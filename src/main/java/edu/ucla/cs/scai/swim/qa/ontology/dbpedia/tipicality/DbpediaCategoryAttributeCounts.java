@@ -5,6 +5,7 @@
  */
 package edu.ucla.cs.scai.swim.qa.ontology.dbpedia.tipicality;
 
+import edu.ucla.cs.scai.swim.qa.ontology.dbpedia.DBpediaOntology;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
@@ -149,7 +150,8 @@ public class DbpediaCategoryAttributeCounts {
         stopAttributes.add("http://dbpedia.org/ontology/thumbnail");
         //stopAttributes.add("http://dbpedia.org/ontology/type");
 
-        String path = "/home/massimo/DBpedia csv/"; //change this with the path on your PC
+        String path=DBpediaOntology.DBPEDIA_CSV_FOLDER;
+        
         if (args != null && args.length > 0) {
             path = args[0];
             if (!path.endsWith("/")) {

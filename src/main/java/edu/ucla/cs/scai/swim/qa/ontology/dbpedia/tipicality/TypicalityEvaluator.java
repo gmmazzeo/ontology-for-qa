@@ -5,6 +5,7 @@
  */
 package edu.ucla.cs.scai.swim.qa.ontology.dbpedia.tipicality;
 
+import edu.ucla.cs.scai.swim.qa.ontology.dbpedia.DBpediaOntology;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -138,7 +139,7 @@ public class TypicalityEvaluator {
     }
 
     public static void main(String[] args) throws ClassNotFoundException, IOException {
-        TypicalityEvaluator te = new TypicalityEvaluator("/home/massimo/DBpedia csv/counts.bin");
+        TypicalityEvaluator te = new TypicalityEvaluator(DBpediaOntology.DBPEDIA_CSV_FOLDER+"counts.bin");
         ArrayList<String> a = new ArrayList<>();
         a.add("http://dbpedia.org/property/state");
         a.add("http://dbpedia.org/ontology/barPassRate");

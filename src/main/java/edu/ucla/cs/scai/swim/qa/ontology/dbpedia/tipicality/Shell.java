@@ -5,6 +5,7 @@
  */
 package edu.ucla.cs.scai.swim.qa.ontology.dbpedia.tipicality;
 
+import edu.ucla.cs.scai.swim.qa.ontology.dbpedia.DBpediaOntology;
 import java.io.Console;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -37,7 +38,7 @@ public class Shell {
     private static final int topAttributes = 20;
 
     public static void main(String[] args) throws IOException, ClassNotFoundException {
-        String path = "/home/massimo/DBpedia csv/";
+        String path = DBpediaOntology.DBPEDIA_CSV_FOLDER;
         if (args != null && args.length > 0) {
             path = args[0];
             if (!path.endsWith("/")) {
