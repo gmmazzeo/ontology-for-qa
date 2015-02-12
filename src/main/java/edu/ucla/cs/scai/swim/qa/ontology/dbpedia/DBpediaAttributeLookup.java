@@ -19,7 +19,7 @@ import java.util.Iterator;
 public class DBpediaAttributeLookup {
 
     private static final double relSimilarityThreshold = 0.5;
-    private static final double absSimilarityThreshold = 0.5;
+    private static final double absSimilarityThreshold = 0.1;
 
     SimilarityClient similarityClient;
 

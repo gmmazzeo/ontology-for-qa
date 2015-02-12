@@ -69,7 +69,7 @@ public class DBpediaOntology implements Ontology {
     public final static String CLASSES_BASE_URI = "http://dbpedia.org/ontology/";
     public final static String SPARQL_END_POINT = "http://dbpedia.org/sparql";
     public final static String SUPERPAGES_FILE = DBPEDIA_CSV_FOLDER + "superpages.txt";
-    private SimilarityClient similarityClient = new SwoogleSimilarityClient();//new WordNetSimilarityClient();
+    private SimilarityClient similarityClient = new WordNetSimilarityClient(); //new SwoogleSimilarityClient();//
 
     DBpediaCategory root = new DBpediaCategory();
     HashMap<String, DBpediaCategory> categoryMap = new HashMap<>();
