@@ -10,6 +10,9 @@ package edu.ucla.cs.scai.swim.qa.ontology;
  * @author Giuseppe M. Mazzeo <mazzeo@cs.ucla.edu>
  */
 public class QueryConstraint {
+    
+    String entityVariableName;
+    String valueName;
 
     String subjString;
     String attrString;
