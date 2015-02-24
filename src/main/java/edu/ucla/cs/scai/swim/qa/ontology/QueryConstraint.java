@@ -34,8 +34,11 @@ public class QueryConstraint {
 
     public QueryConstraint(String subjExpr, String attrExpr, String valueExpr, boolean optional) {
         this.subjExpr = subjExpr;
+        this.subjString = subjExpr;
         this.attrExpr = attrExpr;
+        this.attrString = attrExpr;
         this.valueExpr = valueExpr;
+        this.valueString = valueExpr;
         this.optional = optional;
     }
 
