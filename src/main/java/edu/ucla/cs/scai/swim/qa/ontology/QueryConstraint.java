@@ -48,6 +48,7 @@ public class QueryConstraint {
 
     public void setSubjExpr(String subjExpr) {
         this.subjExpr = subjExpr;
+        this.subjString = subjExpr;
     }
 
     public String getAttrExpr() {
@@ -56,6 +57,7 @@ public class QueryConstraint {
 
     public void setAttrExpr(String attrExpr) {
         this.attrExpr = attrExpr;
+        this.attrString = attrExpr;
     }
 
     public String getValueExpr() {
@@ -64,6 +66,7 @@ public class QueryConstraint {
 
     public void setValueExpr(String valueExpr) {
         this.valueExpr = valueExpr;
+        this.valueString = valueExpr;
     }
 
     public String getSubjString() {
