@@ -15,12 +15,9 @@ public class QueryModel {
 
     String entityVariableName;
     String attributeVariableName;
+    String exampleEntity;
 
     ArrayList<QueryConstraint> constraints = new ArrayList<>();
-
-    public QueryModel() {
-
-    }
 
     public QueryModel(String entityVariableName, String attributeVariableName) {
         this.entityVariableName = entityVariableName;
@@ -51,9 +48,20 @@ public class QueryModel {
         this.attributeVariableName = attributeVariableName;
     }
 
+    public String getExampleEntity() {
+        return exampleEntity;
+    }
+
+    public void setExampleEntity(String exampleEntity) {
+        this.exampleEntity = exampleEntity;
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
+        if (exampleEntity!=null && exampleEntity.trim().length()>0) {
+            sb.append("Example entity: ").append(exampleEntity.trim());
+        }
         for (QueryConstraint qc : constraints) {
             if (sb.length() > 0) {
                 sb.append(".\n");
