@@ -15,6 +15,7 @@ package edu.ucla.cs.scai.swim.qa.ontology.dbpedia;
 import edu.ucla.cs.scai.swim.qa.ontology.Attribute;
 import edu.ucla.cs.scai.swim.qa.ontology.AttributeLookupResult;
 import edu.ucla.cs.scai.swim.qa.ontology.CategoryLookupResult;
+import edu.ucla.cs.scai.swim.qa.ontology.NamedEntityAnnotationResult;
 import edu.ucla.cs.scai.swim.qa.ontology.NamedEntityLookupResult;
 import edu.ucla.cs.scai.swim.qa.ontology.Ontology;
 import edu.ucla.cs.scai.swim.qa.ontology.dbpedia.tipicality.Pair;
@@ -70,6 +71,7 @@ public class DBpediaOntology implements Ontology {
     public final static String SPARQL_END_POINT = "http://dbpedia.org/sparql";
     public final static String SUPERPAGES_FILE = DBPEDIA_CSV_FOLDER + "superpages.txt";
     private SimilarityClient similarityClient = new WordNetSimilarityClient(); //new SwoogleSimilarityClient();//
+    private TagMeClient tagMeClient = new TagMeClient();
 
     DBpediaCategory root = new DBpediaCategory();
     HashMap<String, DBpediaCategory> categoryMap = new HashMap<>();
@@ -534,6 +536,19 @@ public class DBpediaOntology implements Ontology {
             res.add(new DBpediaCategoryLookupResult(categoryMap.get(p.getS()), p.getP()));
         }
         Collections.sort(res);
+        return res;
+    }
+
+    @Override
+    public ArrayList<? extends NamedEntityAnnotationResult> annotateNamedEntities(String sentence) {
+        ArrayList<NamedEntityAnnotationResult> res = new ArrayList<>();
+        try {
+            for (DBpediaEntityAnnotationResult r:new TagMeClient().getTagMeResult(sentence)) {
+                res.add(r);
+            }
+        } catch (Exception ex) {
+            Logger.getLogger(DBpediaOntology.class.getName()).log(Level.SEVERE, null, ex);
+        }
         return res;
     }
 

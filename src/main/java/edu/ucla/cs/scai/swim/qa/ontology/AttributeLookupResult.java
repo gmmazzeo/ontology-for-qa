@@ -11,7 +11,7 @@ package edu.ucla.cs.scai.swim.qa.ontology;
  *
  * @author Giuseppe M. Mazzeo <mazzeo@cs.ucla.edu>
  */
-public abstract class AttributeLookupResult extends LookupResult {
+public abstract class AttributeLookupResult extends WeightedResult {
 
     public abstract Attribute getAttribute();
 

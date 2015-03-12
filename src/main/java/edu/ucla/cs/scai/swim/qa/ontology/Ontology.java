@@ -23,6 +23,8 @@ public interface Ontology {
     public ArrayList<? extends CategoryLookupResult> lookupCategory(String categoryName);
     
     public ArrayList<? extends CategoryLookupResult> lookupCategory(Collection<Attribute> attributes);
+    
+    public ArrayList<? extends NamedEntityAnnotationResult> annotateNamedEntities(String sentence);
 
     public Attribute getAbstractAttribute();
     

@@ -11,7 +11,7 @@ package edu.ucla.cs.scai.swim.qa.ontology;
  *
  * @author Giuseppe M. Mazzeo <mazzeo@cs.ucla.edu>
  */
-public class LookupResult implements Comparable<LookupResult> {
+public class WeightedResult implements Comparable<WeightedResult> {
 
     protected double weight;
 
@@ -24,7 +24,7 @@ public class LookupResult implements Comparable<LookupResult> {
     }
 
     @Override
-    public int compareTo(LookupResult o) {
+    public int compareTo(WeightedResult o) {
         return Double.compare(o.weight, weight);
     }
 
