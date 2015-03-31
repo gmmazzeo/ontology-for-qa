@@ -5,12 +5,14 @@
  */
 package edu.ucla.cs.scai.swim.qa.ontology;
 
+import java.util.HashSet;
+
 /**
  *
  * @author Giuseppe M. Mazzeo <mazzeo@cs.ucla.edu>
  */
 public class QueryConstraint {
-    
+
     String entityVariableName;
     String valueName;
 
@@ -21,6 +23,8 @@ public class QueryConstraint {
     String subjExpr;
     String attrExpr;
     String valueExpr;
+
+    String type;
 
     NamedEntity subj;
     Attribute attr;
@@ -40,6 +44,27 @@ public class QueryConstraint {
         this.valueExpr = valueExpr;
         this.valueString = valueExpr;
         this.optional = optional;
+    }
+
+    public QueryConstraint(String subjExpr, String attrExpr, String valueExpr, String type, boolean optional) {
+        this(subjExpr, attrExpr, valueExpr, optional);
+        if (type != null && type.trim().length() == 0) {
+            type = null;
+        }
+        if (type != null) {
+            this.type = type.trim();
+        }
+    }
+
+    public QueryConstraint copy() {
+        QueryConstraint res = new QueryConstraint(subjExpr, attrExpr, valueExpr, type, optional);
+        res.subjString = subjString;
+        res.valueString = valueString;
+        res.attrString = attrString;
+        res.subj = subj;
+        res.attr = attr;
+        res.valueEntity = valueEntity;
+        return res;
     }
 
     public String getSubjExpr() {
@@ -125,11 +150,33 @@ public class QueryConstraint {
         this.optional = optional;
     }
 
+    public String getEntityVariableName() {
+        return entityVariableName;
+    }
+
+    public void setEntityVariableName(String entityVariableName) {
+        this.entityVariableName = entityVariableName;
+    }
+
+    public String getValueName() {
+        return valueName;
+    }
+
+    public void setValueName(String valueName) {
+        this.valueName = valueName;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
     @Override
     public String toString() {
-        return (optional?"OPTIONAL ":"")+"<"+subjString+"> <"+attrString+"> <"+valueString+">";
+        return (optional ? "OPTIONAL " : "") + "<" + subjString + "> <" + attrString + "> <" + valueString + ">" + (type != null && type.trim().length() > 0 ? "[" + type.trim() + "]" : "");
     }
-    
-    
 
 }

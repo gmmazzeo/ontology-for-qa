@@ -12,12 +12,19 @@ package edu.ucla.cs.scai.swim.qa.ontology.dbpedia;
 //import com.hp.hpl.jena.query.ResultSet;
 //import com.hp.hpl.jena.rdf.model.RDFNode;
 //import com.hp.hpl.jena.sparql.engine.http.QueryExceptionHTTP;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 import edu.ucla.cs.scai.swim.qa.ontology.Attribute;
 import edu.ucla.cs.scai.swim.qa.ontology.AttributeLookupResult;
+import edu.ucla.cs.scai.swim.qa.ontology.Category;
 import edu.ucla.cs.scai.swim.qa.ontology.CategoryLookupResult;
+import edu.ucla.cs.scai.swim.qa.ontology.NamedEntity;
 import edu.ucla.cs.scai.swim.qa.ontology.NamedEntityAnnotationResult;
 import edu.ucla.cs.scai.swim.qa.ontology.NamedEntityLookupResult;
 import edu.ucla.cs.scai.swim.qa.ontology.Ontology;
+import static edu.ucla.cs.scai.swim.qa.ontology.dbpedia.DBpediaOntologyOld.TYPE_ATTRIBUTE;
 import edu.ucla.cs.scai.swim.qa.ontology.dbpedia.tipicality.Pair;
 import edu.ucla.cs.scai.swim.qa.ontology.dbpedia.tipicality.TypicalityEvaluator;
 //import edu.ucla.cs.scai.swim.qa.AttributeCondition;
@@ -31,31 +38,20 @@ import edu.ucla.cs.scai.swim.qa.ontology.dbpedia.tipicality.TypicalityEvaluator;
 //import edu.ucla.cs.scai.swim.qa.QueryResult;
 //import edu.ucla.cs.scai.swim.qa.interfaces.Attribute;
 import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.math.BigInteger;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.Iterator;
-import java.util.StringTokenizer;
+import java.util.LinkedList;
+import java.util.Map;
+import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import java.util.zip.GZIPInputStream;
-import javax.xml.bind.DatatypeConverter;
-import org.apache.commons.csv.CSVFormat;
-import org.apache.commons.csv.CSVParser;
-import org.apache.commons.csv.CSVRecord;
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
 
 /**
  *
@@ -63,22 +59,31 @@ import org.jsoup.nodes.Element;
  */
 public class DBpediaOntology implements Ontology {
 
-    public final static String DBPEDIA_CSV_FOLDER = "/home/massimo/DBpedia csv/"; //change this with the path on your PC
-
     private static final DBpediaOntology instance;
+    public final static String DBPEDIA_CSV_FOLDER = "/home/massimo/DBpedia csv/"; //change this with the path on your PC
     public final static String DBPEDIA_CLASSES_URL = "http://web.informatik.uni-mannheim.de/DBpediaAsTables/DBpediaClasses.htm"; //"http://mappings.dbpedia.org/server/ontology/classes/";
     public final static String CLASSES_BASE_URI = "http://dbpedia.org/ontology/";
     public final static String SPARQL_END_POINT = "http://dbpedia.org/sparql";
-    public final static String SUPERPAGES_FILE = DBPEDIA_CSV_FOLDER + "superpages.txt";
-    private SimilarityClient similarityClient = new WordNetSimilarityClient(); //new SwoogleSimilarityClient();//
-    private TagMeClient tagMeClient = new TagMeClient();
+    public final static String SUPERPAGES_FILE = "superpages.txt";
+    public final static String TYPE_ATTRIBUTE = "http://www.w3.org/1999/02/22-rdf-syntax-ns#type";
+    final HashMap<String, DBpediaCategory> categoriesByUri = new HashMap<>();
+    final HashMap<String, DBpediaAttribute> attributesByUri = new HashMap<>();
+    final HashMap<String, DBpediaDataType> dataTypesByUri = new HashMap<>();
+    HashMap<String, DBpediaNamedEntity> entitiesByUri = new HashMap<>();
+
+    public static final String THING_URI = "http://www.w3.org/2002/07/owl#Thing";
+    public final static String ABSTRACT_ATTRIBUTE_URI = "http://www.w3.org/2000/01/rdf-schema#comment";
+    private SimilarityClient similarityClient = new SwoogleSimilarityClient();//new WordNetSimilarityClient(); //
 
     DBpediaCategory root = new DBpediaCategory();
-    HashMap<String, DBpediaCategory> categoryMap = new HashMap<>();
-    HashMap<String, HashSet<DBpediaAttribute>> attributeMap = new HashMap<>();
-    HashMap<String, DBpediaNamedEntity> entityMap = new HashMap<>();
     DBpediaAttribute abstractAttribute;
     TypicalityEvaluator typicalityEvaluator;
+    HashMap<String, DBpediaNamedEntity> namedEntities = new HashMap<>();
+    //HashMap<String, DBpediaCategory> categories = new HashMap<>();
+
+    DBpediaEntityLookup entityLookup = new DBpediaEntityLookup(similarityClient);
+    DBpediaAttributeLookup attributeLookup = new DBpediaAttributeLookup(similarityClient);
+    DBpediaCategoryLookup categoryLookup = new DBpediaCategoryLookup(similarityClient);
 
     static {
         instance = new DBpediaOntology();
@@ -87,203 +92,320 @@ public class DBpediaOntology implements Ontology {
     public static DBpediaOntology getInstance() {
         return instance;
     }
-    /*
-     private void setNameThumbAndUrl(DBpediaNamedEntity ne) {
-     if (entityMap.containsKey(ne.uri)) {
-     return;
-     }
-     entityMap.put(ne.uri, ne);
-     ne.setNameFromUri();
-     String qs = "PREFIX dbpedia-owl:<http://dbpedia.org/ontology/>\n"
-     + "PREFIX rdfs:<http://www.w3.org/2000/01/rdf-schema#>\n"
-     + "PREFIX foaf:<http://xmlns.com/foaf/0.1/>\n"
-     + "PREFIX skos: <http://www.w3.org/2004/02/skos/core#>\n";
-     qs += "SELECT DISTINCT ?u ?t\n";
-     qs += "WHERE { \n";
-     qs += "\tOPTIONAL {<" + ne.uri + "> dbpedia-owl:thumbnail ?t.}\n";
-     qs += "\tOPTIONAL {?u foaf:primaryTopic <" + ne.uri + ">.}\n";
-     qs += "} ";
-     qs += "LIMIT 1\n";
-     System.out.println(qs);
-     com.hp.hpl.jena.query.Query query = QueryFactory.create(qs);
-     QueryExecution qexec = QueryExecutionFactory.sparqlService(SPARQL_END_POINT, query);
-     try {
-     ResultSet rs = qexec.execSelect();
-     for (; rs.hasNext();) {
-     QuerySolution qSol = rs.next();
-     RDFNode eu = qSol.get("u");
-     if (eu != null) {
-     ne.setPageUrl(eu.toString());
-     }
-     RDFNode et = qSol.get("t");
-     if (et != null) {
-     ne.setThumbUrl(et.toString());
-     }
-     }
-     //System.out.println("===========================");
-     } catch (QueryExceptionHTTP ex) {
-     System.out.println(SPARQL_END_POINT + " is DOWN");
-     } finally {
-     qexec.close();
-     } // end try/catch/finally                   
-     }
-     */
 
-    private void traverseHierarchy(Element e, DBpediaCategory category, HashMap<String, DBpediaCategory> map) {
-        for (Element c : e.children()) {
-            String tagName = c.tag().getName();
-            if (tagName.equals("a")) {
-                String href = c.attr("href");
-                if (href != null && href.length() > 0) {
-                    category.setLabel(c.text());
-                    category.setUri(CLASSES_BASE_URI + href);
-                    map.put(category.getLabel(), category);
-                    System.out.println(c.text() + "\t" + CLASSES_BASE_URI + href);
+    private void initDataTypes() {
+        dataTypesByUri.put("http://www.w3.org/2001/XMLSchema#nonNegativeInteger", new DBpediaDataType("", Integer.class));
+        dataTypesByUri.put("http://www.w3.org/2001/XMLSchema#anyURI", new DBpediaDataType("", String.class));
+        dataTypesByUri.put("http://dbpedia.org/datatype/kilowatt", new DBpediaDataType("", Double.class));
+        dataTypesByUri.put("http://dbpedia.org/datatype/cubicMetrePerSecond", new DBpediaDataType("", Double.class));
+        dataTypesByUri.put("http://dbpedia.org/datatype/megabyte", new DBpediaDataType("", Double.class));
+        dataTypesByUri.put("http://www.w3.org/2001/XMLSchema#float", new DBpediaDataType("", Double.class));
+        dataTypesByUri.put("http://dbpedia.org/datatype/second", new DBpediaDataType("", Double.class));
+        dataTypesByUri.put("http://www.w3.org/2001/XMLSchema#positiveInteger", new DBpediaDataType("", Integer.class));
+        dataTypesByUri.put("http://www.w3.org/2001/XMLSchema#gYear", new DBpediaDataType("", GregorianCalendar.class));
+        dataTypesByUri.put("http://dbpedia.org/datatype/cubicKilometre", new DBpediaDataType("", Double.class));
+        dataTypesByUri.put("http://dbpedia.org/datatype/litre", new DBpediaDataType("", Double.class));
+        dataTypesByUri.put("http://dbpedia.org/datatype/squareKilometre", new DBpediaDataType("", Double.class));
+        dataTypesByUri.put("http://www.w3.org/1999/02/22-rdf-syntax-ns#langString", new DBpediaDataType("", String.class));
+        dataTypesByUri.put("http://dbpedia.org/datatype/metre", new DBpediaDataType("", Double.class));
+        dataTypesByUri.put("http://www.w3.org/2001/XMLSchema#date", new DBpediaDataType("", Date.class));
+        dataTypesByUri.put("http://dbpedia.org/datatype/cubicCentimetre", new DBpediaDataType("", Double.class));
+        dataTypesByUri.put("http://dbpedia.org/datatype/centimetre", new DBpediaDataType("", Double.class));
+        dataTypesByUri.put("http://www.w3.org/2001/XMLSchema#double", new DBpediaDataType("", Double.class));
+        dataTypesByUri.put("http://dbpedia.org/datatype/inhabitantsPerSquareKilometre", new DBpediaDataType("", Double.class));
+        dataTypesByUri.put("http://dbpedia.org/datatype/kilometre", new DBpediaDataType("", Double.class));
+        dataTypesByUri.put("http://dbpedia.org/datatype/gramPerKilometre", new DBpediaDataType("", Double.class));
+        dataTypesByUri.put("http://dbpedia.org/datatype/kelvin", new DBpediaDataType("", Double.class));
+        dataTypesByUri.put("http://www.w3.org/2001/XMLSchema#dateTime", new DBpediaDataType("", Date.class));
+        dataTypesByUri.put("http://dbpedia.org/datatype/squareMetre", new DBpediaDataType("", Double.class));
+        dataTypesByUri.put("http://dbpedia.org/datatype/millimetre", new DBpediaDataType("", Double.class));
+        dataTypesByUri.put("http://dbpedia.org/datatype/kilogramPerCubicMetre", new DBpediaDataType("", Double.class));
+        dataTypesByUri.put("http://www.w3.org/2001/XMLSchema#integer", new DBpediaDataType("", Integer.class));
+        dataTypesByUri.put("http://dbpedia.org/datatype/kilometrePerSecond", new DBpediaDataType("", Double.class));
+        dataTypesByUri.put("http://dbpedia.org/datatype/day", new DBpediaDataType("", Double.class));
+        dataTypesByUri.put("http://dbpedia.org/datatype/kilometrePerHour", new DBpediaDataType("", Double.class));
+        dataTypesByUri.put("http://dbpedia.org/datatype/cubicMetre", new DBpediaDataType("", Double.class));
+        dataTypesByUri.put("http://www.w3.org/2001/XMLSchema#boolean", new DBpediaDataType("", Boolean.class));
+        dataTypesByUri.put("http://dbpedia.org/datatype/newtonMetre", new DBpediaDataType("", Double.class));
+        dataTypesByUri.put("http://dbpedia.org/datatype/kilogram", new DBpediaDataType("", Double.class));
+        dataTypesByUri.put("http://dbpedia.org/datatype/minute", new DBpediaDataType("", Double.class));
+        dataTypesByUri.put("http://www.w3.org/2001/XMLSchema#string", new DBpediaDataType("", String.class));
+        dataTypesByUri.put("http://www.w3.org/2001/XMLSchema#gYearMonth", new DBpediaDataType("", GregorianCalendar.class));
+        dataTypesByUri.put("http://dbpedia.org/datatype/hour", new DBpediaDataType("", Double.class));
+        dataTypesByUri.put("http://dbpedia.org/datatype/fuelType", new DBpediaDataType("", Double.class));
+        dataTypesByUri.put("http://dbpedia.org/datatype/valvetrain", new DBpediaDataType("", Double.class));
+        dataTypesByUri.put("http://dbpedia.org/datatype/engineConfiguration", new DBpediaDataType("", Double.class));
+
+        for (Map.Entry<String, DBpediaDataType> e : dataTypesByUri.entrySet()) {
+            e.getValue().uri = e.getKey();
+        }
+    }
+
+    private JsonArray loadJsonDescriptor() throws IOException {
+        StringBuilder jsonSb;
+        try (BufferedReader in = new BufferedReader(new InputStreamReader(DBpediaClassesLoader.class.getResourceAsStream("/definitions.json")))) {
+            jsonSb = new StringBuilder();
+            String l = in.readLine();
+            while (l != null) {
+                jsonSb.append(l);
+                l = in.readLine();
+            }
+        }
+
+        JsonParser parser = new JsonParser();
+        JsonElement je = parser.parse(jsonSb.toString());
+        return je.getAsJsonObject().get("@graph").getAsJsonArray();
+    }
+
+    private String extractLabel(JsonObject jo, String id) {
+        JsonArray ja = jo.get("http://www.w3.org/2000/01/rdf-schema#label").getAsJsonArray();
+        for (JsonElement je : ja) {
+            String lang = je.getAsJsonObject().get("@language").getAsString();
+            if (lang != null && lang.equals("en")) {
+                String label = je.getAsJsonObject().get("@value").getAsString();
+                if (label != null && label.trim().length() > 0) {
+                    return label;
                 }
-            } else if (tagName.equals("ul")) {
-                for (Element c1 : c.children()) {
-                    if (c1.tagName().equals("li")) {
-                        DBpediaCategory cc = new DBpediaCategory();
-                        traverseHierarchy(c1, cc, map);
-                        cc.setParent(category);
-                        category.getSubclasses().add(cc);
+            }
+        }
+        //the label was not found - let's use the url
+        String[] s = id.split("\\/");
+        return s[s.length - 1];
+    }
+
+    private void loadEmptyCategoriesAndAttributes(JsonArray ja) throws Exception {
+        for (JsonElement je : ja) {
+            JsonObject jo = je.getAsJsonObject();
+            String id = jo.get("@id").getAsString();
+            String type = null;
+            try {
+                type = jo.get("@type").getAsJsonArray().get(0).getAsString();
+            } catch (Exception e) {
+                System.out.println(id);
+                e.printStackTrace();
+                continue;
+            }
+            if (type.endsWith("Class")) {
+                DBpediaCategory c = new DBpediaCategory();
+                c.setUri(id);
+                c.setLabel(extractLabel(jo, id));
+                categoriesByUri.put(id, c);
+            } else if (type.endsWith("Property")) {
+                DBpediaAttribute a = new DBpediaAttribute();
+                a.setUri(id);
+                a.setLabel(extractLabel(jo, id));
+                attributesByUri.put(id, a);
+            } else if (type.endsWith("Ontology")) {
+            } else {
+                throw new Exception("Unexpected type: " + id + ":" + type);
+            }
+        }
+        System.out.println(categoriesByUri.size() + " categories");
+        System.out.println(attributesByUri.size() + " attributes");
+    }
+
+    private void connectCategoriesThroughSubclassRelationship(JsonArray ja) throws Exception {
+        for (JsonElement je : ja) {
+            JsonObject jo = je.getAsJsonObject();
+            String id = jo.get("@id").getAsString();
+            String type = null;
+            try {
+                type = jo.get("@type").getAsJsonArray().get(0).getAsString();
+            } catch (Exception e) {
+                continue;
+            }
+            if (type.endsWith("Class")) {
+                DBpediaCategory c = categoriesByUri.get(id);
+                JsonArray scs = jo.get("http://www.w3.org/2000/01/rdf-schema#subClassOf").getAsJsonArray();
+                for (JsonElement jesc : scs) {
+                    String ps = jesc.getAsString();
+                    DBpediaCategory pc = categoriesByUri.get(ps);
+                    if (pc == null) { //this is an external category
+                        //is it really useful to add this category?
+                        //pc = new DBpediaCategory();
+                        //pc.setUri(ps);
+                        //categoriesByUri.put(ps, pc);
+                        //System.out.println("Added an external category: " + ps);
+                        //System.out.println("It was needed for " + id);
+                        continue;
                     }
+                    c.parents.add(pc);
+                    pc.subClasses.add(c);
+                }
+                if (scs == null || scs.size() == 0) {
+                    throw new Exception(id + " has no subclassOf");
+                } else if (scs.size() > 1) {
+                    System.out.println(id + " has " + scs.size() + " subclassOf");
                 }
             }
         }
     }
 
-    private void processFile(BufferedReader in, DBpediaCategory category, HashMap<String, HashSet<DBpediaAttribute>> map) throws IOException {
-
-        //The first header contains the properties labels.
-        //The second header contains the properties URIs.
-        //The third header contains the properties range labels.
-        //The fourth header contains the properties range URIs.    
-        String l1 = in.readLine();
-        String l2 = in.readLine();
-        String l3 = in.readLine();
-        String l4 = in.readLine();
-
-        Iterator<CSVRecord> it = CSVParser.parse(l1 + "\n" + l2 + "\n" + l3 + "\n" + l4, CSVFormat.RFC4180).iterator();
-        Iterator<String> r1 = it.next().iterator();
-        Iterator<String> r2 = it.next().iterator();
-        Iterator<String> r3 = it.next().iterator();
-        Iterator<String> r4 = it.next().iterator();
-
-        while (r1.hasNext() && r2.hasNext() && r3.hasNext() && r4.hasNext()) {
-
-            String name = r1.next();
-            String uri = r2.next();
-            String range = r3.next();
-            String rangeUri = r4.next();
-
-            HashSet<DBpediaAttribute> as = map.get(name);
-            if (as == null) {
-                as = new HashSet<>();
-                map.put(name, as);
+    private void connectCategoriesAndAttributes(JsonArray ja) throws Exception {
+        for (JsonElement je : ja) {
+            JsonObject jo = je.getAsJsonObject();
+            String id = jo.get("@id").getAsString();
+            String type;
+            try {
+                type = jo.get("@type").getAsJsonArray().get(0).getAsString();
+            } catch (Exception e) {
+                continue;
             }
+            if (type.endsWith("Property")) {
+                DBpediaAttribute att = attributesByUri.get(id);
+                JsonElement dje = jo.get("http://www.w3.org/2000/01/rdf-schema#domain");
+                if (dje != null) { //the domain is specified
+                    JsonArray dja = dje.getAsJsonArray();
+                    for (JsonElement j : dja) {
+                        String ds = j.getAsString();
+                        DBpediaCategory cat = categoriesByUri.get(ds);
+                        if (cat == null) {
+                            if (dataTypesByUri.containsKey(ds)) {
+                                throw new Exception(id + " has domain " + dataTypesByUri.get(ds) + ", which is a basic type!");
+                            }
+                            continue;
+                            //System.out.println(id + " has domain " + ds);
+                            //cat = new DBpediaCategory();
+                            //cat.setUri(ds);
+                            //categoriesByUri.put(ds, cat);
+                            //System.out.println("The category " + ds + " was created");
+                        }
+                        att.domainUri.add(ds);
+                    }
+                } else { //the domain is not specified, thus we assume that the domain id owl#Thing
+                    att.domainUri.add(THING_URI);
+                }
 
-            DBpediaAttribute a = new DBpediaAttribute();
-            a.setLabel(name);
-            a.setRange(range);
-            a.setRangeUri(rangeUri);
-            a.setUri(uri);
-            as.add(a);
+                JsonElement rje = jo.get("http://www.w3.org/2000/01/rdf-schema#range");
+                if (rje != null) { //the range is specified
+                    JsonArray rja = rje.getAsJsonArray();
+                    for (JsonElement j : rja) {
+                        String rs = j.getAsString();
+                        DBpediaCategory cat = categoriesByUri.get(rs);
+                        if (cat == null) {
+                            DBpediaDataType basicType = dataTypesByUri.get(rs);
+                            if (basicType != null) {
+                                basicType.rangeOfAttributes.add(att);
+                                att.rangeCanBeBasicType = true;
+                            } else {
+                                continue;
+                                //System.out.println(id + " has range " + rs);
+                                //cat = new DBpediaCategory();
+                                //cat.setUri(rs);
+                                //categoriesByUri.put(rs, cat);
+                                //System.out.println("The category " + rs + " was created");
+                            }
+                        }
+                        att.rangeUri.add(rs);
+                    }
+                }
+            } else { //the range is not specified - so... ???
 
-            if (abstractAttribute == null && uri.equals("http://www.w3.org/2000/01/rdf-schema#comment")) {
-                abstractAttribute = a;
-                System.out.println("Abstract attribute found");
             }
-
-            category.getAttributes().add(a);
         }
+    }
 
-        if (r1.hasNext() || r2.hasNext() || r3.hasNext() || r4.hasNext()) {
-            System.out.println("Error: number of columns not matching in first rows of " + category.getLabel() + " csv file");
+    private void createThingAndConnectParentlessCategories() {
+        DBpediaCategory thing = categoriesByUri.get(THING_URI);
+        if (thing == null) {
+            thing = new DBpediaCategory();
+            thing.setUri(THING_URI);
+            categoriesByUri.put(THING_URI, thing);
+        }
+        thing.setLabel("thing");
+        for (DBpediaCategory c : categoriesByUri.values()) {
+            if (c.parents.isEmpty()) {
+                c.parents.add(thing);
+                thing.subClasses.add(c);
+            }
+        }
+        thing.parents.clear();
+        thing.subClasses.remove(thing);
+        //check for cycles
+        HashMap<String, Integer> inDegree = new HashMap<>();
+        LinkedList<String> zeroInDegree = new LinkedList<>();
+        for (DBpediaCategory cat : categoriesByUri.values()) {
+            if (cat.parents.isEmpty()) {
+                zeroInDegree.addLast(cat.uri);
+            } else {
+                inDegree.put(cat.uri, cat.parents.size());
+            }
+        }
+        while (!zeroInDegree.isEmpty()) {
+            DBpediaCategory cat = categoriesByUri.get(zeroInDegree.removeFirst());
+            for (DBpediaCategory cc : cat.subClasses) {
+                Integer v = inDegree.get(cc.uri);
+                if (v == 1) {
+                    inDegree.remove(cc.uri);
+                    zeroInDegree.addLast(cc.uri);
+                } else {
+                    inDegree.put(cc.uri, v - 1);
+                }
+            }
+        }
+        if (!inDegree.isEmpty()) {
+            System.out.println("Cycle!");
+        }
+    }
+
+    private void extendDomainsAndRangesToDescendants() {
+        for (DBpediaAttribute att : attributesByUri.values()) {
+            for (String domainUri : att.domainUri) {
+                if (categoriesByUri.containsKey(domainUri)) {
+                    LinkedList<DBpediaCategory> queue = new LinkedList<>();
+                    queue.addLast(categoriesByUri.get(domainUri));
+                    while (!queue.isEmpty()) {
+                        DBpediaCategory cat = queue.removeFirst();
+                        cat.domainOfAttributes.add(att);
+                        for (DBpediaCategory cc : cat.getSubClasses()) {
+                            if (!cc.domainOfAttributes.contains(att)) {
+                                queue.addLast(cc);
+                            }
+                        }
+                    }
+                } else {
+                    System.out.println(domainUri + " not found");
+                }
+            }
+            for (String rangeUri : att.rangeUri) {
+                if (dataTypesByUri.containsKey(rangeUri)) {
+                    dataTypesByUri.get(rangeUri).rangeOfAttributes.add(att);
+                } else if (categoriesByUri.containsKey(rangeUri)) {
+                    LinkedList<DBpediaCategory> queue = new LinkedList<>();
+                    queue.addLast(categoriesByUri.get(rangeUri));
+                    while (!queue.isEmpty()) {
+                        DBpediaCategory cat = queue.removeFirst();
+                        cat.rangeOfAttributes.add(att);
+                        for (DBpediaCategory cc : cat.getSubClasses()) {
+                            if (!cc.rangeOfAttributes.contains(att)) {
+                                queue.addLast(cc);
+                            }
+                        }
+                    }
+                } else {
+                    System.out.println(rangeUri + " not found");
+                }
+            }
         }
     }
 
     private DBpediaOntology() {
-
-        Document doc = null;
         try {
-            doc = Jsoup.connect(DBPEDIA_CLASSES_URL).get();
-        } catch (IOException ex) {
-            Logger.getLogger(DBpediaOntology.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
-        traverseHierarchy(doc.body().children().get(1).children().get(1), root, categoryMap);
-
-        File dir = new File(DBPEDIA_CSV_FOLDER);
-        for (File f : dir.listFiles()) {
-            if (f.isFile() && f.getName().endsWith(".csv.gz")) {
-                BufferedReader in = null;
-                try {
-                    in = new BufferedReader(new InputStreamReader(new GZIPInputStream(new FileInputStream(f))));
-                } catch (IOException ex) {
-                    Logger.getLogger(DBpediaOntology.class.getName()).log(Level.SEVERE, null, ex);
-                }
-                String label = f.getName().replace(".csv.gz", "");
-                DBpediaCategory category = categoryMap.get(label);
-                System.out.println("Processing category " + label);
-                if (category == null) {
-                    System.out.println("Category " + label + " not found");
-                    continue;
-                }
-                try {
-                    processFile(in, category, attributeMap);
-                } catch (Exception ex) {
-                    Logger.getLogger(DBpediaOntology.class.getName()).log(Level.SEVERE, null, ex);
-                }
-                System.out.println(category.getAttributes().size() + " attributes found");
-                for (DBpediaAttribute a : category.getAttributes()) {
-                    System.out.println(a.getName());
-                }
-            }
-        }
-        try {
-            typicalityEvaluator = new TypicalityEvaluator(DBPEDIA_CSV_FOLDER + "counts.bin");
-        } catch (IOException ex) {
-            Logger.getLogger(DBpediaOntology.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(DBpediaOntology.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
-        try {
-            BufferedReader in = new BufferedReader(new FileReader(SUPERPAGES_FILE));
-            String l = in.readLine();
-            while (l != null) {
-                StringTokenizer st = new StringTokenizer(l, "\t ");
-                String category = st.nextToken();
-                String superpage = st.nextToken();
-                Integer count = Integer.parseInt(st.nextToken());
-                DBpediaCategory c = categoryMap.get(category);
-                if (c != null) {
-                    c.updateMostPopularEntity(superpage, count);
-                }
-                l = in.readLine();
-            }
-            in.close();
-            for (DBpediaCategory c : categoryMap.values()) {
-                if (c.getMostPopularEntity() != null) {
-                    c.updateAncestorsPopularity();
-                }
-            }
+            initDataTypes();
+            JsonArray ja = loadJsonDescriptor();
+            loadEmptyCategoriesAndAttributes(ja);
+            connectCategoriesThroughSubclassRelationship(ja);
+            connectCategoriesAndAttributes(ja);
+            createThingAndConnectParentlessCategories();
+            extendDomainsAndRangesToDescendants();
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    HashMap<String, DBpediaNamedEntity> namedEntities = new HashMap<>();
-    //HashMap<String, DBpediaCategory> categories = new HashMap<>();
-
-    DBpediaEntityLookup entityLookup = new DBpediaEntityLookup();
-    DBpediaAttributeLookup attributeLookup = new DBpediaAttributeLookup(similarityClient);
-    DBpediaCategoryLookup categoryLookup = new DBpediaCategoryLookup(similarityClient);
-
     @Override
     public ArrayList<? extends NamedEntityLookupResult> lookupEntity(String entityName) throws Exception {
-        ArrayList<DBpediaEntityLookupResult> res = entityLookup.lookup(entityName, 1);
+        ArrayList<DBpediaEntityLookupResult> res = entityLookup.lookup(entityName, 3);
         for (DBpediaEntityLookupResult ne : res) {
             if (!namedEntities.containsKey(ne.namedEntity.label)) {
                 namedEntities.put(ne.namedEntity.label, ne.namedEntity);
@@ -310,215 +432,10 @@ public class DBpediaOntology implements Ontology {
         }
 
     }
-    /*
-     @Override
-     public ArrayList<? extends QueryResult> executeQuery(Query q) {
-     ArrayList<QueryResult> res = new ArrayList<>();
-
-     if (q.getTypeOfQuestion() == Query.ATTRIBUTE_OF_ENTITY || q.getTypeOfQuestion() == Query.DEFINITION) {
-
-     for (DBpediaNamedEntity ne : ((ArrayList<DBpediaNamedEntity>) q.getSelectedEntities())) {
-     setNameThumbAndUrl(ne);
-     QueryResult qr = new QueryResult();
-     res.add(qr);
-     qr.setNamedEntity(ne);
-     if (!q.getSelectedAttributes().isEmpty()) {
-     String qs = "PREFIX dbpedia-owl:<http://dbpedia.org/ontology/>\n"
-     + "PREFIX rdfs:<http://www.w3.org/2000/01/rdf-schema#>\n"
-     + "PREFIX foaf:<http://xmlns.com/foaf/0.1/>\n"
-     + "PREFIX skos: <http://www.w3.org/2004/02/skos/core#>\n";
-     qs += "SELECT DISTINCT ?a ?v ?vu ?vt";
-     qs += " \nWHERE { \n";
-     boolean first = true;
-     HashMap<String, DBpediaAttribute> attributeUriMap = new HashMap<>();
-     for (DBpediaAttribute sa : (ArrayList<DBpediaAttribute>) q.getSelectedAttributes()) {
-     attributeUriMap.put(sa.getUri(), sa);
-     if (first) {
-     first = false;
-     } else {
-     qs += "UNION \n";
-     }
-     qs += "\t{ \n";
-     qs += "\t<" + ne.getUri() + "> ?a ?v \n";
-     qs += "\tOPTIONAL {?vu foaf:primaryTopic ?v.}\n";
-     qs += "\tOPTIONAL {?v dbpedia-owl:thumbnail ?vt.}\n";
-     qs += "\tFILTER (str(?a) = \"" + sa.getUri() + "\")\n";
-     qs += "\t} \n";
-     }
-     qs += "} LIMIT 10\n";
-     System.out.println(qs);
-     com.hp.hpl.jena.query.Query query = QueryFactory.create(qs);
-     QueryExecution qexec = QueryExecutionFactory.sparqlService(SPARQL_END_POINT, query);
-     try {
-     ResultSet rs = qexec.execSelect();
-     for (; rs.hasNext();) {
-     QuerySolution qSol = rs.next();
-     AttributeValue ac = new AttributeValue();
-     qr.getProperties().add(ac);
-     DBpediaAttribute a = attributeUriMap.get(qSol.get("a").toString());
-     ac.setAttribute(a);
-     DBpediaNamedEntity eValue = new DBpediaNamedEntity();
-     String value = qSol.get("v").toString().split("\\^\\^")[0];
-     boolean basicType = setBasicAttributeValue(ac, value);
-     if (!basicType) {
-     eValue.setUri(value);
-     eValue.setNameFromUri();
-     ac.setEntityValue(eValue);
-     ac.setStringValue(eValue.getName());
-     }
-
-     RDFNode vu = qSol.get("vu");
-     if (vu != null) {
-     eValue.setPageUrl(vu.toString());
-     }
-     RDFNode vt = qSol.get("vt");
-     if (vt != null) {
-     eValue.setThumbUrl(vt.toString());
-     }
-     }
-     //System.out.println("===========================");
-     } catch (QueryExceptionHTTP e) {
-     System.out.println(SPARQL_END_POINT + " is DOWN");
-     } finally {
-     qexec.close();
-     } // end try/catch/finally   
-     }
-     if (q.getTypeOfQuestion() == Query.DEFINITION) {
-     qr.getProperties().add(new AttributeValue(getAbstractAttribute(), qr.getNamedEntity().getDescription()));
-     }
-     }
-     } else if (q.getTypeOfQuestion() == Query.ENTITY_OF_CLASS) { //query on categories
-     for (DBpediaCategory c : ((ArrayList<DBpediaCategory>) q.getSelectedCategories())) {
-     String qs = "PREFIX dbpedia-owl:<http://dbpedia.org/ontology/>\n"
-     + "PREFIX rdfs:<http://www.w3.org/2000/01/rdf-schema#>\n"
-     + "PREFIX foaf:<http://xmlns.com/foaf/0.1/>\n"
-     + "PREFIX skos: <http://www.w3.org/2004/02/skos/core#>\n";
-     qs += "SELECT DISTINCT ?e ?a ?v \n";
-     qs += "WHERE { \n";
-     boolean first = true;
-     for (AttributeCondition ac : (ArrayList<AttributeCondition>) q.getAttributeConditions()) {
-     if (first) {
-     first = false;
-     } else {
-     qs += "UNION \n";
-     }
-     qs += "\t{ \n";
-     qs += "\t?e <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <" + c.uri + "> .\n";
-     qs += "\t?e ?a ?v .\n";
-     if (ac instanceof EntityAttributeCondition) {
-     qs += "\tFILTER (str(?v) = \"" + ((EntityAttributeCondition) ac).getEntity().getUri() + "\")\n";
-     }
-     qs += "\t} \n";
-     }
-     qs += "} LIMIT 10\n";
-     System.out.println(qs);
-     com.hp.hpl.jena.query.Query query = QueryFactory.create(qs);
-     QueryExecution qexec = QueryExecutionFactory.sparqlService(SPARQL_END_POINT, query);
-     try {
-     ResultSet rs = qexec.execSelect();
-     for (; rs.hasNext();) {
-     QuerySolution qSol = rs.next();
-     DBpediaNamedEntity eValue = new DBpediaNamedEntity();
-     String uri = qSol.get("e").toString();
-     eValue.setUri(uri);
-     eValue.setNameFromUri();
-     QueryResult qr = new QueryResult();
-     qr.setNamedEntity(eValue);
-     //TODO: aggiungere gli attributi
-
-     //RDFNode vu = qSol.get("vu");
-     //if (vu != null) {
-     //eValue.setPageUrl(vu.toString());
-     //}
-     //RDFNode vt = qSol.get("vt");
-     //if (vt != null) {
-     //eValue.setThumbUrl(vt.toString());
-     //}
-     res.add(qr);
-     }
-     //System.out.println("===========================");
-     } catch (QueryExceptionHTTP e) {
-     System.out.println(SPARQL_END_POINT + " is DOWN");
-     } finally {
-     qexec.close();
-     } // end try/catch/finally   
-
-     }
-     }
-
-     return res;
-     }
-     */
-    /*
-     private boolean setBasicAttributeValue(AttributeValue av, String s) {
-     DBpediaAttribute a = (DBpediaAttribute) av.getAttribute();
-     if (a.getRange().equalsIgnoreCase("XMLSchema#byte")) {
-     av.setIntegerValue(new BigInteger("" + DatatypeConverter.parseByte(s)));
-     av.setStringValue(av.getIntegerValue().toString());
-     return true;
-     }
-     if (a.getRange().equalsIgnoreCase("XMLSchema#decimal")) {
-     av.setDecimalValue(DatatypeConverter.parseDecimal(s));
-     av.setStringValue(av.getIntegerValue().toString());
-     return true;
-     }
-     if (a.getRange().equalsIgnoreCase("XMLSchema#int")) {
-     av.setIntegerValue(new BigInteger("" + DatatypeConverter.parseInt(s)));
-     av.setStringValue(av.getIntegerValue().toString());
-     return true;
-     }
-     if (a.getRange().equalsIgnoreCase("XMLSchema#long")) {
-     av.setIntegerValue(new BigInteger("" + DatatypeConverter.parseLong(s)));
-     av.setStringValue(av.getIntegerValue().toString());
-     return true;
-     }
-     if (a.getRange().equalsIgnoreCase("XMLSchema#nonNegativeInteger")) {
-     av.setIntegerValue(DatatypeConverter.parseInteger(s));
-     av.setStringValue(av.getIntegerValue().toString());
-     return true;
-     }
-     if (a.getRange().equalsIgnoreCase("XMLSchema#date")) {
-     av.setDateValue(DatatypeConverter.parseDate(s));
-     av.setStringValue(new SimpleDateFormat("yyyy-MM-dd").format(av.getDateValue().getTime()));
-     return true;
-     }
-     if (a.getRange().equalsIgnoreCase("XMLSchema#dateTime")) {
-     av.setDateValue(DatatypeConverter.parseDate(s));
-     av.setStringValue(new SimpleDateFormat("yyyy-MM-dd HH:mm").format(av.getDateValue().getTime()));
-     return true;
-     }
-     if (a.getRange().equalsIgnoreCase("XMLSchema#gYear")) {
-     av.setDateValue(DatatypeConverter.parseDate(s));
-     av.setIntegerValue(new BigInteger("" + av.getDateValue().get(Calendar.YEAR)));
-     av.setStringValue(av.getIntegerValue().toString());
-     return true;
-     }
-     if (a.getRange().equalsIgnoreCase("XMLSchema#string")) {
-     av.setStringValue(DatatypeConverter.parseString(s));
-     return true;
-     }
-     if (a.getRange().equalsIgnoreCase("XMLSchema#token")) {
-     av.setStringValue(DatatypeConverter.parseString(s));
-     return true;
-     }
-     if (a.getRange().equalsIgnoreCase("rdf-schema#Literal")) {
-     av.setStringValue(DatatypeConverter.parseString(s));
-     return true;
-     }
-        
-     //if (a.getRange().equalsIgnoreCase("XMLSchema#gMonth")) {
-     //av.setDateValue(DatatypeConverter.parseDate(s));
-     //av.setIntegerValue(new BigInteger(""+av.getDateValue().get(Calendar.MONTH)));
-     //av.setStringValue(new SimpleDateFormat("MMMMMMMMMM").format(av.getDateValue().getTime()));
-     //return true;
-     //} 
-     return false;
-     }
-     */
 
     @Override
     public Attribute getAbstractAttribute() {
-        return abstractAttribute;
+        return attributesByUri.get(ABSTRACT_ATTRIBUTE_URI);
     }
 
     @Override
@@ -529,11 +446,7 @@ public class DBpediaOntology implements Ontology {
         }
         ArrayList<DBpediaCategoryLookupResult> res = new ArrayList<>();
         for (Pair p : typicalityEvaluator.findTopKCategories(10, atts, false)) {
-            if (categoryMap.get(p.getS()) == null) {
-                System.out.println();
-                continue;
-            }
-            res.add(new DBpediaCategoryLookupResult(categoryMap.get(p.getS()), p.getP()));
+            res.add(new DBpediaCategoryLookupResult(categoriesByUri.get(p.getS()), p.getP()));
         }
         Collections.sort(res);
         return res;
@@ -543,13 +456,60 @@ public class DBpediaOntology implements Ontology {
     public ArrayList<? extends NamedEntityAnnotationResult> annotateNamedEntities(String sentence) {
         ArrayList<NamedEntityAnnotationResult> res = new ArrayList<>();
         try {
-            for (DBpediaEntityAnnotationResult r:new TagMeClient().getTagMeResult(sentence)) {
+            for (DBpediaEntityAnnotationResult r : new TagMeClient().getTagMeResult(sentence)) {
                 res.add(r);
+
             }
         } catch (Exception ex) {
-            Logger.getLogger(DBpediaOntology.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(DBpediaOntology.class
+                    .getName()).log(Level.SEVERE, null, ex);
         }
         return res;
     }
 
+    @Override
+    public ArrayList<? extends AttributeLookupResult> lookupAttribute(String attributeName, Category subjectCategory, String range) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public JsonObject getEntityJsonByUri(String uri) {
+        return entityLookup.getEntityJsonByUri(uri);
+    }
+
+    public DBpediaNamedEntity getEntityByJson(String uri, JsonObject json) {
+        return entityLookup.getEntityByJson(uri, json);
+    }
+
+    public void updateEntity(String uri, DBpediaNamedEntity entity) {
+        entitiesByUri.put(uri, entity);
+    }
+
+    @Override
+    public NamedEntity getEntityByUri(String uri) {
+        DBpediaNamedEntity e = entitiesByUri.get(uri);
+        if (e == null) {
+            e = entityLookup.getEntityByUri(uri);
+            entitiesByUri.put(e.getUri(), e);
+        }
+        return e;
+    }
+
+    @Override
+    public Category getCategoryByUri(String uri) {
+        return categoriesByUri.get(uri);
+    }
+
+    @Override
+    public String getTypeAttribute() {
+        return TYPE_ATTRIBUTE;
+    }
+
+    @Override
+    public ArrayList<? extends AttributeLookupResult> lookupAttribute(String attributeName, Set<String> subjectTypes, Set<String> valueTypes) {
+        return attributeLookup.lookup(attributeName, subjectTypes, valueTypes, true);
+    }
+
+    public DBpediaAttribute getAttributeByUri(String uri) {
+        return attributesByUri.get(uri);
+    }
 }

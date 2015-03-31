@@ -8,6 +8,9 @@ package edu.ucla.cs.scai.swim.qa.ontology.dbpedia;
 import edu.ucla.cs.scai.swim.qa.ontology.Attribute;
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Objects;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -18,7 +21,14 @@ import java.util.logging.Logger;
  */
 public class DBpediaAttribute implements Attribute {
 
-    String label, uri, range, rangeUri;
+    String label, uri, range;
+    HashSet<String> rangeUri = new HashSet<>();
+    HashSet<String> domainUri = new HashSet<>();
+    boolean rangeCanBeBasicType;
+
+    HashMap<String, Double> domainDistribution = new HashMap<>();
+    HashMap<String, Double> rangeDistribution = new HashMap<>();
+    long triplesCount;
 
     String words;
 
@@ -37,6 +47,9 @@ public class DBpediaAttribute implements Attribute {
 
     public void setLabel(String label) {
         this.label = label;
+        if (label == null) {
+            return;
+        }
         if (label.contains("_label")) {
             label = label.replace("_label", "Label");
         }
@@ -62,12 +75,20 @@ public class DBpediaAttribute implements Attribute {
         this.range = range;
     }
 
-    public String getRangeUri() {
+    public HashSet<String> getRangeUri() {
         return rangeUri;
     }
 
-    public void setRangeUri(String rangeUri) {
+    public void setRangeUri(HashSet<String> rangeUri) {
         this.rangeUri = rangeUri;
+    }
+
+    public HashSet<String> getDomainUri() {
+        return domainUri;
+    }
+
+    public void setDomainUri(HashSet<String> domainUri) {
+        this.domainUri = domainUri;
     }
 
     @Override
@@ -101,8 +122,41 @@ public class DBpediaAttribute implements Attribute {
         this.uri = uri;
     }
 
+    public boolean rangeCanBeBasicType() {
+        return rangeCanBeBasicType;
+    }
+
+    public void setRangeCanBeBasicType(boolean rangeCanBeBasicType) {
+        this.rangeCanBeBasicType = rangeCanBeBasicType;
+    }
+
     @Override
     public String toString() {
         return uri;
     }
+
+    public HashMap<String, Double> getDomainDistribution() {
+        return domainDistribution;
+    }
+
+    public void setDomainDistribution(HashMap<String, Double> domainDistribution) {
+        this.domainDistribution = domainDistribution;
+    }
+
+    public HashMap<String, Double> getRangeDistribution() {
+        return rangeDistribution;
+    }
+
+    public void setRangeDistribution(HashMap<String, Double> rangeDistribution) {
+        this.rangeDistribution = rangeDistribution;
+    }
+
+    public long getTriplesCount() {
+        return triplesCount;
+    }
+
+    public void setTriplesCount(long triplesCount) {
+        this.triplesCount = triplesCount;
+    }
+
 }

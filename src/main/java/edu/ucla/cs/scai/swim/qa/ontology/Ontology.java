@@ -9,6 +9,7 @@ package edu.ucla.cs.scai.swim.qa.ontology;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Set;
 
 /**
  *
@@ -18,15 +19,25 @@ public interface Ontology {
     
     public ArrayList<? extends NamedEntityLookupResult> lookupEntity(String entityName) throws Exception;
     
-    public ArrayList<? extends AttributeLookupResult> lookupAttribute(String attributeName) ;
+    public ArrayList<? extends AttributeLookupResult> lookupAttribute(String attributeName);
+    
+    public ArrayList<? extends AttributeLookupResult> lookupAttribute(String attributeName, Set<String> subjectType, Set<String> valueType);
+    
+    public ArrayList<? extends AttributeLookupResult> lookupAttribute(String attributeName, Category subjectCategory, String range);
     
     public ArrayList<? extends CategoryLookupResult> lookupCategory(String categoryName);
     
     public ArrayList<? extends CategoryLookupResult> lookupCategory(Collection<Attribute> attributes);
     
     public ArrayList<? extends NamedEntityAnnotationResult> annotateNamedEntities(String sentence);
+    
+    public NamedEntity getEntityByUri(String uri);
+    
+    public Category getCategoryByUri(String uri);
 
     public Attribute getAbstractAttribute();
+    
+    public String getTypeAttribute();    
     
     //public ArrayList<? extends QueryResult> executeQuery(Query q);
     

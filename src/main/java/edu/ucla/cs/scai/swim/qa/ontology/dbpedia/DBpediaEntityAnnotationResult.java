@@ -39,7 +39,7 @@ public class DBpediaEntityAnnotationResult extends NamedEntityAnnotationResult {
 
     @Override
     public String toString() {
-        return namedEntity.getUri() + " w=" + weight + " begin=" + begin + " end=" + end;
+        return namedEntity.getUri() + " w=" + weight + " begin=" + begin + " end=" + end + " spot=" + spot;
     }
 
     @Override

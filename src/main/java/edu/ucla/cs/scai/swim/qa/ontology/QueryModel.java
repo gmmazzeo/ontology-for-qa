@@ -6,18 +6,24 @@
 package edu.ucla.cs.scai.swim.qa.ontology;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
 
 /**
  *
  * @author Giuseppe M. Mazzeo <mazzeo@cs.ucla.edu>
  */
-public class QueryModel {
+public class QueryModel implements Comparable<QueryModel> {
 
     String entityVariableName;
     String attributeVariableName;
     String exampleEntity;
+    double weight = 1; //this value taken alone has no meaning - it is meaningful just for a collection of models, generated together, in order to rank them
+    HashMap<String, HashSet<String>> ignoreEntitiesForLookup = new HashMap<>();
 
     ArrayList<QueryConstraint> constraints = new ArrayList<>();
+
+    ArrayList<QueryConstraint> filters = new ArrayList<>();
 
     public QueryModel(String entityVariableName, String attributeVariableName) {
         this.entityVariableName = entityVariableName;
@@ -30,6 +36,14 @@ public class QueryModel {
 
     public void setConstraints(ArrayList<QueryConstraint> constraints) {
         this.constraints = constraints;
+    }
+
+    public ArrayList<QueryConstraint> getFilters() {
+        return filters;
+    }
+
+    public void setFilters(ArrayList<QueryConstraint> filters) {
+        this.filters = filters;
     }
 
     public String getEntityVariableName() {
@@ -56,10 +70,26 @@ public class QueryModel {
         this.exampleEntity = exampleEntity;
     }
 
+    public double getWeight() {
+        return weight;
+    }
+
+    public void setWeight(double weight) {
+        this.weight = weight;
+    }
+
+    public HashMap<String, HashSet<String>> getIgnoreEntitiesForLookup() {
+        return ignoreEntitiesForLookup;
+    }
+
+    public void setIgnoreEntitiesForLookup(HashMap<String, HashSet<String>> ignoreEntitiesForLookup) {
+        this.ignoreEntitiesForLookup = ignoreEntitiesForLookup;
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        if (exampleEntity!=null && exampleEntity.trim().length()>0) {
+        if (exampleEntity != null && exampleEntity.trim().length() > 0) {
             sb.append("Example entity: ").append(exampleEntity.trim());
         }
         for (QueryConstraint qc : constraints) {
@@ -68,6 +98,18 @@ public class QueryModel {
             }
             sb.append(qc.toString());
         }
+        if (!filters.isEmpty()) {
+            sb.append("\nFilters:");
+            for (QueryConstraint qc : filters) {
+                sb.append("\n");
+                sb.append(qc.toString());
+            }
+        }
         return sb.toString();
+    }
+
+    @Override
+    public int compareTo(QueryModel o) {
+        return Double.compare(o.weight, weight);
     }
 }

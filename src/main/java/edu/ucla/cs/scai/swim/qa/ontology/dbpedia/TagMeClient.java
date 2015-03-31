@@ -25,7 +25,7 @@ import java.util.ArrayList;
 public class TagMeClient {
 
     private static final String END_POINT = "http://tagme.di.unipi.it/tag";
-    private static final String API_KEY = "mau2013";
+    private static final String API_KEY = "mazzeo2015";
 
     static final HttpTransport HTTP_TRANSPORT = new NetHttpTransport();
     static final JsonFactory JSON_FACTORY = new JacksonFactory();
@@ -88,7 +88,9 @@ public class TagMeClient {
 
     public static void main(String[] args) throws Exception {
         TagMeClient tm = new TagMeClient();
-        for (DBpediaEntityAnnotationResult r : tm.getTagMeResult("Give me all the actors starring in Philadelphia")) {
+        //String sentence="In which films directed by Garry Marshall was Julia Roberts starring?";
+        String sentence="What is a film director?";
+        for (DBpediaEntityAnnotationResult r : tm.getTagMeResult(sentence)) {
             System.out.println(r);
         }
     }

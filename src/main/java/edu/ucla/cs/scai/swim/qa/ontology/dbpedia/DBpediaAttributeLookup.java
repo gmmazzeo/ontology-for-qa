@@ -5,12 +5,14 @@
  */
 package edu.ucla.cs.scai.swim.qa.ontology.dbpedia;
 
+import edu.ucla.cs.scai.swim.qa.ontology.AttributeLookupResult;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.Set;
 
 /**
  *
@@ -37,38 +39,36 @@ public class DBpediaAttributeLookup {
         this.similarityClient = similarityClient;
     }
 
-    public ArrayList<DBpediaAttributeLookupResult> lookup(String attributeName) {        
+    public ArrayList<DBpediaAttributeLookupResult> lookup(String attributeName) {
         String[] attributeNames = attributeName.toLowerCase().split(" ");
         /*
-        Arrays.sort(attributeNames);
-        attributeName = attributeNames[0];
-        for (int i = 1; i < attributeNames.length; i++) {
-            attributeName += "," + attributeNames[i];
-        }
-        */
+         Arrays.sort(attributeNames);
+         attributeName = attributeNames[0];
+         for (int i = 1; i < attributeNames.length; i++) {
+         attributeName += "," + attributeNames[i];
+         }
+         */
         ArrayList<DBpediaAttributeLookupResult> res = readCache(attributeName);
         if (res == null) {
             res = new ArrayList<>();
             double maxSimilarity = 0;
             double similarityThreshold = 0;
-            for (HashSet<DBpediaAttribute> s : DBpediaOntology.getInstance().attributeMap.values()) {
-                for (DBpediaAttribute a : s) {
-                    if (a.words.contains(" label")) {
-                        continue;
+            for (DBpediaAttribute a : DBpediaOntology.getInstance().attributesByUri.values()) {
+                if (a.words.contains(" label")) {
+                    continue;
+                }
+                double similarity = 0;
+                try {
+                    similarity = similarityClient.similarity(a.words, attributeName);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                if (similarity >= relSimilarityThreshold * maxSimilarity && similarity > absSimilarityThreshold / attributeNames.length) {
+                    if (similarity > maxSimilarity) {
+                        maxSimilarity = similarity;
+                        similarityThreshold = maxSimilarity * relSimilarityThreshold;
                     }
-                    double similarity = 0;
-                    try {
-                        similarity=similarityClient.similarity(a.words, attributeName);
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
-                    if (similarity >= relSimilarityThreshold * maxSimilarity && similarity > absSimilarityThreshold / attributeNames.length) {
-                        if (similarity > maxSimilarity) {
-                            maxSimilarity = similarity;
-                            similarityThreshold = maxSimilarity * relSimilarityThreshold;
-                        }
-                        res.add(new DBpediaAttributeLookupResult(a, similarity));
-                    }
+                    res.add(new DBpediaAttributeLookupResult(a, similarity));
                 }
             }
             Collections.sort(res);
@@ -94,4 +94,126 @@ public class DBpediaAttributeLookup {
         }
     }
 
+    public ArrayList<DBpediaAttributeLookupResult> lookup(String attributeName, Set<String> subjectTypes, Set<String> valueTypes, boolean ignoreAttributeRange) {
+        ArrayList<DBpediaAttributeLookupResult> res = new ArrayList<>();
+        String[] attributeNames = attributeName.toLowerCase().split(" ");
+
+        boolean basicTypeAmongValues = false;
+        for (String s : valueTypes) {
+            if (s.equals("basicType")) {
+                basicTypeAmongValues = true;
+                break;
+            }
+        }
+        double maxSimilarity = 0;
+        for (String sts : subjectTypes) {
+            DBpediaCategory subjCat = DBpediaOntology.getInstance().categoriesByUri.get(sts);
+            if (subjCat == null) {
+                continue;
+            }
+            for (DBpediaAttribute att : subjCat.domainOfAttributes) {
+                boolean rangeMatch = false;
+                if (att.rangeCanBeBasicType && basicTypeAmongValues) {
+                    rangeMatch = true;
+                } else { //check a matching between the value types and the ranges of the attribute
+                    for (String valueType : valueTypes) {
+                        if (valueType.equals("basicType")) {
+                            continue;
+                        }
+                        for (String range : att.rangeUri) {
+                            if (range.equals(valueType)) {
+                                rangeMatch = true;
+                                break;
+                            } else {
+                                DBpediaCategory c1 = DBpediaOntology.getInstance().categoriesByUri.get(valueType);
+                                DBpediaCategory c2 = DBpediaOntology.getInstance().categoriesByUri.get(range);
+                                if (c1 != null && c2 != null && c1.hasAncestor(c2)) {
+                                    rangeMatch = true;
+                                    break;
+                                }
+                            }
+                        }
+                        if (rangeMatch) {
+                            break;
+                        }
+                    }
+                }
+                if (rangeMatch || ignoreAttributeRange) {
+                    DBpediaAttributeLookupResult lr = createAttributeLookupResult(att, attributeName, attributeNames, maxSimilarity, rangeMatch ? 1 : 0.7);
+                    if (lr != null) {
+                        if (lr.getWeight() > maxSimilarity) {
+                            maxSimilarity = lr.getWeight();
+                        }
+                        res.add(lr);
+                    }
+                }
+            }
+        }
+
+        //now look for the symmetric relationships
+        for (String sts : valueTypes) {
+            DBpediaCategory subjCat = DBpediaOntology.getInstance().categoriesByUri.get(sts);
+            if (subjCat == null) {
+                continue;
+            }
+            for (DBpediaAttribute att : subjCat.domainOfAttributes) {
+                boolean rangeMatch = false;
+                for (String valueType : subjectTypes) {
+                    for (String range : att.rangeUri) {
+                        if (range.equals(valueType)) {
+                            rangeMatch = true;
+                            break;
+                        } else {
+                            DBpediaCategory c1 = DBpediaOntology.getInstance().categoriesByUri.get(valueType);
+                            DBpediaCategory c2 = DBpediaOntology.getInstance().categoriesByUri.get(range);
+                            if (c1 != null && c2 != null && c1.hasAncestor(c2)) {
+                                rangeMatch = true;
+                                break;
+                            }
+                        }
+                    }
+                    if (rangeMatch) {
+                        break;
+                    }
+                }
+                if (rangeMatch || ignoreAttributeRange) {
+                    DBpediaAttributeLookupResult lr = createAttributeLookupResult(att, attributeName, attributeNames, maxSimilarity, rangeMatch ? 1 : 0.7);
+                    if (lr != null) {
+                        if (lr.getWeight() > maxSimilarity) {
+                            maxSimilarity = lr.getWeight();
+                        }
+                        lr.invertedRelationship = true;
+                        res.add(lr);
+                    }
+                }
+            }
+        }
+
+        Collections.sort(res);
+        ArrayList<DBpediaAttributeLookupResult> filteredRes = new ArrayList<>();
+        double similarityThreshold = maxSimilarity * relSimilarityThreshold;
+        for (DBpediaAttributeLookupResult ar : res) {
+            if (ar.getWeight() >= similarityThreshold) {
+                filteredRes.add(ar);
+            } else {
+                break;
+            }
+        }
+        res = filteredRes;
+        return res;
+    }
+
+    private DBpediaAttributeLookupResult createAttributeLookupResult(DBpediaAttribute att, String attributeName, String[] attributeNames, double maxSimilarity, double similarityMultiplier) {
+        double similarity = 0;
+        try {
+            similarity = similarityClient.similarity(att.words, attributeName);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        similarity *= similarityMultiplier;
+        if (similarity >= relSimilarityThreshold * maxSimilarity && similarity > absSimilarityThreshold / attributeNames.length) {
+            return new DBpediaAttributeLookupResult(att, similarity);
+        }
+        return null;
+    }
 }

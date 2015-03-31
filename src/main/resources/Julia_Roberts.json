@@ -1,0 +1,2044 @@
+{
+    "http://fr.dbpedia.org/resource/Julia_Roberts": {
+        "http://www.w3.org/2002/07/owl#sameAs": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }]
+    },
+    "http://de.dbpedia.org/resource/Julia_Roberts": {
+        "http://www.w3.org/2002/07/owl#sameAs": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }]
+    },
+    "http://wikidata.dbpedia.org/resource/Q40523": {
+        "http://www.w3.org/2002/07/owl#sameAs": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }]
+    },
+    "http://cs.dbpedia.org/resource/Julia_Robertsov\u00E1": {
+        "http://www.w3.org/2002/07/owl#sameAs": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }]
+    },
+    "http://el.dbpedia.org/resource/\u03A4\u03B6\u03BF\u03CD\u03BB\u03B9\u03B1_\u03A1\u03CC\u03BC\u03C0\u03B5\u03C1\u03C4\u03C2": {
+        "http://www.w3.org/2002/07/owl#sameAs": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }]
+    },
+    "http://es.dbpedia.org/resource/Julia_Roberts": {
+        "http://www.w3.org/2002/07/owl#sameAs": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }]
+    },
+    "http://eu.dbpedia.org/resource/Julia_Roberts": {
+        "http://www.w3.org/2002/07/owl#sameAs": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }]
+    },
+    "http://id.dbpedia.org/resource/Julia_Roberts": {
+        "http://www.w3.org/2002/07/owl#sameAs": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }]
+    },
+    "http://it.dbpedia.org/resource/Julia_Roberts": {
+        "http://www.w3.org/2002/07/owl#sameAs": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }]
+    },
+    "http://ja.dbpedia.org/resource/\u30B8\u30E5\u30EA\u30A2\u30FB\u30ED\u30D0\u30FC\u30C4": {
+        "http://www.w3.org/2002/07/owl#sameAs": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }]
+    },
+    "http://ko.dbpedia.org/resource/\uC904\uB9AC\uC544_\uB85C\uBC84\uCE20": {
+        "http://www.w3.org/2002/07/owl#sameAs": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }]
+    },
+    "http://nl.dbpedia.org/resource/Julia_Roberts": {
+        "http://www.w3.org/2002/07/owl#sameAs": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }]
+    },
+    "http://pl.dbpedia.org/resource/Julia_Roberts": {
+        "http://www.w3.org/2002/07/owl#sameAs": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }]
+    },
+    "http://pt.dbpedia.org/resource/Julia_Roberts": {
+        "http://www.w3.org/2002/07/owl#sameAs": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }]
+    },
+    "http://dbpedia.org/resource/Flatliners": {
+        "http://dbpedia.org/property/starring": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }],
+        "http://dbpedia.org/ontology/starring": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }]
+    },
+    "http://en.wikipedia.org/wiki/Julia_Roberts": {
+        "http://xmlns.com/foaf/0.1/primaryTopic": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }]
+    },
+    "http://dbpedia.org/resource/Julia_Roberts_(disambiguation)": {
+        "http://dbpedia.org/ontology/wikiPageDisambiguates": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }]
+    },
+    "http://dbpedia.org/resource/Julia_Fiona_Roberts": {
+        "http://dbpedia.org/ontology/wikiPageRedirects": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }]
+    },
+    "http://dbpedia.org/resource/Julia_Robert": {
+        "http://dbpedia.org/ontology/wikiPageRedirects": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }]
+    },
+    "http://dbpedia.org/resource/Julia_Roberts_(actress)": {
+        "http://dbpedia.org/ontology/wikiPageRedirects": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }]
+    },
+    "http://dbpedia.org/resource/Julia_roberts": {
+        "http://dbpedia.org/ontology/wikiPageRedirects": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }]
+    },
+    "http://dbpedia.org/resource/Phinnaeus_Walter_Moder": {
+        "http://dbpedia.org/ontology/wikiPageRedirects": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }]
+    },
+    "http://dbpedia.org/resource/Roberts,_Julia": {
+        "http://dbpedia.org/ontology/wikiPageRedirects": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }]
+    },
+    "http://dbpedia.org/resource/The_Mexican": {
+        "http://dbpedia.org/property/starring": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }],
+        "http://dbpedia.org/ontology/starring": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }]
+    },
+    "http://dbpedia.org/resource/Ocean's_Twelve": {
+        "http://dbpedia.org/property/starring": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }],
+        "http://dbpedia.org/ontology/starring": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }]
+    },
+    "http://dbpedia.org/resource/Conspiracy_Theory_(film)": {
+        "http://dbpedia.org/ontology/starring": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }]
+    },
+    "http://dbpedia.org/resource/Full_Frontal_(film)": {
+        "http://dbpedia.org/ontology/starring": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }]
+    },
+    "http://dbpedia.org/resource/Satisfaction_(film)": {
+        "http://dbpedia.org/property/starring": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }],
+        "http://dbpedia.org/ontology/starring": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }]
+    },
+    "http://dbpedia.org/resource/Mona_Lisa_Smile": {
+        "http://dbpedia.org/property/starring": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }],
+        "http://dbpedia.org/ontology/starring": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }]
+    },
+    "http://dbpedia.org/resource/The_Pelican_Brief_(film)": {
+        "http://dbpedia.org/property/starring": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }],
+        "http://dbpedia.org/ontology/starring": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }]
+    },
+    "http://dbpedia.org/resource/Stepmom_(film)": {
+        "http://dbpedia.org/property/producer": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }],
+        "http://dbpedia.org/property/starring": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }],
+        "http://dbpedia.org/ontology/starring": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }],
+        "http://dbpedia.org/ontology/producer": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }]
+    },
+    "http://dbpedia.org/resource/Dying_Young": {
+        "http://dbpedia.org/property/starring": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }],
+        "http://dbpedia.org/ontology/starring": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }]
+    },
+    "http://dbpedia.org/resource/America's_Sweethearts": {
+        "http://dbpedia.org/property/starring": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }],
+        "http://dbpedia.org/ontology/starring": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }]
+    },
+    "http://dbpedia.org/resource/My_Best_Friend's_Wedding": {
+        "http://dbpedia.org/property/starring": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }],
+        "http://dbpedia.org/ontology/starring": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }]
+    },
+    "http://dbpedia.org/resource/Something_to_Talk_About_(film)": {
+        "http://dbpedia.org/property/starring": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }],
+        "http://dbpedia.org/ontology/starring": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }]
+    },
+    "http://dbpedia.org/resource/Michael_Collins_(film)": {
+        "http://dbpedia.org/property/starring": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }],
+        "http://dbpedia.org/ontology/starring": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }]
+    },
+    "http://dbpedia.org/resource/Erin_Brockovich_(film)": {
+        "http://dbpedia.org/property/starring": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }],
+        "http://dbpedia.org/ontology/starring": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }]
+    },
+    "http://dbpedia.org/resource/Hook_(film)": {
+        "http://dbpedia.org/property/starring": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }],
+        "http://dbpedia.org/ontology/starring": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }]
+    },
+    "http://dbpedia.org/resource/Pr%C3%AAt-%C3%A0-Porter_(film)": {
+        "http://dbpedia.org/ontology/starring": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }]
+    },
+    "http://dbpedia.org/resource/Mystic_Pizza": {
+        "http://dbpedia.org/property/starring": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }],
+        "http://dbpedia.org/ontology/starring": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }]
+    },
+    "http://dbpedia.org/resource/Fireflies_in_the_Garden": {
+        "http://dbpedia.org/property/starring": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }],
+        "http://dbpedia.org/ontology/starring": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }]
+    },
+    "http://dbpedia.org/resource/Duplicity_(film)": {
+        "http://dbpedia.org/property/starring": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }],
+        "http://dbpedia.org/ontology/starring": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }]
+    },
+    "http://dbpedia.org/resource/Larry_Crowne": {
+        "http://dbpedia.org/property/starring": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }],
+        "http://dbpedia.org/ontology/starring": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }]
+    },
+    "http://dbpedia.org/resource/Mirror_Mirror_(film)": {
+        "http://dbpedia.org/property/starring": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }],
+        "http://dbpedia.org/ontology/starring": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }]
+    },
+    "http://dbpedia.org/resource/Confessions_of_a_Dangerous_Mind": {
+        "http://dbpedia.org/property/starring": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }],
+        "http://dbpedia.org/ontology/starring": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }]
+    },
+    "http://dbpedia.org/resource/August:_Osage_County_(film)": {
+        "http://dbpedia.org/property/starring": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }],
+        "http://dbpedia.org/ontology/starring": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }]
+    },
+    "http://dbpedia.org/resource/Julia": {
+        "http://dbpedia.org/ontology/wikiPageDisambiguates": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }]
+    },
+    "http://dbpedia.org/resource/Charlotte's_Web_(2006_film)": {
+        "http://dbpedia.org/property/starring": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }],
+        "http://dbpedia.org/ontology/starring": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }]
+    },
+    "http://dbpedia.org/resource/The_One_After_the_Superbowl": {
+        "http://dbpedia.org/ontology/guest": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }]
+    },
+    "http://dbpedia.org/resource/Queens_Supreme": {
+        "http://dbpedia.org/property/executiveProducer": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }],
+        "http://dbpedia.org/ontology/executiveProducer": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }]
+    },
+    "http://an.dbpedia.org/resource/Julia_Roberts": {
+        "http://www.w3.org/2002/07/owl#sameAs": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }]
+    },
+    "http://ar.dbpedia.org/resource/\u062C\u0648\u0644\u064A\u0627_\u0631\u0648\u0628\u0631\u062A\u0633": {
+        "http://www.w3.org/2002/07/owl#sameAs": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }]
+    },
+    "http://arz.dbpedia.org/resource/\u062C\u0648\u0644\u064A\u0627_\u0631\u0648\u0628\u0631\u062A\u0633": {
+        "http://www.w3.org/2002/07/owl#sameAs": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }]
+    },
+    "http://az.dbpedia.org/resource/Culiya_Roberts": {
+        "http://www.w3.org/2002/07/owl#sameAs": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }]
+    },
+    "http://be.dbpedia.org/resource/\u0414\u0436\u0443\u043B\u0456\u044F_\u0420\u043E\u0431\u0435\u0440\u0442\u0441": {
+        "http://www.w3.org/2002/07/owl#sameAs": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }]
+    },
+    "http://bg.dbpedia.org/resource/\u0414\u0436\u0443\u043B\u0438\u044F_\u0420\u043E\u0431\u044A\u0440\u0442\u0441": {
+        "http://www.w3.org/2002/07/owl#sameAs": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }]
+    },
+    "http://bn.dbpedia.org/resource/\u099C\u09C1\u09B2\u09BF\u09AF\u09BC\u09BE_\u09B0\u09AC\u09BE\u09B0\u09CD\u099F\u09B8": {
+        "http://www.w3.org/2002/07/owl#sameAs": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }]
+    },
+    "http://ca.dbpedia.org/resource/Julia_Roberts": {
+        "http://www.w3.org/2002/07/owl#sameAs": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }]
+    },
+    "http://csb.dbpedia.org/resource/Julia_Roberts": {
+        "http://www.w3.org/2002/07/owl#sameAs": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }]
+    },
+    "http://cy.dbpedia.org/resource/Julia_Roberts": {
+        "http://www.w3.org/2002/07/owl#sameAs": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }]
+    },
+    "http://da.dbpedia.org/resource/Julia_Roberts": {
+        "http://www.w3.org/2002/07/owl#sameAs": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }]
+    },
+    "http://eo.dbpedia.org/resource/Julia_Roberts": {
+        "http://www.w3.org/2002/07/owl#sameAs": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }]
+    },
+    "http://et.dbpedia.org/resource/Julia_Roberts": {
+        "http://www.w3.org/2002/07/owl#sameAs": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }]
+    },
+    "http://fa.dbpedia.org/resource/\u062C\u0648\u0644\u06CC\u0627_\u0631\u0627\u0628\u0631\u062A\u0632": {
+        "http://www.w3.org/2002/07/owl#sameAs": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }]
+    },
+    "http://fi.dbpedia.org/resource/Julia_Roberts": {
+        "http://www.w3.org/2002/07/owl#sameAs": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }]
+    },
+    "http://fy.dbpedia.org/resource/Julia_Roberts": {
+        "http://www.w3.org/2002/07/owl#sameAs": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }]
+    },
+    "http://ga.dbpedia.org/resource/Julia_Roberts": {
+        "http://www.w3.org/2002/07/owl#sameAs": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }]
+    },
+    "http://gl.dbpedia.org/resource/Julia_Roberts": {
+        "http://www.w3.org/2002/07/owl#sameAs": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }]
+    },
+    "http://he.dbpedia.org/resource/\u05D2'\u05D5\u05DC\u05D9\u05D4_\u05E8\u05D5\u05D1\u05E8\u05D8\u05E1": {
+        "http://www.w3.org/2002/07/owl#sameAs": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }]
+    },
+    "http://hi.dbpedia.org/resource/\u091C\u0942\u0932\u093F\u092F\u093E_\u0930\u093E\u092C\u0930\u094D\u091F\u094D\u0938": {
+        "http://www.w3.org/2002/07/owl#sameAs": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }]
+    },
+    "http://hr.dbpedia.org/resource/Julia_Roberts": {
+        "http://www.w3.org/2002/07/owl#sameAs": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }]
+    },
+    "http://hsb.dbpedia.org/resource/Julia_Roberts": {
+        "http://www.w3.org/2002/07/owl#sameAs": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }]
+    },
+    "http://hu.dbpedia.org/resource/Julia_Roberts": {
+        "http://www.w3.org/2002/07/owl#sameAs": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }]
+    },
+    "http://hy.dbpedia.org/resource/\u054B\u0578\u0582\u056C\u056B\u0561_\u054C\u0578\u0562\u0565\u0580\u057F\u057D": {
+        "http://www.w3.org/2002/07/owl#sameAs": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }]
+    },
+    "http://ia.dbpedia.org/resource/Julia_Roberts": {
+        "http://www.w3.org/2002/07/owl#sameAs": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }]
+    },
+    "http://io.dbpedia.org/resource/Julia_Roberts": {
+        "http://www.w3.org/2002/07/owl#sameAs": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }]
+    },
+    "http://is.dbpedia.org/resource/Julia_Roberts": {
+        "http://www.w3.org/2002/07/owl#sameAs": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }]
+    },
+    "http://jv.dbpedia.org/resource/Julia_Roberts": {
+        "http://www.w3.org/2002/07/owl#sameAs": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }]
+    },
+    "http://ka.dbpedia.org/resource/\u10EF\u10E3\u10DA\u10D8\u10D0_\u10E0\u10DD\u10D1\u10D4\u10E0\u10E2\u10E1\u10D8": {
+        "http://www.w3.org/2002/07/owl#sameAs": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }]
+    },
+    "http://kk.dbpedia.org/resource/\u0414\u0436\u0443\u043B\u0438\u044F_\u0420\u043E\u0431\u0435\u0440\u0442\u0441": {
+        "http://www.w3.org/2002/07/owl#sameAs": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }]
+    },
+    "http://kn.dbpedia.org/resource/\u0C9C\u0CC2\u0CB2\u0CBF\u0CAF\u0CBE_\u0CB0\u0CBE\u0CAC\u0CB0\u0CCD\u0C9F\u0CCD\u0CB8\u0CCD\u200C": {
+        "http://www.w3.org/2002/07/owl#sameAs": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }]
+    },
+    "http://la.dbpedia.org/resource/Iulia_Roberts": {
+        "http://www.w3.org/2002/07/owl#sameAs": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }]
+    },
+    "http://lb.dbpedia.org/resource/Julia_Roberts": {
+        "http://www.w3.org/2002/07/owl#sameAs": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }]
+    },
+    "http://lv.dbpedia.org/resource/D\u017E\u016Blija_Robertsa": {
+        "http://www.w3.org/2002/07/owl#sameAs": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }]
+    },
+    "http://mk.dbpedia.org/resource/\u040F\u0443\u043B\u0438\u0458\u0430_\u0420\u043E\u0431\u0435\u0440\u0442\u0441": {
+        "http://www.w3.org/2002/07/owl#sameAs": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }]
+    },
+    "http://ml.dbpedia.org/resource/\u0D1C\u0D42\u0D32\u0D3F\u0D2F_\u0D31\u0D4B\u0D2C\u0D7C\u0D1F\u0D4D\u0D1F\u0D4D\u0D38\u0D4D": {
+        "http://www.w3.org/2002/07/owl#sameAs": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }]
+    },
+    "http://mr.dbpedia.org/resource/\u091C\u0941\u0932\u093F\u092F\u093E_\u0930\u0949\u092C\u0930\u094D\u091F\u094D\u200C\u0938": {
+        "http://www.w3.org/2002/07/owl#sameAs": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }]
+    },
+    "http://ms.dbpedia.org/resource/Julia_Roberts": {
+        "http://www.w3.org/2002/07/owl#sameAs": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }]
+    },
+    "http://nah.dbpedia.org/resource/Julia_Roberts": {
+        "http://www.w3.org/2002/07/owl#sameAs": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }]
+    },
+    "http://no.dbpedia.org/resource/Julia_Roberts": {
+        "http://www.w3.org/2002/07/owl#sameAs": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }]
+    },
+    "http://nov.dbpedia.org/resource/Julia_Roberts": {
+        "http://www.w3.org/2002/07/owl#sameAs": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }]
+    },
+    "http://oc.dbpedia.org/resource/Julia_Roberts": {
+        "http://www.w3.org/2002/07/owl#sameAs": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }]
+    },
+    "http://ro.dbpedia.org/resource/Julia_Roberts": {
+        "http://www.w3.org/2002/07/owl#sameAs": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }]
+    },
+    "http://ru.dbpedia.org/resource/\u0420\u043E\u0431\u0435\u0440\u0442\u0441,_\u0414\u0436\u0443\u043B\u0438\u044F": {
+        "http://www.w3.org/2002/07/owl#sameAs": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }]
+    },
+    "http://sh.dbpedia.org/resource/Julia_Roberts": {
+        "http://www.w3.org/2002/07/owl#sameAs": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }]
+    },
+    "http://simple.dbpedia.org/resource/Julia_Roberts": {
+        "http://www.w3.org/2002/07/owl#sameAs": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }]
+    },
+    "http://sk.dbpedia.org/resource/Julia_Robertsov\u00E1": {
+        "http://www.w3.org/2002/07/owl#sameAs": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }]
+    },
+    "http://sl.dbpedia.org/resource/Julia_Roberts": {
+        "http://www.w3.org/2002/07/owl#sameAs": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }]
+    },
+    "http://sq.dbpedia.org/resource/Julia_Roberts": {
+        "http://www.w3.org/2002/07/owl#sameAs": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }]
+    },
+    "http://sr.dbpedia.org/resource/\u040F\u0443\u043B\u0438\u0458\u0430_\u0420\u043E\u0431\u0435\u0440\u0442\u0441": {
+        "http://www.w3.org/2002/07/owl#sameAs": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }]
+    },
+    "http://sv.dbpedia.org/resource/Julia_Roberts": {
+        "http://www.w3.org/2002/07/owl#sameAs": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }]
+    },
+    "http://ta.dbpedia.org/resource/\u0B9C\u0BC2\u0BB2\u0BBF\u0BAF\u0BBE_\u0BB0\u0BBE\u0BAA\u0BB0\u0BCD\u0B9F\u0BCD\u0BB8\u0BCD": {
+        "http://www.w3.org/2002/07/owl#sameAs": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }]
+    },
+    "http://te.dbpedia.org/resource/\u0C1C\u0C42\u0C32\u0C3F\u0C2F\u0C3E_\u0C30\u0C3E\u0C2C\u0C30\u0C4D\u0C1F\u0C4D\u0C38\u0C4D": {
+        "http://www.w3.org/2002/07/owl#sameAs": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }]
+    },
+    "http://tg.dbpedia.org/resource/\u04B6\u0443\u043B\u0438\u044F_\u0420\u043E\u0431\u0435\u0440\u0442\u0437": {
+        "http://www.w3.org/2002/07/owl#sameAs": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }]
+    },
+    "http://th.dbpedia.org/resource/\u0E08\u0E39\u0E40\u0E25\u0E35\u0E22_\u0E42\u0E23\u0E40\u0E1A\u0E34\u0E15\u0E2A\u0E4C": {
+        "http://www.w3.org/2002/07/owl#sameAs": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }]
+    },
+    "http://tl.dbpedia.org/resource/Julia_Roberts": {
+        "http://www.w3.org/2002/07/owl#sameAs": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }]
+    },
+    "http://tr.dbpedia.org/resource/Julia_Roberts": {
+        "http://www.w3.org/2002/07/owl#sameAs": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }]
+    },
+    "http://uk.dbpedia.org/resource/\u0414\u0436\u0443\u043B\u0456\u044F_\u0420\u043E\u0431\u0435\u0440\u0442\u0441": {
+        "http://www.w3.org/2002/07/owl#sameAs": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }]
+    },
+    "http://vec.dbpedia.org/resource/Julia_Roberts": {
+        "http://www.w3.org/2002/07/owl#sameAs": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }]
+    },
+    "http://vi.dbpedia.org/resource/Julia_Roberts": {
+        "http://www.w3.org/2002/07/owl#sameAs": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }]
+    },
+    "http://xmf.dbpedia.org/resource/\u10EF\u10E3\u10DA\u10D8\u10D0_\u10E0\u10DD\u10D1\u10D4\u10E0\u10D7\u10E1\u10D8": {
+        "http://www.w3.org/2002/07/owl#sameAs": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }]
+    },
+    "http://yo.dbpedia.org/resource/Julia_Roberts": {
+        "http://www.w3.org/2002/07/owl#sameAs": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }]
+    },
+    "http://zh.dbpedia.org/resource/\u8331\u8389\u5A05\u00B7\u7F57\u4F2F\u8328": {
+        "http://www.w3.org/2002/07/owl#sameAs": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }]
+    },
+    "http://zh_min_nan.dbpedia.org/resource/Julia_Roberts": {
+        "http://www.w3.org/2002/07/owl#sameAs": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }]
+    },
+    "http://dbpedia.org/resource/Charlie_Wilson's_War": {
+        "http://dbpedia.org/property/starring": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }],
+        "http://dbpedia.org/ontology/starring": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }]
+    },
+    "http://dbpedia.org/resource/Closer_(2004_film)": {
+        "http://dbpedia.org/property/starring": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }],
+        "http://dbpedia.org/ontology/starring": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }]
+    },
+    "http://dbpedia.org/resource/The_Ant_Bully_(film)": {
+        "http://dbpedia.org/property/starring": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }],
+        "http://dbpedia.org/ontology/starring": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }]
+    },
+    "http://dbpedia.org/resource/Steel_Magnolias": {
+        "http://dbpedia.org/property/starring": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }],
+        "http://dbpedia.org/ontology/starring": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }]
+    },
+    "http://dbpedia.org/resource/Eat_Pray_Love": {
+        "http://dbpedia.org/property/starring": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }],
+        "http://dbpedia.org/ontology/starring": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }]
+    },
+    "http://dbpedia.org/resource/List_of_Film_Sack_episodes": {
+        "http://dbpedia.org/property/aux": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }]
+    },
+    "http://dbpedia.org/resource/Mary_Reilly_(film)": {
+        "http://dbpedia.org/property/starring": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }],
+        "http://dbpedia.org/ontology/starring": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }]
+    },
+    "http://dbpedia.org/resource/I_Love_Trouble_(1994_film)": {
+        "http://dbpedia.org/property/starring": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }],
+        "http://dbpedia.org/ontology/starring": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }]
+    },
+    "http://dbpedia.org/resource/Julia_Roberts": {
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/class/yago/GeorgiaStateUniversityAlumni"
+            },
+            {
+                "type": "uri",
+                "value": "http://dbpedia.org/class/yago/PeopleFromAtlanta,Georgia"
+            },
+            {
+                "type": "uri",
+                "value": "http://dbpedia.org/class/yago/CausalAgent100007347"
+            },
+            {
+                "type": "uri",
+                "value": "http://dbpedia.org/class/yago/LivingThing100004258"
+            },
+            {
+                "type": "uri",
+                "value": "http://dbpedia.org/class/yago/YagoLegalActorGeo"
+            },
+            {
+                "type": "uri",
+                "value": "http://dbpedia.org/class/yago/Organism100004475"
+            },
+            {
+                "type": "uri",
+                "value": "http://dbpedia.org/class/yago/Person100007846"
+            },
+            {
+                "type": "uri",
+                "value": "http://dbpedia.org/class/yago/YagoLegalActor"
+            },
+            {
+                "type": "uri",
+                "value": "http://dbpedia.org/class/yago/LivingPeople"
+            },
+            {
+                "type": "uri",
+                "value": "http://wikidata.dbpedia.org/resource/Q215627"
+            },
+            {
+                "type": "uri",
+                "value": "http://www.w3.org/2002/07/owl#Thing"
+            },
+            {
+                "type": "uri",
+                "value": "http://umbel.org/umbel/rc/Actor"
+            },
+            {
+                "type": "uri",
+                "value": "http://dbpedia.org/class/yago/AmericanPeopleOfEnglishDescent"
+            },
+            {
+                "type": "uri",
+                "value": "http://umbel.org/umbel/rc/Artist"
+            },
+            {
+                "type": "uri",
+                "value": "http://dbpedia.org/class/yago/PhysicalEntity100001930"
+            },
+            {
+                "type": "uri",
+                "value": "http://wikidata.dbpedia.org/resource/Q5"
+            },
+            {
+                "type": "uri",
+                "value": "http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Agent"
+            },
+            {
+                "type": "uri",
+                "value": "http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#NaturalPerson"
+            },
+            {
+                "type": "uri",
+                "value": "http://dbpedia.org/class/yago/Whole100003553"
+            },
+            {
+                "type": "uri",
+                "value": "http://dbpedia.org/class/yago/Object100002684"
+            },
+            {
+                "type": "uri",
+                "value": "http://dbpedia.org/class/yago/AmericanPeopleOfWelshDescent"
+            },
+            {
+                "type": "uri",
+                "value": "http://dbpedia.org/class/yago/AmericanStageActors"
+            },
+            {
+                "type": "uri",
+                "value": "http://dbpedia.org/class/yago/AmericanFilmActors"
+            },
+            {
+                "type": "uri",
+                "value": "http://dbpedia.org/class/yago/AmericanPeopleOfIrishDescent"
+            },
+            {
+                "type": "uri",
+                "value": "http://dbpedia.org/class/yago/ActorsStudioAlumni"
+            },
+            {
+                "type": "uri",
+                "value": "http://dbpedia.org/class/yago/PeopleFromTaosCounty,NewMexico"
+            },
+            {
+                "type": "uri",
+                "value": "http://dbpedia.org/class/yago/AmericanPeopleOfGermanDescent"
+            },
+            {
+                "type": "uri",
+                "value": "http://dbpedia.org/class/yago/ActorsFromGeorgia(U.S.State)"
+            },
+            {
+                "type": "uri",
+                "value": "http://dbpedia.org/class/yago/Convert109962414"
+            },
+            {
+                "type": "uri",
+                "value": "http://dbpedia.org/class/yago/ConvertsFromRomanCatholicism"
+            },
+            {
+                "type": "uri",
+                "value": "http://dbpedia.org/class/yago/AmericanPeopleOfSwedishDescent"
+            },
+            {
+                "type": "uri",
+                "value": "http://dbpedia.org/class/yago/Actor109765278"
+            },
+            {
+                "type": "uri",
+                "value": "http://dbpedia.org/class/yago/Alumnus109786338"
+            },
+            {
+                "type": "uri",
+                "value": "http://dbpedia.org/class/yago/Entertainer109616922"
+            },
+            {
+                "type": "uri",
+                "value": "http://dbpedia.org/class/yago/Performer110415638"
+            },
+            {
+                "type": "uri",
+                "value": "http://dbpedia.org/class/yago/Scholar110557854"
+            },
+            {
+                "type": "uri",
+                "value": "http://dbpedia.org/class/yago/Intellectual109621545"
+            },
+            {
+                "type": "uri",
+                "value": "http://schema.org/Person"
+            },
+            {
+                "type": "uri",
+                "value": "http://dbpedia.org/class/yago/PeopleFromCobbCounty,Georgia"
+            },
+            {
+                "type": "uri",
+                "value": "http://dbpedia.org/class/yago/Assistant109815790"
+            },
+            {
+                "type": "uri",
+                "value": "http://dbpedia.org/class/yago/Model110324560"
+            },
+            {
+                "type": "uri",
+                "value": "http://dbpedia.org/class/yago/AmericanFemaleModels"
+            },
+            {
+                "type": "uri",
+                "value": "http://dbpedia.org/class/yago/AmericanTelevisionActors"
+            },
+            {
+                "type": "uri",
+                "value": "http://dbpedia.org/ontology/Agent"
+            },
+            {
+                "type": "uri",
+                "value": "http://dbpedia.org/ontology/Person"
+            },
+            {
+                "type": "uri",
+                "value": "http://xmlns.com/foaf/0.1/Person"
+            },
+            {
+                "type": "uri",
+                "value": "http://dbpedia.org/class/yago/LeeStrasbergTheatreInstituteAlumni"
+            },
+            {
+                "type": "uri",
+                "value": "http://dbpedia.org/class/yago/AmericanPeopleOfScottishDescent"
+            },
+            {
+                "type": "uri",
+                "value": "http://dbpedia.org/class/yago/Worker109632518"
+            },
+            {
+                "type": "uri",
+                "value": "http://dbpedia.org/class/yago/ConvertsToHinduism"
+            }],
+        "http://www.w3.org/2002/07/owl#sameAs": [{
+                "type": "uri",
+                "value": "http://hy.dbpedia.org/resource/\u054B\u0578\u0582\u056C\u056B\u0561_\u054C\u0578\u0562\u0565\u0580\u057F\u057D"
+            },
+            {
+                "type": "uri",
+                "value": "http://fy.dbpedia.org/resource/Julia_Roberts"
+            },
+            {
+                "type": "uri",
+                "value": "http://eu.dbpedia.org/resource/Julia_Roberts"
+            },
+            {
+                "type": "uri",
+                "value": "http://pl.dbpedia.org/resource/Julia_Roberts"
+            },
+            {
+                "type": "uri",
+                "value": "http://ms.dbpedia.org/resource/Julia_Roberts"
+            },
+            {
+                "type": "uri",
+                "value": "http://ru.dbpedia.org/resource/\u0420\u043E\u0431\u0435\u0440\u0442\u0441,_\u0414\u0436\u0443\u043B\u0438\u044F"
+            },
+            {
+                "type": "uri",
+                "value": "http://el.dbpedia.org/resource/\u03A4\u03B6\u03BF\u03CD\u03BB\u03B9\u03B1_\u03A1\u03CC\u03BC\u03C0\u03B5\u03C1\u03C4\u03C2"
+            },
+            {
+                "type": "uri",
+                "value": "http://no.dbpedia.org/resource/Julia_Roberts"
+            },
+            {
+                "type": "uri",
+                "value": "http://az.dbpedia.org/resource/Culiya_Roberts"
+            },
+            {
+                "type": "uri",
+                "value": "http://ar.dbpedia.org/resource/\u062C\u0648\u0644\u064A\u0627_\u0631\u0648\u0628\u0631\u062A\u0633"
+            },
+            {
+                "type": "uri",
+                "value": "http://bg.dbpedia.org/resource/\u0414\u0436\u0443\u043B\u0438\u044F_\u0420\u043E\u0431\u044A\u0440\u0442\u0441"
+            },
+            {
+                "type": "uri",
+                "value": "http://eo.dbpedia.org/resource/Julia_Roberts"
+            },
+            {
+                "type": "uri",
+                "value": "http://yo.dbpedia.org/resource/Julia_Roberts"
+            },
+            {
+                "type": "uri",
+                "value": "http://tg.dbpedia.org/resource/\u04B6\u0443\u043B\u0438\u044F_\u0420\u043E\u0431\u0435\u0440\u0442\u0437"
+            },
+            {
+                "type": "uri",
+                "value": "http://sv.dbpedia.org/resource/Julia_Roberts"
+            },
+            {
+                "type": "uri",
+                "value": "http://mk.dbpedia.org/resource/\u040F\u0443\u043B\u0438\u0458\u0430_\u0420\u043E\u0431\u0435\u0440\u0442\u0441"
+            },
+            {
+                "type": "uri",
+                "value": "http://nl.dbpedia.org/resource/Julia_Roberts"
+            },
+            {
+                "type": "uri",
+                "value": "http://io.dbpedia.org/resource/Julia_Roberts"
+            },
+            {
+                "type": "uri",
+                "value": "http://sw.cyc.com/concept/Mx4rwOhVOZwpEbGdrcN5Y29ycA"
+            },
+            {
+                "type": "uri",
+                "value": "http://tr.dbpedia.org/resource/Julia_Roberts"
+            },
+            {
+                "type": "uri",
+                "value": "http://hr.dbpedia.org/resource/Julia_Roberts"
+            },
+            {
+                "type": "uri",
+                "value": "http://bn.dbpedia.org/resource/\u099C\u09C1\u09B2\u09BF\u09AF\u09BC\u09BE_\u09B0\u09AC\u09BE\u09B0\u09CD\u099F\u09B8"
+            },
+            {
+                "type": "uri",
+                "value": "http://sr.dbpedia.org/resource/\u040F\u0443\u043B\u0438\u0458\u0430_\u0420\u043E\u0431\u0435\u0440\u0442\u0441"
+            },
+            {
+                "type": "uri",
+                "value": "http://ia.dbpedia.org/resource/Julia_Roberts"
+            },
+            {
+                "type": "uri",
+                "value": "http://la.dbpedia.org/resource/Iulia_Roberts"
+            },
+            {
+                "type": "uri",
+                "value": "http://arz.dbpedia.org/resource/\u062C\u0648\u0644\u064A\u0627_\u0631\u0648\u0628\u0631\u062A\u0633"
+            },
+            {
+                "type": "uri",
+                "value": "http://fi.dbpedia.org/resource/Julia_Roberts"
+            },
+            {
+                "type": "uri",
+                "value": "http://oc.dbpedia.org/resource/Julia_Roberts"
+            },
+            {
+                "type": "uri",
+                "value": "http://simple.dbpedia.org/resource/Julia_Roberts"
+            },
+            {
+                "type": "uri",
+                "value": "http://vi.dbpedia.org/resource/Julia_Roberts"
+            },
+            {
+                "type": "uri",
+                "value": "http://id.dbpedia.org/resource/Julia_Roberts"
+            },
+            {
+                "type": "uri",
+                "value": "http://fr.dbpedia.org/resource/Julia_Roberts"
+            },
+            {
+                "type": "uri",
+                "value": "http://yago-knowledge.org/resource/Julia_Roberts"
+            },
+            {
+                "type": "uri",
+                "value": "http://te.dbpedia.org/resource/\u0C1C\u0C42\u0C32\u0C3F\u0C2F\u0C3E_\u0C30\u0C3E\u0C2C\u0C30\u0C4D\u0C1F\u0C4D\u0C38\u0C4D"
+            },
+            {
+                "type": "uri",
+                "value": "http://csb.dbpedia.org/resource/Julia_Roberts"
+            },
+            {
+                "type": "uri",
+                "value": "http://rdf.freebase.com/ns/m.046zh"
+            },
+            {
+                "type": "uri",
+                "value": "http://sl.dbpedia.org/resource/Julia_Roberts"
+            },
+            {
+                "type": "uri",
+                "value": "http://lb.dbpedia.org/resource/Julia_Roberts"
+            },
+            {
+                "type": "uri",
+                "value": "http://ro.dbpedia.org/resource/Julia_Roberts"
+            },
+            {
+                "type": "uri",
+                "value": "http://uk.dbpedia.org/resource/\u0414\u0436\u0443\u043B\u0456\u044F_\u0420\u043E\u0431\u0435\u0440\u0442\u0441"
+            },
+            {
+                "type": "uri",
+                "value": "http://www.bbc.co.uk/things/f083d175-cfad-469d-8fce-73dd3e754c2c#id"
+            },
+            {
+                "type": "uri",
+                "value": "http://tl.dbpedia.org/resource/Julia_Roberts"
+            },
+            {
+                "type": "uri",
+                "value": "http://th.dbpedia.org/resource/\u0E08\u0E39\u0E40\u0E25\u0E35\u0E22_\u0E42\u0E23\u0E40\u0E1A\u0E34\u0E15\u0E2A\u0E4C"
+            },
+            {
+                "type": "uri",
+                "value": "http://xmf.dbpedia.org/resource/\u10EF\u10E3\u10DA\u10D8\u10D0_\u10E0\u10DD\u10D1\u10D4\u10E0\u10D7\u10E1\u10D8"
+            },
+            {
+                "type": "uri",
+                "value": "http://ko.dbpedia.org/resource/\uC904\uB9AC\uC544_\uB85C\uBC84\uCE20"
+            },
+            {
+                "type": "uri",
+                "value": "http://jv.dbpedia.org/resource/Julia_Roberts"
+            },
+            {
+                "type": "uri",
+                "value": "http://wikidata.dbpedia.org/resource/Q40523"
+            },
+            {
+                "type": "uri",
+                "value": "http://cs.dbpedia.org/resource/Julia_Robertsov\u00E1"
+            },
+            {
+                "type": "uri",
+                "value": "http://pt.dbpedia.org/resource/Julia_Roberts"
+            },
+            {
+                "type": "uri",
+                "value": "http://sk.dbpedia.org/resource/Julia_Robertsov\u00E1"
+            },
+            {
+                "type": "uri",
+                "value": "http://ga.dbpedia.org/resource/Julia_Roberts"
+            },
+            {
+                "type": "uri",
+                "value": "http://ca.dbpedia.org/resource/Julia_Roberts"
+            },
+            {
+                "type": "uri",
+                "value": "http://sq.dbpedia.org/resource/Julia_Roberts"
+            },
+            {
+                "type": "uri",
+                "value": "http://zh.dbpedia.org/resource/\u8331\u8389\u5A05\u00B7\u7F57\u4F2F\u8328"
+            },
+            {
+                "type": "uri",
+                "value": "http://zh_min_nan.dbpedia.org/resource/Julia_Roberts"
+            },
+            {
+                "type": "uri",
+                "value": "http://he.dbpedia.org/resource/\u05D2'\u05D5\u05DC\u05D9\u05D4_\u05E8\u05D5\u05D1\u05E8\u05D8\u05E1"
+            },
+            {
+                "type": "uri",
+                "value": "http://ja.dbpedia.org/resource/\u30B8\u30E5\u30EA\u30A2\u30FB\u30ED\u30D0\u30FC\u30C4"
+            },
+            {
+                "type": "uri",
+                "value": "http://da.dbpedia.org/resource/Julia_Roberts"
+            },
+            {
+                "type": "uri",
+                "value": "http://ml.dbpedia.org/resource/\u0D1C\u0D42\u0D32\u0D3F\u0D2F_\u0D31\u0D4B\u0D2C\u0D7C\u0D1F\u0D4D\u0D1F\u0D4D\u0D38\u0D4D"
+            },
+            {
+                "type": "uri",
+                "value": "http://kn.dbpedia.org/resource/\u0C9C\u0CC2\u0CB2\u0CBF\u0CAF\u0CBE_\u0CB0\u0CBE\u0CAC\u0CB0\u0CCD\u0C9F\u0CCD\u0CB8\u0CCD\u200C"
+            },
+            {
+                "type": "uri",
+                "value": "http://is.dbpedia.org/resource/Julia_Roberts"
+            },
+            {
+                "type": "uri",
+                "value": "http://vec.dbpedia.org/resource/Julia_Roberts"
+            },
+            {
+                "type": "uri",
+                "value": "http://nov.dbpedia.org/resource/Julia_Roberts"
+            },
+            {
+                "type": "uri",
+                "value": "http://nah.dbpedia.org/resource/Julia_Roberts"
+            },
+            {
+                "type": "uri",
+                "value": "http://cy.dbpedia.org/resource/Julia_Roberts"
+            },
+            {
+                "type": "uri",
+                "value": "http://kk.dbpedia.org/resource/\u0414\u0436\u0443\u043B\u0438\u044F_\u0420\u043E\u0431\u0435\u0440\u0442\u0441"
+            },
+            {
+                "type": "uri",
+                "value": "http://gl.dbpedia.org/resource/Julia_Roberts"
+            },
+            {
+                "type": "uri",
+                "value": "http://hsb.dbpedia.org/resource/Julia_Roberts"
+            },
+            {
+                "type": "uri",
+                "value": "http://mr.dbpedia.org/resource/\u091C\u0941\u0932\u093F\u092F\u093E_\u0930\u0949\u092C\u0930\u094D\u091F\u094D\u200C\u0938"
+            },
+            {
+                "type": "uri",
+                "value": "http://sh.dbpedia.org/resource/Julia_Roberts"
+            },
+            {
+                "type": "uri",
+                "value": "http://de.dbpedia.org/resource/Julia_Roberts"
+            },
+            {
+                "type": "uri",
+                "value": "http://et.dbpedia.org/resource/Julia_Roberts"
+            },
+            {
+                "type": "uri",
+                "value": "http://be.dbpedia.org/resource/\u0414\u0436\u0443\u043B\u0456\u044F_\u0420\u043E\u0431\u0435\u0440\u0442\u0441"
+            },
+            {
+                "type": "uri",
+                "value": "http://es.dbpedia.org/resource/Julia_Roberts"
+            },
+            {
+                "type": "uri",
+                "value": "http://lv.dbpedia.org/resource/D\u017E\u016Blija_Robertsa"
+            },
+            {
+                "type": "uri",
+                "value": "http://an.dbpedia.org/resource/Julia_Roberts"
+            },
+            {
+                "type": "uri",
+                "value": "http://ka.dbpedia.org/resource/\u10EF\u10E3\u10DA\u10D8\u10D0_\u10E0\u10DD\u10D1\u10D4\u10E0\u10E2\u10E1\u10D8"
+            },
+            {
+                "type": "uri",
+                "value": "http://it.dbpedia.org/resource/Julia_Roberts"
+            },
+            {
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            },
+            {
+                "type": "uri",
+                "value": "http://fa.dbpedia.org/resource/\u062C\u0648\u0644\u06CC\u0627_\u0631\u0627\u0628\u0631\u062A\u0632"
+            },
+            {
+                "type": "uri",
+                "value": "http://hu.dbpedia.org/resource/Julia_Roberts"
+            },
+            {
+                "type": "uri",
+                "value": "http://ta.dbpedia.org/resource/\u0B9C\u0BC2\u0BB2\u0BBF\u0BAF\u0BBE_\u0BB0\u0BBE\u0BAA\u0BB0\u0BCD\u0B9F\u0BCD\u0BB8\u0BCD"
+            },
+            {
+                "type": "uri",
+                "value": "http://wikidata.org/entity/Q40523"
+            },
+            {
+                "type": "uri",
+                "value": "http://hi.dbpedia.org/resource/\u091C\u0942\u0932\u093F\u092F\u093E_\u0930\u093E\u092C\u0930\u094D\u091F\u094D\u0938"
+            }],
+        "http://www.w3.org/2000/01/rdf-schema#label": [{
+                "type": "literal",
+                "value": "Julia Roberts",
+                "lang": "pt"
+            },
+            {
+                "type": "literal",
+                "value": "\u0420\u043E\u0431\u0435\u0440\u0442\u0441, \u0414\u0436\u0443\u043B\u0438\u044F",
+                "lang": "ru"
+            },
+            {
+                "type": "literal",
+                "value": "Julia Roberts",
+                "lang": "fr"
+            },
+            {
+                "type": "literal",
+                "value": "Julia Roberts",
+                "lang": "it"
+            },
+            {
+                "type": "literal",
+                "value": "Julia Roberts",
+                "lang": "nl"
+            },
+            {
+                "type": "literal",
+                "value": "Julia Roberts",
+                "lang": "es"
+            },
+            {
+                "type": "literal",
+                "value": "\u30B8\u30E5\u30EA\u30A2\u30FB\u30ED\u30D0\u30FC\u30C4",
+                "lang": "ja"
+            },
+            {
+                "type": "literal",
+                "value": "Julia Roberts",
+                "lang": "en"
+            },
+            {
+                "type": "literal",
+                "value": "Julia Roberts",
+                "lang": "pl"
+            },
+            {
+                "type": "literal",
+                "value": "\u062C\u0648\u0644\u064A\u0627 \u0631\u0648\u0628\u0631\u062A\u0633",
+                "lang": "ar"
+            },
+            {
+                "type": "literal",
+                "value": "\u8331\u8389\u5A05\u00B7\u7F57\u4F2F\u8328",
+                "lang": "zh"
+            },
+            {
+                "type": "literal",
+                "value": "Julia Roberts",
+                "lang": "de"
+            }],
+        "http://purl.org/dc/terms/subject": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Category:American_people_of_English_descent"
+            },
+            {
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Category:American_people_of_German_descent"
+            },
+            {
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Category:Best_Supporting_Actress_Golden_Globe_(film)_winners"
+            },
+            {
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Category:1967_births"
+            },
+            {
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Category:American_Hindus"
+            },
+            {
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Category:Actresses_from_New_Mexico"
+            },
+            {
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Category:Women_film_producers"
+            },
+            {
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Category:Georgia_State_University_alumni"
+            },
+            {
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Category:Outstanding_Performance_by_a_Female_Actor_in_a_Leading_Role_Screen_Actors_Guild_Award_winners"
+            },
+            {
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Category:Best_Musical_or_Comedy_Actress_Golden_Globe_(film)_winners"
+            },
+            {
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Category:American_voice_actresses"
+            },
+            {
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Category:American_television_actresses"
+            },
+            {
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Category:Actresses_from_Atlanta,_Georgia"
+            },
+            {
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Category:BAFTA_winners_(people)"
+            },
+            {
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Category:American_female_models"
+            },
+            {
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Category:American_people_of_Swedish_descent"
+            },
+            {
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Category:Best_Drama_Actress_Golden_Globe_(film)_winners"
+            },
+            {
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Category:Converts_from_Roman_Catholicism"
+            },
+            {
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Category:Actors_Studio_alumni"
+            },
+            {
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Category:Lee_Strasberg_Theatre_Institute_alumni"
+            },
+            {
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Category:People_from_Cobb_County,_Georgia"
+            },
+            {
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Category:Converts_to_Hinduism"
+            },
+            {
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Category:American_film_actresses"
+            },
+            {
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Category:American_people_of_Irish_descent"
+            },
+            {
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Category:American_stage_actresses"
+            },
+            {
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Category:Best_Actress_Academy_Award_winners"
+            },
+            {
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Category:Best_Actress_BAFTA_Award_winners"
+            },
+            {
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Category:American_people_of_Scottish_descent"
+            },
+            {
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Category:American_people_of_Welsh_descent"
+            },
+            {
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Category:20th-century_American_actresses"
+            },
+            {
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Category:People_from_Taos,_New_Mexico"
+            },
+            {
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Category:21st-century_American_actresses"
+            },
+            {
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Category:Living_people"
+            },
+            {
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Category:American_film_producers"
+            }],
+        "http://xmlns.com/foaf/0.1/depiction": [{
+                "type": "uri",
+                "value": "http://commons.wikimedia.org/wiki/Special:FilePath/Julia_Roberts_2011_Shankbone_3.JPG"
+            }],
+        "http://purl.org/dc/elements/1.1/description": [{
+                "type": "literal",
+                "value": "American actress",
+                "lang": "en"
+            },
+            {
+                "type": "literal",
+                "value": "American actress"
+            }],
+        "http://xmlns.com/foaf/0.1/givenName": [{
+                "type": "literal",
+                "value": "Julia",
+                "lang": "en"
+            }],
+        "http://xmlns.com/foaf/0.1/name": [{
+                "type": "literal",
+                "value": "Roberts, Julia",
+                "lang": "en"
+            },
+            {
+                "type": "literal",
+                "value": "Julia Roberts",
+                "lang": "en"
+            }],
+        "http://www.w3.org/ns/prov#wasDerivedFrom": [{
+                "type": "uri",
+                "value": "http://en.wikipedia.org/wiki/Julia_Roberts?oldid=606136760"
+            }],
+        "http://www.w3.org/2000/01/rdf-schema#comment": [{
+                "type": "literal",
+                "value": "\u8331\u8389\u4E9E\u00B7\u8CBB\u6B50\u5A1C\u00B7\u7F85\u52C3\u8332\uFF08Julia Fiona Roberts\uFF0C1967\u5E7410\u670828\u65E5\uFF0D\uFF09\uFF0C\u751F\u4E8E\u7F8E\u570B\u55AC\u6CBB\u4E9E\u5DDE\u58EB\u9EA6\u90A3\u7684\u5973\u6F14\u5458\u30022001\u5E74\u4EE5\u300A\u6C38\u4E0D\u59A5\u5354\u300B\u7372\u5F97\u7B2C73\u5C4A\u5967\u65AF\u5361\u91D1\u50CF\u734E\u6700\u4F73\u5973\u4E3B\u89D2\u5956\u3002",
+                "lang": "zh"
+            },
+            {
+                "type": "literal",
+                "value": "\u062C\u0648\u0644\u064A\u0627 \u0641\u064A\u0648\u0646\u0627 \u0631\u0648\u0628\u0631\u062A\u0633 (\u0645\u0646 \u0645\u0648\u0627\u0644\u064A\u062F 28 \u0623\u0643\u062A\u0648\u0628\u0631 1967) \u0647\u064A \u0645\u0645\u062B\u0644\u0629 \u0627\u0645\u064A\u0631\u0643\u064A\u0629. \u0623\u0635\u0628\u062D\u062A \u0646\u062C\u0645\u0629 \u0647\u0648\u0644\u064A\u0648\u0648\u062F\u064A\u0629 \u0643\u0628\u064A\u0631\u0629 \u0628\u0639\u062F \u062A\u0642\u062F\u064A\u0645\u0647\u0627 \u0644\u0639\u062F\u0629 \u0627\u0641\u0644\u0627\u0645 : \u0641\u064A \u0627\u0644\u0643\u0648\u0645\u064A\u062F\u064A\u0627 \u0627\u0644\u0631\u0648\u0645\u0646\u0633\u064A\u0629 \" \u0627\u0645\u0631\u0627\u0629 \u062C\u0645\u064A\u0644\u0629 \" (1990)\u060C \u0627\u0644\u0630\u064A \u062D\u0642\u0642 464 \u0645\u0644\u064A\u0648\u0646 \u062F\u0648\u0644\u0627\u0631 \u0641\u064A \u062C\u0645\u064A\u0639 \u0623\u0646\u062D\u0627\u0621 \u0627\u0644\u0639\u0627\u0644\u0645\u060C \u0628\u0639\u062F \u062D\u0635\u0648\u0644\u0647\u0627 \u0639\u0644\u0649 \u062C\u0648\u0627\u0626\u0632 \u063A\u0648\u0644\u062F\u0646 \u063A\u0644\u0648\u0628 \u0648\u062A\u0631\u0634\u064A\u062D\u0627\u062A \u0644\u062C\u0648\u0627\u0626\u0632 \u0627\u0644\u0623\u0648\u0633\u0643\u0627\u0631 \u0644\"\u0633\u062A\u064A\u0644 \u0645\u0627\u063A\u0646\u0648\u0644\u064A\u0627 \"(1989) \u0648\u0627\u0645\u0631\u0623\u0629 \u062C\u0645\u064A\u0644\u0629. \u062D\u0635\u0644\u062A \u0639\u0644\u0649 \u062C\u0627\u0626\u0632\u0629 \u0627\u0644\u0623\u0648\u0633\u0643\u0627\u0631 \u0644\u0623\u0641\u0636\u0644 \u0645\u0645\u062B\u0644\u0629 \u0639\u0646 \u062F\u0648\u0631\u0647\u0627 \u0641\u064A \"\u0627\u064A\u0631\u064A\u0646 \u0628\u0631\u0648\u0643\u0648\u0641\u064A\u062A\u0634 \"(2000).",
+                "lang": "ar"
+            },
+            {
+                "type": "literal",
+                "value": "Julia Fiona Roberts (Smyrna, 28 de outubro de 1967) \u00E9 uma atriz e produtora norte-americana. Vencedora do Oscar de Melhor Atriz pelo filme Erin Brockovich, tamb\u00E9m atuou em Pretty Woman (br: Uma Linda Mulher - pt: Um Sonho de Mulher). Ela se tornou uma estrela de Hollywood depois de ser a atra\u00E7\u00E3o principal da com\u00E9dia rom\u00E2ntica Pretty Woman (1990), que arrecadou $464 milh\u00F5es de d\u00F3lares em todo o mundo.",
+                "lang": "pt"
+            },
+            {
+                "type": "literal",
+                "value": "Julie Fiona Roberts (Atlanta, 28 oktober 1967) is een Amerikaans actrice. Ze kreeg een Academy Award voor haar hoofdrol in Erin Brockovich (2000), nadat ze eerder al genomineerd werd voor Steel Magnolias (1990) en Pretty Woman (1991).",
+                "lang": "nl"
+            },
+            {
+                "type": "literal",
+                "value": "\u0414\u0436\u0443\u0301\u043B\u0438\u044F \u0420\u043E\u0301\u0431\u0435\u0440\u0442\u0441 (\u0430\u043D\u0433\u043B. Julia Roberts; \u0440\u043E\u0434. 28 \u043E\u043A\u0442\u044F\u0431\u0440\u044F 1967(19671028), \u0410\u0442\u043B\u0430\u043D\u0442\u0430, \u0414\u0436\u043E\u0440\u0434\u0436\u0438\u044F) \u2014 \u0430\u043C\u0435\u0440\u0438\u043A\u0430\u043D\u0441\u043A\u0430\u044F \u0430\u043A\u0442\u0440\u0438\u0441\u0430.\u041F\u0435\u0440\u0432\u044B\u043C \u0443\u0441\u043F\u0435\u0445\u043E\u043C \u0430\u043A\u0442\u0440\u0438\u0441\u044B \u0432 \u043A\u0438\u043D\u043E \u0441\u0442\u0430\u043B\u0430 \u0440\u043E\u043B\u044C \u0432 \u0444\u0438\u043B\u044C\u043C\u0435 \u00AB\u0421\u0442\u0430\u043B\u044C\u043D\u044B\u0435 \u043C\u0430\u0433\u043D\u043E\u043B\u0438\u0438\u00BB, \u0437\u0430 \u043A\u043E\u0442\u043E\u0440\u044B\u0439 \u043E\u043D\u0430 \u043F\u043E\u043B\u0443\u0447\u0438\u043B\u0430 \u043F\u0440\u0435\u043C\u0438\u044E \u00AB\u0417\u043E\u043B\u043E\u0442\u043E\u0439 \u0433\u043B\u043E\u0431\u0443\u0441\u00BB \u0438 \u043D\u043E\u043C\u0438\u043D\u0430\u0446\u0438\u044E \u043D\u0430 \u00AB\u041E\u0441\u043A\u0430\u0440\u00BB. \u0427\u0435\u0440\u0435\u0437 \u0433\u043E\u0434 \u0420\u043E\u0431\u0435\u0440\u0442\u0441 \u043F\u0440\u0438\u043E\u0431\u0440\u0435\u043B\u0430 \u0441\u0442\u0430\u0442\u0443\u0441 \u00AB\u0437\u0432\u0435\u0437\u0434\u044B \u0413\u043E\u043B\u043B\u0438\u0432\u0443\u0434\u0430\u00BB \u043F\u043E\u0441\u043B\u0435 \u0438\u0441\u043F\u043E\u043B\u043D\u0435\u043D\u0438\u044F \u0433\u043B\u0430\u0432\u043D\u043E\u0439 \u0440\u043E\u043B\u0438 \u0432 \u043A\u043E\u043C\u0435\u0434\u0438\u0438 \u00AB\u041A\u0440\u0430\u0441\u043E\u0442\u043A\u0430\u00BB, \u043F\u0440\u0438\u043D\u0451\u0441\u0448\u0438\u0439 \u0435\u0439 \u0432\u0442\u043E\u0440\u043E\u0439 \u00AB\u0417\u043E\u043B\u043E\u0442\u043E\u0439 \u0433\u043B\u043E\u0431\u0443\u0441\u00BB \u0438 \u043D\u043E\u043C\u0438\u043D\u0430\u0446\u0438\u0438 \u043D\u0430 \u00AB\u041E\u0441\u043A\u0430\u0440\u00BB \u0438 BAFTA.",
+                "lang": "ru"
+            },
+            {
+                "type": "literal",
+                "value": "Julia Fiona Roberts (Atlanta, 28 ottobre 1967) \u00E8 un'attrice statunitense. Nel corso della sua carriera ventennale ha ricevuto diversi premi tra cui 3 Golden Globe e un Premio Oscar come migliore attrice protagonista.",
+                "lang": "it"
+            },
+            {
+                "type": "literal",
+                "value": "\u30B8\u30E5\u30EA\u30A2\u30FB\u30D5\u30A3\u30AA\u30CA\u30FB\u30ED\u30D0\u30FC\u30C4\uFF08Julia Fiona Roberts, 1967\u5E7410\u670828\u65E5 - \uFF09\u306F\u3001\u30A2\u30E1\u30EA\u30AB\u5408\u8846\u56FD\u306E\u5973\u512A\u3002\u30B8\u30E7\u30FC\u30B8\u30A2\u5DDE\u30A2\u30C8\u30E9\u30F3\u30BF\u51FA\u8EAB\u3002\u8EAB\u9577175cm\u3002\u5144\u30A8\u30EA\u30C3\u30AF\u3001\u59EA\u306E\u30A8\u30DE\u3082\u4FF3\u512A\u3002",
+                "lang": "ja"
+            },
+            {
+                "type": "literal",
+                "value": "Julia Fiona Roberts (n.",
+                "lang": "es"
+            },
+            {
+                "type": "literal",
+                "value": "Julia Fiona Roberts (* 28. Oktober 1967 in Atlanta, Georgia) ist eine US-amerikanische Schauspielerin.Durch die Filmromanze Pretty Woman 1990 wurde sie weltber\u00FChmt und erhielt daf\u00FCr den Golden Globe und eine Oscar-Nominierung. Mit Filmen wie Die Akte (1993), Die Hochzeit meines besten Freundes (1997), Notting Hill (1999) und Die Braut, die sich nicht traut (1999) etablierte sie sich als eine der erfolgreichsten Schauspielerinnen Hollywoods.",
+                "lang": "de"
+            },
+            {
+                "type": "literal",
+                "value": "Julia Fiona Roberts (born October 28, 1967) is an American actress and producer. She became a Hollywood star after headlining the romantic comedy Pretty Woman (1990), which grossed $464 million worldwide. After winning two Golden Globe Awards and also receiving Academy Award nominations for Steel Magnolias (1989) and Pretty Woman, she won the Academy Award for Best Actress for her performance in Erin Brockovich (2000).",
+                "lang": "en"
+            },
+            {
+                "type": "literal",
+                "value": "Julia Roberts, n\u00E9e le 28 octobre 1967 \u00E0 Atlanta en G\u00E9orgie, est une actrice et productrice am\u00E9ricaine. Elle a obtenu l\u2019Oscar de la meilleure actrice en 2001, pour Erin Brockovich, seule contre tous. Elle est une des actrices les mieux pay\u00E9es de Hollywood. Son fr\u00E8re, Eric Roberts, sa s\u0153ur, Lisa Roberts Gillan et sa ni\u00E8ce, Emma Roberts, sont \u00E9galement acteurs.",
+                "lang": "fr"
+            },
+            {
+                "type": "literal",
+                "value": "Julia Fiona Roberts (ur. 28 pa\u017Adziernika 1967 w Atlancie) \u2013 ameryka\u0144ska aktorka, laureatka Oscara za rol\u0119 w filmie Erin Brockovich. Jest siostr\u0105 aktora Erica Robertsa (ur. 1956) i aktorki Lisy Roberts Gillan (ur. 1965).",
+                "lang": "pl"
+            }],
+        "http://xmlns.com/foaf/0.1/surname": [{
+                "type": "literal",
+                "value": "Roberts",
+                "lang": "en"
+            }],
+        "http://dbpedia.org/property/b": [{
+                "type": "literal",
+                "value": "no",
+                "lang": "en"
+            }],
+        "http://dbpedia.org/property/commons": [{
+                "type": "literal",
+                "value": "category:Julia Roberts",
+                "lang": "en"
+            }],
+        "http://dbpedia.org/property/n": [{
+                "type": "literal",
+                "value": "no",
+                "lang": "en"
+            }],
+        "http://dbpedia.org/property/s": [{
+                "type": "literal",
+                "value": "no",
+                "lang": "en"
+            }],
+        "http://dbpedia.org/property/v": [{
+                "type": "literal",
+                "value": "no",
+                "lang": "en"
+            }],
+        "http://dbpedia.org/property/wikt": [{
+                "type": "literal",
+                "value": "no",
+                "lang": "en"
+            }],
+        "http://dbpedia.org/property/children": [{
+                "type": "literal",
+                "value": 3,
+                "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }],
+        "http://dbpedia.org/ontology/birthName": [{
+                "type": "literal",
+                "value": "Julia Fiona Roberts",
+                "lang": "en"
+            }],
+        "http://xmlns.com/foaf/0.1/isPrimaryTopicOf": [{
+                "type": "uri",
+                "value": "http://en.wikipedia.org/wiki/Julia_Roberts"
+            }],
+        "http://dbpedia.org/property/hasPhotoCollection": [{
+                "type": "uri",
+                "value": "http://wifo5-03.informatik.uni-mannheim.de/flickrwrappr/photos/Julia_Roberts"
+            }],
+        "http://dbpedia.org/property/caption": [{
+                "type": "literal",
+                "value": "Roberts at the 2011 Tribeca Film Festival premiere of Jesus Henry Christ",
+                "lang": "en"
+            }],
+        "http://dbpedia.org/property/name": [{
+                "type": "literal",
+                "value": "Roberts, Julia",
+                "lang": "en"
+            }],
+        "http://dbpedia.org/ontology/thumbnail": [{
+                "type": "uri",
+                "value": "http://commons.wikimedia.org/wiki/Special:FilePath/Julia_Roberts_2011_Shankbone_3.JPG?width=300"
+            }],
+        "http://dbpedia.org/ontology/abstract": [{
+                "type": "literal",
+                "value": "Julia Fiona Roberts (Smyrna, 28 de outubro de 1967) \u00E9 uma atriz e produtora norte-americana. Vencedora do Oscar de Melhor Atriz pelo filme Erin Brockovich, tamb\u00E9m atuou em Pretty Woman (br: Uma Linda Mulher - pt: Um Sonho de Mulher). Ela se tornou uma estrela de Hollywood depois de ser a atra\u00E7\u00E3o principal da com\u00E9dia rom\u00E2ntica Pretty Woman (1990), que arrecadou $464 milh\u00F5es de d\u00F3lares em todo o mundo. Depois de receber Pr\u00EAmios Globo de Ouro e indica\u00E7\u00F5es ao Oscar por Steel Magnolias (1989) e Pretty Woman, ela ganhou o Oscar de Melhor Atriz por sua atua\u00E7\u00E3o em Erin Brockovich (2000). Seus filmes Mystic Pizza (1988), The Pelican Brief (1993), My Best Friend's Wedding (1997), Notting Hill (1999), Runaway Bride (1999), Ocean's Eleven (2001), Ocean's Twelve (2004), Charlie Wilson's War (2007), Valentine's Day (2010), Eat Pray Love (2010) e Mirror Mirror (2012) trouxeram coletivamente bilheteria de mais de $2.6 bilh\u00F5es, fazendo dela uma das atrizes mais bem sucedidas em termos de bilheteria.Roberts tornou-se uma das atrizes mais bem pagas do mundo, superando anual \"lista de poder\" do The Hollywood Reporter das melhores estrelas femininas que mais rendem 2005-2006. Seu pagamento por Pretty Women em 1990 foi de $300,000; em 2003, foi pago um in\u00E9dito $25 milh\u00F5es para seu papel em Mona Lisa Smile (2003). A partir de 2010, o patrim\u00F4nio l\u00EDquido de Roberts foi estimado em $140 milh\u00F5es.Roberts foi nomeada pela revista People uma das \"50 Pessoas Mais Bonitas do Mundo\" onze vezes, empatado com Halle Berry. Em 2011, ela foi nomeada uma das \"100 Mulheres Mais Quentes de Todos os Tempos\", na Men's Health. Em 2001, Ladies Home Journal classificou-a na posi\u00E7\u00E3o 11 como a mulher mais poderosa nos Estados Unidos.",
+                "lang": "pt"
+            },
+            {
+                "type": "literal",
+                "value": "Julia Fiona Roberts (* 28. Oktober 1967 in Atlanta, Georgia) ist eine US-amerikanische Schauspielerin.Durch die Filmromanze Pretty Woman 1990 wurde sie weltber\u00FChmt und erhielt daf\u00FCr den Golden Globe und eine Oscar-Nominierung. Mit Filmen wie Die Akte (1993), Die Hochzeit meines besten Freundes (1997), Notting Hill (1999) und Die Braut, die sich nicht traut (1999) etablierte sie sich als eine der erfolgreichsten Schauspielerinnen Hollywoods. F\u00FCr ihre Rolle in Erin Brockovich (2000) gewann sie den Golden Globe und den Oscar als beste Hauptdarstellerin. Weitere Kinohits hatte sie mit Ocean\u2019s Eleven (2001) und der Fortsetzung Ocean\u2019s 12 (2004).",
+                "lang": "de"
+            },
+            {
+                "type": "literal",
+                "value": "Julia Fiona Roberts (n. 28 de octubre de 1967, Smyrna, Georgia) es una actriz de cine y televisi\u00F3n estadounidense, ganadora del premio \u00D3scar a la mejor actriz, as\u00ED como de tres Globos de Oro en las categor\u00EDas de mejor actriz en drama, mejor actriz en comedia o musical y mejor actriz de reparto, un BAFTA a la mejor actriz y un premio del Sindicato de Actores a la mejor actriz protagonista.Conocida por sus intervenciones en pel\u00EDculas como Magnolias de acero (1989), Pretty Woman (1990), El informe Pel\u00EDcano (1993), La boda de mi mejor amigo (1997), Notting Hill (1999), Novia a la fuga (1999) y La gran estafa (2001), se convirti\u00F3 en la actriz mejor pagada en el a\u00F1o 2000, a\u00F1o en el que protagoniz\u00F3 la pel\u00EDcula Erin Brockovich y por la que cobr\u00F3 veinte millones de d\u00F3lares. Es considerada la octava mujer m\u00E1s rica del mundo del entretenimiento, con una fortuna estimada en 140 millones de d\u00F3lares.En 1999 se convirti\u00F3 en la primera mujer en ser considerada la int\u00E9rprete m\u00E1s rentable del a\u00F1o por los distribuidores norteamericanos, gracias a los \u00E9xitos de Notting Hill y Novia a la fuga, manteniendo el liderato femenino durante diez a\u00F1os hasta que Sandra Bullock lo consigui\u00F3 en 2009 gracias a La Propuesta y Un sue\u00F1o posible..",
+                "lang": "es"
+            },
+            {
+                "type": "literal",
+                "value": "\u062C\u0648\u0644\u064A\u0627 \u0641\u064A\u0648\u0646\u0627 \u0631\u0648\u0628\u0631\u062A\u0633 (\u0645\u0646 \u0645\u0648\u0627\u0644\u064A\u062F 28 \u0623\u0643\u062A\u0648\u0628\u0631 1967) \u0647\u064A \u0645\u0645\u062B\u0644\u0629 \u0627\u0645\u064A\u0631\u0643\u064A\u0629. \u0623\u0635\u0628\u062D\u062A \u0646\u062C\u0645\u0629 \u0647\u0648\u0644\u064A\u0648\u0648\u062F\u064A\u0629 \u0643\u0628\u064A\u0631\u0629 \u0628\u0639\u062F \u062A\u0642\u062F\u064A\u0645\u0647\u0627 \u0644\u0639\u062F\u0629 \u0627\u0641\u0644\u0627\u0645 : \u0641\u064A \u0627\u0644\u0643\u0648\u0645\u064A\u062F\u064A\u0627 \u0627\u0644\u0631\u0648\u0645\u0646\u0633\u064A\u0629 \" \u0627\u0645\u0631\u0627\u0629 \u062C\u0645\u064A\u0644\u0629 \" (1990)\u060C \u0627\u0644\u0630\u064A \u062D\u0642\u0642 464 \u0645\u0644\u064A\u0648\u0646 \u062F\u0648\u0644\u0627\u0631 \u0641\u064A \u062C\u0645\u064A\u0639 \u0623\u0646\u062D\u0627\u0621 \u0627\u0644\u0639\u0627\u0644\u0645\u060C \u0628\u0639\u062F \u062D\u0635\u0648\u0644\u0647\u0627 \u0639\u0644\u0649 \u062C\u0648\u0627\u0626\u0632 \u063A\u0648\u0644\u062F\u0646 \u063A\u0644\u0648\u0628 \u0648\u062A\u0631\u0634\u064A\u062D\u0627\u062A \u0644\u062C\u0648\u0627\u0626\u0632 \u0627\u0644\u0623\u0648\u0633\u0643\u0627\u0631 \u0644\"\u0633\u062A\u064A\u0644 \u0645\u0627\u063A\u0646\u0648\u0644\u064A\u0627 \"(1989) \u0648\u0627\u0645\u0631\u0623\u0629 \u062C\u0645\u064A\u0644\u0629. \u062D\u0635\u0644\u062A \u0639\u0644\u0649 \u062C\u0627\u0626\u0632\u0629 \u0627\u0644\u0623\u0648\u0633\u0643\u0627\u0631 \u0644\u0623\u0641\u0636\u0644 \u0645\u0645\u062B\u0644\u0629 \u0639\u0646 \u062F\u0648\u0631\u0647\u0627 \u0641\u064A \"\u0627\u064A\u0631\u064A\u0646 \u0628\u0631\u0648\u0643\u0648\u0641\u064A\u062A\u0634 \"(2000). \u0642\u062F\u0645\u062A \u062C\u0648\u0644\u064A\u0627 \u0639\u062F\u0629 \u0627\u0641\u0644\u0627\u0645 \u0646\u0627\u062C\u062D\u0629 \u0645\u0646\u0647\u0627 :\"\u0639\u0631\u0633 \u0627\u0639\u0632 \u0635\u062F\u064A\u0642 \u0644\u064A \" \u0639\u0627\u0645 1997\u060C \"\u0645\u064A\u0633\u062A\u064A\u0643 \u0628\u064A\u062A\u0632\u0627\" \u0639\u0627\u0645 1988\u060C \"\u0646\u0648\u062A\u064A\u0646\u063A \u0647\u064A\u0644 \" \u0648\" \u0627\u0644\u0639\u0631\u0648\u0633 \u0627\u0644\u0647\u0627\u0631\u0628\u0629 \" \u0639\u0627\u0645 1999\u060C \"\u0639\u064A\u062F \u0627\u0644\u062D\u0628 \" \u0639\u0627\u0645 2010\u060C \"\u0627\u0644\u0645\u062D\u064A\u0637 \u0625\u062B\u0646\u0627 \u0639\u0634\u0631\" \u0639\u0627\u0645 2004. \u062A\u062D\u0642\u0642 \u062C\u0648\u0644\u064A\u0627 \u0627\u064A\u0631\u0627\u062F\u0627\u062A \u0639\u0644\u0649 \u0634\u0628\u0627\u0628\u064A\u0643 \u0627\u0644\u062A\u0630\u0627\u0643\u0631 \u0623\u0643\u062B\u0631 \u0645\u0646 2,4 \u0645\u0644\u064A\u0627\u0631 \u062F\u0648\u0644\u0627\u0631\u060C \u0645\u0645\u0627 \u064A\u062C\u0639\u0644 \u0645\u0646\u0647\u0627 \u0648\u0627\u062D\u062F\u0629 \u0645\u0646 \u0623\u0643\u062B\u0631 \u0627\u0644\u0645\u0645\u062B\u0644\u0627\u062B \u0627\u0644\u0646\u0627\u062C\u062D\u0627\u062A \u0645\u0646 \u062D\u064A\u062B \u0627\u064A\u0631\u0627\u062F\u0627\u062A \u0634\u0628\u0627\u0628\u064A\u0643 \u0627\u0644\u062A\u0630\u0627\u0643\u0631.",
+                "lang": "ar"
+            },
+            {
+                "type": "literal",
+                "value": "\u30B8\u30E5\u30EA\u30A2\u30FB\u30D5\u30A3\u30AA\u30CA\u30FB\u30ED\u30D0\u30FC\u30C4\uFF08Julia Fiona Roberts, 1967\u5E7410\u670828\u65E5 - \uFF09\u306F\u3001\u30A2\u30E1\u30EA\u30AB\u5408\u8846\u56FD\u306E\u5973\u512A\u3002\u30B8\u30E7\u30FC\u30B8\u30A2\u5DDE\u30A2\u30C8\u30E9\u30F3\u30BF\u51FA\u8EAB\u3002\u8EAB\u9577175cm\u3002\u5144\u30A8\u30EA\u30C3\u30AF\u3001\u59EA\u306E\u30A8\u30DE\u3082\u4FF3\u512A\u3002",
+                "lang": "ja"
+            },
+            {
+                "type": "literal",
+                "value": "Julia Roberts, n\u00E9e le 28 octobre 1967 \u00E0 Atlanta en G\u00E9orgie, est une actrice et productrice am\u00E9ricaine. Elle a obtenu l\u2019Oscar de la meilleure actrice en 2001, pour Erin Brockovich, seule contre tous. Elle est une des actrices les mieux pay\u00E9es de Hollywood. Son fr\u00E8re, Eric Roberts, sa s\u0153ur, Lisa Roberts Gillan et sa ni\u00E8ce, Emma Roberts, sont \u00E9galement acteurs.",
+                "lang": "fr"
+            },
+            {
+                "type": "literal",
+                "value": "Julie Fiona Roberts (Atlanta, 28 oktober 1967) is een Amerikaans actrice. Ze kreeg een Academy Award voor haar hoofdrol in Erin Brockovich (2000), nadat ze eerder al genomineerd werd voor Steel Magnolias (1990) en Pretty Woman (1991). Daarnaast won ze meer dan dertig andere acteerprijzen, waaronder Golden Globes voor zowel Steel Magnolias, Pretty Woman als Erin Brockovich, een BAFTA Award voor Erin Brockovich en National Board of Review Awards voor Pr\u00EAt-\u00E0-Porter (samen met de gehele cast), Erin Brockovich en Closer.",
+                "lang": "nl"
+            },
+            {
+                "type": "literal",
+                "value": "Julia Fiona Roberts (born October 28, 1967) is an American actress and producer. She became a Hollywood star after headlining the romantic comedy Pretty Woman (1990), which grossed $464 million worldwide. After winning two Golden Globe Awards and also receiving Academy Award nominations for Steel Magnolias (1989) and Pretty Woman, she won the Academy Award for Best Actress for her performance in Erin Brockovich (2000). Her films Mystic Pizza (1988), The Pelican Brief (1993), My Best Friend's Wedding (1997), Conspiracy Theory (1997), Notting Hill (1999), Runaway Bride (1999), Ocean's Eleven (2001), Ocean's Twelve (2004), Charlie Wilson's War (2007), Valentine's Day (2010), Eat Pray Love (2010), and Mirror Mirror (2012) have collectively brought box office receipts of over $2.6 billion, making her one of the most successful actresses in terms of box office receipts. In 2013, she appeared in August: Osage County, for which she received her fourth Academy Award nomination.Roberts had become one of the highest-paid actresses in the world, topping The Hollywood Reporter's annual \"power list\" of top-earning female stars from 2005 to 2006. Her fee for 1990's Pretty Woman was $300,000; in 2003, she was paid an unprecedented $25 million for her role in Mona Lisa Smile (2003). As of 2010, Roberts's net worth was estimated to be $140 million.Roberts has been named one of People magazine's \"50 Most Beautiful People in the World\" eleven times, tied with Halle Berry. In 2011, she was named one of the \"100 Hottest Women of All-Time\" by Men's Health.",
+                "lang": "en"
+            },
+            {
+                "type": "literal",
+                "value": "\u0414\u0436\u0443\u0301\u043B\u0438\u044F \u0420\u043E\u0301\u0431\u0435\u0440\u0442\u0441 (\u0430\u043D\u0433\u043B. Julia Roberts; \u0440\u043E\u0434. 28 \u043E\u043A\u0442\u044F\u0431\u0440\u044F 1967(19671028), \u0410\u0442\u043B\u0430\u043D\u0442\u0430, \u0414\u0436\u043E\u0440\u0434\u0436\u0438\u044F) \u2014 \u0430\u043C\u0435\u0440\u0438\u043A\u0430\u043D\u0441\u043A\u0430\u044F \u0430\u043A\u0442\u0440\u0438\u0441\u0430.\u041F\u0435\u0440\u0432\u044B\u043C \u0443\u0441\u043F\u0435\u0445\u043E\u043C \u0430\u043A\u0442\u0440\u0438\u0441\u044B \u0432 \u043A\u0438\u043D\u043E \u0441\u0442\u0430\u043B\u0430 \u0440\u043E\u043B\u044C \u0432 \u0444\u0438\u043B\u044C\u043C\u0435 \u00AB\u0421\u0442\u0430\u043B\u044C\u043D\u044B\u0435 \u043C\u0430\u0433\u043D\u043E\u043B\u0438\u0438\u00BB, \u0437\u0430 \u043A\u043E\u0442\u043E\u0440\u044B\u0439 \u043E\u043D\u0430 \u043F\u043E\u043B\u0443\u0447\u0438\u043B\u0430 \u043F\u0440\u0435\u043C\u0438\u044E \u00AB\u0417\u043E\u043B\u043E\u0442\u043E\u0439 \u0433\u043B\u043E\u0431\u0443\u0441\u00BB \u0438 \u043D\u043E\u043C\u0438\u043D\u0430\u0446\u0438\u044E \u043D\u0430 \u00AB\u041E\u0441\u043A\u0430\u0440\u00BB. \u0427\u0435\u0440\u0435\u0437 \u0433\u043E\u0434 \u0420\u043E\u0431\u0435\u0440\u0442\u0441 \u043F\u0440\u0438\u043E\u0431\u0440\u0435\u043B\u0430 \u0441\u0442\u0430\u0442\u0443\u0441 \u00AB\u0437\u0432\u0435\u0437\u0434\u044B \u0413\u043E\u043B\u043B\u0438\u0432\u0443\u0434\u0430\u00BB \u043F\u043E\u0441\u043B\u0435 \u0438\u0441\u043F\u043E\u043B\u043D\u0435\u043D\u0438\u044F \u0433\u043B\u0430\u0432\u043D\u043E\u0439 \u0440\u043E\u043B\u0438 \u0432 \u043A\u043E\u043C\u0435\u0434\u0438\u0438 \u00AB\u041A\u0440\u0430\u0441\u043E\u0442\u043A\u0430\u00BB, \u043F\u0440\u0438\u043D\u0451\u0441\u0448\u0438\u0439 \u0435\u0439 \u0432\u0442\u043E\u0440\u043E\u0439 \u00AB\u0417\u043E\u043B\u043E\u0442\u043E\u0439 \u0433\u043B\u043E\u0431\u0443\u0441\u00BB \u0438 \u043D\u043E\u043C\u0438\u043D\u0430\u0446\u0438\u0438 \u043D\u0430 \u00AB\u041E\u0441\u043A\u0430\u0440\u00BB \u0438 BAFTA. \u0412 2001 \u0433\u043E\u0434\u0443, \u0441\u043D\u044F\u0432\u0448\u0438\u0441\u044C \u0432 \u0444\u0438\u043B\u044C\u043C\u0435 \u00AB\u042D\u0440\u0438\u043D \u0411\u0440\u043E\u043A\u043E\u0432\u0438\u0447\u00BB, \u0441\u0442\u0430\u043B\u0430 \u043E\u0431\u043B\u0430\u0434\u0430\u0442\u0435\u043B\u044C\u043D\u0438\u0446\u0435\u0439 \u043C\u043D\u043E\u0436\u0435\u0441\u0442\u0432\u0430 \u043D\u0430\u0433\u0440\u0430\u0434, \u0432 \u0442\u043E\u043C \u0447\u0438\u0441\u043B\u0435 \u00AB\u041E\u0441\u043A\u0430\u0440\u00BB, \u0442\u0440\u0435\u0442\u044C\u0435\u0433\u043E \u00AB\u0417\u043E\u043B\u043E\u0442\u043E\u0433\u043E \u0433\u043B\u043E\u0431\u0443\u0441\u0430\u00BB \u0438 BAFTA. \u0412 2014 \u0433\u043E\u0434\u0443 \u0432\u043D\u043E\u0432\u044C \u0431\u044B\u043B\u0430 \u0432\u044B\u0434\u0432\u0438\u043D\u0443\u0442\u0430 \u043D\u0430 \u043F\u0440\u0435\u043C\u0438\u0438 \u00AB\u041E\u0441\u043A\u0430\u0440\u00BB, \u00AB\u0417\u043E\u043B\u043E\u0442\u043E\u0439 \u0433\u043B\u043E\u0431\u0443\u0441\u00BB \u0438 BAFTA \u0437\u0430 \u0432\u0442\u043E\u0440\u043E\u0441\u0442\u0435\u043F\u0435\u043D\u043D\u0443\u044E \u0440\u043E\u043B\u044C \u0432 \u043A\u0430\u0440\u0442\u0438\u043D\u0435 \u00AB\u0410\u0432\u0433\u0443\u0441\u0442: \u0413\u0440\u0430\u0444\u0441\u0442\u0432\u043E \u041E\u0441\u0435\u0439\u0434\u0436\u00BB.\u0420\u043E\u0431\u0435\u0440\u0442\u0441 \u2014 \u043E\u0434\u043D\u0430 \u0438\u0437 \u0441\u0430\u043C\u044B\u0445 \u0432\u044B\u0441\u043E\u043A\u043E\u043E\u043F\u043B\u0430\u0447\u0438\u0432\u0430\u0435\u043C\u044B\u0445 \u0430\u043A\u0442\u0440\u0438\u0441 \u0432 \u043C\u0438\u0440\u0435. \u0424\u0438\u043B\u044C\u043C\u044B \u0441 \u0435\u0451 \u0443\u0447\u0430\u0441\u0442\u0438\u0435\u043C \u043F\u0440\u0438\u043D\u0435\u0441\u043B\u0438 \u0432 \u043C\u0438\u0440\u043E\u0432\u043E\u043C \u043F\u0440\u043E\u043A\u0430\u0442\u0435 \u043F\u0440\u0438\u0431\u044B\u043B\u044C \u0441\u0432\u044B\u0448\u0435 \u0434\u0432\u0443\u0445 \u043C\u0438\u043B\u043B\u0438\u0430\u0440\u0434\u043E\u0432 \u0434\u043E\u043B\u043B\u0430\u0440\u043E\u0432.",
+                "lang": "ru"
+            },
+            {
+                "type": "literal",
+                "value": "Julia Fiona Roberts (ur. 28 pa\u017Adziernika 1967 w Atlancie) \u2013 ameryka\u0144ska aktorka, laureatka Oscara za rol\u0119 w filmie Erin Brockovich. Jest siostr\u0105 aktora Erica Robertsa (ur. 1956) i aktorki Lisy Roberts Gillan (ur. 1965).",
+                "lang": "pl"
+            },
+            {
+                "type": "literal",
+                "value": "\u8331\u8389\u4E9E\u00B7\u8CBB\u6B50\u5A1C\u00B7\u7F85\u52C3\u8332\uFF08Julia Fiona Roberts\uFF0C1967\u5E7410\u670828\u65E5\uFF0D\uFF09\uFF0C\u751F\u4E8E\u7F8E\u570B\u55AC\u6CBB\u4E9E\u5DDE\u58EB\u9EA6\u90A3\u7684\u5973\u6F14\u5458\u30022001\u5E74\u4EE5\u300A\u6C38\u4E0D\u59A5\u5354\u300B\u7372\u5F97\u7B2C73\u5C4A\u5967\u65AF\u5361\u91D1\u50CF\u734E\u6700\u4F73\u5973\u4E3B\u89D2\u5956\u3002",
+                "lang": "zh"
+            },
+            {
+                "type": "literal",
+                "value": "Julia Fiona Roberts (Atlanta, 28 ottobre 1967) \u00E8 un'attrice statunitense. Nel corso della sua carriera ventennale ha ricevuto diversi premi tra cui 3 Golden Globe e un Premio Oscar come migliore attrice protagonista.",
+                "lang": "it"
+            }],
+        "http://dbpedia.org/ontology/wikiPageID": [{
+                "type": "literal",
+                "value": 16553,
+                "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }],
+        "http://dbpedia.org/ontology/wikiPageRevisionID": [{
+                "type": "literal",
+                "value": 606136760,
+                "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }],
+        "http://dbpedia.org/property/birthDate": [{
+                "type": "literal",
+                "value": "1967-10-28+02:00",
+                "datatype": "http://www.w3.org/2001/XMLSchema#date"
+            }],
+        "http://dbpedia.org/property/birthPlace": [{
+                "type": "literal",
+                "value": "Smyrna, Georgia, U.S.",
+                "lang": "en"
+            }],
+        "http://dbpedia.org/property/dateOfBirth": [{
+                "type": "literal",
+                "value": "1967-10-28+02:00",
+                "datatype": "http://www.w3.org/2001/XMLSchema#date"
+            }],
+        "http://dbpedia.org/property/placeOfBirth": [{
+                "type": "literal",
+                "value": "Atlanta, Georgia",
+                "lang": "en"
+            }],
+        "http://dbpedia.org/property/shortDescription": [{
+                "type": "literal",
+                "value": "American actress",
+                "lang": "en"
+            }],
+        "http://dbpedia.org/ontology/birthDate": [{
+                "type": "literal",
+                "value": "1967-10-28+02:00",
+                "datatype": "http://www.w3.org/2001/XMLSchema#date"
+            }],
+        "http://dbpedia.org/ontology/birthPlace": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Atlanta"
+            },
+            {
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Georgia_(U.S._state)"
+            },
+            {
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Smyrna,_Georgia"
+            }],
+        "http://dbpedia.org/ontology/birthYear": [{
+                "type": "literal",
+                "value": "1967+02:00",
+                "datatype": "http://www.w3.org/2001/XMLSchema#gYear"
+            }],
+        "http://dbpedia.org/ontology/viafId": [{
+                "type": "literal",
+                "value": "100914297"
+            }],
+        "http://dbpedia.org/property/family": [{
+                "type": "literal",
+                "value": "Emma Roberts",
+                "lang": "en"
+            },
+            {
+                "type": "literal",
+                "value": "Eric Roberts",
+                "lang": "en"
+            },
+            {
+                "type": "literal",
+                "value": "Lisa Roberts Gillan",
+                "lang": "en"
+            }],
+        "http://dbpedia.org/property/occupation": [{
+                "type": "literal",
+                "value": "Actress, executive producer",
+                "lang": "en"
+            }],
+        "http://dbpedia.org/property/yearsActive": [{
+                "type": "literal",
+                "value": 1987,
+                "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }],
+        "http://dbpedia.org/ontology/activeYearsStartYear": [{
+                "type": "literal",
+                "value": "1987+02:00",
+                "datatype": "http://www.w3.org/2001/XMLSchema#gYear"
+            }],
+        "http://dbpedia.org/ontology/occupation": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts__1"
+            }],
+        "http://dbpedia.org/property/birthName": [{
+                "type": "literal",
+                "value": "Julia Fiona Roberts",
+                "lang": "en"
+            }],
+        "http://dbpedia.org/property/colwidth": [{
+                "type": "literal",
+                "value": 30,
+                "datatype": "http://www.w3.org/2001/XMLSchema#integer"
+            }],
+        "http://dbpedia.org/property/wordnet_type": [{
+                "type": "uri",
+                "value": "http://www.w3.org/2006/03/wn/wn20/instances/synset-actor-noun-1"
+            }],
+        "http://dbpedia.org/property/title": [{
+                "type": "literal",
+                "value": "Awards for Julia Roberts",
+                "lang": "en"
+            }],
+        "http://dbpedia.org/property/religion": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Hinduism"
+            }],
+        "http://dbpedia.org/ontology/religion": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Hinduism"
+            }],
+        "http://dbpedia.org/ontology/alias": [{
+                "type": "literal",
+                "value": "Julie Roberts"
+            }],
+        "http://dbpedia.org/property/alternativeNames": [{
+                "type": "literal",
+                "value": "Julie Roberts",
+                "lang": "en"
+            }]
+    },
+    "http://dbpedia.org/resource/Lisa_Roberts_Gillan": {
+        "http://dbpedia.org/property/family": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }]
+    },
+    "http://dbpedia.org/resource/Emma_Roberts": {
+        "http://dbpedia.org/property/family": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }]
+    },
+    "http://dbpedia.org/resource/Eric_Roberts": {
+        "http://dbpedia.org/property/relatives": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }],
+        "http://dbpedia.org/ontology/relative": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }]
+    },
+    "http://dbpedia.org/resource/Sleeping_with_the_Enemy": {
+        "http://dbpedia.org/property/starring": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }],
+        "http://dbpedia.org/ontology/starring": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }]
+    },
+    "http://dbpedia.org/resource/Kit_Kittredge:_An_American_Girl": {
+        "http://dbpedia.org/property/producer": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }],
+        "http://dbpedia.org/ontology/producer": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }]
+    },
+    "http://dbpedia.org/resource/Ocean's_Eleven": {
+        "http://dbpedia.org/property/starring": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }],
+        "http://dbpedia.org/ontology/starring": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }]
+    },
+    "http://dbpedia.org/resource/The_Normal_Heart_(film)": {
+        "http://dbpedia.org/ontology/starring": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }]
+    },
+    "http://dbpedia.org/resource/Notting_Hill_(film)": {
+        "http://dbpedia.org/property/starring": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }],
+        "http://dbpedia.org/ontology/starring": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }]
+    },
+    "http://dbpedia.org/resource/Runaway_Bride_(1999_film)": {
+        "http://dbpedia.org/property/starring": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }],
+        "http://dbpedia.org/ontology/starring": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }]
+    },
+    "http://dbpedia.org/resource/Pretty_Woman": {
+        "http://dbpedia.org/property/starring": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }],
+        "http://dbpedia.org/ontology/starring": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }]
+    },
+    "http://dbpedia.org/resource/Valentine's_Day_(2010_film)": {
+        "http://dbpedia.org/property/starring": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }],
+        "http://dbpedia.org/ontology/starring": [{
+                "type": "uri",
+                "value": "http://dbpedia.org/resource/Julia_Roberts"
+            }]
+    }
+}

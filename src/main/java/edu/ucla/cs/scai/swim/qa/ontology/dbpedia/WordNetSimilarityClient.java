@@ -22,15 +22,16 @@ public class WordNetSimilarityClient implements SimilarityClient {
     @Override
     public double similarity(String s1, String s2) {
         try {
-            String url=wordnetServiceUrl + URLEncoder.encode(s1.replace(" ", ","), "UTF-8") + "/" + URLEncoder.encode(s2.replace(" ", ","), "UTF-8");
+            String url = wordnetServiceUrl + URLEncoder.encode(s1.replace(" ", ","), "UTF-8") + "/" + URLEncoder.encode(s2.replace(" ", ","), "UTF-8");
             Document doc = Jsoup.connect(url).get();
             return Double.parseDouble(doc.text());
         } catch (Exception ex) {
+            Logger.getLogger(DBpediaAttributeLookup.class.getName()).log(Level.SEVERE, "Error evaluating similarity of {0} <and> {1}", new Object[]{s1, s2});
             Logger.getLogger(DBpediaAttributeLookup.class.getName()).log(Level.SEVERE, null, ex);
             return 0;
         }
     }
-    
+
     public static void main(String args[]) {
     }
 

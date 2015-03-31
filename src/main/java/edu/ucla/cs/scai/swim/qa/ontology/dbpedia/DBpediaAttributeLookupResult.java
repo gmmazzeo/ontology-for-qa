@@ -17,10 +17,11 @@ import edu.ucla.cs.scai.swim.qa.ontology.NamedEntityLookupResult;
 public class DBpediaAttributeLookupResult extends AttributeLookupResult {
 
     DBpediaAttribute attribute;
+    boolean invertedRelationship;
 
     public DBpediaAttributeLookupResult(DBpediaAttribute attribute, double weight) {
         this.attribute = attribute;
-        this.weight=weight;
+        this.weight = weight;
     }
 
     @Override
@@ -34,6 +35,11 @@ public class DBpediaAttributeLookupResult extends AttributeLookupResult {
 
     @Override
     public String toString() {
-        return attribute.toString()+"["+weight+"]"; //To change body of generated methods, choose Tools | Templates.
+        return attribute.toString() + "[" + weight + "]"; //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public boolean isInvertedRelationship() {
+        return invertedRelationship;
     }
 }

@@ -9,6 +9,7 @@ import com.google.api.client.util.Key;
 import edu.ucla.cs.scai.swim.qa.ontology.Category;
 import edu.ucla.cs.scai.swim.qa.ontology.NamedEntity;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Set;
 
 /**
@@ -27,7 +28,9 @@ public class DBpediaNamedEntity implements NamedEntity {
     String description;
 
     @Key
-    ArrayList<DBpediaCategory> classes;
+    ArrayList<DBpediaCategory> classes=new ArrayList<>();
+    
+    HashSet<DBpediaCategory> categories;
 
     String thumbUrl;
 
@@ -44,8 +47,11 @@ public class DBpediaNamedEntity implements NamedEntity {
     }
 
     @Override
-    public Set<Category> getCategories() {
-        return null;
+    public Set<? extends Category> getCategories() {
+        if (categories==null) {
+            categories=new HashSet<>(classes);
+        }
+        return categories;
     }
 
     @Override

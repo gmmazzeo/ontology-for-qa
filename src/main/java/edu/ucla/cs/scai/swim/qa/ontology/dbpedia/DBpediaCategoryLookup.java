@@ -18,7 +18,8 @@ import java.util.Iterator;
  */
 public class DBpediaCategoryLookup {
 
-    private static final double similarityCutOff = 0.5;
+    private static final double relSimilarityThreshold = 0.5;
+    private static final double absSimilarityThreshold = 0.3;
 
     private static HashMap<String, ArrayList<DBpediaCategoryLookupResult>> cache = new HashMap<>();
 
@@ -38,32 +39,29 @@ public class DBpediaCategoryLookup {
 
     public ArrayList<DBpediaCategoryLookupResult> lookup(String categoryName) {
         String[] categoryNames = categoryName.toLowerCase().split(" ");
-        /*
-        Arrays.sort(categoryNames);
-        categoryName = categoryNames[0];
-        for (int i = 1; i < categoryNames.length; i++) {
-            categoryName += " " + categoryNames[i];
-        }
-        */
         ArrayList<DBpediaCategoryLookupResult> res = readCache(categoryName);
         if (res == null) {
             res = new ArrayList<>();
             double maxSimilarity = 0;
             double similarityThreshold = 0;
-            for (DBpediaCategory c : DBpediaOntology.getInstance().categoryMap.values()) {
+            for (DBpediaCategory c : DBpediaOntology.getInstance().categoriesByUri.values()) {
+                if (c.words==null || c.words.length()==0) {
+                    continue;
+                }
                 double similarity = 0;
                 try {
-                    similarity=similarityClient.similarity(c.words, categoryName);
+                    similarity = similarityClient.similarity(c.words, categoryName);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-                if (similarity >= similarityCutOff * maxSimilarity && similarity > 0) {
+                if (similarity >= relSimilarityThreshold * maxSimilarity && similarity > absSimilarityThreshold / categoryNames.length) {
                     if (similarity > maxSimilarity) {
                         maxSimilarity = similarity;
-                        similarityThreshold = maxSimilarity * similarityCutOff;
+                        similarityThreshold = maxSimilarity * relSimilarityThreshold;
                     }
                     res.add(new DBpediaCategoryLookupResult(c, similarity));
                 }
+
             }
             Collections.sort(res);
             for (Iterator<DBpediaCategoryLookupResult> it = res.iterator(); it.hasNext();) {

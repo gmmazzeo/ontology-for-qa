@@ -5,8 +5,6 @@ package edu.ucla.cs.scai.swim.qa.ontology;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
-
 /**
  *
  * @author Giuseppe M. Mazzeo <mazzeo@cs.ucla.edu>
@@ -17,7 +15,7 @@ public abstract class AttributeLookupResult extends WeightedResult {
 
     @Override
     public boolean equals(Object obj) {
-        return getAttribute().equals(((AttributeLookupResult)obj).getAttribute());
+        return getAttribute().equals(((AttributeLookupResult) obj).getAttribute());
     }
 
     @Override
@@ -25,4 +23,5 @@ public abstract class AttributeLookupResult extends WeightedResult {
         return getAttribute().hashCode();
     }
 
+    public abstract boolean isInvertedRelationship();
 }

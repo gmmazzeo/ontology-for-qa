@@ -25,7 +25,7 @@ public interface NamedEntity {
 
     public String getProperty(String name);
 
-    public Set<Category> getCategories();
+    public Set<? extends Category> getCategories();
     
     public String getUri();
 }

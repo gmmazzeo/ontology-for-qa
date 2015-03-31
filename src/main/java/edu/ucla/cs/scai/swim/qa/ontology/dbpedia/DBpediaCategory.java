@@ -5,8 +5,10 @@
  */
 package edu.ucla.cs.scai.swim.qa.ontology.dbpedia;
 
+import edu.ucla.cs.scai.swim.qa.ontology.Attribute;
 import edu.ucla.cs.scai.swim.qa.ontology.Category;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Objects;
 
 /**
@@ -21,11 +23,15 @@ public class DBpediaCategory implements Category {
 
     String words;
 
-    DBpediaCategory parent;
+    HashSet<DBpediaCategory> parents = new HashSet<>();
 
-    ArrayList<DBpediaCategory> subclasses = new ArrayList<>();
+    HashSet<DBpediaCategory> subClasses = new HashSet<>();
 
-    ArrayList<DBpediaAttribute> attributes = new ArrayList<>();
+    HashSet<DBpediaAttribute> domainOfAttributes = new HashSet<>();
+
+    HashSet<DBpediaAttribute> rangeOfAttributes = new HashSet<>();
+
+    HashSet<DBpediaCategory> ancestors;
 
     String mostPopularEntity;
     int popularity;
@@ -43,10 +49,6 @@ public class DBpediaCategory implements Category {
         }
     }
 
-    public String getUri() {
-        return uri;
-    }
-
     public void setUri(String uri) {
         this.uri = uri;
     }
@@ -57,21 +59,12 @@ public class DBpediaCategory implements Category {
     }
 
     @Override
-    public Category getParent() {
-        return parent;
+    public HashSet<? extends Category> getParents() {
+        return parents;
     }
 
-    public void setParent(DBpediaCategory parent) {
-        this.parent = parent;
-    }
-
-    public ArrayList<DBpediaCategory> getSubclasses() {
-        return subclasses;
-    }
-
-    @Override
-    public ArrayList<DBpediaAttribute> getAttributes() {
-        return attributes;
+    public HashSet<DBpediaCategory> getSubClasses() {
+        return subClasses;
     }
 
     @Override
@@ -97,7 +90,7 @@ public class DBpediaCategory implements Category {
     }
 
     @Override
-    public String getURI() {
+    public String getUri() {
         return uri;
     }
 
@@ -113,10 +106,14 @@ public class DBpediaCategory implements Category {
         }
         return false;
     }
-    
+
     public void updateAncestorsPopularity() {
-        if (parent!=null && parent.updateMostPopularEntity(mostPopularEntity, popularity)) {
-            parent.updateAncestorsPopularity();
+        if (parents != null) {
+            for (DBpediaCategory parent : parents) {
+                if (parent.updateMostPopularEntity(mostPopularEntity, popularity)) {
+                    parent.updateAncestorsPopularity();
+                }
+            }
         }
     }
 
@@ -127,4 +124,38 @@ public class DBpediaCategory implements Category {
     public void setPopularity(int popularity) {
         this.popularity = popularity;
     }
+
+    @Override
+    public String toString() {
+        return uri;
+    }
+
+    @Override
+    public HashSet<? extends Attribute> getDomainOfAttributes() {
+        return domainOfAttributes;
+    }
+
+    @Override
+    public HashSet<? extends Attribute> getRangeOfAttributes() {
+        return rangeOfAttributes;
+    }
+
+    private HashSet<DBpediaCategory> computeAncestors() {
+        if (ancestors == null) {
+            ancestors = new HashSet<>();
+            ancestors.addAll(parents);
+            for (DBpediaCategory c : parents) {
+                ancestors.addAll(c.computeAncestors());
+            }
+        }
+        return ancestors;
+    }
+
+    public boolean hasAncestor(DBpediaCategory c) {
+        if (ancestors == null) {
+            computeAncestors();
+        }
+        return ancestors.contains(c);
+    }
+
 }
