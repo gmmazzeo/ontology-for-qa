@@ -25,6 +25,7 @@ public class DBpediaStatisticsBuilder {
             System.out.println("Classes of " + uri + " are " + entity.classes);
             System.exit(0);
         }
+        String domain = entity.classes.get(0).uri;
         ontology.updateEntity(uri, entity);
         //analyze the attributes of the entity
         System.out.println(uri);
@@ -32,12 +33,17 @@ public class DBpediaStatisticsBuilder {
             String attributeUri = e.getKey();
             DBpediaAttribute attribute = ontology.getAttributeByUri(attributeUri);
             if (attribute != null) {
-                System.out.println(attributeUri);
                 JsonArray vals = e.getValue().getAsJsonArray();
                 for (JsonElement jeVal : vals) {
                     attribute.triplesCount++;
+                    Double dd = attribute.domainDistribution.get(domain);
+                    if (dd == null) {
+                        attribute.domainDistribution.put(domain, 1d);
+                    } else {
+                        attribute.domainDistribution.put(domain, 1 + dd);
+                    }
                     JsonObject joVal = jeVal.getAsJsonObject();
-                    String type = joVal.get("type").getAsString();                    
+                    String type = joVal.get("type").getAsString();
                     if (type.equals("literal")) {
                         JsonElement jeValDatatype = joVal.get("datatype");
                         String datatype;
@@ -46,16 +52,34 @@ public class DBpediaStatisticsBuilder {
                         } else {
                             datatype = jeValDatatype.getAsString();
                         }
-                        Double d = attribute.rangeDistribution.get(datatype);
-                        if (d == null) {
+                        Double rd = attribute.rangeDistribution.get(datatype);
+                        if (rd == null) {
                             attribute.rangeDistribution.put(datatype, 1d);
                         } else {
-                            attribute.rangeDistribution.put(datatype, 1 + d);
+                            attribute.rangeDistribution.put(datatype, 1 + rd);
                         }
                     } else if (type.equals("uri")) {
                         System.out.println(joVal);
+                        String uriVal = joVal.get("value").getAsString();
+                        if (uriVal == null || !uriVal.startsWith("http://dbpedia.org/resource/")) {
+                            continue;
+                        }
+                        DBpediaNamedEntity entityVal = (DBpediaNamedEntity) ontology.getEntityByUri(uriVal);
+                        if (entityVal.classes.size() != 1) {
+                            System.out.println("Classes of entityVal " + uriVal + " are " + entityVal.classes);
+                            System.exit(0);
+                        }
+                        String classUri = entityVal.classes.get(0).uri;
+                        Double rd = attribute.rangeDistribution.get(classUri);
+                        if (rd == null) {
+                            attribute.rangeDistribution.put(classUri, 1d);
+                        } else {
+                            attribute.rangeDistribution.put(classUri, 1 + rd);
+                        }
+                    } else {
+                        System.out.println(attributeUri + "\n" + joVal);
+                        System.exit(0);
                     }
-
                 }
 
             }

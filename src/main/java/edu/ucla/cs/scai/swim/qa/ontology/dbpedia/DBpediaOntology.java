@@ -235,7 +235,7 @@ public class DBpediaOntology implements Ontology {
                 if (scs == null || scs.size() == 0) {
                     throw new Exception(id + " has no subclassOf");
                 } else if (scs.size() > 1) {
-                    System.out.println(id + " has " + scs.size() + " subclassOf");
+                    //System.out.println(id + " has " + scs.size() + " subclassOf");
                 }
             }
         }
