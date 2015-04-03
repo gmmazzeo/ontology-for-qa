@@ -66,6 +66,7 @@ public class DBpediaOntology implements Ontology {
     public final static String SPARQL_END_POINT = "http://dbpedia.org/sparql";
     public final static String SUPERPAGES_FILE = "superpages.txt";
     public final static String TYPE_ATTRIBUTE = "http://www.w3.org/1999/02/22-rdf-syntax-ns#type";
+
     final HashMap<String, DBpediaCategory> categoriesByUri = new HashMap<>();
     final HashMap<String, DBpediaAttribute> attributesByUri = new HashMap<>();
     final HashMap<String, DBpediaDataType> dataTypesByUri = new HashMap<>();
@@ -489,7 +490,9 @@ public class DBpediaOntology implements Ontology {
         DBpediaNamedEntity e = entitiesByUri.get(uri);
         if (e == null) {
             e = entityLookup.getEntityByUri(uri);
-            entitiesByUri.put(e.getUri(), e);
+            if (e != null) {
+                entitiesByUri.put(e.getUri(), e);
+            }
         }
         return e;
     }
@@ -512,4 +515,9 @@ public class DBpediaOntology implements Ontology {
     public DBpediaAttribute getAttributeByUri(String uri) {
         return attributesByUri.get(uri);
     }
+
+    public static DBpediaCategory thingCategory() {
+        return instance.categoriesByUri.get(THING_URI);
+    }
+
 }

@@ -204,7 +204,9 @@ public class DBpediaEntityLookup {
             res.classes.addAll(categories);
         } catch (Exception e) {
         }
-
+        if (res.classes.isEmpty()) {
+            res.classes.add(DBpediaOntology.thingCategory());
+        }
         return res;
     }
     
