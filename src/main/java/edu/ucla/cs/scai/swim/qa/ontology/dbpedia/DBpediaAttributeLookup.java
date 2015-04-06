@@ -20,8 +20,8 @@ import java.util.Set;
  */
 public class DBpediaAttributeLookup {
 
-    private static final double relSimilarityThreshold = 0.5;
-    private static final double absSimilarityThreshold = 0.1;
+    public static final double relSimilarityThreshold = 0.5;
+    public static final double absSimilarityThreshold = 0.1;
 
     SimilarityClient similarityClient;
 
@@ -203,7 +203,7 @@ public class DBpediaAttributeLookup {
         return res;
     }
 
-    private DBpediaAttributeLookupResult createAttributeLookupResult(DBpediaAttribute att, String attributeName, String[] attributeNames, double maxSimilarity, double similarityMultiplier) {
+    protected DBpediaAttributeLookupResult createAttributeLookupResult(DBpediaAttribute att, String attributeName, String[] attributeNames, double maxSimilarity, double similarityMultiplier) {
         double similarity = 0;
         try {
             similarity = similarityClient.similarity(att.words, attributeName);

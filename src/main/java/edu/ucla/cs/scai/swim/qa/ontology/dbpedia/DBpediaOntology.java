@@ -390,7 +390,7 @@ public class DBpediaOntology implements Ontology {
         }
     }
 
-    private DBpediaOntology() {
+    protected DBpediaOntology() {
         try {
             initDataTypes();
             JsonArray ja = loadJsonDescriptor();
