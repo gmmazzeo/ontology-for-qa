@@ -29,6 +29,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.MalformedURLException;
+import java.net.URI;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -83,6 +84,7 @@ public class DBpediaEntityLookup {
 
     public JsonObject getEntityJsonByUri(String uri) {
         String urls = uri.replace("/resource/", "/data/") + ".json";
+        urls = URI.create(urls).toASCIIString();
         URL url;
         InputStream is = null;
         BufferedReader br;
@@ -111,7 +113,9 @@ public class DBpediaEntityLookup {
         }
         JsonParser parser = new JsonParser();
         JsonElement je = parser.parse(jsonSb.toString());
-        JsonObject jo = je.getAsJsonObject().get(uri).getAsJsonObject();
+        System.out.println("uri: " + uri);
+        System.out.println("uri2: " + URI.create(uri).toASCIIString());
+        JsonObject jo = je.getAsJsonObject().get(URI.create(uri).toASCIIString()).getAsJsonObject();
         return jo;
     }
 

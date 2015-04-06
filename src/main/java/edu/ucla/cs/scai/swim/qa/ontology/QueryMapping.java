@@ -5,7 +5,6 @@
  */
 package edu.ucla.cs.scai.swim.qa.ontology;
 
-import edu.ucla.cs.scai.swim.qa.ontology.dbpedia.DBpediaCategory;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -71,10 +70,10 @@ public class QueryMapping {
             for (QueryModel qmc : res) {
                 for (int i = 0; i < expandedConstraints.size(); i++) {
                     QueryConstraint eqc = expandedConstraints.get(i);
-                    Double weigth = expandedConstraintsWeight.get(i);
+                    Double weight = expandedConstraintsWeight.get(i);
                     QueryModel nqm = new QueryModel(qmc.entityVariableName, qmc.attributeVariableName);
-                    nqm.setWeight(qmc.getWeight() * weigth);
-                    nqm.setExampleEntity(qmc.entityVariableName);
+                    nqm.setWeight(qmc.getWeight() * weight);
+                    nqm.setExampleEntity(qmc.exampleEntity);
                     nqm.filters.addAll(qmc.filters);
                     nqm.constraints.addAll(qmc.constraints);
                     nqm.constraints.add(eqc);
@@ -131,10 +130,10 @@ public class QueryMapping {
             for (QueryModel qmc : res) {
                 for (int i = 0; i < expandedConstraints.size(); i++) {
                     QueryConstraint eqc = expandedConstraints.get(i);
-                    Double weigth = expandedConstraintsWeight.get(i);
+                    Double weight = expandedConstraintsWeight.get(i);
                     QueryModel nqm = new QueryModel(qmc.entityVariableName, qmc.attributeVariableName);
-                    nqm.setWeight(qmc.getWeight() * weigth);
-                    nqm.setExampleEntity(qmc.entityVariableName);
+                    nqm.setWeight(qmc.getWeight() * weight);
+                    nqm.setExampleEntity(qmc.exampleEntity);
                     nqm.filters.addAll(qmc.filters);
                     nqm.constraints.addAll(qmc.constraints);
                     nqm.constraints.add(eqc);
@@ -194,10 +193,10 @@ public class QueryMapping {
                 String valueType = variableType.get(qc.getValueExpr());
                 HashSet<String> valueTypes = new HashSet<>();
                 if (valueType == null) {
-                    boolean basicType=false;
+                    boolean basicType = false;
                     for (QueryConstraint qf:qm.filters) {
                         if (qf.subjExpr.equals(qc.getValueExpr())) {
-                            basicType=true;
+                            basicType = true;
                             break;
                         }
                     }
@@ -224,12 +223,12 @@ public class QueryMapping {
                     QueryConstraint nqc = qc.copy();
                     nqc.setAttrString(r.getAttribute().getUri());
                     if (r.isInvertedRelationship()) {
-                        nqc.subjExpr=qc.valueExpr;
-                        nqc.subjString=qc.valueString;
-                        nqc.subj=qc.valueEntity;
-                        nqc.valueExpr=qc.subjExpr;
-                        nqc.valueString=qc.subjString;
-                        nqc.valueEntity=qc.subj;
+                        nqc.subjExpr = qc.valueExpr;
+                        nqc.subjString = qc.valueString;
+                        nqc.subj = qc.valueEntity;
+                        nqc.valueExpr = qc.subjExpr;
+                        nqc.valueString = qc.subjString;
+                        nqc.valueEntity = qc.subj;
                     }
                     expandedConstraints.add(nqc);
                     expandedConstraintsWeight.add(r.weight);
@@ -243,10 +242,10 @@ public class QueryMapping {
             for (QueryModel qmc : res) {
                 for (int i = 0; i < expandedConstraints.size(); i++) {
                     QueryConstraint eqc = expandedConstraints.get(i);
-                    Double weigth = expandedConstraintsWeight.get(i);
+                    Double weight = expandedConstraintsWeight.get(i);
                     QueryModel nqm = new QueryModel(qmc.entityVariableName, qmc.attributeVariableName);
-                    nqm.setWeight(qmc.getWeight() * weigth);
-                    nqm.setExampleEntity(qmc.entityVariableName);
+                    nqm.setWeight(qmc.getWeight() * weight);
+                    nqm.setExampleEntity(qmc.exampleEntity);
                     nqm.filters.addAll(qmc.filters);
                     nqm.constraints.addAll(qmc.constraints);
                     nqm.constraints.add(eqc);

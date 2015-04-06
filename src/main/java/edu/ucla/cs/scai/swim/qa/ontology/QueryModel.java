@@ -13,7 +13,7 @@ import java.util.HashSet;
  *
  * @author Giuseppe M. Mazzeo <mazzeo@cs.ucla.edu>
  */
-public class QueryModel implements Comparable<QueryModel> {
+    public class QueryModel implements Comparable<QueryModel> {
 
     String entityVariableName;
     String attributeVariableName;
@@ -90,10 +90,11 @@ public class QueryModel implements Comparable<QueryModel> {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         if (exampleEntity != null && exampleEntity.trim().length() > 0) {
-            sb.append("Example entity: ").append(exampleEntity.trim());
+            sb.append("Example entity: ").append(exampleEntity.trim()).append("\n");
         }
+        int length = sb.length();
         for (QueryConstraint qc : constraints) {
-            if (sb.length() > 0) {
+            if (sb.length() > length) {
                 sb.append(".\n");
             }
             sb.append(qc.toString());
