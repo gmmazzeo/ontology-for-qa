@@ -153,11 +153,11 @@ public class QueryMapping {
     }
 
     private ArrayList<QueryModel> expandLookupAttribute(QueryModel qm) throws Exception {
-        HashMap<String, String> variableType = new HashMap<>();
+        HashMap<String, QueryConstraint> variableType = new HashMap<>();
         for (QueryConstraint qc : qm.constraints) {
             if (qc.getAttrExpr().equals("rdf:type")) {
                 qc.setAttrString(ontology.getTypeAttribute());
-                variableType.put(qc.getSubjExpr(), qc.getValueString());
+                variableType.put(qc.getSubjExpr(), qc);
             }
         }
 
@@ -178,7 +178,8 @@ public class QueryMapping {
             ArrayList<Double> expandedConstraintsWeight = new ArrayList<>();
             if (qc.attrExpr.startsWith("lookupAttribute(")) {
                 String astring = qc.attrExpr.substring(16, qc.attrExpr.length() - 1);
-                String subjType = variableType.get(qc.getSubjExpr());
+                QueryConstraint subj = variableType.get(qc.getSubjExpr());
+                String subjType = (subj == null) ? null : subj.getValueString();
                 HashSet<String> subjTypes = new HashSet<>();
                 if (subjType == null) { //subject is already resolved as an entity
                     NamedEntity ne = ontology.getEntityByUri(qc.getSubjString());
@@ -190,7 +191,8 @@ public class QueryMapping {
                 } else {
                     subjTypes.add(subjType);
                 }
-                String valueType = variableType.get(qc.getValueExpr());
+                QueryConstraint value = variableType.get(qc.getValueExpr());
+                String valueType = (value == null) ? null : value.getValueString();
                 HashSet<String> valueTypes = new HashSet<>();
                 if (valueType == null) {
                     boolean basicType = false;
@@ -212,6 +214,7 @@ public class QueryMapping {
                     }
                 } else {
                     valueTypes.add(valueType);
+                    astring += " " + value.getValueExpr().substring(15, value.getValueExpr().length() - 1);
                 }
 
                 ArrayList<AttributeLookupResult> l = (ArrayList<AttributeLookupResult>) ontology.lookupAttribute(astring, subjTypes, valueTypes);
@@ -277,16 +280,47 @@ public class QueryMapping {
         }
         Collections.sort(inputModels);
 
+        System.out.println("######### LOOKUP ENTITY #############");
         ArrayList<QueryModel> intermediateModels1 = new ArrayList<>();
         for (QueryModel inm : inputModels) {
             intermediateModels1.addAll(expandLookupEntity(inm));
         }
 
+        System.out.println("#####################################");
+        System.out.println("######### MAPPED ENTITY #############");
+        System.out.println("#####################################");
+        for (int i = 0; i < intermediateModels1.size(); i++) {
+            if (intermediateModels1.get(i).getWeight() == 0) {
+                intermediateModels1.remove(i);
+                i--;
+                continue;
+            }
+            System.out.println("Weight: " + intermediateModels1.get(i).getWeight());
+            System.out.println(intermediateModels1.get(i));
+            System.out.println("-------------------------");
+        }
+        
+        System.out.println("######### LOOKUP CATEGORY ###########");
         ArrayList<QueryModel> intermediateModels2 = new ArrayList<>();
         for (QueryModel inm : intermediateModels1) {
             intermediateModels2.addAll(expandLookupCategory(inm));
         }
 
+        System.out.println("#####################################");
+        System.out.println("######### MAPPED CATEGORY ###########");
+        System.out.println("#####################################");
+        for (int i = 0; i < intermediateModels2.size(); i++) {
+            if (intermediateModels2.get(i).getWeight() == 0) {
+                intermediateModels2.remove(i);
+                i--;
+                continue;
+            }
+            System.out.println("Weight: " + intermediateModels2.get(i).getWeight());
+            System.out.println(intermediateModels2.get(i));
+            System.out.println("-------------------------");
+        }
+        
+        System.out.println("######### LOOKUP ATTRIBUTE ##########");
         ArrayList<QueryModel> outputModels = new ArrayList<>();
         for (QueryModel inm : intermediateModels2) {
             outputModels.addAll(expandLookupAttribute(inm));
