@@ -15,28 +15,51 @@ import java.util.HashSet;
  * @author Giuseppe M. Mazzeo <mazzeo@cs.ucla.edu>
  */
 public class QueryMapping {
-    
+
     private final HashMap<String, ArrayList<NamedEntityLookupResult>> cacheLookupEntity = new HashMap<>();
     private final HashMap<String, ArrayList<AttributeLookupResult>> cacheLookupAttribute = new HashMap<>();
     private final HashMap<String, ArrayList<CategoryLookupResult>> cacheLookupCategory = new HashMap<>();
-    
+
     Ontology ontology;
-    
+
     private ArrayList<QueryModel> expandExampleEntity(QueryModel qm) throws Exception {
         ArrayList<QueryModel> res = new ArrayList<>();
-        QueryModel qm0 = new QueryModel(qm.entityVariableName, qm.attributeVariableName);
-        qm0.setWeight(qm.getWeight());
-        qm0.setExampleEntity(qm.exampleEntity);
-        qm0.getFilters().addAll(qm.getFilters());
-        res.add(qm0);
-        if (qm0.exampleEntity.startsWith("lookupEntity")) {
-            
+        String exampleEntity = qm.getExampleEntity();
+        if (exampleEntity != null && exampleEntity.startsWith("lookupEntity")) {
+            String estring = exampleEntity.substring(13, exampleEntity.length() - 1);
+            ArrayList<NamedEntityLookupResult> l = cacheLookupEntity.get(estring);
+            if (l == null) {
+                l = (ArrayList<NamedEntityLookupResult>) ontology.lookupEntity(estring);
+                cacheLookupEntity.put(estring, l);
+            }
+            if (l.isEmpty()) {
+                return new ArrayList<>();
+            }
+            for (NamedEntityLookupResult r : l) {
+                HashSet<String> entitiesToIgnore = qm.ignoreEntitiesForLookup.get(estring);
+                if (entitiesToIgnore != null && entitiesToIgnore.contains(r.getNamedEntity().getUri())) {
+                    continue;
+                }
+                QueryModel qm0 = new QueryModel(qm.entityVariableName, qm.attributeVariableName);
+                qm0.setWeight(qm.getWeight() * r.getWeight());
+                qm0.setExampleEntity(r.getNamedEntity().getUri());
+                qm0.getFilters().addAll(qm.getFilters());
+                res.add(qm0);
+                for (QueryConstraint qc : qm.getConstraints()) {
+                    QueryConstraint nqc = qc.copy();
+                    if (qc.subjExpr.equals(exampleEntity)) {
+                        nqc.subjString = r.getNamedEntity().getUri();
+                    } else if (qc.valueExpr.equals(exampleEntity)) {
+                        nqc.valueString = r.getNamedEntity().getUri();
+                    }
+                }
+            }            
+        } else {
+            res.add(qm);
         }
-
         return res;
     }
 
-    
     private ArrayList<QueryModel> expandLookupEntity(QueryModel qm) throws Exception {
         ArrayList<QueryModel> res = new ArrayList<>();
         QueryModel qm0 = new QueryModel(qm.entityVariableName, qm.attributeVariableName);
@@ -109,7 +132,7 @@ public class QueryMapping {
         }
         return res;
     }
-    
+
     private ArrayList<QueryModel> expandLookupCategory(QueryModel qm) throws Exception {
         ArrayList<QueryModel> res = new ArrayList<>();
         QueryModel qm0 = new QueryModel(qm.entityVariableName, qm.attributeVariableName);
@@ -166,7 +189,7 @@ public class QueryMapping {
         }
         return res;
     }
-    
+
     private ArrayList<QueryModel> expandLookupAttribute(QueryModel qm) throws Exception {
         HashMap<String, String> variableType = new HashMap<>();
         for (QueryConstraint qc : qm.constraints) {
@@ -175,19 +198,19 @@ public class QueryMapping {
                 variableType.put(qc.getSubjExpr(), qc.getValueString());
             }
         }
-        
+
         ArrayList<QueryModel> res = new ArrayList<>();
         if (false) {
             res.add(qm);
             return res;
         }
-        
+
         QueryModel qm0 = new QueryModel(qm.entityVariableName, qm.attributeVariableName);
         qm0.setExampleEntity(qm.exampleEntity);
         qm0.setWeight(qm.getWeight());
         qm0.getFilters().addAll(qm.getFilters());
         res.add(qm0);
-        
+
         for (QueryConstraint qc : qm.constraints) {
             ArrayList<QueryConstraint> expandedConstraints = new ArrayList<>();
             ArrayList<Double> expandedConstraintsWeight = new ArrayList<>();
@@ -228,9 +251,9 @@ public class QueryMapping {
                 } else {
                     valueTypes.add(valueType);
                 }
-                
+
                 ArrayList<AttributeLookupResult> l = (ArrayList<AttributeLookupResult>) ontology.lookupAttribute(astring, subjTypes, valueTypes);
-                
+
                 if (l.isEmpty()) {
                     return new ArrayList<>(); //this is very inflexible - it should be better to return an approximate model, with less constraints
                 }
@@ -278,7 +301,7 @@ public class QueryMapping {
         }
         return res;
     }
-    
+
     public ArrayList<QueryModel> mapOnOntology(ArrayList<QueryModel> inputModels, Ontology ontology) throws Exception {
         this.ontology = ontology;
 
@@ -297,30 +320,30 @@ public class QueryMapping {
         for (QueryModel qm : inputModels) {
             qm.setWeight(qm.getWeight() / maxWeight);
         }
-        
+
         ArrayList<QueryModel> intermediateModels0 = new ArrayList<>();
         for (QueryModel inm : inputModels) {
             intermediateModels0.addAll(expandExampleEntity(inm));
         }
-        
+
         ArrayList<QueryModel> intermediateModels1 = new ArrayList<>();
         for (QueryModel inm : intermediateModels0) {
             intermediateModels1.addAll(expandLookupEntity(inm));
         }
-        
+
         ArrayList<QueryModel> intermediateModels2 = new ArrayList<>();
         for (QueryModel inm : intermediateModels1) {
             intermediateModels2.addAll(expandLookupCategory(inm));
         }
-        
+
         ArrayList<QueryModel> outputModels = new ArrayList<>();
         for (QueryModel inm : intermediateModels2) {
             outputModels.addAll(expandLookupAttribute(inm));
         }
-        
+
         Collections.sort(outputModels);
-        
+
         return outputModels;
     }
-    
+
 }
