@@ -53,7 +53,7 @@ public class QueryMapping {
                         nqc.valueString = r.getNamedEntity().getUri();
                     }
                 }
-            }            
+            }
         } else {
             res.add(qm);
         }
@@ -315,8 +315,10 @@ public class QueryMapping {
             minC = Math.min(minC, qm.constraints.size() + qm.getFilters().size());
             maxC = Math.max(maxC, qm.constraints.size() + qm.getFilters().size());
         }
-        for (QueryModel qm : inputModels) {
-            qm.weight *= 1 - 0.3 * (qm.constraints.size() + qm.getFilters().size() - minC) / (maxC - minC);
+        if (maxC != minC) {
+            for (QueryModel qm : inputModels) {
+                qm.weight *= 1 - 0.3 * (qm.constraints.size() + qm.getFilters().size() - minC) / (maxC - minC);
+            }
         }
         Collections.sort(inputModels);
         double maxWeight = inputModels.isEmpty() ? 0 : inputModels.get(0).getWeight();
@@ -324,14 +326,13 @@ public class QueryMapping {
             qm.setWeight(qm.getWeight() / maxWeight);
         }
 
-
         System.out.println("######### LOOKUP EXAMPLE PAGE #############");
         ArrayList<QueryModel> intermediateModels0 = new ArrayList<>();
         for (QueryModel inm : inputModels) {
             intermediateModels0.addAll(expandExampleEntity(inm));
         }
 
-        System.out.println("######### LOOKUP ENTITY #############");        
+        System.out.println("######### LOOKUP ENTITY #############");
         ArrayList<QueryModel> intermediateModels1 = new ArrayList<>();
         for (QueryModel inm : intermediateModels0) {
             intermediateModels1.addAll(expandLookupEntity(inm));
@@ -350,7 +351,7 @@ public class QueryMapping {
             System.out.println(intermediateModels1.get(i));
             System.out.println("-------------------------");
         }
-        
+
         System.out.println("######### LOOKUP CATEGORY ###########");
         ArrayList<QueryModel> intermediateModels2 = new ArrayList<>();
         for (QueryModel inm : intermediateModels1) {
@@ -370,7 +371,7 @@ public class QueryMapping {
             System.out.println(intermediateModels2.get(i));
             System.out.println("-------------------------");
         }
-        
+
         System.out.println("######### LOOKUP ATTRIBUTE ##########");
         ArrayList<QueryModel> outputModels = new ArrayList<>();
         for (QueryModel inm : intermediateModels2) {
