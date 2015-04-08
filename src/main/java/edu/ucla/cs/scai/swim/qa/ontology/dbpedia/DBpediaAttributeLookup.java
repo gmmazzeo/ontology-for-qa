@@ -152,19 +152,19 @@ public class DBpediaAttributeLookup {
 
         //now look for the symmetric relationships
         for (String sts : valueTypes) {
-            DBpediaCategory subjCat = DBpediaOntology.getInstance().categoriesByUri.get(sts);
-            if (subjCat == null) {
+            DBpediaCategory valueCat = DBpediaOntology.getInstance().categoriesByUri.get(sts);
+            if (valueCat == null) {
                 continue;
             }
-            for (DBpediaAttribute att : subjCat.domainOfAttributes) {
+            for (DBpediaAttribute att : valueCat.domainOfAttributes) {
                 boolean rangeMatch = false;
-                for (String valueType : subjectTypes) {
+                for (String subjType : subjectTypes) {
                     for (String range : att.rangeUri) {
-                        if (range.equals(valueType)) {
+                        if (range.equals(subjType)) {
                             rangeMatch = true;
                             break;
                         } else {
-                            DBpediaCategory c1 = DBpediaOntology.getInstance().categoriesByUri.get(valueType);
+                            DBpediaCategory c1 = DBpediaOntology.getInstance().categoriesByUri.get(subjType);
                             DBpediaCategory c2 = DBpediaOntology.getInstance().categoriesByUri.get(range);
                             if (c1 != null && c2 != null && c1.hasAncestor(c2)) {
                                 rangeMatch = true;
