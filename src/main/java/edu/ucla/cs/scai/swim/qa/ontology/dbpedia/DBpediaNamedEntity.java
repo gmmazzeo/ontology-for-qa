@@ -28,7 +28,7 @@ public class DBpediaNamedEntity implements NamedEntity {
     String description;
 
     @Key
-    ArrayList<DBpediaCategory> classes=new ArrayList<>();
+    ArrayList<DBpediaCategory> classes = new ArrayList<>();
     
     HashSet<DBpediaCategory> categories;
 
@@ -94,8 +94,8 @@ public class DBpediaNamedEntity implements NamedEntity {
             label = null;
             return;
         }
-        String[] s=uri.split("/");
-        String l=s[s.length-1];
+        String[] s = uri.split("/");
+        String l = s[s.length - 1];
         label=l.replace("_", " ");
     }
 
