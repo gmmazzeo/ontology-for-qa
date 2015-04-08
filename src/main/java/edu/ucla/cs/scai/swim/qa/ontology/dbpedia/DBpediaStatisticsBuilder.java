@@ -182,6 +182,7 @@ public class DBpediaStatisticsBuilder {
             queue.addLast("http://dbpedia.org/resource/Aalsum,_Groningen");
             queue.addLast("http://dbpedia.org/resource/Aaron_Lines");
             queue.addLast("http://dbpedia.org/resource/Abel_Lafleur");
+            queue.addLast("http://dbpedia.org/resource/Measles");
         }
 
         in = new BufferedReader(new FileReader("/home/massimo/processed.json"));
@@ -194,7 +195,9 @@ public class DBpediaStatisticsBuilder {
         in.close();
         type = new TypeToken<HashSet<String>>() {
         }.getType();
-        processed = gson.fromJson(json, type);        
+        processed = gson.fromJson(json, type);     
+        
+        System.out.println("Entity processed: "+processed.size());
         
         int duplicates = 0;
         for (Iterator<String> it = queue.iterator(); it.hasNext();) {
@@ -240,13 +243,21 @@ public class DBpediaStatisticsBuilder {
             System.out.println("Attribute " + a.getUri());
             System.out.println("Number of triples: " + a.triplesCount);
             System.out.println("Domain distribution");
+            double totVal=0;
             for (Map.Entry<String, Double> e : a.domainDistribution.entrySet()) {
-                e.setValue(e.getValue() / a.triplesCount);
+                totVal+=e.getValue();
+            }
+            for (Map.Entry<String, Double> e : a.domainDistribution.entrySet()) {
+                e.setValue(e.getValue() / totVal);
                 System.out.println("\t" + e.getKey() + " -> " + e.getValue());
             }
             System.out.println("Range distribution");
+            totVal=0;
             for (Map.Entry<String, Double> e : a.rangeDistribution.entrySet()) {
-                e.setValue(e.getValue() / a.triplesCount);
+                totVal+=e.getValue();
+            }
+            for (Map.Entry<String, Double> e : a.rangeDistribution.entrySet()) {
+                e.setValue(e.getValue() / totVal);
                 System.out.println("\t" + e.getKey() + " -> " + e.getValue());
             }
         }
