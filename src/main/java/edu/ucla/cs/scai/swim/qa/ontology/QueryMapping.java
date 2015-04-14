@@ -145,6 +145,9 @@ public class QueryMapping {
             ArrayList<Double> expandedConstraintsWeight = new ArrayList<>();
             if (qc.valueExpr.startsWith("lookupCategory(")) {
                 String cstring = qc.valueExpr.substring(15, qc.valueExpr.length() - 1);
+                if (cstring.length()==0) {
+                    return new ArrayList<>(); //some error occurred before - the argument of the lookupCategory function was missing
+                }
                 ArrayList<CategoryLookupResult> l = cacheLookupCategory.get(cstring);
                 if (l == null) {
                     l = (ArrayList<CategoryLookupResult>) ontology.lookupCategory(cstring);

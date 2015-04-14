@@ -38,6 +38,9 @@ public class DBpediaCategoryLookup {
     }
 
     public ArrayList<DBpediaCategoryLookupResult> lookup(String categoryName) {
+        if (categoryName.length()==0) {
+            return new ArrayList<>();
+        }
         String[] categoryNames = categoryName.toLowerCase().split(" ");
         ArrayList<DBpediaCategoryLookupResult> res = readCache(categoryName);
         if (res == null) {
