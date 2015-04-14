@@ -34,6 +34,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.Map;
 
 public class DBpediaEntityLookup {
 
@@ -113,9 +114,7 @@ public class DBpediaEntityLookup {
         }
         JsonParser parser = new JsonParser();
         JsonElement je = parser.parse(jsonSb.toString());
-        System.out.println("uri: " + uri);
-        System.out.println("uri2: " + URI.create(uri).toASCIIString());
-        JsonObject jo = je.getAsJsonObject().get(URI.create(uri).toASCIIString()).getAsJsonObject();
+        JsonObject jo = je.getAsJsonObject();
         return jo;
     }
 
@@ -124,12 +123,40 @@ public class DBpediaEntityLookup {
         return getEntityByJson(uri, jo);
     }
 
-    public DBpediaNamedEntity getEntityByJson(String uri, JsonObject jo) {
-
+    public DBpediaNamedEntity getEntityByJson(String uri, JsonObject jsonObj) {
 
         DBpediaNamedEntity res = new DBpediaNamedEntity();
         res.setUri(uri);
         
+        String uri2 = URI.create(uri).toASCIIString();
+        System.out.println("uri: " + uri);
+        System.out.println("uri2: " + uri2);
+        JsonObject jo = jsonObj.getAsJsonObject().get(uri2).getAsJsonObject();
+        
+        for (Map.Entry<String, JsonElement> e : jsonObj.entrySet()) {
+            String je = e.getKey();
+            if (je.contains("http://dbpedia.org/resource")) {
+                if (je.equals(uri)) {
+                    continue;
+                }
+//                System.out.println(je);
+                JsonObject o = e.getValue().getAsJsonObject();
+                for (Map.Entry<String, JsonElement> v : o.entrySet()) {
+                    String attr = v.getKey();
+                    if (!attr.contains("http://dbpedia.org/ontology")) {
+                        continue;
+                    }
+                    
+                    String value = o.get(attr).getAsJsonArray().get(0).getAsJsonObject().get("value").getAsString();
+//                    System.out.println(" " + attr);
+//                    System.out.println(" " + value);
+                    if (value.equals(uri)) {
+                        res.rangeOfAttributes.add(attr);
+                    }
+                }
+            }
+        }
+
         try {
             JsonArray jda = jo.get("http://www.w3.org/2000/01/rdf-schema#comment").getAsJsonArray();
             for (JsonElement jde : jda) {
@@ -179,16 +206,28 @@ public class DBpediaEntityLookup {
         }
 
         try {
+            for (Map.Entry<String, JsonElement> e : jo.entrySet()) {
+                String attr = e.getKey();
+                if (attr.contains("http://dbpedia.org/ontology")) {
+                    res.domainOfAttributes.add(attr);
+                }
+            }
+
             HashSet<DBpediaCategory> categories = new HashSet<>();
             JsonArray jta = jo.get(DBpediaOntology.TYPE_ATTRIBUTE).getAsJsonArray();
             for (JsonElement jte : jta) {
                 JsonObject jto = jte.getAsJsonObject();
-                if (jto.get("value") != null) {
-                    String catUri = jto.get("value").getAsString();
+                JsonElement jval = jto.get("value");
+                if (jval != null) {
+                    String catUri = jval.getAsString();
+                    if (!catUri.contains("http://dbpedia.org/ontology")) {
+                        continue;
+                    }
                     DBpediaCategory cat = DBpediaOntology.getInstance().categoriesByUri.get(catUri);
                     if (cat != null) {
-                        //if categories contains a subclass of cat, then cat is not added
-                        //if categories contains a superclass of cat, then this class is removed
+                        //keep only the lowest subclasses categories
+                        //if categories c contains a subclass of cat, then superclass c is removed
+                        //if categories c contains a superclass of cat, then cat is not added
                         boolean addCat = true;
                         for (Iterator<DBpediaCategory> it = categories.iterator(); it.hasNext();) {
                             DBpediaCategory c = it.next();

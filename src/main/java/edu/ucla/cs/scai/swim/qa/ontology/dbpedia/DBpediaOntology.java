@@ -5,13 +5,6 @@
  */
 package edu.ucla.cs.scai.swim.qa.ontology.dbpedia;
 
-//import com.hp.hpl.jena.query.QueryExecution;
-//import com.hp.hpl.jena.query.QueryExecutionFactory;
-//import com.hp.hpl.jena.query.QueryFactory;
-//import com.hp.hpl.jena.query.QuerySolution;
-//import com.hp.hpl.jena.query.ResultSet;
-//import com.hp.hpl.jena.rdf.model.RDFNode;
-//import com.hp.hpl.jena.sparql.engine.http.QueryExceptionHTTP;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
@@ -24,19 +17,8 @@ import edu.ucla.cs.scai.swim.qa.ontology.NamedEntity;
 import edu.ucla.cs.scai.swim.qa.ontology.NamedEntityAnnotationResult;
 import edu.ucla.cs.scai.swim.qa.ontology.NamedEntityLookupResult;
 import edu.ucla.cs.scai.swim.qa.ontology.Ontology;
-import static edu.ucla.cs.scai.swim.qa.ontology.dbpedia.DBpediaOntologyOld.TYPE_ATTRIBUTE;
 import edu.ucla.cs.scai.swim.qa.ontology.dbpedia.tipicality.Pair;
 import edu.ucla.cs.scai.swim.qa.ontology.dbpedia.tipicality.TypicalityEvaluator;
-//import edu.ucla.cs.scai.swim.qa.AttributeCondition;
-//import edu.ucla.cs.scai.swim.qa.AttributeValue;
-//import edu.ucla.cs.scai.swim.qa.EntityAttributeCondition;
-//import edu.ucla.cs.scai.swim.qa.Query;
-//import edu.ucla.cs.scai.swim.qa.interfaces.AttributeLookupResult;
-//import edu.ucla.cs.scai.swim.qa.interfaces.CategoryLookupResult;
-//import edu.ucla.cs.scai.swim.qa.interfaces.NamedEntityLookupResult;
-//import edu.ucla.cs.scai.swim.qa.interfaces.Ontology;
-//import edu.ucla.cs.scai.swim.qa.QueryResult;
-//import edu.ucla.cs.scai.swim.qa.interfaces.Attribute;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -46,7 +28,6 @@ import java.util.Collections;
 import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.Map;
 import java.util.Set;
@@ -60,7 +41,7 @@ import java.util.logging.Logger;
 public class DBpediaOntology implements Ontology {
 
     private static final DBpediaOntology instance;
-    public final static String DBPEDIA_CSV_FOLDER = "/home/massimo/DBpedia csv/"; //change this with the path on your PC
+    public final static String DBPEDIA_CSV_FOLDER = "/Users/peterhuang/NetBeansProjects/ontology-for-qa/DBpedia csv/"; //change this with the path on your PC
     public final static String DBPEDIA_CLASSES_URL = "http://web.informatik.uni-mannheim.de/DBpediaAsTables/DBpediaClasses.htm"; //"http://mappings.dbpedia.org/server/ontology/classes/";
     public final static String CLASSES_BASE_URI = "http://dbpedia.org/ontology/";
     public final static String SPARQL_END_POINT = "http://dbpedia.org/sparql";
@@ -74,13 +55,12 @@ public class DBpediaOntology implements Ontology {
 
     public static final String THING_URI = "http://www.w3.org/2002/07/owl#Thing";
     public final static String ABSTRACT_ATTRIBUTE_URI = "http://www.w3.org/2000/01/rdf-schema#comment";
-    private SimilarityClient similarityClient = new SwoogleSimilarityClient();//new WordNetSimilarityClient(); //
+    private SimilarityClient similarityClient = new SwoogleSimilarityClient();
 
     DBpediaCategory root = new DBpediaCategory();
     DBpediaAttribute abstractAttribute;
     TypicalityEvaluator typicalityEvaluator;
     HashMap<String, DBpediaNamedEntity> namedEntities = new HashMap<>();
-    //HashMap<String, DBpediaCategory> categories = new HashMap<>();
 
     DBpediaEntityLookup entityLookup = new DBpediaEntityLookup(similarityClient);
     DBpediaAttributeLookup attributeLookup = new DBpediaAttributeLookup(similarityClient);
@@ -203,6 +183,12 @@ public class DBpediaOntology implements Ontology {
         }
         System.out.println(categoriesByUri.size() + " categories");
         System.out.println(attributesByUri.size() + " attributes");
+//        for (DBpediaCategory dc : categoriesByUri.values()) {
+//            System.out.println(dc.uri);
+//        }
+//        for (DBpediaAttribute da : attributesByUri.values()) {
+//            System.out.println(da.words);
+//        }
     }
 
     private void connectCategoriesThroughSubclassRelationship(JsonArray ja) throws Exception {
@@ -471,7 +457,7 @@ public class DBpediaOntology implements Ontology {
     @Override
     public ArrayList<? extends AttributeLookupResult> lookupAttribute(String attributeName, Category subjectCategory, String range) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    }   
 
     public JsonObject getEntityJsonByUri(String uri) {
         return entityLookup.getEntityJsonByUri(uri);
@@ -509,7 +495,12 @@ public class DBpediaOntology implements Ontology {
 
     @Override
     public ArrayList<? extends AttributeLookupResult> lookupAttribute(String attributeName, Set<String> subjectTypes, Set<String> valueTypes) {
-        return attributeLookup.lookup(attributeName, subjectTypes, valueTypes, true);
+        return attributeLookup.lookup(attributeName, subjectTypes, valueTypes, null, null, false);
+    }
+
+    @Override
+    public ArrayList<? extends AttributeLookupResult> lookupAttribute(String attributeName, Set<String> subjectTypes, Set<String> valueTypes, NamedEntity domain, NamedEntity range) {
+        return attributeLookup.lookup(attributeName, subjectTypes, valueTypes, domain, range, false);
     }
 
     public DBpediaAttribute getAttributeByUri(String uri) {

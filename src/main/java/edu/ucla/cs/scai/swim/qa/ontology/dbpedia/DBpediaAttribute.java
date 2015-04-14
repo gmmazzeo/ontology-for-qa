@@ -55,10 +55,10 @@ public class DBpediaAttribute implements Attribute {
         }
         try {
             String[] w = URLDecoder.decode(label, "UTF-8").split("(?<!(^|[A-Z]))(?=[A-Z])|(?<!^)(?=[A-Z][a-z])");
-            words = w[0].toLowerCase();
+            words = w[0].toLowerCase().trim();
             for (int i = 1; i < w.length; i++) {
-                if (!w[i].toLowerCase().equals("of")) {
-                    words += " " + w[i].toLowerCase();
+                if (!w[i].toLowerCase().trim().equals("of")) {
+                    words += " " + w[i].toLowerCase().trim();
                 }
             }
         } catch (UnsupportedEncodingException ex) {

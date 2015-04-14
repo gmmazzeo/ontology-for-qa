@@ -6,6 +6,7 @@
 package edu.ucla.cs.scai.swim.qa.ontology.dbpedia;
 
 import edu.ucla.cs.scai.swim.qa.ontology.AttributeLookupResult;
+import edu.ucla.cs.scai.swim.qa.ontology.NamedEntity;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -94,7 +95,7 @@ public class DBpediaAttributeLookup {
         }
     }
 
-    public ArrayList<DBpediaAttributeLookupResult> lookup(String attributeName, Set<String> subjectTypes, Set<String> valueTypes, boolean ignoreAttributeRange) {
+    public ArrayList<DBpediaAttributeLookupResult> lookup(String attributeName, Set<String> subjectTypes, Set<String> valueTypes, NamedEntity domain, NamedEntity range, boolean ignoreAttributeRange) {
         ArrayList<DBpediaAttributeLookupResult> res = new ArrayList<>();
         String[] attributeNames = attributeName.toLowerCase().split(" ");
 
@@ -113,21 +114,36 @@ public class DBpediaAttributeLookup {
             }
             for (DBpediaAttribute att : subjCat.domainOfAttributes) {
                 boolean rangeMatch = false;
+                if (domain != null) {
+                    if (!((DBpediaNamedEntity) domain).getDomainOfAttributes().contains(att.getUri())) {
+                        continue;
+                    }
+                }
+                if (range != null) {
+                    if (!((DBpediaNamedEntity) range).getRangeOfAttributes().contains(att.getUri())) {
+                        continue;
+                    } else {
+                        rangeMatch = true;
+                    }
+                }
                 if (att.rangeCanBeBasicType && basicTypeAmongValues) {
                     rangeMatch = true;
-                } else { //check a matching between the value types and the ranges of the attribute
+                } else if (!rangeMatch) { //check a matching between the value types and the ranges of the attribute
+                    if (valueTypes.isEmpty() || att.rangeUri.isEmpty()) {
+                        rangeMatch = true;
+                    }
                     for (String valueType : valueTypes) {
                         if (valueType.equals("basicType")) {
                             continue;
                         }
-                        for (String range : att.rangeUri) {
-                            if (range.equals(valueType)) {
+                        for (String rangeUri : att.rangeUri) {
+                            if (rangeUri.equals(valueType)) {
                                 rangeMatch = true;
                                 break;
                             } else {
                                 DBpediaCategory c1 = DBpediaOntology.getInstance().categoriesByUri.get(valueType);
-                                DBpediaCategory c2 = DBpediaOntology.getInstance().categoriesByUri.get(range);
-                                if (c1 != null && c2 != null && c1.hasAncestor(c2)) {
+                                DBpediaCategory c2 = DBpediaOntology.getInstance().categoriesByUri.get(rangeUri);
+                                if (c1 != null && c2 != null && (c1.hasAncestor(c2) || (c2.hasAncestor(c1) && !c1.equals(DBpediaOntology.thingCategory())))) {
                                     rangeMatch = true;
                                     break;
                                 }
@@ -150,30 +166,50 @@ public class DBpediaAttributeLookup {
             }
         }
 
+        if (valueTypes.isEmpty()) {
+            for (String attr : ((DBpediaNamedEntity) domain).getRangeOfAttributes()) {
+                DBpediaAttribute da = DBpediaOntology.getInstance().attributesByUri.get(attr);
+                valueTypes.addAll(da.getDomainUri());
+            }
+        }
         //now look for the symmetric relationships
         for (String sts : valueTypes) {
             DBpediaCategory valueCat = DBpediaOntology.getInstance().categoriesByUri.get(sts);
             if (valueCat == null) {
-                continue;
+                continue;   
             }
             for (DBpediaAttribute att : valueCat.domainOfAttributes) {
                 boolean rangeMatch = false;
-                for (String subjType : subjectTypes) {
-                    for (String range : att.rangeUri) {
-                        if (range.equals(subjType)) {
-                            rangeMatch = true;
-                            break;
-                        } else {
-                            DBpediaCategory c1 = DBpediaOntology.getInstance().categoriesByUri.get(subjType);
-                            DBpediaCategory c2 = DBpediaOntology.getInstance().categoriesByUri.get(range);
-                            if (c1 != null && c2 != null && c1.hasAncestor(c2)) {
+                if (domain != null) {
+                    if (!((DBpediaNamedEntity) domain).getRangeOfAttributes().contains(att.getUri())) {
+                        continue;
+                    } else {
+                        rangeMatch = true;
+                    }
+                }
+                if (range != null) {
+                    if (!((DBpediaNamedEntity) range).getDomainOfAttributes().contains(att.getUri())) {
+                        continue;
+                    }
+                }
+                if (!rangeMatch) {
+                    for (String subjType : subjectTypes) {
+                        for (String rangeUri : att.rangeUri) {
+                            if (rangeUri.equals(subjType)) {
                                 rangeMatch = true;
                                 break;
+                            } else {
+                                DBpediaCategory c1 = DBpediaOntology.getInstance().categoriesByUri.get(subjType);
+                                DBpediaCategory c2 = DBpediaOntology.getInstance().categoriesByUri.get(rangeUri);
+                                if (c1 != null && c2 != null && (c1.hasAncestor(c2) || c2.hasAncestor(c1))) {
+                                    rangeMatch = true;
+                                    break;
+                                }
                             }
                         }
-                    }
-                    if (rangeMatch) {
-                        break;
+                        if (rangeMatch) {
+                            break;
+                        }
                     }
                 }
                 if (rangeMatch || ignoreAttributeRange) {
