@@ -32,6 +32,10 @@ public class DBpediaNamedEntity implements NamedEntity {
     
     HashSet<DBpediaCategory> categories;
 
+    HashSet<String> domainOfAttributes = new HashSet<>();
+
+    HashSet<String> rangeOfAttributes = new HashSet<>();
+
     String thumbUrl;
 
     String pageUrl;
@@ -48,8 +52,8 @@ public class DBpediaNamedEntity implements NamedEntity {
 
     @Override
     public Set<? extends Category> getCategories() {
-        if (categories==null) {
-            categories=new HashSet<>(classes);
+        if (categories == null) {
+            categories = new HashSet<>(classes);
         }
         return categories;
     }
@@ -69,6 +73,14 @@ public class DBpediaNamedEntity implements NamedEntity {
         return thumbUrl;
     }
 
+    public HashSet<String> getDomainOfAttributes() {
+        return domainOfAttributes;
+    }
+
+    public HashSet<String> getRangeOfAttributes() {
+        return rangeOfAttributes;
+    }
+    
     public void setLabel(String label) {
         this.label = label;
     }

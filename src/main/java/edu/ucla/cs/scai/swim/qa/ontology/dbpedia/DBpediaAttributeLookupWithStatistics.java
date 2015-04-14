@@ -6,6 +6,7 @@
 package edu.ucla.cs.scai.swim.qa.ontology.dbpedia;
 
 import edu.ucla.cs.scai.swim.qa.ontology.AttributeLookupResult;
+import edu.ucla.cs.scai.swim.qa.ontology.NamedEntity;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -25,7 +26,7 @@ public class DBpediaAttributeLookupWithStatistics extends DBpediaAttributeLookup
     }
 
     @Override
-    public ArrayList<DBpediaAttributeLookupResult> lookup(String attributeName, Set<String> subjectTypes, Set<String> valueTypes, boolean ignoreAttributeRange) {
+    public ArrayList<DBpediaAttributeLookupResult> lookup(String attributeName, Set<String> subjectTypes, Set<String> valueTypes, NamedEntity domainEntity, NamedEntity rangeEntity, boolean ignoreAttributeRange) {
         ignoreAttributeRange=false;
         ArrayList<DBpediaAttributeLookupResult> res = new ArrayList<>();
         String[] attributeNames = attributeName.toLowerCase().split(" ");

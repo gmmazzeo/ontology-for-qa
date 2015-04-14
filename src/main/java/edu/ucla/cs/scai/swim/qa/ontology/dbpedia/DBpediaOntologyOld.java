@@ -594,4 +594,9 @@ public class DBpediaOntologyOld implements Ontology {
         return lookupAttribute(attributeName);
     }
 
+    @Override
+    public ArrayList<? extends AttributeLookupResult> lookupAttribute(String attributeName, Set<String> subjectType, Set<String> valueType, NamedEntity domain, NamedEntity range) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
 }

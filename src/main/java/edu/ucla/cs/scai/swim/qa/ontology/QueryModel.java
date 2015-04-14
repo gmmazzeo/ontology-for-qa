@@ -18,11 +18,11 @@ import java.util.HashSet;
     String entityVariableName;
     String attributeVariableName;
     String exampleEntity;
+    int modelNumber;
     double weight = 1; //this value taken alone has no meaning - it is meaningful just for a collection of models, generated together, in order to rank them
     HashMap<String, HashSet<String>> ignoreEntitiesForLookup = new HashMap<>();
 
     ArrayList<QueryConstraint> constraints = new ArrayList<>();
-
     ArrayList<QueryConstraint> filters = new ArrayList<>();
 
     public QueryModel(String entityVariableName, String attributeVariableName) {
@@ -70,6 +70,14 @@ import java.util.HashSet;
         this.exampleEntity = exampleEntity;
     }
 
+    public int getModelNumber() {
+        return modelNumber;
+    }
+    
+    public void setModelNumber(int modelNumber) {
+        this.modelNumber = modelNumber;
+    }
+    
     public double getWeight() {
         return weight;
     }

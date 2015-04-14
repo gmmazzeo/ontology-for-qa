@@ -48,7 +48,7 @@ public class DBpediaCategoryLookup {
             double maxSimilarity = 0;
             double similarityThreshold = 0;
             for (DBpediaCategory c : DBpediaOntology.getInstance().categoriesByUri.values()) {
-                if (c.words==null || c.words.length()==0) {
+                if (c.words == null || c.words.length() == 0) {
                     continue;
                 }
                 double similarity = 0;
