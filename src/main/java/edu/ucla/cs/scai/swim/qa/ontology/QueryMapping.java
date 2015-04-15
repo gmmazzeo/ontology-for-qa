@@ -150,7 +150,7 @@ public class QueryMapping {
             ArrayList<Double> expandedConstraintsWeight = new ArrayList<>();
             if (qc.getValueString().startsWith("lookupCategory(")) {
                 String cstring = qc.valueString.substring(15, qc.valueString.length() - 1);
-                if (cstring.length()==0) {
+                if (cstring.length() == 0) {
                     return new ArrayList<>(); //some error occurred before - the argument of the lookupCategory function was missing
                 }
                 ArrayList<CategoryLookupResult> l = cacheLookupCategory.get(cstring);
@@ -188,7 +188,7 @@ public class QueryMapping {
                 }
             }
             Collections.sort(newRes);
-            res = new ArrayList<QueryModel> (newRes.subList(0, Math.min(3, newRes.size())));
+            res = new ArrayList<QueryModel>(newRes.subList(0, Math.min(3, newRes.size())));
         }
         for (QueryModel rqm : res) {
             for (QueryConstraint qc : rqm.getConstraints()) {
@@ -310,7 +310,7 @@ public class QueryMapping {
                 }
             }
             Collections.sort(newRes);
-            res = new ArrayList<QueryModel> (newRes.subList(0, Math.min(3, newRes.size())));
+            res = new ArrayList<QueryModel>(newRes.subList(0, Math.min(3, newRes.size())));
         }
         for (QueryModel rqm : res) {
             for (QueryConstraint qc : rqm.getConstraints()) {
@@ -325,18 +325,22 @@ public class QueryMapping {
     public ArrayList<QueryModel> mapOnOntology(ArrayList<QueryModel> inputModels, Ontology ontology) throws Exception {
         this.ontology = ontology;
 
-        //As fans of the Occam's razor principle, we prefer "simple" models, i.e., models with less constraints (may be this will penalize too much the correct models with more constraints)
-        double minC = Double.POSITIVE_INFINITY;
-        double maxC = Double.NEGATIVE_INFINITY;
-        for (QueryModel qm : inputModels) {
-            minC = Math.min(minC, qm.getConstraints().size() + qm.getFilters().size());
-            maxC = Math.max(maxC, qm.getConstraints().size() + qm.getFilters().size());
-        }
-        if (maxC != minC) {
-            for (QueryModel qm : inputModels) {
-                qm.weight *= 1 - 0.3 * (qm.getConstraints().size() + qm.getFilters().size() - minC) / (maxC - minC);
-            }
-        }
+        /*
+        
+         //TODO: define an effective strategy for assigning weights according to the number of contraints
+         //the following piece of code can be removed
+         double minC = Double.POSITIVE_INFINITY;
+         double maxC = Double.NEGATIVE_INFINITY;
+         for (QueryModel qm : inputModels) {
+         minC = Math.min(minC, qm.getConstraints().size() + qm.getFilters().size());
+         maxC = Math.max(maxC, qm.getConstraints().size() + qm.getFilters().size());
+         }
+         if (maxC != minC) {
+         for (QueryModel qm : inputModels) {
+         qm.weight *= 1 - 0.3 * (qm.getConstraints().size() + qm.getFilters().size() - minC) / (maxC - minC);
+         }
+         }
+         */
         Collections.sort(inputModels);
         double maxWeight = inputModels.isEmpty() ? 0 : inputModels.get(0).getWeight();
         for (QueryModel qm : inputModels) {
@@ -345,6 +349,8 @@ public class QueryMapping {
 
         //TEST:Remove models that are not example models if example exists
         //TODO:Test to see if this is relevant
+        /*
+        The following piece of code can be removed
         boolean exampleQueryModelExists = false;
         for (QueryModel qm : inputModels) {
             if (qm.getExampleEntity() != null) {
@@ -360,7 +366,8 @@ public class QueryMapping {
                 }
             }
         }
-        
+        */
+
         System.out.println("######### LOOKUP EXAMPLE PAGE #######");
         long start = System.currentTimeMillis();
         ArrayList<QueryModel> intermediateModels0 = new ArrayList<>();
@@ -384,7 +391,7 @@ public class QueryMapping {
             System.out.println(intermediateModels0.get(i));
             System.out.println("-------------------------");
         }
-        
+
         System.out.println("######### LOOKUP ENTITY #############");
         start = System.currentTimeMillis();
         ArrayList<QueryModel> intermediateModels1 = new ArrayList<>();
@@ -449,7 +456,7 @@ public class QueryMapping {
             }
         }
         Collections.sort(outputModels);
-        outputModels = new ArrayList<QueryModel> (outputModels.subList(0, Math.min(5, outputModels.size())));
+        outputModels = new ArrayList<QueryModel>(outputModels.subList(0, Math.min(5, outputModels.size())));
 
         return outputModels;
     }
