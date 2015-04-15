@@ -37,6 +37,8 @@ public interface Ontology {
 
     public Category getCategoryByUri(String uri);
 
+    public Attribute getAttributeByUri(String uri);
+
     public Attribute getAbstractAttribute();
 
     public String getTypeAttribute();    

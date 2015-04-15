@@ -7,7 +7,6 @@ package edu.ucla.cs.scai.swim.qa.ontology;
  */
 
 
-import java.util.ArrayList;
 import java.util.HashSet;
 
 /**
