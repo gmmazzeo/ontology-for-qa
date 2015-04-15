@@ -227,16 +227,17 @@ public class QueryMapping {
             ArrayList<Double> expandedConstraintsWeight = new ArrayList<>();
             String attr = qc.getAttrString();
             boolean freeConstraint = !qc.getSubjString().contains("http://dbpedia.org/resource") && !qc.getValueString().contains("http://dbpedia.org/resource");
-            if (attr.startsWith("lookupAttribute(") && freeConstraint && !rangesOfResolvedAttributes.containsKey(qc.getSubjString())) {
+            boolean notTyped = !variableType.containsKey(qc.getSubjExpr()) && !variableType.containsKey(qc.getValueExpr());
+            if (attr.startsWith("lookupAttribute(") && freeConstraint && notTyped && !rangesOfResolvedAttributes.containsKey(qc.getSubjString())) {
                 QueryConstraint nqc = qc.copy();
                 expandedConstraints.add(nqc);
                 expandedConstraintsWeight.add(1d);
-            } else if (attr.startsWith("lookupAttribute(")) {
+            } else if (attr.startsWith("lookupAttribute(")) { //typed subj or value or free variable is resolved
                 HashSet<String> subjTypes = new HashSet<>();
                 HashSet<String> valueTypes = new HashSet<>();
                 NamedEntity domain = null, range = null;
                 String astring = attr.substring(16, attr.length() - 1);
-                if (qc.getSubjString().contains("http://dbpedia.org/resource") || qc.getValueString().contains("http://dbpedia.org/resource")) {
+                if (qc.getSubjString().contains("http://dbpedia.org/resource") || qc.getValueString().contains("http://dbpedia.org/resource")) { //not free constraint
                     QueryConstraint subj = variableType.get(qc.getSubjExpr());
                     QueryConstraint value = variableType.get(qc.getValueExpr());
                     if (subj == null) { //subject is already resolved as an entity
@@ -273,7 +274,7 @@ public class QueryMapping {
                         valueTypes.add(value.getValueString());
                         astring += " " + value.getValueExpr().substring(15, value.getValueExpr().length() - 1);
                     }
-                } else {
+                } else { //free constraint
                     QueryConstraint subj = variableType.get(qc.getSubjExpr());
                     String subjType = (subj == null) ? null : subj.getValueString();
                     if (subjType == null) { //subject is already resolved as an entity
@@ -342,7 +343,12 @@ public class QueryMapping {
             if (recurse) {
                 res.remove(i);
                 i--;
-                res.addAll(expandLookupAttribute(rqm));
+                ArrayList<QueryModel> newRes = expandLookupAttribute(rqm);
+                if (newRes.isEmpty()) {
+                    return new ArrayList<>(); //this is very inflexible - it should be better to return an approximate model, with less constraints
+                } else {
+                    res.addAll(newRes);
+                }
             }
         }
         return res;
