@@ -189,7 +189,7 @@ public class QueryMapping {
                 }
             }
             Collections.sort(newRes);
-            res = new ArrayList<QueryModel> (newRes.subList(0, Math.min(3, newRes.size())));
+            res = new ArrayList<QueryModel>(newRes.subList(0, Math.min(3, newRes.size())));
         }
         for (QueryModel rqm : res) {
             for (QueryConstraint qc : rqm.getConstraints()) {
@@ -328,7 +328,7 @@ public class QueryMapping {
                 }
             }
             Collections.sort(newRes);
-            res = new ArrayList<QueryModel> (newRes.subList(0, Math.min(3, newRes.size())));
+            res = new ArrayList<QueryModel>(newRes.subList(0, Math.min(3, newRes.size())));
         }
         for (int i = 0 ; i < res.size(); i++) {
             QueryModel rqm = res.get(i);
@@ -434,7 +434,7 @@ public class QueryMapping {
             System.out.println(intermediateModels0.get(i));
             System.out.println("-------------------------");
         }
-        
+
         System.out.println("######### LOOKUP ENTITY #############");
         start = System.currentTimeMillis();
         ArrayList<QueryModel> intermediateModels1 = new ArrayList<>();
@@ -499,7 +499,7 @@ public class QueryMapping {
             }
         }
         Collections.sort(outputModels);
-        outputModels = new ArrayList<QueryModel> (outputModels.subList(0, Math.min(5, outputModels.size())));
+        outputModels = new ArrayList<QueryModel>(outputModels.subList(0, Math.min(5, outputModels.size())));
 
         return outputModels;
     }
