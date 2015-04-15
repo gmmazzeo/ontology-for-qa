@@ -75,6 +75,7 @@ public class DBpediaAttribute implements Attribute {
         this.range = range;
     }
 
+    @Override
     public HashSet<String> getRangeUri() {
         return rangeUri;
     }
@@ -83,6 +84,7 @@ public class DBpediaAttribute implements Attribute {
         this.rangeUri = rangeUri;
     }
 
+    @Override
     public HashSet<String> getDomainUri() {
         return domainUri;
     }

@@ -599,4 +599,9 @@ public class DBpediaOntologyOld implements Ontology {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+    @Override
+    public Attribute getAttributeByUri(String uri) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
 }
