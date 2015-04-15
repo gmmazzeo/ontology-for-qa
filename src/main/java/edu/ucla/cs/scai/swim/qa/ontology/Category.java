@@ -18,11 +18,11 @@ public interface Category {
     public String getName();
 
     public HashSet<? extends Attribute> getDomainOfAttributes();
-    
+
     public HashSet<? extends Attribute> getRangeOfAttributes();
 
     public HashSet<? extends Category> getParents();
-    
+
     public String getUri();
 
 }

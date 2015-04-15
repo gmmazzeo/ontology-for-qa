@@ -28,7 +28,7 @@ public class DBpediaDataType implements DataType {
         this.uri = uri;
         this.javaClass = javaClass;
     }
-    
+   
     @Override
     public HashSet<? extends Attribute> getRangeOfAttributes() {
         return rangeOfAttributes;
@@ -64,7 +64,5 @@ public class DBpediaDataType implements DataType {
         }
         return true;
     }
-    
-    
 
 }

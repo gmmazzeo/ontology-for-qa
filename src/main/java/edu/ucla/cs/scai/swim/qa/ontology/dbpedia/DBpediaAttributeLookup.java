@@ -176,7 +176,7 @@ public class DBpediaAttributeLookup {
         for (String sts : valueTypes) {
             DBpediaCategory valueCat = DBpediaOntology.getInstance().categoriesByUri.get(sts);
             if (valueCat == null) {
-                continue;   
+                continue;
             }
             for (DBpediaAttribute att : valueCat.domainOfAttributes) {
                 boolean rangeMatch = false;

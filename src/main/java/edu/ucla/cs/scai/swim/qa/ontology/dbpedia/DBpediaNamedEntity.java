@@ -29,7 +29,7 @@ public class DBpediaNamedEntity implements NamedEntity {
 
     @Key
     ArrayList<DBpediaCategory> classes = new ArrayList<>();
-    
+
     HashSet<DBpediaCategory> categories;
 
     HashSet<String> domainOfAttributes = new HashSet<>();
@@ -80,7 +80,7 @@ public class DBpediaNamedEntity implements NamedEntity {
     public HashSet<String> getRangeOfAttributes() {
         return rangeOfAttributes;
     }
-    
+
     public void setLabel(String label) {
         this.label = label;
     }
@@ -108,7 +108,7 @@ public class DBpediaNamedEntity implements NamedEntity {
         }
         String[] s = uri.split("/");
         String l = s[s.length - 1];
-        label=l.replace("_", " ");
+        label = l.replace("_", " ");
     }
 
     @Override

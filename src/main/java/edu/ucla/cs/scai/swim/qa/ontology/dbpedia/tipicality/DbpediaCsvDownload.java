@@ -40,7 +40,7 @@ import org.jsoup.nodes.Element;
  * @author Giuseppe M. Mazzeo <mazzeo@cs.ucla.edu>
  */
 public class DbpediaCsvDownload {
-    
+
     private static void download(Element e) throws MalformedURLException, IOException {
         for (Element c : e.children()) {
             String tagName = c.tag().getName();

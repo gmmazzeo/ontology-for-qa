@@ -30,13 +30,13 @@ public class SwoogleSimilarityClient implements SimilarityClient {
     //public final static String serviceUrl = "http://swoogle.umbc.edu/StsService/GetStsSim?operation=api&";
     public final static String serviceUrl = "http://swoogle.umbc.edu/SimService/GetSimilarity?operation=api&";
 
-    private final static String CACHE_FILE = "/home/massimo/swoogle.cache";
+    private final static String CACHE_FILE = "/Users/peterhuang/NetBeansProjects/ontology-for-qa/swoogle.cache";
 
     static final HashMap<String, HashMap<String, Double>> cache = new HashMap<>();
 
     static {
         try (BufferedReader in = new BufferedReader(new FileReader(CACHE_FILE));) {
-            //load cache from disk            
+            //load cache from disk
             String l = in.readLine();
             while (l != null) {
                 StringTokenizer st = new StringTokenizer(l, "|");
@@ -146,7 +146,7 @@ public class SwoogleSimilarityClient implements SimilarityClient {
         double res = qa.similarity("by direct", "effects special");
         System.out.println(res);
         res = qa.similarityWithoutCache("by direct", "effects special");
-        System.out.println(res);        
-        
+        System.out.println(res);
+
     }
 }

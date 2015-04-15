@@ -127,7 +127,7 @@ public class DBpediaOntologyOld implements Ontology {
      System.out.println(SPARQL_END_POINT + " is DOWN");
      } finally {
      qexec.close();
-     } // end try/catch/finally                   
+     } // end try/catch/finally
      }
      */
 
@@ -161,7 +161,7 @@ public class DBpediaOntologyOld implements Ontology {
         //The first header contains the properties labels.
         //The second header contains the properties URIs.
         //The third header contains the properties range labels.
-        //The fourth header contains the properties range URIs.    
+        //The fourth header contains the properties range URIs.
         String l1 = in.readLine();
         String l2 = in.readLine();
         String l3 = in.readLine();
@@ -393,7 +393,7 @@ public class DBpediaOntologyOld implements Ontology {
      System.out.println(SPARQL_END_POINT + " is DOWN");
      } finally {
      qexec.close();
-     } // end try/catch/finally   
+     } // end try/catch/finally
      }
      if (q.getTypeOfQuestion() == Query.DEFINITION) {
      qr.getProperties().add(new AttributeValue(getAbstractAttribute(), qr.getNamedEntity().getDescription()));
@@ -453,7 +453,7 @@ public class DBpediaOntologyOld implements Ontology {
      System.out.println(SPARQL_END_POINT + " is DOWN");
      } finally {
      qexec.close();
-     } // end try/catch/finally   
+     } // end try/catch/finally
 
      }
      }
@@ -517,13 +517,13 @@ public class DBpediaOntologyOld implements Ontology {
      av.setStringValue(DatatypeConverter.parseString(s));
      return true;
      }
-        
+
      //if (a.getRange().equalsIgnoreCase("XMLSchema#gMonth")) {
      //av.setDateValue(DatatypeConverter.parseDate(s));
-     //av.setIntegerValue(new BigInteger(""+av.getDateValue().get(Calendar.MONTH)));
+     //av.setIntegerValue(new BigInteger("" + av.getDateValue().get(Calendar.MONTH)));
      //av.setStringValue(new SimpleDateFormat("MMMMMMMMMM").format(av.getDateValue().getTime()));
      //return true;
-     //} 
+     //}
      return false;
      }
      */

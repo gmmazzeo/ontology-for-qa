@@ -16,16 +16,16 @@ import java.util.Set;
 public interface NamedEntity {
 
     public String getName();
-    
+
     public String getDescription();
-    
+
     public String getPageUrl();
-    
+
     public String getThumbUrl();
 
     public String getProperty(String name);
 
     public Set<? extends Category> getCategories();
-    
+
     public String getUri();
 }

@@ -73,11 +73,11 @@ import java.util.HashSet;
     public int getModelNumber() {
         return modelNumber;
     }
-    
+
     public void setModelNumber(int modelNumber) {
         this.modelNumber = modelNumber;
     }
-    
+
     public double getWeight() {
         return weight;
     }

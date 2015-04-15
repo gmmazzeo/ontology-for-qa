@@ -17,8 +17,8 @@ public class DBpediaEntityLookupResult extends NamedEntityLookupResult {
 
     public DBpediaEntityLookupResult(DBpediaNamedEntity namedEntity, double weight) {
         this.namedEntity = namedEntity;
-        this.weight=weight;
-    }    
+        this.weight = weight;
+    }
 
     @Override
     public DBpediaNamedEntity getNamedEntity() {

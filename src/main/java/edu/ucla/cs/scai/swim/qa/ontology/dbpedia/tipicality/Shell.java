@@ -152,7 +152,7 @@ public class Shell {
                 for (Pair p : topKcategories) {
                     p.p /= maxProb;
                     System.out.println(p.s + "\t" + p.p);
-                }                
+                }
 
                 HashMap<String, Double> rankedAttributes = new HashMap<>();
 
@@ -181,11 +181,11 @@ public class Shell {
                 }
 
                 ArrayList<Pair> topKattributes = new ArrayList<>();
-                
+
                 for (Map.Entry<String, Double> e : rankedAttributes.entrySet()) {
                     topKattributes.add(new Pair(e.getKey(), e.getValue()));
                 }
-                
+
                 Collections.sort(topKattributes);
 
                 /*

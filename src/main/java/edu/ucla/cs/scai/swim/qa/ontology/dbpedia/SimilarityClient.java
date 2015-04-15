@@ -10,7 +10,7 @@ package edu.ucla.cs.scai.swim.qa.ontology.dbpedia;
  * @author Giuseppe M. Mazzeo <mazzeo@cs.ucla.edu>
  */
 public interface SimilarityClient {
-    
+
     public double similarity(String phrase1, String phrase2) throws Exception;
-    
+
 }
