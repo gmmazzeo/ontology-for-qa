@@ -207,7 +207,7 @@ public class QueryMapping {
             if (qc.getAttrExpr().equals("rdf:type")) {
                 qc.setAttrString(ontology.getTypeAttribute());
                 variableType.put(qc.getSubjExpr(), qc);
-            } else if (qc.getAttrString().contains("http://dbpedia.org/ontology") && qc.getSubjString().contains("http://dbpedia.org/resource")) {
+            } else if (qc.getAttrString().contains("http://dbpedia.org/ontology")) {
                 rangesOfResolvedAttributes.put(qc.getValueString(), qc.getAttrString());
                 System.out.println(qc.getAttrString() + " : " + qc.getValueString());
             }
