@@ -149,7 +149,7 @@ public class QueryMapping {
             ArrayList<QueryConstraint> expandedConstraints = new ArrayList<>();
             ArrayList<Double> expandedConstraintsWeight = new ArrayList<>();
             if (qc.getValueString().startsWith("lookupCategory(")) {
-                String cstring = qc.valueString.substring(15, qc.valueString.length() - 1);
+                String cstring = qc.getValueString().substring(15, qc.getValueString().length() - 1);
                 if (cstring.length() == 0) {
                     return new ArrayList<>(); //some error occurred before - the argument of the lookupCategory function was missing
                 }
@@ -188,7 +188,7 @@ public class QueryMapping {
                 }
             }
             Collections.sort(newRes);
-            res = new ArrayList<QueryModel>(newRes.subList(0, Math.min(3, newRes.size())));
+            res = new ArrayList<QueryModel> (newRes.subList(0, Math.min(3, newRes.size())));
         }
         for (QueryModel rqm : res) {
             for (QueryConstraint qc : rqm.getConstraints()) {
@@ -202,10 +202,27 @@ public class QueryMapping {
 
     private ArrayList<QueryModel> expandLookupAttribute(QueryModel qm) throws Exception {
         HashMap<String, QueryConstraint> variableType = new HashMap<>();
+        HashMap<String, String> domainsOfResolvedAttributes = new HashMap<>();
+        HashMap<String, String> rangesOfResolvedAttributes = new HashMap<>();
+        HashSet<String> unresolvedAttributes = new HashSet<>();
         for (QueryConstraint qc : qm.getConstraints()) {
             if (qc.getAttrExpr().equals("rdf:type")) {
                 qc.setAttrString(ontology.getTypeAttribute());
                 variableType.put(qc.getSubjExpr(), qc);
+            } else if (qc.getAttrString().contains("http://dbpedia.org/ontology")) {
+                if (qc.getSubjString().contains("http://dbpedia.org/resource")) {
+                    rangesOfResolvedAttributes.put(qc.getValueString(), qc.getAttrString());
+                    System.out.println(qc.getValueString() + " : " + qc.getAttrString());
+                } else if (qc.getValueString().contains("http://dbpedia.org/resource")) {
+                    domainsOfResolvedAttributes.put(qc.getSubjString(), qc.getAttrString());
+                    System.out.println(qc.getSubjString() + " : " + qc.getAttrString());
+                }
+            } else if (qc.getAttrString().contains("lookupAttribute")) {
+                if (qc.getSubjString().contains("http://dbpedia.org/resource")) {
+                    unresolvedAttributes.add(qc.getValueString());
+                } else if (qc.getValueString().contains("http://dbpedia.org/resource")) {
+                    unresolvedAttributes.add(qc.getSubjString());
+                }
             }
         }
 
@@ -221,58 +238,95 @@ public class QueryMapping {
         for (QueryConstraint qc : qm.getConstraints()) {
             ArrayList<QueryConstraint> expandedConstraints = new ArrayList<>();
             ArrayList<Double> expandedConstraintsWeight = new ArrayList<>();
-            if (qc.getAttrExpr().startsWith("lookupAttribute(")) {
-                String astring = qc.getAttrExpr().substring(16, qc.getAttrExpr().length() - 1);
-                QueryConstraint subj = variableType.get(qc.getSubjExpr());
-                String subjType = (subj == null) ? null : subj.getValueString();
+            String attr = qc.getAttrString();
+            boolean resolvedConstraint = qc.getSubjString().contains("http://dbpedia.org/resource") || qc.getValueString().contains("http://dbpedia.org/resource");
+            boolean unresolvedAttributesContainsSubj = unresolvedAttributes.contains(qc.getSubjString());
+            boolean freeConstraintAttributeResolved = domainsOfResolvedAttributes.containsKey(qc.getSubjString()) || rangesOfResolvedAttributes.containsKey(qc.getSubjString());
+            if (attr.startsWith("lookupAttribute(") && (resolvedConstraint || !unresolvedAttributesContainsSubj || freeConstraintAttributeResolved)) { //resolved or typed subj or value, or free variable is resolved
                 HashSet<String> subjTypes = new HashSet<>();
-                NamedEntity domain = null, range = null;
-                if (subjType == null) { //subject is already resolved as an entity
-                    System.out.println("elookup: " + qc.getSubjString());
-                    domain = ontology.getEntityByUri(qc.getSubjString());
-                    System.out.println("elookup finished");
-                    if (domain != null) {
-                        for (Category c : domain.getCategories()) {
-                            subjTypes.add(c.getUri());
-                        }
-                    }
-                } else {
-                    subjTypes.add(subjType);
-                }
-                QueryConstraint value = variableType.get(qc.getValueExpr());
-                String valueType = (value == null) ? null : value.getValueString();
                 HashSet<String> valueTypes = new HashSet<>();
-                if (valueType == null) {
-                    boolean basicType = false;
-                    for (QueryConstraint qf : qm.getFilters()) {
-                        if (qf.getSubjExpr().equals(qc.getValueExpr())) {
-                            basicType = true;
-                            break;
-                        }
-                    }
-                    if (basicType) {
-                        valueTypes.add("basicType");
-                    } else if (!qc.getValueString().equals(qm.getAttributeVariableName())) {
-                        range = ontology.getEntityByUri(qc.getValueString());
-                        if (range != null) {
-                            for (Category c : range.getCategories()) {
-                                valueTypes.add(c.getUri());
+                NamedEntity domain = null, range = null;
+                String astring = attr.substring(16, attr.length() - 1);
+                if (resolvedConstraint) { //not free constraint
+                    QueryConstraint subj = variableType.get(qc.getSubjExpr());
+                    QueryConstraint value = variableType.get(qc.getValueExpr());
+                    if (subj == null) { //subject is already resolved as an entity
+                        System.out.println("elookup: " + qc.getSubjString());
+                        domain = ontology.getEntityByUri(qc.getSubjString());
+                        System.out.println("elookup finished");
+                        if (domain != null) {
+                            for (Category c : domain.getCategories()) {
+                                subjTypes.add(c.getUri());
                             }
                         }
+                    } else { //subject has a category type
+                            subjTypes.add(subj.getValueString());
                     }
-                } else {
-                    valueTypes.add(valueType);
-                    astring += " " + value.getValueExpr().substring(15, value.getValueExpr().length() - 1);
+                    if (value == null) { //value is entity or basic type
+                        boolean basicType = false;
+                        for (QueryConstraint qf : qm.getFilters()) {
+                            if (qf.getSubjExpr().equals(qc.getValueExpr())) {
+                                basicType = true;
+                                break;
+                            }
+                        }
+                        if (basicType) {
+                            valueTypes.add("basicType");
+                        } else if (!qc.getValueString().equals(qm.getAttributeVariableName())) {
+                            range = ontology.getEntityByUri(qc.getValueString());
+                            if (range != null) {
+                                for (Category c : range.getCategories()) {
+                                    valueTypes.add(c.getUri());
+                                }
+                            }
+                        }
+                    } else { //value has a category type
+                        valueTypes.add(value.getValueString());
+                        astring += " " + value.getValueExpr().substring(15, value.getValueExpr().length() - 1);
+                    }
+                } else { //free constraint is typed or has resolved attribute
+                    QueryConstraint subj = variableType.get(qc.getSubjExpr());
+                    QueryConstraint value = variableType.get(qc.getValueExpr());
+                    if (subj == null) {
+                        if (rangesOfResolvedAttributes.get(qc.getSubjString()) != null) {
+                            subjTypes.addAll(ontology.getAttributeByUri(rangesOfResolvedAttributes.get(qc.getSubjString())).getRangeUri());
+                        } else if (domainsOfResolvedAttributes.get(qc.getSubjString()) != null) {
+                            subjTypes.addAll(ontology.getAttributeByUri(domainsOfResolvedAttributes.get(qc.getSubjString())).getDomainUri());
+                        } else {
+                            System.out.println(qc.getSubjString());
+                            for (QueryConstraint qc2 : qm.getConstraints()) {
+                                System.out.println(" " + qc2.toString());
+                            }
+                            throw new Exception("resolveAttribute error"); //can we even get here?
+                        }
+                    } else { //subj has a category type
+                        subjTypes.add(subj.getValueString());
+                    }
+                    if (value == null) { //value is basic type
+                        boolean basicType = false;
+                        for (QueryConstraint qf : qm.getFilters()) {
+                            if (qf.getSubjExpr().equals(qc.getValueExpr())) {
+                                basicType = true;
+                                break;
+                            }
+                        }
+                        if (basicType) {
+                            valueTypes.add("basicType");
+                        }
+                    } else { //value has a category type
+                        valueTypes.add(value.getValueString());
+                        astring += " " + value.getValueExpr().substring(15, value.getValueExpr().length() - 1);
+                    }
                 }
-
                 System.out.println("lookup: \"" + astring + "\" for model: " + qm.getModelNumber());
                 System.out.println("subjTypes: " + subjTypes);
                 System.out.println("valueTypes: " + valueTypes);
-//                System.out.println("domain: " + (domain == null ? null : domain.getUri()));
-//                System.out.println("range: " + (range == null ? null : range.getUri()));
+                System.out.println("domain: " + (domain == null ? null : domain.getUri()));
+                System.out.println("range: " + (range == null ? null : range.getUri()));
                 ArrayList<AttributeLookupResult> l = (ArrayList<AttributeLookupResult>) ontology.lookupAttribute(astring, subjTypes, valueTypes, domain, range);
 
                 if (l.isEmpty()) {
+                    System.out.println("Empty AttributeLookupResult");
                     return new ArrayList<>(); //this is very inflexible - it should be better to return an approximate model, with less constraints
                 }
                 for (AttributeLookupResult r : l) {
@@ -310,12 +364,27 @@ public class QueryMapping {
                 }
             }
             Collections.sort(newRes);
-            res = new ArrayList<QueryModel>(newRes.subList(0, Math.min(3, newRes.size())));
+            res = new ArrayList<QueryModel> (newRes.subList(0, Math.min(3, newRes.size())));
         }
-        for (QueryModel rqm : res) {
+        for (int i = 0 ; i < res.size(); i++) {
+            QueryModel rqm = res.get(i);
+            boolean recurse = false;
             for (QueryConstraint qc : rqm.getConstraints()) {
                 if (qc.getAttrString().startsWith("lookupAttribute")) {
-                    //throw new Exception("unresolved lookupAttribute");
+                    System.out.println("recurse");
+                    recurse = true;
+                    break;
+                }
+            }
+            if (recurse) {
+                res.remove(i);
+                i--;
+                ArrayList<QueryModel> newRes = expandLookupAttribute(rqm);
+                if (newRes.isEmpty()) {
+                    System.out.println("recursive lookup empty");
+                    continue;
+                } else {
+                    res.addAll(newRes);
                 }
             }
         }
@@ -325,32 +394,11 @@ public class QueryMapping {
     public ArrayList<QueryModel> mapOnOntology(ArrayList<QueryModel> inputModels, Ontology ontology) throws Exception {
         this.ontology = ontology;
 
-        /*
-        
-         //TODO: define an effective strategy for assigning weights according to the number of contraints
-         //the following piece of code can be removed
-         double minC = Double.POSITIVE_INFINITY;
-         double maxC = Double.NEGATIVE_INFINITY;
-         for (QueryModel qm : inputModels) {
-         minC = Math.min(minC, qm.getConstraints().size() + qm.getFilters().size());
-         maxC = Math.max(maxC, qm.getConstraints().size() + qm.getFilters().size());
-         }
-         if (maxC != minC) {
-         for (QueryModel qm : inputModels) {
-         qm.weight *= 1 - 0.3 * (qm.getConstraints().size() + qm.getFilters().size() - minC) / (maxC - minC);
-         }
-         }
-         */
-        Collections.sort(inputModels);
-        double maxWeight = inputModels.isEmpty() ? 0 : inputModels.get(0).getWeight();
-        for (QueryModel qm : inputModels) {
-            qm.setWeight(qm.getWeight() / maxWeight);
-        }
-
         //TEST:Remove models that are not example models if example exists
         //TODO:Test to see if this is relevant
-        /*
-        The following piece of code can be removed
+        System.out.println("#####################################");
+        System.out.println("######### REDUCED MODELS ############");
+        System.out.println("#####################################");
         boolean exampleQueryModelExists = false;
         for (QueryModel qm : inputModels) {
             if (qm.getExampleEntity() != null) {
@@ -358,15 +406,52 @@ public class QueryMapping {
                 break;
             }
         }
-        if (exampleQueryModelExists) {
-            for (int i = 0; i < inputModels.size(); i++) {
-                if (inputModels.get(i).getExampleEntity() == null) {
+        for (int i = 0; i < inputModels.size(); i++) {
+            if (exampleQueryModelExists) {
+                boolean containsEntity = false;
+                for (QueryConstraint qc : inputModels.get(i).getConstraints()) {
+                    boolean hasLookupEntity = qc.getSubjExpr().contains("lookupEntity") || qc.getValueExpr().contains("lookupEntity");
+                    boolean hasResource = qc.getSubjExpr().contains("http://dbpedia.org/resource") || qc.getValueExpr().contains("http://dbpedia.org/resource");
+                    if (hasLookupEntity || hasResource) {
+                        containsEntity = true;
+                        break;
+                    }
+                }
+                if (!containsEntity && inputModels.get(i).getExampleEntity() == null) {
                     inputModels.remove(i);
                     i--;
+                } else {
+                    System.out.println("Weight: " + inputModels.get(i).getWeight());
+                    System.out.println("Number: " + inputModels.get(i).getModelNumber());
+                    System.out.println(inputModels.get(i));
+                    System.out.println("-------------------------");
                 }
+            } else {
+                System.out.println("Weight: " + inputModels.get(i).getWeight());
+                System.out.println("Number: " + inputModels.get(i).getModelNumber());
+                System.out.println(inputModels.get(i));
+                System.out.println("-------------------------");
+            }
+        }
+        /*
+        //As fans of the Occam's razor principle, we prefer "simple" models, i.e., models with less constraints (may be this will penalize too much the correct models with more constraints)
+        double minC = Double.POSITIVE_INFINITY;
+        double maxC = Double.NEGATIVE_INFINITY;
+        for (QueryModel qm : inputModels) {
+            minC = Math.min(minC, qm.getConstraints().size() + qm.getFilters().size());
+            maxC = Math.max(maxC, qm.getConstraints().size() + qm.getFilters().size());
+        }
+        if (maxC != minC) {
+            for (QueryModel qm : inputModels) {
+                qm.weight *= 1 - 0.3 * (qm.getConstraints().size() + qm.getFilters().size() - minC) / (maxC - minC);
             }
         }
         */
+        Collections.sort(inputModels);
+        double maxWeight = inputModels.isEmpty() ? 0 : inputModels.get(0).getWeight();
+        for (QueryModel qm : inputModels) {
+            qm.setWeight(qm.getWeight() / maxWeight);
+        }
 
         System.out.println("######### LOOKUP EXAMPLE PAGE #######");
         long start = System.currentTimeMillis();
@@ -444,6 +529,7 @@ public class QueryMapping {
         start = System.currentTimeMillis();
         ArrayList<QueryModel> outputModels = new ArrayList<>();
         for (QueryModel inm : intermediateModels2) {
+            System.out.println("===========================================");
             outputModels.addAll(expandLookupAttribute(inm));
         }
         stop = System.currentTimeMillis();
@@ -456,7 +542,7 @@ public class QueryMapping {
             }
         }
         Collections.sort(outputModels);
-        outputModels = new ArrayList<QueryModel>(outputModels.subList(0, Math.min(5, outputModels.size())));
+        outputModels = new ArrayList<QueryModel> (outputModels.subList(0, Math.min(5, outputModels.size())));
 
         return outputModels;
     }

@@ -85,7 +85,7 @@ public class DBpediaOntologyWithStatistics extends DBpediaOntology {
         }
         return instance;
     }
-    
+
     public static void main(String[] args) {
         DBpediaOntologyWithStatistics.getInstance();
     }

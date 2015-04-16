@@ -107,6 +107,15 @@ public class DBpediaAttributeLookup {
             }
         }
         double maxSimilarity = 0;
+        HashSet<String> visitedAttr = new HashSet<>();
+        
+        if (subjectTypes.isEmpty() && range != null) {
+            for (String attr : ((DBpediaNamedEntity) range).getRangeOfAttributes()) {
+                DBpediaAttribute da = DBpediaOntology.getInstance().attributesByUri.get(attr);
+                subjectTypes.addAll(da.getDomainUri());
+            }
+        }
+                
         for (String sts : subjectTypes) {
             DBpediaCategory subjCat = DBpediaOntology.getInstance().categoriesByUri.get(sts);
             if (subjCat == null) {
@@ -155,6 +164,10 @@ public class DBpediaAttributeLookup {
                     }
                 }
                 if (rangeMatch || ignoreAttributeRange) {
+                    if (visitedAttr.contains(att.getUri())) {
+                        continue;
+                    }
+                    visitedAttr.add(att.getUri());
                     DBpediaAttributeLookupResult lr = createAttributeLookupResult(att, attributeName, attributeNames, maxSimilarity, rangeMatch ? 1 : 0.7);
                     if (lr != null) {
                         if (lr.getWeight() > maxSimilarity) {
@@ -166,7 +179,7 @@ public class DBpediaAttributeLookup {
             }
         }
 
-        if (valueTypes.isEmpty()) {
+        if (valueTypes.isEmpty() && domain != null) {
             for (String attr : ((DBpediaNamedEntity) domain).getRangeOfAttributes()) {
                 DBpediaAttribute da = DBpediaOntology.getInstance().attributesByUri.get(attr);
                 valueTypes.addAll(da.getDomainUri());
@@ -176,15 +189,13 @@ public class DBpediaAttributeLookup {
         for (String sts : valueTypes) {
             DBpediaCategory valueCat = DBpediaOntology.getInstance().categoriesByUri.get(sts);
             if (valueCat == null) {
-                continue;   
+                continue;
             }
             for (DBpediaAttribute att : valueCat.domainOfAttributes) {
                 boolean rangeMatch = false;
                 if (domain != null) {
                     if (!((DBpediaNamedEntity) domain).getRangeOfAttributes().contains(att.getUri())) {
                         continue;
-                    } else {
-                        rangeMatch = true;
                     }
                 }
                 if (range != null) {
@@ -201,7 +212,7 @@ public class DBpediaAttributeLookup {
                             } else {
                                 DBpediaCategory c1 = DBpediaOntology.getInstance().categoriesByUri.get(subjType);
                                 DBpediaCategory c2 = DBpediaOntology.getInstance().categoriesByUri.get(rangeUri);
-                                if (c1 != null && c2 != null && (c1.hasAncestor(c2) || c2.hasAncestor(c1))) {
+                                if (c1 != null && c2 != null && (c1.hasAncestor(c2))) { // || c2.hasAncestor(c1))) {
                                     rangeMatch = true;
                                     break;
                                 }
@@ -213,6 +224,10 @@ public class DBpediaAttributeLookup {
                     }
                 }
                 if (rangeMatch || ignoreAttributeRange) {
+                    if (visitedAttr.contains(att.getUri())) {
+                        continue;
+                    }
+                    visitedAttr.add(att.getUri());
                     DBpediaAttributeLookupResult lr = createAttributeLookupResult(att, attributeName, attributeNames, maxSimilarity, rangeMatch ? 1 : 0.7);
                     if (lr != null) {
                         if (lr.getWeight() > maxSimilarity) {

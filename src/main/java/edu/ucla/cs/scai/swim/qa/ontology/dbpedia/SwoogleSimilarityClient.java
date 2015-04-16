@@ -40,7 +40,7 @@ public class SwoogleSimilarityClient implements SimilarityClient {
     static {
         int pairs = 0;
         try (BufferedReader in = new BufferedReader(new FileReader(CACHE_FILE));) {
-            //load cache from disk            
+            //load cache from disk
             String l = in.readLine();
             int i = 1;
             while (l != null) {

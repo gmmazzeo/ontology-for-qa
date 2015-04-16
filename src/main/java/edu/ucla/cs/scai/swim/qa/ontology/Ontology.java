@@ -16,7 +16,7 @@ import java.util.Set;
  * @author Giuseppe M. Mazzeo <mazzeo@cs.ucla.edu>
  */
 public interface Ontology {
-    
+
     public ArrayList<? extends NamedEntityLookupResult> lookupEntity(String entityName) throws Exception;
 
     public ArrayList<? extends AttributeLookupResult> lookupAttribute(String attributeName);
@@ -37,9 +37,11 @@ public interface Ontology {
 
     public Category getCategoryByUri(String uri);
 
+    public Attribute getAttributeByUri(String uri);
+
     public Attribute getAbstractAttribute();
 
-    public String getTypeAttribute();    
+    public String getTypeAttribute();
 
     //public ArrayList<? extends QueryResult> executeQuery(Query q);
 

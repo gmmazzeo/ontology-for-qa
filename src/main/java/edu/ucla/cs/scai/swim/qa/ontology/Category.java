@@ -7,7 +7,6 @@ package edu.ucla.cs.scai.swim.qa.ontology;
  */
 
 
-import java.util.ArrayList;
 import java.util.HashSet;
 
 /**
@@ -19,11 +18,11 @@ public interface Category {
     public String getName();
 
     public HashSet<? extends Attribute> getDomainOfAttributes();
-    
+
     public HashSet<? extends Attribute> getRangeOfAttributes();
 
     public HashSet<? extends Category> getParents();
-    
+
     public String getUri();
 
 }

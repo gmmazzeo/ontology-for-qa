@@ -127,29 +127,26 @@ public class DBpediaEntityLookup {
 
         DBpediaNamedEntity res = new DBpediaNamedEntity();
         res.setUri(uri);
-        
+
         String uri2 = URI.create(uri).toASCIIString();
         System.out.println("uri: " + uri);
         System.out.println("uri2: " + uri2);
         JsonObject jo = jsonObj.getAsJsonObject().get(uri2).getAsJsonObject();
-        
+
         for (Map.Entry<String, JsonElement> e : jsonObj.entrySet()) {
             String je = e.getKey();
             if (je.contains("http://dbpedia.org/resource")) {
                 if (je.equals(uri)) {
                     continue;
                 }
-//                System.out.println(je);
                 JsonObject o = e.getValue().getAsJsonObject();
                 for (Map.Entry<String, JsonElement> v : o.entrySet()) {
                     String attr = v.getKey();
                     if (!attr.contains("http://dbpedia.org/ontology")) {
                         continue;
                     }
-                    
+
                     String value = o.get(attr).getAsJsonArray().get(0).getAsJsonObject().get("value").getAsString();
-//                    System.out.println(" " + attr);
-//                    System.out.println(" " + value);
                     if (value.equals(uri)) {
                         res.rangeOfAttributes.add(attr);
                     }
@@ -252,5 +249,5 @@ public class DBpediaEntityLookup {
         }
         return res;
     }
-    
+
 }

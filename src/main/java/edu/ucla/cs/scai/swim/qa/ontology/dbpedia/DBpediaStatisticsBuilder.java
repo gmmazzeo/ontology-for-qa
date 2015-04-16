@@ -130,7 +130,7 @@ public class DBpediaStatisticsBuilder {
         Gson gson = new Gson();
         Type type = new TypeToken<HashMap<String, DBpediaAttribute>>() {
         }.getType();
-        HashMap<String, DBpediaAttribute> stats = gson.fromJson(json, type);        
+        HashMap<String, DBpediaAttribute> stats = gson.fromJson(json, type);
         for (String attUri : stats.keySet()) {
             DBpediaAttribute cachedAtt = stats.get(attUri);
             DBpediaAttribute ontoAtt = ontology.attributesByUri.get(attUri);
@@ -157,7 +157,7 @@ public class DBpediaStatisticsBuilder {
             }
         }
         System.out.println("Total triples found: "+totalTriples);
-        
+
         in = new BufferedReader(new FileReader("/home/massimo/queue.json"));
         l = in.readLine();
         json = "";
@@ -195,10 +195,10 @@ public class DBpediaStatisticsBuilder {
         in.close();
         type = new TypeToken<HashSet<String>>() {
         }.getType();
-        processed = gson.fromJson(json, type);     
-        
+        processed = gson.fromJson(json, type);
+
         System.out.println("Entity processed: "+processed.size());
-        
+
         int duplicates = 0;
         for (Iterator<String> it = queue.iterator(); it.hasNext();) {
             String uri = it.next();

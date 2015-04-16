@@ -47,7 +47,7 @@ public class DbpediaCategoryAttributeCounts {
         ArrayList<Integer> attributePositions = new ArrayList<>();
         ArrayList<String> attributeNames = new ArrayList<>();
         HashMap<String, Integer> thisCategoryAttributeCounts = new HashMap<>();
-        categoryAttributeCount.put(category, thisCategoryAttributeCounts);        
+        categoryAttributeCount.put(category, thisCategoryAttributeCounts);
         for (CSVRecord csvRecord : parser) {
             if (r == 0) {
                 Iterator<String> it = csvRecord.iterator();
@@ -151,7 +151,7 @@ public class DbpediaCategoryAttributeCounts {
         //stopAttributes.add("http://dbpedia.org/ontology/type");
 
         String path=DBpediaOntology.DBPEDIA_CSV_FOLDER;
-        
+
         if (args != null && args.length > 0) {
             path = args[0];
             if (!path.endsWith("/")) {
