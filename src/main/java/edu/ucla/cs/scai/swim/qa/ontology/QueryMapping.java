@@ -202,14 +202,27 @@ public class QueryMapping {
 
     private ArrayList<QueryModel> expandLookupAttribute(QueryModel qm) throws Exception {
         HashMap<String, QueryConstraint> variableType = new HashMap<>();
+        HashMap<String, String> domainsOfResolvedAttributes = new HashMap<>();
         HashMap<String, String> rangesOfResolvedAttributes = new HashMap<>();
+        HashSet<String> unresolvedAttributes = new HashSet<>();
         for (QueryConstraint qc : qm.getConstraints()) {
             if (qc.getAttrExpr().equals("rdf:type")) {
                 qc.setAttrString(ontology.getTypeAttribute());
                 variableType.put(qc.getSubjExpr(), qc);
             } else if (qc.getAttrString().contains("http://dbpedia.org/ontology")) {
-                rangesOfResolvedAttributes.put(qc.getValueString(), qc.getAttrString());
-                System.out.println(qc.getAttrString() + " : " + qc.getValueString());
+                if (qc.getSubjString().contains("http://dbpedia.org/resource")) {
+                    rangesOfResolvedAttributes.put(qc.getValueString(), qc.getAttrString());
+                    System.out.println(qc.getValueString() + " : " + qc.getAttrString());
+                } else if (qc.getValueString().contains("http://dbpedia.org/resource")) {
+                    domainsOfResolvedAttributes.put(qc.getSubjString(), qc.getAttrString());
+                    System.out.println(qc.getSubjString() + " : " + qc.getAttrString());
+                }
+            } else if (qc.getAttrString().contains("lookupAttribute")) {
+                if (qc.getSubjString().contains("http://dbpedia.org/resource")) {
+                    unresolvedAttributes.add(qc.getValueString());
+                } else if (qc.getValueString().contains("http://dbpedia.org/resource")) {
+                    unresolvedAttributes.add(qc.getSubjString());
+                }
             }
         }
 
@@ -226,18 +239,15 @@ public class QueryMapping {
             ArrayList<QueryConstraint> expandedConstraints = new ArrayList<>();
             ArrayList<Double> expandedConstraintsWeight = new ArrayList<>();
             String attr = qc.getAttrString();
-            boolean freeConstraint = !qc.getSubjString().contains("http://dbpedia.org/resource") && !qc.getValueString().contains("http://dbpedia.org/resource");
-            boolean notTyped = !variableType.containsKey(qc.getSubjExpr()) && !variableType.containsKey(qc.getValueExpr());
-            if (attr.startsWith("lookupAttribute(") && freeConstraint && notTyped && !rangesOfResolvedAttributes.containsKey(qc.getSubjString())) {
-                QueryConstraint nqc = qc.copy();
-                expandedConstraints.add(nqc);
-                expandedConstraintsWeight.add(1d);
-            } else if (attr.startsWith("lookupAttribute(")) { //typed subj or value or free variable is resolved
+            boolean resolvedConstraint = qc.getSubjString().contains("http://dbpedia.org/resource") || qc.getValueString().contains("http://dbpedia.org/resource");
+            boolean unresolvedAttributesContainsSubj = unresolvedAttributes.contains(qc.getSubjString());
+            boolean freeConstraintAttributeResolved = domainsOfResolvedAttributes.containsKey(qc.getSubjString()) || rangesOfResolvedAttributes.containsKey(qc.getSubjString());
+            if (attr.startsWith("lookupAttribute(") && (resolvedConstraint || !unresolvedAttributesContainsSubj || freeConstraintAttributeResolved)) { //resolved or typed subj or value, or free variable is resolved
                 HashSet<String> subjTypes = new HashSet<>();
                 HashSet<String> valueTypes = new HashSet<>();
                 NamedEntity domain = null, range = null;
                 String astring = attr.substring(16, attr.length() - 1);
-                if (qc.getSubjString().contains("http://dbpedia.org/resource") || qc.getValueString().contains("http://dbpedia.org/resource")) { //not free constraint
+                if (resolvedConstraint) { //not free constraint
                     QueryConstraint subj = variableType.get(qc.getSubjExpr());
                     QueryConstraint value = variableType.get(qc.getValueExpr());
                     if (subj == null) { //subject is already resolved as an entity
@@ -274,23 +284,49 @@ public class QueryMapping {
                         valueTypes.add(value.getValueString());
                         astring += " " + value.getValueExpr().substring(15, value.getValueExpr().length() - 1);
                     }
-                } else { //free constraint
+                } else { //free constraint is typed or has resolved attribute
                     QueryConstraint subj = variableType.get(qc.getSubjExpr());
-                    String subjType = (subj == null) ? null : subj.getValueString();
-                    if (subjType == null) { //subject is already resolved as an entity
-                        subjTypes.addAll(ontology.getAttributeByUri(rangesOfResolvedAttributes.get(qc.getSubjString())).getDomainUri());
-                    } else {
-                        subjTypes.add(subjType);
+                    QueryConstraint value = variableType.get(qc.getValueExpr());
+                    if (subj == null) {
+                        if (rangesOfResolvedAttributes.get(qc.getSubjString()) != null) {
+                            subjTypes.addAll(ontology.getAttributeByUri(rangesOfResolvedAttributes.get(qc.getSubjString())).getRangeUri());
+                        } else if (domainsOfResolvedAttributes.get(qc.getSubjString()) != null) {
+                            subjTypes.addAll(ontology.getAttributeByUri(domainsOfResolvedAttributes.get(qc.getSubjString())).getDomainUri());
+                        } else {
+                            System.out.println(qc.getSubjString());
+                            for (QueryConstraint qc2 : qm.getConstraints()) {
+                                System.out.println(" " + qc2.toString());
+                            }
+                            throw new Exception("resolveAttribute error"); //can we even get here?
+                        }
+                    } else { //subj has a category type
+                        subjTypes.add(subj.getValueString());
+                    }
+                    if (value == null) { //value is basic type
+                        boolean basicType = false;
+                        for (QueryConstraint qf : qm.getFilters()) {
+                            if (qf.getSubjExpr().equals(qc.getValueExpr())) {
+                                basicType = true;
+                                break;
+                            }
+                        }
+                        if (basicType) {
+                            valueTypes.add("basicType");
+                        }
+                    } else { //value has a category type
+                        valueTypes.add(value.getValueString());
+                        astring += " " + value.getValueExpr().substring(15, value.getValueExpr().length() - 1);
                     }
                 }
                 System.out.println("lookup: \"" + astring + "\" for model: " + qm.getModelNumber());
                 System.out.println("subjTypes: " + subjTypes);
                 System.out.println("valueTypes: " + valueTypes);
-                //System.out.println("domain: " + (domain == null ? null : domain.getUri()));
-                //System.out.println("range: " + (range == null ? null : range.getUri()));
+                System.out.println("domain: " + (domain == null ? null : domain.getUri()));
+                System.out.println("range: " + (range == null ? null : range.getUri()));
                 ArrayList<AttributeLookupResult> l = (ArrayList<AttributeLookupResult>) ontology.lookupAttribute(astring, subjTypes, valueTypes, domain, range);
 
                 if (l.isEmpty()) {
+                    System.out.println("Empty AttributeLookupResult");
                     return new ArrayList<>(); //this is very inflexible - it should be better to return an approximate model, with less constraints
                 }
                 for (AttributeLookupResult r : l) {
@@ -345,7 +381,8 @@ public class QueryMapping {
                 i--;
                 ArrayList<QueryModel> newRes = expandLookupAttribute(rqm);
                 if (newRes.isEmpty()) {
-                    return new ArrayList<>(); //this is very inflexible - it should be better to return an approximate model, with less constraints
+                    System.out.println("recursive lookup empty");
+                    continue;
                 } else {
                     res.addAll(newRes);
                 }
@@ -492,6 +529,7 @@ public class QueryMapping {
         start = System.currentTimeMillis();
         ArrayList<QueryModel> outputModels = new ArrayList<>();
         for (QueryModel inm : intermediateModels2) {
+            System.out.println("===========================================");
             outputModels.addAll(expandLookupAttribute(inm));
         }
         stop = System.currentTimeMillis();

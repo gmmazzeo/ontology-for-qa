@@ -30,7 +30,7 @@ public class SwoogleSimilarityClient implements SimilarityClient {
     //public final static String serviceUrl = "http://swoogle.umbc.edu/StsService/GetStsSim?operation=api&";
     public final static String serviceUrl = "http://swoogle.umbc.edu/SimService/GetSimilarity?operation=api&";
 
-    private final static String CACHE_FILE = "/Users/peterhuang/NetBeansProjects/ontology-for-qa/swoogle.cache";
+    private final static String CACHE_FILE = "/home/massimo/swoogle.cache";
 
     static final HashMap<String, HashMap<String, Double>> cache = new HashMap<>();
 

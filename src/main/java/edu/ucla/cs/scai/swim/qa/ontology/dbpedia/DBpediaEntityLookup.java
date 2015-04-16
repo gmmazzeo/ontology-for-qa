@@ -139,7 +139,6 @@ public class DBpediaEntityLookup {
                 if (je.equals(uri)) {
                     continue;
                 }
-//                System.out.println(je);
                 JsonObject o = e.getValue().getAsJsonObject();
                 for (Map.Entry<String, JsonElement> v : o.entrySet()) {
                     String attr = v.getKey();
@@ -148,8 +147,6 @@ public class DBpediaEntityLookup {
                     }
 
                     String value = o.get(attr).getAsJsonArray().get(0).getAsJsonObject().get("value").getAsString();
-//                    System.out.println(" " + attr);
-//                    System.out.println(" " + value);
                     if (value.equals(uri)) {
                         res.rangeOfAttributes.add(attr);
                     }

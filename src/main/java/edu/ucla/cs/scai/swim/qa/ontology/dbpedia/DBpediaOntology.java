@@ -41,7 +41,7 @@ import java.util.logging.Logger;
 public class DBpediaOntology implements Ontology {
 
     private static final DBpediaOntology instance;
-    public static final String DBPEDIA_CSV_FOLDER = "/Users/peterhuang/NetBeansProjects/ontology-for-qa/DBpedia csv/"; //change this with the path on your PC
+    public static final String DBPEDIA_CSV_FOLDER = "/home/massimo/DBpedia csv/"; //change this with the path on your PC
     public static final String DBPEDIA_CLASSES_URL = "http://web.informatik.uni-mannheim.de/DBpediaAsTables/DBpediaClasses.htm"; //"http://mappings.dbpedia.org/server/ontology/classes/";
     public static final String CLASSES_BASE_URI = "http://dbpedia.org/ontology/";
     public static final String SPARQL_END_POINT = "http://dbpedia.org/sparql";
