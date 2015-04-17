@@ -215,15 +215,13 @@ public class QueryMapping {
             if (qc.getAttrString().contains("http://dbpedia.org/ontology")) {
                 if (qc.getSubjString().contains("http://dbpedia.org/resource") || variableType.containsKey(qc.getSubjString())) {
                     rangesOfResolvedAttributes.put(qc.getValueString(), qc.getAttrString());
-                    System.out.println(qc.getValueString() + " : " + qc.getAttrString());
-                } else if (qc.getValueString().contains("http://dbpedia.org/resource")) {
+                } else if (qc.getValueString().contains("http://dbpedia.org/resource") || variableType.containsKey(qc.getValueString())) {
                     domainsOfResolvedAttributes.put(qc.getSubjString(), qc.getAttrString());
-                    System.out.println(qc.getSubjString() + " : " + qc.getAttrString());
                 }
             } else if (qc.getAttrString().contains("lookupAttribute")) {
                 if (qc.getSubjString().contains("http://dbpedia.org/resource") || variableType.containsKey(qc.getSubjString())) {
                     unresolvedAttributes.add(qc.getValueString());
-                } else if (qc.getValueString().contains("http://dbpedia.org/resource")) {
+                } else if (qc.getValueString().contains("http://dbpedia.org/resource") || variableType.containsKey(qc.getValueString())) {
                     unresolvedAttributes.add(qc.getSubjString());
                 }
             }
@@ -244,7 +242,8 @@ public class QueryMapping {
             String attr = qc.getAttrString();
             boolean resolvedConstraint = qc.getSubjString().contains("http://dbpedia.org/resource") || qc.getValueString().contains("http://dbpedia.org/resource");
             boolean unresolvedAttributesContainsSubj = unresolvedAttributes.contains(qc.getSubjString());
-            if (attr.startsWith("lookupAttribute(") && (resolvedConstraint || !unresolvedAttributesContainsSubj)) { //resolved or typed subj or value, or free variable is resolved
+            boolean resolvedAttributesContainsSubj = domainsOfResolvedAttributes.containsKey(qc.getSubjString()) || rangesOfResolvedAttributes.containsKey(qc.getSubjString());
+            if (attr.startsWith("lookupAttribute(") && (resolvedConstraint || !unresolvedAttributesContainsSubj || resolvedAttributesContainsSubj)) { //resolved or typed subj or value, or free variable is resolved
                 HashSet<String> subjTypes = new HashSet<>();
                 HashSet<String> valueTypes = new HashSet<>();
                 NamedEntity domain = null, range = null;
