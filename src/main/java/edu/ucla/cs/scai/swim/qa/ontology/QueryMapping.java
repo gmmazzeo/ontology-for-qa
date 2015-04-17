@@ -210,17 +210,17 @@ public class QueryMapping {
                 qc.setAttrString(ontology.getTypeAttribute());
                 variableType.put(qc.getSubjExpr(), qc);
             } else if (qc.getAttrString().contains("http://dbpedia.org/ontology")) {
-                if (qc.getSubjString().contains("http://dbpedia.org/resource")) {
+                if (qc.getSubjString().contains("http://dbpedia.org/resource") || qc.getSubjString().startsWith("?")) {
                     rangesOfResolvedAttributes.put(qc.getValueString(), qc.getAttrString());
                     System.out.println(qc.getValueString() + " : " + qc.getAttrString());
-                } else if (qc.getValueString().contains("http://dbpedia.org/resource")) {
+                } else if (qc.getValueString().contains("http://dbpedia.org/resource") || qc.getValueString().startsWith("?")) {
                     domainsOfResolvedAttributes.put(qc.getSubjString(), qc.getAttrString());
                     System.out.println(qc.getSubjString() + " : " + qc.getAttrString());
                 }
             } else if (qc.getAttrString().contains("lookupAttribute")) {
-                if (qc.getSubjString().contains("http://dbpedia.org/resource")) {
+                if (qc.getSubjString().contains("http://dbpedia.org/resource") || qc.getSubjString().startsWith("?")) {
                     unresolvedAttributes.add(qc.getValueString());
-                } else if (qc.getValueString().contains("http://dbpedia.org/resource")) {
+                } else if (qc.getValueString().contains("http://dbpedia.org/resource") || qc.getValueString().startsWith("?")) {
                     unresolvedAttributes.add(qc.getSubjString());
                 }
             }
