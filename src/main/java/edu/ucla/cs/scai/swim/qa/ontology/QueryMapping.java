@@ -398,6 +398,13 @@ public class QueryMapping {
 
         //TEST:Remove models that are not example models if example exists
         //TODO:Test to see if this is relevant
+        //(Max) I insist that dropping some initial models according to the example page of other models is conceptually wrong.
+        //Different models (with or without example page) derive from different interpretations, which are created because we can not know which are the correct ones before using the ontology.
+        //This should be enough to see that dropping some initial models is not a good idea.
+        //However, practical examples are those questions asking for the attribute of a class of enties, such as: give me the capitals of american countries
+        //When we resolve the NP node "american countries", we try both the entity and the category interpretations for this node. Only for the entity interpretation we have the example page.
+        //Then, the correct model, with "american countries" interpreted as a category, is dropped.
+        /*
         System.out.println("#####################################");
         System.out.println("######### REDUCED MODELS ############");
         System.out.println("#####################################");
@@ -435,8 +442,9 @@ public class QueryMapping {
                 System.out.println("-------------------------");
             }
         }
+        */
         /*
-        //As fans of the Occam's razor principle, we prefer "simple" models, i.e., models with less constraints (may be this will penalize too much the correct models with more constraints)
+        //This is too penalizing for models with "many" constraints, which will be later penalized for the larger number of factors (<1) by which their weight will be multiplied
         double minC = Double.POSITIVE_INFINITY;
         double maxC = Double.NEGATIVE_INFINITY;
         for (QueryModel qm : inputModels) {
