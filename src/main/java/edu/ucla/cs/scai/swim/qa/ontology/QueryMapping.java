@@ -204,7 +204,7 @@ public class QueryMapping {
         HashMap<String, QueryConstraint> variableType = new HashMap<>();
         HashMap<String, String> domainsOfResolvedAttributes = new HashMap<>();
         HashMap<String, String> rangesOfResolvedAttributes = new HashMap<>();
-        HashSet<String> unresolvedAttributes = new HashSet<>();
+        HashSet<String> resolvedAttributes = new HashSet<>();
         for (QueryConstraint qc : qm.getConstraints()) {
             if (qc.getAttrExpr().equals("rdf:type")) {
                 qc.setAttrString(ontology.getTypeAttribute());
@@ -215,16 +215,10 @@ public class QueryMapping {
             if (qc.getAttrString().contains("http://dbpedia.org/ontology")) {
                 if (qc.getSubjString().contains("http://dbpedia.org/resource") || variableType.containsKey(qc.getSubjString())) {
                     rangesOfResolvedAttributes.put(qc.getValueString(), qc.getAttrString());
-                    System.out.println(qc.getValueString() + " : " + qc.getAttrString());
-                } else if (qc.getValueString().contains("http://dbpedia.org/resource")) {
+                    resolvedAttributes.add(qc.getValueString());
+                } else if (qc.getValueString().contains("http://dbpedia.org/resource") || variableType.containsKey(qc.getValueString())) {
                     domainsOfResolvedAttributes.put(qc.getSubjString(), qc.getAttrString());
-                    System.out.println(qc.getSubjString() + " : " + qc.getAttrString());
-                }
-            } else if (qc.getAttrString().contains("lookupAttribute")) {
-                if (qc.getSubjString().contains("http://dbpedia.org/resource") || variableType.containsKey(qc.getSubjString())) {
-                    unresolvedAttributes.add(qc.getValueString());
-                } else if (qc.getValueString().contains("http://dbpedia.org/resource")) {
-                    unresolvedAttributes.add(qc.getSubjString());
+                    resolvedAttributes.add(qc.getSubjString());
                 }
             }
         }
@@ -243,8 +237,9 @@ public class QueryMapping {
             ArrayList<Double> expandedConstraintsWeight = new ArrayList<>();
             String attr = qc.getAttrString();
             boolean resolvedConstraint = qc.getSubjString().contains("http://dbpedia.org/resource") || qc.getValueString().contains("http://dbpedia.org/resource");
-            boolean unresolvedAttributesContainsSubj = unresolvedAttributes.contains(qc.getSubjString());
-            if (attr.startsWith("lookupAttribute(") && (resolvedConstraint || !unresolvedAttributesContainsSubj)) { //resolved or typed subj or value, or free variable is resolved
+            boolean variableTypeContainsSubj = variableType.containsKey(qc.getSubjString());
+            boolean resolvedAttributesContainsSubj = resolvedAttributes.contains(qc.getSubjString());
+            if (attr.startsWith("lookupAttribute(") && (resolvedConstraint || variableTypeContainsSubj || resolvedAttributesContainsSubj)) { //resolved or typed subj or value, or free variable is resolved
                 HashSet<String> subjTypes = new HashSet<>();
                 HashSet<String> valueTypes = new HashSet<>();
                 NamedEntity domain = null, range = null;
@@ -299,6 +294,7 @@ public class QueryMapping {
                             for (QueryConstraint qc2 : qm.getConstraints()) {
                                 System.out.println(" " + qc2.toString());
                             }
+                            System.out.println(variableType);
                             throw new Exception("resolveAttribute error"); //can we even get here?
                         }
                     } else { //subj has a category type
@@ -314,6 +310,19 @@ public class QueryMapping {
                         }
                         if (basicType) {
                             valueTypes.add("basicType");
+                        } else if (resolvedAttributes.contains(qc.getValueString())) {
+                            if (rangesOfResolvedAttributes.get(qc.getValueString()) != null) {
+                                valueTypes.addAll(ontology.getAttributeByUri(rangesOfResolvedAttributes.get(qc.getValueString())).getRangeUri());
+                            } else if (domainsOfResolvedAttributes.get(qc.getValueString()) != null) {
+                                valueTypes.addAll(ontology.getAttributeByUri(domainsOfResolvedAttributes.get(qc.getValueString())).getDomainUri());
+                            } else {
+                                System.out.println(qc.getValueString());
+                                for (QueryConstraint qc2 : qm.getConstraints()) {
+                                    System.out.println(" " + qc2.toString());
+                                }
+                                System.out.println(variableType);
+                                throw new Exception("resolveAttribute error"); //can we even get here?
+                            }
                         }
                     } else { //value has a category type
                         valueTypes.add(value.getValueString());
