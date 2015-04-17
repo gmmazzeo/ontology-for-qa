@@ -241,8 +241,7 @@ public class QueryMapping {
             String attr = qc.getAttrString();
             boolean resolvedConstraint = qc.getSubjString().contains("http://dbpedia.org/resource") || qc.getValueString().contains("http://dbpedia.org/resource");
             boolean unresolvedAttributesContainsSubj = unresolvedAttributes.contains(qc.getSubjString());
-            boolean freeConstraintAttributeResolved = domainsOfResolvedAttributes.containsKey(qc.getSubjString()) || rangesOfResolvedAttributes.containsKey(qc.getSubjString());
-            if (attr.startsWith("lookupAttribute(") && (resolvedConstraint || !unresolvedAttributesContainsSubj || freeConstraintAttributeResolved)) { //resolved or typed subj or value, or free variable is resolved
+            if (attr.startsWith("lookupAttribute(") && (resolvedConstraint || !unresolvedAttributesContainsSubj)) { //resolved or typed subj or value, or free variable is resolved
                 HashSet<String> subjTypes = new HashSet<>();
                 HashSet<String> valueTypes = new HashSet<>();
                 NamedEntity domain = null, range = null;
