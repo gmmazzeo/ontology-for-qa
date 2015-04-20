@@ -121,11 +121,11 @@ public class DBpediaAttributeLookup {
             if (subjCat == null) {
                 continue;
             }
-            for (DBpediaAttribute att : subjCat.domainOfAttributes) {
+            for (DBpediaAttribute att : subjCat.domainOfAttributes) { //Idea: in order to reduce the number of attributes tested we could handle the attributes of the classes of the hierarchy separately - fo instance (first we scan the attributes of MusicalArtist, then those of Artist, then those of Person, until reaching Thing. For each level we assign a weight. We keep the current maximum weight. If at a certain level, its weight is less than the maximum weight multiplied by a threshold level, then we stop the computation
                 boolean rangeMatch = false;
                 if (domain != null) {
                     if (!((DBpediaNamedEntity) domain).getDomainOfAttributes().contains(att.getUri())) {
-                        continue;
+                        continue; //We are excluding the models that cannot provide an answer, but, since the ontology can be incomplete, semantically correct models can be excluded (e.g., instruments played by Katy Parry)
                     }
                 }
                 if (range != null) {

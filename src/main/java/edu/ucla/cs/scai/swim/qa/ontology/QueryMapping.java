@@ -375,7 +375,7 @@ public class QueryMapping {
                 }
             }
             Collections.sort(newRes);
-            res = new ArrayList<QueryModel> (newRes.subList(0, Math.min(3, newRes.size())));
+            res = new ArrayList<QueryModel> (newRes.subList(0, Math.min(10, newRes.size()))); //use a global threshold - in this way the correct model can be easily lost - e.g.: In which country does the Ganges start?
         }
         for (int i = 0 ; i < res.size(); i++) {
             QueryModel rqm = res.get(i);
@@ -561,7 +561,7 @@ public class QueryMapping {
             }
         }
         Collections.sort(outputModels);
-        outputModels = new ArrayList<QueryModel> (outputModels.subList(0, Math.min(5, outputModels.size())));
+        outputModels = new ArrayList<QueryModel> (outputModels.subList(0, Math.min(10, outputModels.size()))); //use a threshold - sometimes many models have with similar weights, and the correct one in not in the top 5 - e.g.: In which country does the Ganges start? - the correct model is the 6th and its weight is quite close the the top-5 weights
 
         return outputModels;
     }
