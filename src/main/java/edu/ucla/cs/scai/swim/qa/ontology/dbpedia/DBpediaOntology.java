@@ -168,8 +168,7 @@ public class DBpediaOntology implements Ontology {
             try {
                 type = jo.get("@type").getAsJsonArray().get(0).getAsString();
             } catch (Exception e) {
-                System.out.println(id);
-                e.printStackTrace();
+                System.out.println(id + " element type resolution failed - Not an real problem!");
                 continue;
             }
             if (type.endsWith("Class")) {
