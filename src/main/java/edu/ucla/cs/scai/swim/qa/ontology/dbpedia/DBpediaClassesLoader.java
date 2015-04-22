@@ -85,7 +85,7 @@ public class DBpediaClassesLoader {
 
     private static JsonArray loadJsonDescriptor() throws IOException {
         StringBuilder jsonSb;
-        try (BufferedReader in = new BufferedReader(new InputStreamReader(DBpediaClassesLoader.class.getResourceAsStream("/definitions.json")))) {
+        try (BufferedReader in = new BufferedReader(new InputStreamReader(Thread.currentThread().getContextClassLoader().getResourceAsStream("/definitions.json")))) {
             jsonSb = new StringBuilder();
             String l = in.readLine();
             while (l != null) {

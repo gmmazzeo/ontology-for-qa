@@ -20,6 +20,7 @@ import edu.ucla.cs.scai.swim.qa.ontology.Ontology;
 import edu.ucla.cs.scai.swim.qa.ontology.dbpedia.tipicality.Pair;
 import edu.ucla.cs.scai.swim.qa.ontology.dbpedia.tipicality.TypicalityEvaluator;
 import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
@@ -41,11 +42,11 @@ import java.util.logging.Logger;
 public class DBpediaOntology implements Ontology {
 
     private static final DBpediaOntology instance;
-    public static final String DBPEDIA_CSV_FOLDER = "/home/massimo/DBpedia csv/"; //change this with the path on your PC
-    public static final String DBPEDIA_CLASSES_URL = "http://web.informatik.uni-mannheim.de/DBpediaAsTables/DBpediaClasses.htm"; //"http://mappings.dbpedia.org/server/ontology/classes/";
-    public static final String CLASSES_BASE_URI = "http://dbpedia.org/ontology/";
-    public static final String SPARQL_END_POINT = "http://dbpedia.org/sparql";
-    public static final String SUPERPAGES_FILE = "superpages.txt";
+    //public static final String DBPEDIA_CSV_FOLDER = "/home/massimo/DBpedia csv/"; //change this with the path on your PC
+    //public static final String DBPEDIA_CLASSES_URL = "http://web.informatik.uni-mannheim.de/DBpediaAsTables/DBpediaClasses.htm"; //"http://mappings.dbpedia.org/server/ontology/classes/";
+    //public static final String CLASSES_BASE_URI = "http://dbpedia.org/ontology/";
+    //public static final String SPARQL_END_POINT = "http://dbpedia.org/sparql";
+    //public static final String SUPERPAGES_FILE = "superpages.txt";
     public static final String TYPE_ATTRIBUTE = "http://www.w3.org/1999/02/22-rdf-syntax-ns#type";
 
     final HashMap<String, DBpediaCategory> categoriesByUri = new HashMap<>();
@@ -124,7 +125,12 @@ public class DBpediaOntology implements Ontology {
 
     private JsonArray loadJsonDescriptor() throws IOException {
         StringBuilder jsonSb;
-        try (BufferedReader in = new BufferedReader(new InputStreamReader(DBpediaClassesLoader.class.getResourceAsStream("/definitions.json")))) {
+        String filePath = System.getProperty("dbpedia.ontology.definitions.path");
+        if (filePath==null) {
+            filePath="put your absolute path here";
+        }
+        System.out.println("Loading ontology definitions from " + filePath);
+        try (BufferedReader in = new BufferedReader(new FileReader(filePath))) {
             jsonSb = new StringBuilder();
             String l = in.readLine();
             while (l != null) {

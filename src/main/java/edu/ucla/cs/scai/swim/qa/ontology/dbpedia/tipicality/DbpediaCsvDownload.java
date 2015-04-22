@@ -5,32 +5,18 @@
  */
 package edu.ucla.cs.scai.swim.qa.ontology.dbpedia.tipicality;
 
-import edu.ucla.cs.scai.swim.qa.ontology.dbpedia.DBpediaCategory;
 import edu.ucla.cs.scai.swim.qa.ontology.dbpedia.DBpediaOntology;
-import static edu.ucla.cs.scai.swim.qa.ontology.dbpedia.DBpediaOntology.CLASSES_BASE_URI;
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileInputStream;
+
+import edu.ucla.cs.scai.swim.qa.ontology.dbpedia.DBpediaOntologyOld;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.ObjectOutputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.nio.channels.Channels;
 import java.nio.channels.ReadableByteChannel;
-import java.nio.charset.Charset;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Iterator;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import java.util.zip.GZIPInputStream;
-import org.apache.commons.csv.CSVFormat;
-import org.apache.commons.csv.CSVParser;
-import org.apache.commons.csv.CSVRecord;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -53,7 +39,7 @@ public class DbpediaCsvDownload {
                             URL remoteFile = new URL(href);
                             ReadableByteChannel rbc = Channels.newChannel(remoteFile.openStream());
                             String[] s = href.split("\\/");
-                            FileOutputStream fos = new FileOutputStream(DBpediaOntology.DBPEDIA_CSV_FOLDER + s[s.length - 1]);
+                            FileOutputStream fos = new FileOutputStream(DBpediaOntologyOld.DBPEDIA_CSV_FOLDER + s[s.length - 1]);
                             fos.getChannel().transferFrom(rbc, 0, Long.MAX_VALUE);
                         } catch (Exception ex) {
                             ex.printStackTrace();
@@ -73,7 +59,7 @@ public class DbpediaCsvDownload {
     public static void main(String args[]) throws FileNotFoundException, IOException {
         Document doc = null;
         try {
-            doc = Jsoup.connect(DBpediaOntology.DBPEDIA_CLASSES_URL).get();
+            doc = Jsoup.connect(DBpediaOntologyOld.DBPEDIA_CLASSES_URL).get();
         } catch (IOException ex) {
             Logger.getLogger(DBpediaOntology.class.getName()).log(Level.SEVERE, null, ex);
         }

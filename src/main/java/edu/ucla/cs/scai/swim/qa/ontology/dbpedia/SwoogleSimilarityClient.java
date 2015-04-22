@@ -33,13 +33,19 @@ public class SwoogleSimilarityClient implements SimilarityClient {
     //public final static String serviceUrl = "http://swoogle.umbc.edu/StsService/GetStsSim?operation=api&";
     public final static String serviceUrl = "http://swoogle.umbc.edu/SimService/GetSimilarity?operation=api&";
 
-    private final static String CACHE_FILE = System.getProperty("swoogle.cache.path");
+    private final static String CACHE_FILE;
     //Project Properties -> Run Tab -> VM Options field -> add -Dswoogle.cache.path=your file path
 
     static final HashMap<String, HashMap<String, Double>> cache = new HashMap<>();
 
     static {
         int pairs = 0;
+        String propPath=System.getProperty("swoogle.cache.path");
+        if (propPath==null) {
+            propPath="put your absolute path here";
+        }
+        CACHE_FILE=propPath;
+        System.out.println("Loading the swoogle cache from: "+CACHE_FILE);
         try (BufferedReader in = new BufferedReader(new FileReader(CACHE_FILE));) {
             //load cache from disk
             String l = in.readLine();

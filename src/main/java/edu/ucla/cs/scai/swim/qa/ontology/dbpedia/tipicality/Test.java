@@ -6,6 +6,7 @@
 package edu.ucla.cs.scai.swim.qa.ontology.dbpedia.tipicality;
 
 import edu.ucla.cs.scai.swim.qa.ontology.dbpedia.DBpediaOntology;
+import edu.ucla.cs.scai.swim.qa.ontology.dbpedia.DBpediaOntologyOld;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -74,7 +75,7 @@ public class Test {
     }
 
     public static void main(String[] args) throws IOException, ClassNotFoundException {
-        String path = DBpediaOntology.DBPEDIA_CSV_FOLDER;
+        String path = DBpediaOntologyOld.DBPEDIA_CSV_FOLDER;
         if (args != null && args.length > 0) {
             path = args[0];
             if (!path.endsWith("/")) {
