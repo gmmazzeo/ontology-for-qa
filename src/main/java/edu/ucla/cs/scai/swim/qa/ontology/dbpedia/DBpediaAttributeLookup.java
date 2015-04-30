@@ -196,6 +196,8 @@ public class DBpediaAttributeLookup {
                 if (domain != null) {
                     if (!((DBpediaNamedEntity) domain).getRangeOfAttributes().contains(att.getUri())) {
                         continue;
+                    } else {
+                        rangeMatch = true;
                     }
                 }
                 if (range != null) {
@@ -212,7 +214,7 @@ public class DBpediaAttributeLookup {
                             } else {
                                 DBpediaCategory c1 = DBpediaOntology.getInstance().categoriesByUri.get(subjType);
                                 DBpediaCategory c2 = DBpediaOntology.getInstance().categoriesByUri.get(rangeUri);
-                                if (c1 != null && c2 != null && (c1.hasAncestor(c2))) { // || c2.hasAncestor(c1))) {
+                                if (c1 != null && c2 != null && (c1.hasAncestor(c2) || (c2.hasAncestor(c1) && !c1.equals(DBpediaOntology.thingCategory())))) { // || c2.hasAncestor(c1))) {
                                     rangeMatch = true;
                                     break;
                                 }
