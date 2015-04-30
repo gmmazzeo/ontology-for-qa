@@ -129,8 +129,8 @@ public class DBpediaEntityLookup {
         res.setUri(uri);
 
         String uri2 = URI.create(uri).toASCIIString();
-        System.out.println("uri: " + uri);
-        System.out.println("uri2: " + uri2);
+        //System.out.println("uri: " + uri);
+        //System.out.println("uri2: " + uri2);
         JsonObject jo = jsonObj.getAsJsonObject().get(uri2).getAsJsonObject();
 
         for (Map.Entry<String, JsonElement> e : jsonObj.entrySet()) {
