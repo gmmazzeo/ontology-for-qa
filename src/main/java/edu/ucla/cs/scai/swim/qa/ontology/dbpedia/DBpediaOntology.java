@@ -126,8 +126,8 @@ public class DBpediaOntology implements Ontology {
     private JsonArray loadJsonDescriptor() throws IOException {
         StringBuilder jsonSb;
         String filePath = System.getProperty("dbpedia.ontology.definitions.path");
-        if (filePath==null) {
-            filePath="put your absolute path here";
+        if (filePath == null) {
+            filePath = "put your absolute path here";
         }
         System.out.println("Loading ontology definitions from " + filePath);
         try (BufferedReader in = new BufferedReader(new FileReader(filePath))) {
@@ -290,10 +290,10 @@ public class DBpediaOntology implements Ontology {
                         }
                         att.rangeUri.add(rs);
                     }
+                } else { //the range is not specified - so... ???
+                    att.rangeUri.add(THING_URI);
                 }
-            } else { //the range is not specified - so... ???
-
-            }
+            } 
         }
     }
 
