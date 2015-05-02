@@ -59,7 +59,7 @@ public class DBpediaCategory implements Category {
     }
 
     @Override
-    public HashSet<? extends Category> getParents() {
+    public HashSet<DBpediaCategory> getParents() {
         return parents;
     }
 
@@ -140,7 +140,7 @@ public class DBpediaCategory implements Category {
         return rangeOfAttributes;
     }
 
-    private HashSet<DBpediaCategory> computeAncestors() {
+    public HashSet<DBpediaCategory> computeAncestors() {
         if (ancestors == null) {
             ancestors = new HashSet<>();
             ancestors.addAll(parents);
