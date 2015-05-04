@@ -64,7 +64,7 @@ public class DBpediaDomainRangeFinder {
         }
         return paths;
     }
-    
+
     //Calculates lowest common ancestor with graph rooted at #Thing
     public String commonAncestor(DBpediaCategory cat1, DBpediaCategory cat2) {
         ArrayList<ArrayList<DBpediaCategory>> paths1 = new ArrayList<>();
@@ -72,7 +72,7 @@ public class DBpediaDomainRangeFinder {
 
         paths1.addAll(parentBFS(new ArrayList<>(Arrays.asList(cat1))));
         paths2.addAll(parentBFS(new ArrayList<>(Arrays.asList(cat2))));
-        
+
         for (ArrayList path : paths1) {
             Collections.reverse(path);
         }
@@ -96,7 +96,7 @@ public class DBpediaDomainRangeFinder {
                 }
             }
         }
-        
+
         return common;
     }
 
@@ -392,7 +392,7 @@ public class DBpediaDomainRangeFinder {
             System.out.println(proplabels.size());
         }
     }
-    
+
     //Calculate the lowest type for each entity
     /*line format:
         <res/Entity> <ont/Category>

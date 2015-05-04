@@ -22,7 +22,6 @@ import edu.ucla.cs.scai.swim.qa.ontology.dbpedia.tipicality.TypicalityEvaluator;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
@@ -293,7 +292,7 @@ public class DBpediaOntology implements Ontology {
                 } else { //the range is not specified - so... ???
                     att.rangeUri.add(THING_URI);
                 }
-            } 
+            }
         }
     }
 
@@ -450,11 +449,9 @@ public class DBpediaOntology implements Ontology {
         try {
             for (DBpediaEntityAnnotationResult r : new TagMeClient().getTagMeResult(sentence)) {
                 res.add(r);
-
             }
         } catch (Exception ex) {
-            Logger.getLogger(DBpediaOntology.class
-                    .getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(DBpediaOntology.class.getName()).log(Level.SEVERE, null, ex);
         }
         return res;
     }

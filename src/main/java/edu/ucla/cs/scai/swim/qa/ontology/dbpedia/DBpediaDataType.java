@@ -6,9 +6,7 @@
 package edu.ucla.cs.scai.swim.qa.ontology.dbpedia;
 
 import edu.ucla.cs.scai.swim.qa.ontology.Attribute;
-import edu.ucla.cs.scai.swim.qa.ontology.Category;
 import edu.ucla.cs.scai.swim.qa.ontology.DataType;
-import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Objects;
 
@@ -28,7 +26,7 @@ public class DBpediaDataType implements DataType {
         this.uri = uri;
         this.javaClass = javaClass;
     }
-   
+
     @Override
     public HashSet<? extends Attribute> getRangeOfAttributes() {
         return rangeOfAttributes;

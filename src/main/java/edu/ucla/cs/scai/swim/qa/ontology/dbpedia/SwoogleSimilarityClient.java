@@ -10,6 +10,7 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
@@ -34,18 +35,18 @@ public class SwoogleSimilarityClient implements SimilarityClient {
     public final static String serviceUrl = "http://swoogle.umbc.edu/SimService/GetSimilarity?operation=api&";
 
     private final static String CACHE_FILE;
-    //Project Properties -> Run Tab -> VM Options field -> add -Dswoogle.cache.path=your file path
+    //Project Properties -> Run Tab -> VM Options field -> add -Dswoogle.cache.path=[your file path]
 
     static final HashMap<String, HashMap<String, Double>> cache = new HashMap<>();
 
     static {
         int pairs = 0;
-        String propPath=System.getProperty("swoogle.cache.path");
-        if (propPath==null) {
-            propPath="put your absolute path here";
+        String propPath = System.getProperty("swoogle.cache.path");
+        if (propPath == null) {
+            propPath = "put your absolute path here";
         }
-        CACHE_FILE=propPath;
-        System.out.println("Loading the swoogle cache from: "+CACHE_FILE);
+        CACHE_FILE = propPath;
+        System.out.println("Loading the swoogle cache from: " + CACHE_FILE);
         try (BufferedReader in = new BufferedReader(new FileReader(CACHE_FILE));) {
             //load cache from disk
             String l = in.readLine();
@@ -89,7 +90,7 @@ public class SwoogleSimilarityClient implements SimilarityClient {
         } catch (Exception ex) {
             Logger.getLogger(SwoogleSimilarityClient.class.getName()).log(Level.SEVERE, null, ex);
         }
-        //rewrite the clean cache        
+        //rewrite the clean cache 
         try (PrintWriter out = new PrintWriter(new FileWriter(CACHE_FILE, false), true)) {
             for (Map.Entry<String, HashMap<String, Double>> e1 : cache.entrySet()) {
                 pairs += e1.getValue().size();
@@ -166,7 +167,22 @@ public class SwoogleSimilarityClient implements SimilarityClient {
             String p1 = URLEncoder.encode(phrase1, "UTF-8");
             String p2 = URLEncoder.encode(phrase2, "UTF-8");
             String url = serviceUrl + "phrase1=" + p1 + "&phrase2=" + p2;
-            InputStream fileStream = new URL(url).openStream();
+            InputStream fileStream = null;
+            IOException e = null;
+            for (int i = 0; i < 5; i++) {
+                try {
+                    fileStream = new URL(url).openStream();
+                } catch (IOException ex) {
+                    e = ex;
+                    continue;
+                }
+                if (fileStream != null) {
+                    break;
+                }
+            }
+            if (fileStream == null) {
+                throw e;
+            }
             Reader decoder = new InputStreamReader(fileStream, "UTF-8");
             BufferedReader buffered = new BufferedReader(decoder);
             String l = buffered.readLine();

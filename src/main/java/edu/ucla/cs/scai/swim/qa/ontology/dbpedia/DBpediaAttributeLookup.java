@@ -5,14 +5,11 @@
  */
 package edu.ucla.cs.scai.swim.qa.ontology.dbpedia;
 
-import edu.ucla.cs.scai.swim.qa.ontology.AttributeLookupResult;
 import edu.ucla.cs.scai.swim.qa.ontology.NamedEntity;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.Iterator;
 import java.util.Set;
 
 /**
@@ -108,14 +105,14 @@ public class DBpediaAttributeLookup {
         }
         double maxSimilarity = 0;
         HashSet<String> visitedAttr = new HashSet<>();
-        
+
         if (subjectTypes.isEmpty() && range != null) {
             for (String attr : ((DBpediaNamedEntity) range).getRangeOfAttributes()) {
                 DBpediaAttribute da = DBpediaOntology.getInstance().attributesByUri.get(attr);
                 subjectTypes.addAll(da.getDomainUri());
             }
         }
-                
+
         for (String sts : subjectTypes) {
             DBpediaCategory subjCat = DBpediaOntology.getInstance().categoriesByUri.get(sts);
             if (subjCat == null) {
