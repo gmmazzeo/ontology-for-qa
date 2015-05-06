@@ -526,64 +526,68 @@ public class DBpediaOntology implements Ontology {
         return instance.categoriesByUri.get(THING_URI);
     }
 
-/*    
-    public String modelToSparqlQuery(QueryModel m) {
-        StringBuilder sb = new StringBuilder();
-        sb.append("select distinct");
-        if (m.getEntityVariableName() != null) {
-            sb.append(" ");
-            if (m.getExampleEntity() != null && m.getExampleEntity().startsWith("http://")) {
-                sb.append("<").append(m.getExampleEntity()).append("> as");
-            }
-            sb.append(m.getEntityVariableName());
-        }
-        if (m.getAttributeVariableName() != null) {
-            sb.append(", ");
-            sb.append(m.getAttributeVariableName());
-        }
-        sb.append("\nwhere{");
-        for (QueryConstraint qc : m.getConstraints()) {
-            if (qc.getSubjString().startsWith("http://")) {
-                sb.append("<").append(qc.getSubjString()).append(">");
-            } else {
-                sb.append(qc.getSubjString());
-            }
-            sb.append(" <").append(qc.getAttrString()).append("> ");
-            if (qc.getValueString().startsWith("http://")) {
-                sb.append("<").append(qc.getValueString()).append(">");
-            } else {
-                sb.append(qc.getValueString());
-            }
-            sb.append(" .\n");
-        }
-        //TODO: create filters
-        sb.append("}\nLIMIT 1");
-        return sb.toString();
+    /*    
+     public String modelToSparqlQuery(QueryModel m) {
+     StringBuilder sb = new StringBuilder();
+     sb.append("select distinct");
+     if (m.getEntityVariableName() != null) {
+     sb.append(" ");
+     if (m.getExampleEntity() != null && m.getExampleEntity().startsWith("http://")) {
+     sb.append("<").append(m.getExampleEntity()).append("> as");
+     }
+     sb.append(m.getEntityVariableName());
+     }
+     if (m.getAttributeVariableName() != null) {
+     sb.append(", ");
+     sb.append(m.getAttributeVariableName());
+     }
+     sb.append("\nwhere{");
+     for (QueryConstraint qc : m.getConstraints()) {
+     if (qc.getSubjString().startsWith("http://")) {
+     sb.append("<").append(qc.getSubjString()).append(">");
+     } else {
+     sb.append(qc.getSubjString());
+     }
+     sb.append(" <").append(qc.getAttrString()).append("> ");
+     if (qc.getValueString().startsWith("http://")) {
+     sb.append("<").append(qc.getValueString()).append(">");
+     } else {
+     sb.append(qc.getValueString());
+     }
+     sb.append(" .\n");
+     }
+     //TODO: create filters
+     sb.append("}\nLIMIT 1");
+     return sb.toString();
+     }
+
+     public ArrayList<HashMap<String, String>> executeSparql(String queryString) {
+     Query query = QueryFactory.create(queryString);
+     QueryExecution qexec = QueryExecutionFactory.sparqlService(SPARQL_END_POINT, query);
+     ResultSet rs = qexec.execSelect();
+     ArrayList<HashMap<String, String>> res = new ArrayList<>();
+     for (; rs.hasNext();) {
+     QuerySolution qs = rs.next();
+     HashMap<String, String> row = new HashMap<>();
+     for (Iterator<String> it = qs.varNames(); it.hasNext();) {
+     String varName = it.next();
+     RDFNode node = qs.get(varName);
+     if (node.isLiteral()) {
+     row.put(varName, node.asLiteral().toString());
+     } else {
+     row.put(varName, node.asResource().getURI());
+     }
+     res.add(row);
+     }
+     }
+     return res;
+     }
+     */
+    public ArrayList<HashMap<String, String>> executeSparql(QueryModel qm) {
+        return executeSparql(qm, 1);
     }
 
-    public ArrayList<HashMap<String, String>> executeSparql(String queryString) {
-        Query query = QueryFactory.create(queryString);
-        QueryExecution qexec = QueryExecutionFactory.sparqlService(SPARQL_END_POINT, query);
-        ResultSet rs = qexec.execSelect();
-        ArrayList<HashMap<String, String>> res = new ArrayList<>();
-        for (; rs.hasNext();) {
-            QuerySolution qs = rs.next();
-            HashMap<String, String> row = new HashMap<>();
-            for (Iterator<String> it = qs.varNames(); it.hasNext();) {
-                String varName = it.next();
-                RDFNode node = qs.get(varName);
-                if (node.isLiteral()) {
-                    row.put(varName, node.asLiteral().toString());
-                } else {
-                    row.put(varName, node.asResource().getURI());
-                }
-                res.add(row);
-            }
-        }
-        return res;
-    }
-*/
-    public ArrayList<HashMap<String, String>> executeSparql(QueryModel qm) {
+    public ArrayList<HashMap<String, String>> executeSparql(QueryModel qm, int limit) {
         ArrayList<HashMap<String, String>> res = new ArrayList<>();
         if (qm.getAttributeVariableName() == null && qm.getExampleEntity() != null) {
             HashMap<String, String> row = new HashMap<>();
@@ -615,7 +619,7 @@ public class DBpediaOntology implements Ontology {
                 sb.append(" .\n");
             }
             //TODO: create filters
-            sb.append("}\nLIMIT 1");
+            sb.append("}\nLIMIT " + limit);
             String queryString = sb.toString();
             try {
                 Query query = QueryFactory.create(queryString);
@@ -628,9 +632,9 @@ public class DBpediaOntology implements Ontology {
                         String varName = it.next();
                         RDFNode node = qs.get(varName);
                         if (node.isLiteral()) {
-                            row.put("?"+varName, node.asLiteral().toString());
+                            row.put("?" + varName, node.asLiteral().toString());
                         } else {
-                            row.put("?"+varName, node.asResource().getURI());
+                            row.put("?" + varName, node.asResource().getURI());
                         }
                         res.add(row);
                     }
