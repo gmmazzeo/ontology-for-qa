@@ -48,10 +48,14 @@ public class DBpediaOntology implements Ontology {
     //public static final String SUPERPAGES_FILE = "superpages.txt";
     public static final String TYPE_ATTRIBUTE = "http://www.w3.org/1999/02/22-rdf-syntax-ns#type";
 
-    final HashMap<String, DBpediaCategory> categoriesByUri = new HashMap<>();
+    
     final HashMap<String, DBpediaAttribute> attributesByUri = new HashMap<>();
+    final HashMap<String, DBpediaCategory> categoriesByUri = new HashMap<>();
+    final HashMap<String, DBpediaNamedEntity> entitiesByUri = new HashMap<>();
     final HashMap<String, DBpediaDataType> dataTypesByUri = new HashMap<>();
-    HashMap<String, DBpediaNamedEntity> entitiesByUri = new HashMap<>();
+
+    ArrayList<String> attributes = new ArrayList<>();
+    ArrayList<String> categories = new ArrayList<>();
 
     public static final String THING_URI = "http://www.w3.org/2002/07/owl#Thing";
     public static final String ABSTRACT_ATTRIBUTE_URI = "http://www.w3.org/2000/01/rdf-schema#comment";
@@ -62,9 +66,9 @@ public class DBpediaOntology implements Ontology {
     TypicalityEvaluator typicalityEvaluator;
     HashMap<String, DBpediaNamedEntity> namedEntities = new HashMap<>();
 
-    DBpediaEntityLookup entityLookup = new DBpediaEntityLookup(similarityClient);
     DBpediaAttributeLookup attributeLookup = new DBpediaAttributeLookup(similarityClient);
     DBpediaCategoryLookup categoryLookup = new DBpediaCategoryLookup(similarityClient);
+    DBpediaEntityLookup entityLookup = new DBpediaEntityLookup(similarityClient);
 
     static {
         instance = new DBpediaOntology();
@@ -113,15 +117,43 @@ public class DBpediaOntology implements Ontology {
         dataTypesByUri.put("http://www.w3.org/2001/XMLSchema#nonNegativeInteger", new DBpediaDataType("", Integer.class));
         dataTypesByUri.put("http://www.w3.org/2001/XMLSchema#positiveInteger", new DBpediaDataType("", Integer.class));
         dataTypesByUri.put("http://www.w3.org/2001/XMLSchema#string", new DBpediaDataType("", String.class));
-//        dataTypesByUri.put("http://dbpedia.org/datatype/fuelType", new DBpediaDataType("", Double.class));
-//        dataTypesByUri.put("http://dbpedia.org/datatype/valvetrain", new DBpediaDataType("", Double.class));
-//        dataTypesByUri.put("http://dbpedia.org/datatype/engineConfiguration", new DBpediaDataType("", Double.class));
 
         for (Map.Entry<String, DBpediaDataType> e : dataTypesByUri.entrySet()) {
             e.getValue().uri = e.getKey();
         }
     }
 
+    private void loadCategoriesAndAttributes() throws IOException {
+        String categoriesPath = System.getProperty("dbpedia.ontology.categories.path");
+        if (categoriesPath == null) {
+            categoriesPath = "/Users/peterhuang/NetBeansProjects/ontology-for-qa/src/main/resources/categories";
+        }
+        System.out.println("Loading ontology categories from " + categoriesPath);
+        try (BufferedReader in = new BufferedReader(new FileReader(categoriesPath))) {
+            String l = in.readLine();
+            while (l != null) {
+                categories.add("http://dbpedia.org/ontology/" + l);
+                l = in.readLine();
+            }
+        }
+        
+        String attributesPath = System.getProperty("dbpedia.ontology.attributes.path");
+        if (attributesPath == null) {
+            attributesPath = "/Users/peterhuang/NetBeansProjects/ontology-for-qa/src/main/resources/mappings";
+        }
+        System.out.println("Loading ontology attributes from " + attributesPath);
+        try (BufferedReader in = new BufferedReader(new FileReader(attributesPath))) {
+            String l = in.readLine();
+            while (l != null) {
+                attributes.add("http://dbpedia.org/ontology/" + l.split(" : ")[0]);
+                l = in.readLine();
+            }
+        }
+        
+        System.out.println(categories.size() + " categories");
+        System.out.println(attributes.size() + " attributes");
+    }
+    
     private JsonArray loadJsonDescriptor() throws IOException {
         StringBuilder jsonSb;
         String filePath = System.getProperty("dbpedia.ontology.definitions.path");
@@ -163,7 +195,7 @@ public class DBpediaOntology implements Ontology {
         for (JsonElement je : ja) {
             JsonObject jo = je.getAsJsonObject();
             String id = jo.get("@id").getAsString();
-            String type = null;
+            String type;
             try {
                 type = jo.get("@type").getAsJsonArray().get(0).getAsString();
             } catch (Exception e) {
@@ -199,7 +231,7 @@ public class DBpediaOntology implements Ontology {
         for (JsonElement je : ja) {
             JsonObject jo = je.getAsJsonObject();
             String id = jo.get("@id").getAsString();
-            String type = null;
+            String type;
             try {
                 type = jo.get("@type").getAsJsonArray().get(0).getAsString();
             } catch (Exception e) {
@@ -383,6 +415,7 @@ public class DBpediaOntology implements Ontology {
     protected DBpediaOntology() {
         try {
             initDataTypes();
+            loadCategoriesAndAttributes();
             JsonArray ja = loadJsonDescriptor();
             loadEmptyCategoriesAndAttributes(ja);
             connectCategoriesThroughSubclassRelationship(ja);
@@ -508,6 +541,7 @@ public class DBpediaOntology implements Ontology {
         return attributeLookup.lookup(attributeName, subjectTypes, valueTypes, domain, range, false);
     }
 
+    @Override
     public DBpediaAttribute getAttributeByUri(String uri) {
         return attributesByUri.get(uri);
     }
