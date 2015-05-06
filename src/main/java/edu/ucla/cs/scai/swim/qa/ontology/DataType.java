@@ -16,5 +16,5 @@ public interface DataType {
 
     public HashSet<? extends Attribute> getRangeOfAttributes();
 
-    public String getUri(); 
+    public String getUri();
 }

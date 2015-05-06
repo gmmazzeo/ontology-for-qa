@@ -5,14 +5,11 @@
  */
 package edu.ucla.cs.scai.swim.qa.ontology.dbpedia;
 
-import edu.ucla.cs.scai.swim.qa.ontology.AttributeLookupResult;
 import edu.ucla.cs.scai.swim.qa.ontology.NamedEntity;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.Iterator;
 import java.util.Set;
 
 /**
@@ -108,14 +105,14 @@ public class DBpediaAttributeLookup {
         }
         double maxSimilarity = 0;
         HashSet<String> visitedAttr = new HashSet<>();
-        
+
         if (subjectTypes.isEmpty() && range != null) {
             for (String attr : ((DBpediaNamedEntity) range).getRangeOfAttributes()) {
                 DBpediaAttribute da = DBpediaOntology.getInstance().attributesByUri.get(attr);
                 subjectTypes.addAll(da.getDomainUri());
             }
         }
-                
+
         for (String sts : subjectTypes) {
             DBpediaCategory subjCat = DBpediaOntology.getInstance().categoriesByUri.get(sts);
             if (subjCat == null) {
@@ -196,6 +193,8 @@ public class DBpediaAttributeLookup {
                 if (domain != null) {
                     if (!((DBpediaNamedEntity) domain).getRangeOfAttributes().contains(att.getUri())) {
                         continue;
+                    } else {
+                        rangeMatch = true;
                     }
                 }
                 if (range != null) {
@@ -212,7 +211,7 @@ public class DBpediaAttributeLookup {
                             } else {
                                 DBpediaCategory c1 = DBpediaOntology.getInstance().categoriesByUri.get(subjType);
                                 DBpediaCategory c2 = DBpediaOntology.getInstance().categoriesByUri.get(rangeUri);
-                                if (c1 != null && c2 != null && (c1.hasAncestor(c2))) { // || c2.hasAncestor(c1))) {
+                                if (c1 != null && c2 != null && (c1.hasAncestor(c2) || (c2.hasAncestor(c1) && !c1.equals(DBpediaOntology.thingCategory())))) { // || c2.hasAncestor(c1))) {
                                     rangeMatch = true;
                                     break;
                                 }

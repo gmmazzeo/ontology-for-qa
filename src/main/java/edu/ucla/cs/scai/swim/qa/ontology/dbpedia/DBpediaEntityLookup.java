@@ -129,14 +129,18 @@ public class DBpediaEntityLookup {
         res.setUri(uri);
 
         String uri2 = URI.create(uri).toASCIIString();
-        //System.out.println("uri: " + uri);
-        //System.out.println("uri2: " + uri2);
-        JsonObject jo = jsonObj.getAsJsonObject().get(uri2).getAsJsonObject();
+//        System.out.println("uri: " + uri);
+//        System.out.println("uri2: " + uri2);
+        JsonElement je = jsonObj.getAsJsonObject().get(uri2);
+        if (je == null) {
+            return null;
+        }
+        JsonObject jo = je.getAsJsonObject();
 
         for (Map.Entry<String, JsonElement> e : jsonObj.entrySet()) {
-            String je = e.getKey();
-            if (je.contains("http://dbpedia.org/resource")) {
-                if (je.equals(uri)) {
+            String jre = e.getKey();
+            if (jre.contains("http://dbpedia.org/resource")) {
+                if (jre.equals(uri)) {
                     continue;
                 }
                 JsonObject o = e.getValue().getAsJsonObject();

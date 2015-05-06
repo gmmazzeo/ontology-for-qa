@@ -1,0 +1,1353 @@
+aSide : a side : <http://dbpedia.org/ontology/Single, http://www.w3.org/2001/XMLSchema#string>
+abbreviation : abbreviation : <http://www.w3.org/2002/07/owl#Thing, http://www.w3.org/2001/XMLSchema#string>
+absoluteMagnitude : absolute magnitude : <http://dbpedia.org/ontology/Planet, http://www.w3.org/2001/XMLSchema#double>
+academicAdvisor : academic advisor : <http://dbpedia.org/ontology/Scientist, http://dbpedia.org/ontology/Person>
+academicDiscipline : academic discipline : <http://dbpedia.org/ontology/AcademicJournal, http://www.w3.org/2002/07/owl#Thing>
+acceleration : acceleration (s) : <http://dbpedia.org/ontology/AutomobileEngine, http://www.w3.org/2001/XMLSchema#double>
+access : access : <http://dbpedia.org/ontology/Place, http://www.w3.org/2001/XMLSchema#string>
+acquirementDate : date of acquirement : <http://dbpedia.org/ontology/Ship, http://www.w3.org/2001/XMLSchema#date>
+actScore : ACT score : <http://dbpedia.org/ontology/School, http://www.w3.org/2002/07/owl#Thing>
+activeYearsEndDate : active years end date : <http://www.w3.org/2002/07/owl#Thing, http://www.w3.org/2001/XMLSchema#date>
+activeYearsEndYear : active years end year : <http://www.w3.org/2002/07/owl#Thing, http://www.w3.org/2001/XMLSchema#gYear>
+activeYearsStartDate : active years start date : <http://www.w3.org/2002/07/owl#Thing, http://www.w3.org/2001/XMLSchema#date>
+activeYearsStartYear : active years start year : <http://www.w3.org/2002/07/owl#Thing, http://www.w3.org/2001/XMLSchema#gYear>
+added : added : <http://dbpedia.org/ontology/Place, http://www.w3.org/2001/XMLSchema#date>
+address : address : <http://www.w3.org/2002/07/owl#Thing, http://www.w3.org/2001/XMLSchema#langString>
+addressInRoad : address in road : <http://dbpedia.org/ontology/Road, http://dbpedia.org/ontology/Place>
+administrativeCollectivity : administrative collectivity : <http://dbpedia.org/ontology/Settlement, http://dbpedia.org/ontology/PopulatedPlace>
+administrativeDistrict : administrative district : <http://dbpedia.org/ontology/Settlement, http://dbpedia.org/ontology/PopulatedPlace>
+affiliation : affiliation : <http://www.w3.org/2002/07/owl#Thing, http://www.w3.org/2002/07/owl#Thing>
+ageRange : age range : <http://dbpedia.org/ontology/Organisation, http://www.w3.org/2001/XMLSchema#nonNegativeInteger>
+agencyStationCode : agency station code : <http://dbpedia.org/ontology/Station, http://www.w3.org/2001/XMLSchema#string>
+aircraftAttack : aircraft attack : <http://dbpedia.org/ontology/MilitaryUnit, http://dbpedia.org/ontology/Aircraft>
+aircraftBomber : aircraft bomber : <http://dbpedia.org/ontology/MilitaryUnit, http://dbpedia.org/ontology/Aircraft>
+aircraftElectronic : aircraft electronic : <http://dbpedia.org/ontology/MilitaryUnit, http://dbpedia.org/ontology/Aircraft>
+aircraftFighter : aircraft fighter : <http://dbpedia.org/ontology/MilitaryUnit, http://dbpedia.org/ontology/Aircraft>
+aircraftHelicopter : aircraft helicopter : <http://dbpedia.org/ontology/MilitaryUnit, http://dbpedia.org/ontology/Aircraft>
+aircraftHelicopterAttack : aircraft helicopter attack : <http://dbpedia.org/ontology/MilitaryUnit, http://dbpedia.org/ontology/Aircraft>
+aircraftHelicopterCargo : aircraft helicopter cargo : <http://dbpedia.org/ontology/MilitaryUnit, http://dbpedia.org/ontology/Aircraft>
+aircraftHelicopterMultirole : aircraft helicopter multirole : <http://dbpedia.org/ontology/MilitaryUnit, http://dbpedia.org/ontology/Aircraft>
+aircraftHelicopterObservation : aircraft helicopter observation : <http://dbpedia.org/ontology/MilitaryUnit, http://dbpedia.org/ontology/Aircraft>
+aircraftHelicopterTransport : aircraft helicopter transport : <http://dbpedia.org/ontology/MilitaryUnit, http://dbpedia.org/ontology/Aircraft>
+aircraftHelicopterUtility : aircraft helicopter utility : <http://dbpedia.org/ontology/MilitaryUnit, http://dbpedia.org/ontology/Aircraft>
+aircraftInterceptor : aircraft interceptor : <http://dbpedia.org/ontology/MilitaryUnit, http://dbpedia.org/ontology/Aircraft>
+aircraftPatrol : aircraft patrol : <http://dbpedia.org/ontology/MilitaryUnit, http://dbpedia.org/ontology/Aircraft>
+aircraftRecon : aircraft recon : <http://dbpedia.org/ontology/MilitaryUnit, http://dbpedia.org/ontology/Aircraft>
+aircraftTrainer : aircraft trainer : <http://dbpedia.org/ontology/MilitaryUnit, http://dbpedia.org/ontology/Aircraft>
+aircraftTransport : aircraft transport : <http://dbpedia.org/ontology/MilitaryUnit, http://dbpedia.org/ontology/Aircraft>
+albedo : albedo : <http://dbpedia.org/ontology/Planet, http://www.w3.org/2001/XMLSchema#double>
+album : album : <http://dbpedia.org/ontology/MusicalWork, http://dbpedia.org/ontology/Album>
+alias : alias : <http://www.w3.org/2002/07/owl#Thing, http://www.w3.org/2001/XMLSchema#string>
+allegiance : allegiance : <http://dbpedia.org/ontology/MilitaryPerson, http://www.w3.org/2001/XMLSchema#string>
+alliance : alliance : <http://dbpedia.org/ontology/Airline, http://www.w3.org/2002/07/owl#Thing>
+almaMater : alma mater : <http://dbpedia.org/ontology/Person, http://dbpedia.org/ontology/University>
+alumni : alumni : <http://dbpedia.org/ontology/School, http://dbpedia.org/ontology/Person>
+amgid : amgId : <http://dbpedia.org/ontology/Film, http://www.w3.org/2001/XMLSchema#string>
+analogChannel : analog channel : <http://dbpedia.org/ontology/Broadcaster, http://www.w3.org/2001/XMLSchema#string>
+animal : animal : <http://dbpedia.org/ontology/Place, http://dbpedia.org/ontology/Animal>
+animator : animator : <http://dbpedia.org/ontology/HollywoodCartoon, http://dbpedia.org/ontology/Person>
+anniversary : anniversary : <http://dbpedia.org/ontology/MilitaryUnit, http://www.w3.org/2001/XMLSchema#date>
+anthem : anthem : <http://dbpedia.org/ontology/PopulatedPlace, http://www.w3.org/2002/07/owl#Thing>
+apoapsis : apoapsis (μ) : <http://dbpedia.org/ontology/Planet, http://www.w3.org/2001/XMLSchema#double>
+apparentMagnitude : apparent magnitude : <http://dbpedia.org/ontology/Planet, http://www.w3.org/2001/XMLSchema#double>
+appointer : appointer : <http://dbpedia.org/ontology/Person, http://dbpedia.org/ontology/Person>
+approximateCalories : approximate calories (J) : <http://dbpedia.org/ontology/Food, http://www.w3.org/2001/XMLSchema#double>
+archipelago : archipelago : <http://dbpedia.org/ontology/Island, http://dbpedia.org/ontology/PopulatedPlace>
+architect : architect : <http://dbpedia.org/ontology/Place, http://dbpedia.org/ontology/Agent>
+architecturalStyle : architectural style : <http://dbpedia.org/ontology/Place, http://www.w3.org/2002/07/owl#Thing>
+area : area (m2) : <http://www.w3.org/2002/07/owl#Thing, http://www.w3.org/2001/XMLSchema#double>
+areaCode : area code : <http://dbpedia.org/ontology/Place, http://www.w3.org/2001/XMLSchema#string>
+areaLand : area land (m2) : <http://dbpedia.org/ontology/PopulatedPlace, http://www.w3.org/2001/XMLSchema#double>
+areaMetro : area metro (m2) : <http://dbpedia.org/ontology/PopulatedPlace, http://www.w3.org/2001/XMLSchema#double>
+areaOfCatchment : area of catchment (m2) : <http://dbpedia.org/ontology/Lake, http://www.w3.org/2001/XMLSchema#double>
+areaOfSearch : area of search : <http://dbpedia.org/ontology/SiteOfSpecialScientificInterest, http://www.w3.org/2002/07/owl#Thing>
+areaRural : area rural (m2) : <http://dbpedia.org/ontology/Settlement, http://www.w3.org/2001/XMLSchema#double>
+areaTotal : area total (m2) : <http://dbpedia.org/ontology/Place, http://www.w3.org/2001/XMLSchema#double>
+areaUrban : area urban (m2) : <http://dbpedia.org/ontology/Settlement, http://www.w3.org/2001/XMLSchema#double>
+areaWater : area water (m2) : <http://dbpedia.org/ontology/PopulatedPlace, http://www.w3.org/2001/XMLSchema#double>
+argueDate : argue date : <http://dbpedia.org/ontology/SupremeCourtOfTheUnitedStatesCase, http://www.w3.org/2001/XMLSchema#date>
+arm : arm : <http://dbpedia.org/ontology/Protein, http://www.w3.org/2001/XMLSchema#string>
+arrondissement : arrondissement : <http://dbpedia.org/ontology/Settlement, http://www.w3.org/2002/07/owl#Thing>
+artery : artery : <http://dbpedia.org/ontology/AnatomicalStructure, http://dbpedia.org/ontology/Artery>
+artist : performer : <http://dbpedia.org/ontology/MusicalWork, http://dbpedia.org/ontology/Agent>
+assembly : assembly : <http://dbpedia.org/ontology/Automobile, http://dbpedia.org/ontology/PopulatedPlace>
+assetUnderManagement : asset under management ($) : <http://dbpedia.org/ontology/Company, http://dbpedia.org/datatype/usDollar>
+assets : assets ($) : <http://dbpedia.org/ontology/Company, http://dbpedia.org/datatype/usDollar>
+assistantPrincipal : assistant principal : <http://dbpedia.org/ontology/School, http://www.w3.org/2002/07/owl#Thing>
+associate : associate : <http://www.w3.org/2002/07/owl#Thing, http://dbpedia.org/ontology/Person>
+associateEditor : associate editor : <http://dbpedia.org/ontology/Newspaper, http://www.w3.org/2002/07/owl#Thing>
+associatedAct : associated act : <http://dbpedia.org/ontology/Agent, http://dbpedia.org/ontology/Band>
+associatedBand : associated band : <http://dbpedia.org/ontology/Agent, http://dbpedia.org/ontology/Agent>
+associatedMusicalArtist : associated musical artist : <http://dbpedia.org/ontology/Agent, http://dbpedia.org/ontology/Agent>
+associatedRocket : associated rocket : <http://dbpedia.org/ontology/LaunchPad, http://www.w3.org/2002/07/owl#Thing>
+associationOfLocalGovernment : association of local government : <http://dbpedia.org/ontology/Settlement, http://dbpedia.org/ontology/PopulatedPlace>
+atcPrefix : ATC prefix : <http://dbpedia.org/ontology/Drug, http://www.w3.org/2001/XMLSchema#string>
+atcSuffix : ATC suffix : <http://dbpedia.org/ontology/Drug, http://www.w3.org/2001/XMLSchema#string>
+atcSupplemental : ATC supplemental : <http://dbpedia.org/ontology/Drug, http://www.w3.org/2001/XMLSchema#string>
+athletics : athletics : <http://dbpedia.org/ontology/University, http://www.w3.org/2002/07/owl#Thing>
+author : author : <http://dbpedia.org/ontology/Work, http://dbpedia.org/ontology/Person>
+authority : authority : <http://dbpedia.org/ontology/School, http://www.w3.org/2002/07/owl#Thing>
+automobileModel : automobile model : <http://dbpedia.org/ontology/AutomobileEngine, http://www.w3.org/2001/XMLSchema#string>
+automobilePlatform : automobile platform : <http://dbpedia.org/ontology/Automobile, http://www.w3.org/2002/07/owl#Thing>
+availableSmartCard : available smart card : <http://dbpedia.org/ontology/Station, http://www.w3.org/2002/07/owl#Thing>
+averageAnnualGeneration : average annual gross power generation (J) : <http://dbpedia.org/ontology/PowerStation, http://www.w3.org/2001/XMLSchema#double>
+averageClassSize : average class size : <http://dbpedia.org/ontology/School, http://www.w3.org/2001/XMLSchema#float>
+averageSpeed : average speed (kmh) : <http://www.w3.org/2002/07/owl#Thing, http://www.w3.org/2001/XMLSchema#double>
+award : award : <http://www.w3.org/2002/07/owl#Thing, http://www.w3.org/2002/07/owl#Thing>
+bSide : b side : <http://dbpedia.org/ontology/Single, http://www.w3.org/2001/XMLSchema#string>
+background : background : <http://dbpedia.org/ontology/Agent, http://www.w3.org/2001/XMLSchema#string>
+band : band : <http://dbpedia.org/ontology/Protein, http://www.w3.org/2001/XMLSchema#string>
+bandMember : band member : <http://dbpedia.org/ontology/Band, http://dbpedia.org/ontology/Person>
+barPassRate : bar pass rate : <http://dbpedia.org/ontology/School, http://www.w3.org/2001/XMLSchema#float>
+basedOn : based on : <http://dbpedia.org/ontology/Work, http://www.w3.org/2002/07/owl#Thing>
+battingSide : batting side : <http://dbpedia.org/ontology/BaseballPlayer, http://www.w3.org/2001/XMLSchema#string>
+battle : battle : <http://dbpedia.org/ontology/Agent, http://dbpedia.org/ontology/MilitaryConflict>
+battleHonours : battle honours : <http://dbpedia.org/ontology/MilitaryUnit, http://www.w3.org/2001/XMLSchema#string>
+beatifiedBy : beatified by : <http://dbpedia.org/ontology/Saint, http://dbpedia.org/ontology/Pope>
+beatifiedDate : beatified date : <http://dbpedia.org/ontology/Saint, http://www.w3.org/2001/XMLSchema#date>
+beatifiedPlace : beatified place : <http://dbpedia.org/ontology/Saint, http://dbpedia.org/ontology/Place>
+bedCount : bed count : <http://dbpedia.org/ontology/Hospital, http://www.w3.org/2001/XMLSchema#nonNegativeInteger>
+beltwayCity : beltway city : <http://dbpedia.org/ontology/Road, http://dbpedia.org/ontology/Settlement>
+bestFinish : best ranking finish : <http://dbpedia.org/ontology/SnookerPlayer, http://www.w3.org/2001/XMLSchema#string>
+bibsysId : BIBSYS Id : <http://dbpedia.org/ontology/Person, http://www.w3.org/2001/XMLSchema#string>
+bicycleInformation : bicycle information : <http://dbpedia.org/ontology/Station, http://www.w3.org/2001/XMLSchema#string>
+billed : billed : <http://dbpedia.org/ontology/Wrestler, http://dbpedia.org/ontology/PopulatedPlace>
+binomial : binomial : <http://dbpedia.org/ontology/Species, http://www.w3.org/2002/07/owl#Thing>
+binomialAuthority : binomial authority : <http://dbpedia.org/ontology/Species, http://dbpedia.org/ontology/Person>
+bioavailability : Bioavailability : <http://dbpedia.org/ontology/Drug, http://www.w3.org/2001/XMLSchema#float>
+biome : biome : <http://dbpedia.org/ontology/Place, http://www.w3.org/2002/07/owl#Thing>
+birthDate : birth date : <http://www.w3.org/2002/07/owl#Thing, http://www.w3.org/2001/XMLSchema#date>
+birthName : birth name : <http://dbpedia.org/ontology/Person, http://www.w3.org/2001/XMLSchema#langString>
+birthPlace : birth place : <http://dbpedia.org/ontology/Agent, http://dbpedia.org/ontology/PopulatedPlace>
+birthYear : birth year : <http://dbpedia.org/ontology/Person, http://www.w3.org/2001/XMLSchema#gYear>
+block : block : <http://dbpedia.org/ontology/Person, http://www.w3.org/2001/XMLSchema#string>
+blockAlloy : block alloy : <http://dbpedia.org/ontology/AutomobileEngine, http://www.w3.org/2002/07/owl#Thing>
+bnfId : BNF Id : <http://dbpedia.org/ontology/Agent, http://www.w3.org/2001/XMLSchema#string>
+board : board : <http://dbpedia.org/ontology/Person, http://www.w3.org/2002/07/owl#Thing>
+bodyDiscovered : body discovered : <http://dbpedia.org/ontology/Person, http://dbpedia.org/ontology/PopulatedPlace>
+bodyStyle : body style : <http://dbpedia.org/ontology/Automobile, http://www.w3.org/2002/07/owl#Thing>
+boiler : boiler : <http://dbpedia.org/ontology/Locomotive, http://www.w3.org/2002/07/owl#Thing>
+boilerPressure : boiler pressure : <http://dbpedia.org/ontology/Locomotive, http://www.w3.org/2002/07/owl#Thing>
+booster : booster : <http://dbpedia.org/ontology/SpaceMission, http://dbpedia.org/ontology/Rocket>
+border : border : <http://dbpedia.org/ontology/Place, http://dbpedia.org/ontology/Place>
+borough : borough : <http://dbpedia.org/ontology/Settlement, http://dbpedia.org/ontology/Settlement>
+bowlRecord : bowl record : <http://dbpedia.org/ontology/CollegeCoach, http://www.w3.org/2001/XMLSchema#string>
+bpnId : BPN Id : <http://dbpedia.org/ontology/Agent, http://www.w3.org/2001/XMLSchema#string>
+brainInfoNumber : brain info number : <http://dbpedia.org/ontology/Brain, http://www.w3.org/2001/XMLSchema#string>
+brainInfoType : brain info type : <http://dbpedia.org/ontology/Brain, http://www.w3.org/2001/XMLSchema#string>
+branchFrom : branch from : <http://dbpedia.org/ontology/AnatomicalStructure, http://dbpedia.org/ontology/AnatomicalStructure>
+branchTo : branch to : <http://dbpedia.org/ontology/AnatomicalStructure, http://dbpedia.org/ontology/AnatomicalStructure>
+brand : brand : <http://dbpedia.org/ontology/WrestlingEvent, http://dbpedia.org/ontology/TelevisionShow>
+breeder : breeder : <http://dbpedia.org/ontology/RaceHorse, http://dbpedia.org/ontology/Agent>
+bridgeCarries : bridge carries : <http://dbpedia.org/ontology/Bridge, http://www.w3.org/2001/XMLSchema#string>
+broadcastArea : broadcast area : <http://dbpedia.org/ontology/Broadcaster, http://dbpedia.org/ontology/PopulatedPlace>
+broadcastNetwork : broadcast network : <http://dbpedia.org/ontology/Broadcaster, http://dbpedia.org/ontology/Organisation>
+broadcastRepeater : broadcast repeater : <http://dbpedia.org/ontology/RadioStation, http://www.w3.org/2001/XMLSchema#string>
+broadcastStationClass : broadcast station class : <http://dbpedia.org/ontology/Broadcaster, http://www.w3.org/2001/XMLSchema#string>
+broadcastTranslator : broadcast translator : <http://dbpedia.org/ontology/RadioStation, http://www.w3.org/2001/XMLSchema#string>
+bronzeMedalist : bronze medalist : <http://dbpedia.org/ontology/OlympicEvent, http://dbpedia.org/ontology/Person>
+budget : budget ($) : <http://www.w3.org/2002/07/owl#Thing, http://dbpedia.org/datatype/usDollar>
+builder : builder : <http://www.w3.org/2002/07/owl#Thing, http://www.w3.org/2002/07/owl#Thing>
+building : building : <http://dbpedia.org/ontology/Place, http://www.w3.org/2002/07/owl#Thing>
+buildingEndDate : building end date : <http://dbpedia.org/ontology/Place, http://www.w3.org/2001/XMLSchema#date>
+buildingEndYear : building end year : <http://dbpedia.org/ontology/ArchitecturalStructure, http://www.w3.org/2001/XMLSchema#gYear>
+buildingStartDate : building start date : <http://dbpedia.org/ontology/Place, http://www.w3.org/2001/XMLSchema#date>
+buildingStartYear : building start year : <http://dbpedia.org/ontology/ArchitecturalStructure, http://www.w3.org/2001/XMLSchema#gYear>
+buriedPlace : buried place : <http://dbpedia.org/ontology/Noble, http://www.w3.org/2002/07/owl#Thing>
+bustSize : bust size (μ) : <http://dbpedia.org/ontology/PlayboyPlaymate, http://www.w3.org/2001/XMLSchema#double>
+callSign : call sign : <http://www.w3.org/2002/07/owl#Thing, http://www.w3.org/2001/XMLSchema#string>
+callsignMeaning : call sign meaning : <http://dbpedia.org/ontology/Broadcaster, http://www.w3.org/2001/XMLSchema#string>
+campus : campus : <http://dbpedia.org/ontology/University, http://www.w3.org/2002/07/owl#Thing>
+campusSize : campus size (m2) : <http://dbpedia.org/ontology/School, http://www.w3.org/2001/XMLSchema#double>
+campusType : campus type : <http://dbpedia.org/ontology/School, http://www.w3.org/2001/XMLSchema#langString>
+canBaggageChecked : can baggage checked : <http://dbpedia.org/ontology/Station, http://www.w3.org/2001/XMLSchema#boolean>
+canonizedBy : canonized by : <http://dbpedia.org/ontology/Saint, http://dbpedia.org/ontology/Pope>
+canonizedDate : canonized date : <http://dbpedia.org/ontology/Saint, http://www.w3.org/2001/XMLSchema#date>
+canonizedPlace : canonized place : <http://dbpedia.org/ontology/Saint, http://dbpedia.org/ontology/Place>
+canton : canton : <http://dbpedia.org/ontology/Settlement, http://www.w3.org/2002/07/owl#Thing>
+capacity : capacity : <http://www.w3.org/2002/07/owl#Thing, http://www.w3.org/2001/XMLSchema#nonNegativeInteger>
+capacityFactor : capacity factor : <http://dbpedia.org/ontology/PowerStation, http://www.w3.org/2001/XMLSchema#float>
+capital : capital : <http://dbpedia.org/ontology/Place, http://dbpedia.org/ontology/Settlement>
+capitalCountry : capital country : <http://dbpedia.org/ontology/AdministrativeRegion, http://dbpedia.org/ontology/AdministrativeRegion>
+capitalElevation : capital elevation (μ) : <http://dbpedia.org/ontology/Place, http://www.w3.org/2001/XMLSchema#double>
+capitalMountain : capital mountain : <http://dbpedia.org/ontology/AdministrativeRegion, http://dbpedia.org/ontology/Settlement>
+capitalPlace : capital place : <http://dbpedia.org/ontology/AdministrativeRegion, http://dbpedia.org/ontology/Settlement>
+capitalPosition : capital position : <http://dbpedia.org/ontology/Place, http://www.w3.org/2002/07/owl#Thing>
+capitalRegion : capital region : <http://dbpedia.org/ontology/AdministrativeRegion, http://dbpedia.org/ontology/PopulatedPlace>
+captureDate : capture date : <http://dbpedia.org/ontology/Ship, http://www.w3.org/2001/XMLSchema#date>
+careerPoints : career points : <http://dbpedia.org/ontology/FormulaOneRacer, http://www.w3.org/2001/XMLSchema#integer>
+careerPrizeMoney : career prize money ($) : <http://dbpedia.org/ontology/TennisPlayer, http://dbpedia.org/datatype/usDollar>
+careerStation : career station : <http://dbpedia.org/ontology/Person, http://dbpedia.org/ontology/CareerStation>
+casNumber : CAS number : <http://www.w3.org/2002/07/owl#Thing, http://www.w3.org/2001/XMLSchema#string>
+casSupplemental : CAS supplemental : <http://dbpedia.org/ontology/Drug, http://www.w3.org/2001/XMLSchema#string>
+category : category : <http://www.w3.org/2002/07/owl#Thing, http://www.w3.org/2002/07/owl#Thing>
+causalties : causalties : <http://dbpedia.org/ontology/MilitaryConflict, http://www.w3.org/2001/XMLSchema#string>
+ceeb : ceeb : <http://dbpedia.org/ontology/School, http://www.w3.org/2001/XMLSchema#string>
+censusYear : census year : <http://dbpedia.org/ontology/PopulatedPlace, http://www.w3.org/2001/XMLSchema#gYear>
+centuryBreaks : century breaks : <http://dbpedia.org/ontology/SnookerPlayer, http://www.w3.org/2001/XMLSchema#integer>
+ceo : chief executive officer : <http://dbpedia.org/ontology/Organisation, http://www.w3.org/2002/07/owl#Thing>
+ceremonialCounty : Ceremonial County : <http://dbpedia.org/ontology/Settlement, http://www.w3.org/2002/07/owl#Thing>
+certification : certification : <http://dbpedia.org/ontology/Single, http://www.w3.org/2001/XMLSchema#string>
+certificationDate : certification date : <http://dbpedia.org/ontology/Single, http://www.w3.org/2001/XMLSchema#date>
+chEBI : ChEBI : <http://dbpedia.org/ontology/Drug, http://www.w3.org/2001/XMLSchema#string>
+chain : chain : <http://dbpedia.org/ontology/Hotel, http://dbpedia.org/ontology/Company>
+chairLabel : chair label : <http://dbpedia.org/ontology/School, http://www.w3.org/2002/07/owl#Thing>
+chairman : chairman : <http://www.w3.org/2002/07/owl#Thing, http://www.w3.org/2002/07/owl#Thing>
+chairmanTitle : chairman title : <http://www.w3.org/2002/07/owl#Thing, http://www.w3.org/2001/XMLSchema#langString>
+chairperson : chairperson : <http://dbpedia.org/ontology/Organisation, http://www.w3.org/2002/07/owl#Thing>
+champion : champion : <http://dbpedia.org/ontology/GolfTournament, http://dbpedia.org/ontology/GolfPlayer>
+championInDoubleFemale : champion in double female : <http://dbpedia.org/ontology/TennisTournament, http://dbpedia.org/ontology/TennisPlayer>
+championInDoubleMale : champion in double male : <http://dbpedia.org/ontology/TennisTournament, http://dbpedia.org/ontology/TennisPlayer>
+championInMixedDouble : champion in mixed double : <http://dbpedia.org/ontology/TennisTournament, http://dbpedia.org/ontology/TennisPlayer>
+championInSingleFemale : champion in single female : <http://dbpedia.org/ontology/TennisTournament, http://dbpedia.org/ontology/TennisPlayer>
+championInSingleMale : champion in single male : <http://dbpedia.org/ontology/TennisTournament, http://dbpedia.org/ontology/TennisPlayer>
+championships : championships : <http://dbpedia.org/ontology/FormulaOneRacer, http://www.w3.org/2001/XMLSchema#nonNegativeInteger>
+chancellor : chancellor : <http://dbpedia.org/ontology/Agent, http://dbpedia.org/ontology/Person>
+channel : channel : <http://dbpedia.org/ontology/TelevisionShow, http://dbpedia.org/ontology/Broadcaster>
+chaplain : chaplain : <http://dbpedia.org/ontology/School, http://www.w3.org/2002/07/owl#Thing>
+characterInPlay : character in play : <http://dbpedia.org/ontology/Play, http://www.w3.org/2001/XMLSchema#string>
+chef : chef : <http://dbpedia.org/ontology/Restaurant, http://dbpedia.org/ontology/Person>
+chiefEditor : chief editor : <http://dbpedia.org/ontology/Newspaper, http://dbpedia.org/ontology/Person>
+child : child : <http://dbpedia.org/ontology/Person, http://dbpedia.org/ontology/Person>
+childOrganisation : child organisation : <http://dbpedia.org/ontology/GovernmentAgency, http://www.w3.org/2002/07/owl#Thing>
+choreographer : choreographer : <http://dbpedia.org/ontology/FigureSkater, http://dbpedia.org/ontology/Person>
+chorusCharacterInPlay : chorus character in play : <http://dbpedia.org/ontology/Play, http://www.w3.org/2001/XMLSchema#string>
+christeningDate : date of christening : <http://dbpedia.org/ontology/Ship, http://www.w3.org/2001/XMLSchema#date>
+chromosome : chromosome : <http://dbpedia.org/ontology/Protein, http://www.w3.org/2001/XMLSchema#string>
+cinematography : cinematography : <http://dbpedia.org/ontology/Film, http://dbpedia.org/ontology/Person>
+circulation : circulation : <http://dbpedia.org/ontology/PeriodicalLiterature, http://www.w3.org/2001/XMLSchema#nonNegativeInteger>
+citizenship : citizenship : <http://dbpedia.org/ontology/Person, http://www.w3.org/2002/07/owl#Thing>
+city : city : <http://www.w3.org/2002/07/owl#Thing, http://dbpedia.org/ontology/PopulatedPlace>
+cityType : city type : <http://dbpedia.org/ontology/AdministrativeRegion, http://www.w3.org/2001/XMLSchema#string>
+class : class : <http://www.w3.org/2002/07/owl#Thing, http://www.w3.org/2002/07/owl#Thing>
+classes : classes : <http://dbpedia.org/ontology/School, http://www.w3.org/2001/XMLSchema#nonNegativeInteger>
+closed : closed : <http://dbpedia.org/ontology/EducationalInstitution, http://www.w3.org/2001/XMLSchema#date>
+closingDate : closing date : <http://www.w3.org/2002/07/owl#Thing, http://www.w3.org/2001/XMLSchema#date>
+closingFilm : closing film : <http://dbpedia.org/ontology/FilmFestival, http://dbpedia.org/ontology/Film>
+closingYear : closing year : <http://www.w3.org/2002/07/owl#Thing, http://www.w3.org/2001/XMLSchema#gYear>
+club : club : <http://dbpedia.org/ontology/Athlete, http://www.w3.org/2002/07/owl#Thing>
+clubsRecordGoalscorer : clubs record goalscorer : <http://dbpedia.org/ontology/SoccerClub, http://dbpedia.org/ontology/Person>
+cmykCoordinateBlack : black coordinate in the CMYK space : <http://dbpedia.org/ontology/Colour, http://www.w3.org/2001/XMLSchema#integer>
+cmykCoordinateCyanic : cyanic coordinate in the CMYK space : <http://dbpedia.org/ontology/Colour, http://www.w3.org/2001/XMLSchema#integer>
+cmykCoordinateMagenta : magenta coordinate in the CMYK space : <http://dbpedia.org/ontology/Colour, http://www.w3.org/2001/XMLSchema#integer>
+cmykCoordinateYellow : yellow coordinate in the CMYK space : <http://dbpedia.org/ontology/Colour, http://www.w3.org/2001/XMLSchema#integer>
+co2Emission : CO2 emission (g/km) : <http://dbpedia.org/ontology/AutomobileEngine, http://www.w3.org/2001/XMLSchema#double>
+coach : coach : <http://www.w3.org/2002/07/owl#Thing, http://dbpedia.org/ontology/Person>
+coachedTeam : coached team : <http://dbpedia.org/ontology/CollegeCoach, http://www.w3.org/2002/07/owl#Thing>
+coachingRecord : coaching record : <http://dbpedia.org/ontology/CollegeCoach, http://www.w3.org/2001/XMLSchema#string>
+code : code : <http://dbpedia.org/ontology/Place, http://www.w3.org/2001/XMLSchema#string>
+coden : CODEN : <http://dbpedia.org/ontology/AcademicJournal, http://www.w3.org/2001/XMLSchema#string>
+collection : collection : <http://dbpedia.org/ontology/Museum, http://www.w3.org/2001/XMLSchema#string>
+college : college : <http://dbpedia.org/ontology/Person, http://dbpedia.org/ontology/University>
+colour : colour : <http://www.w3.org/2002/07/owl#Thing, http://www.w3.org/2002/07/owl#Thing>
+colourHexCode : colour hex code : <http://dbpedia.org/ontology/Colour, http://www.w3.org/2001/XMLSchema#string>
+colourName : 色名 : <http://www.w3.org/2002/07/owl#Thing, http://www.w3.org/2001/XMLSchema#langString>
+combatant : combatant : <http://dbpedia.org/ontology/MilitaryConflict, http://www.w3.org/2001/XMLSchema#string>
+commandModule : command module : <http://dbpedia.org/ontology/SpaceMission, http://www.w3.org/2001/XMLSchema#string>
+commandStructure : command structure : <http://dbpedia.org/ontology/MilitaryUnit, http://dbpedia.org/ontology/MilitaryUnit>
+commander : commander : <http://www.w3.org/2002/07/owl#Thing, http://dbpedia.org/ontology/Person>
+commissioningDate : commissioning date : <http://dbpedia.org/ontology/Ship, http://www.w3.org/2001/XMLSchema#date>
+committee : committee : <http://dbpedia.org/ontology/Person, http://www.w3.org/2001/XMLSchema#string>
+committeeInLegislature : committee in legislature : <http://dbpedia.org/ontology/Legislature, http://www.w3.org/2002/07/owl#Thing>
+commonName : common name : <http://dbpedia.org/ontology/SoccerPlayer, http://www.w3.org/2001/XMLSchema#langString>
+company : company : <http://www.w3.org/2002/07/owl#Thing, http://dbpedia.org/ontology/Company>
+comparable : comparable : <http://dbpedia.org/ontology/Rocket, http://dbpedia.org/ontology/MeanOfTransportation>
+compiler : compiler : <http://dbpedia.org/ontology/Album, http://dbpedia.org/ontology/Agent>
+completionDate : completion date : <http://www.w3.org/2002/07/owl#Thing, http://www.w3.org/2001/XMLSchema#date>
+component : component : <http://dbpedia.org/ontology/Brain, http://dbpedia.org/ontology/AnatomicalStructure>
+composer : composer : <http://dbpedia.org/ontology/Work, http://dbpedia.org/ontology/Person>
+compressionRatio : compression ratio : <http://dbpedia.org/ontology/AutomobileEngine, http://www.w3.org/2001/XMLSchema#string>
+computingInput : Computing input : <http://dbpedia.org/ontology/VideoGame, http://www.w3.org/2002/07/owl#Thing>
+computingMedia : Computing Media : <http://dbpedia.org/ontology/VideoGame, http://www.w3.org/2002/07/owl#Thing>
+computingPlatform : computing platform : <http://dbpedia.org/ontology/Software, http://www.w3.org/2002/07/owl#Thing>
+configuration : configuration : <http://dbpedia.org/ontology/AutomobileEngine, http://dbpedia.org/datatype/engineConfiguration>
+congressionalDistrict : congressional district : <http://dbpedia.org/ontology/AdministrativeRegion, http://www.w3.org/2002/07/owl#Thing>
+connotation : connotation : <http://dbpedia.org/ontology/Colour, http://www.w3.org/2002/07/owl#Thing>
+conservationStatus : conservation status : <http://dbpedia.org/ontology/Species, http://www.w3.org/2001/XMLSchema#string>
+conservationStatusSystem : conservation status system : <http://dbpedia.org/ontology/Species, http://www.w3.org/2001/XMLSchema#string>
+constructionMaterial : construction material : <http://dbpedia.org/ontology/Bridge, http://www.w3.org/2002/07/owl#Thing>
+contractAward : contract award : <http://dbpedia.org/ontology/SpaceShuttle, http://www.w3.org/2001/XMLSchema#date>
+coolingSystem : cooling system : <http://dbpedia.org/ontology/AutomobileEngine, http://www.w3.org/2002/07/owl#Thing>
+cosparId : COSPAR id : <http://www.w3.org/2002/07/owl#Thing, http://www.w3.org/2001/XMLSchema#string>
+cost : cost ($) : <http://www.w3.org/2002/07/owl#Thing, http://dbpedia.org/datatype/usDollar>
+councilArea : Council area : <http://dbpedia.org/ontology/Settlement, http://www.w3.org/2002/07/owl#Thing>
+country : country : <http://www.w3.org/2002/07/owl#Thing, http://dbpedia.org/ontology/Country>
+countryOrigin : country origin : <http://dbpedia.org/ontology/Rocket, http://dbpedia.org/ontology/Country>
+countryWithFirstAstronaut : country with first astronaut : <http://dbpedia.org/ontology/YearInSpaceflight, http://dbpedia.org/ontology/Country>
+countryWithFirstSatellite : country with first satellite : <http://dbpedia.org/ontology/YearInSpaceflight, http://dbpedia.org/ontology/Country>
+countryWithFirstSatelliteLaunched : country with first satellite launched : <http://dbpedia.org/ontology/YearInSpaceflight, http://dbpedia.org/ontology/PopulatedPlace>
+countryWithFirstSpaceflight : country with first spaceflight : <http://dbpedia.org/ontology/YearInSpaceflight, http://dbpedia.org/ontology/Country>
+county : county : <http://www.w3.org/2002/07/owl#Thing, http://dbpedia.org/ontology/AdministrativeRegion>
+countySeat : county seat : <http://dbpedia.org/ontology/AdministrativeRegion, http://dbpedia.org/ontology/Settlement>
+course : course (μ) : <http://dbpedia.org/ontology/GrandPrix, http://www.w3.org/2001/XMLSchema#double>
+coverArtist : cover artist : <http://dbpedia.org/ontology/WrittenWork, http://dbpedia.org/ontology/Person>
+cpu : CPU : <http://www.w3.org/2002/07/owl#Thing, http://www.w3.org/2002/07/owl#Thing>
+creativeDirector : creative director : <http://dbpedia.org/ontology/TelevisionShow, http://dbpedia.org/ontology/Person>
+creator : creator : <http://www.w3.org/2002/07/owl#Thing, http://dbpedia.org/ontology/Agent>
+creatorOfDish : creator of dish : <http://dbpedia.org/ontology/Food, http://www.w3.org/2002/07/owl#Thing>
+crewSize : crew size : <http://dbpedia.org/ontology/SpaceMission, http://www.w3.org/2001/XMLSchema#nonNegativeInteger>
+crews : crews : <http://dbpedia.org/ontology/SpaceShuttle, http://www.w3.org/2001/XMLSchema#nonNegativeInteger>
+crosses : crosses : <http://dbpedia.org/ontology/Bridge, http://dbpedia.org/ontology/River>
+crownDependency : crown dependency : <http://dbpedia.org/ontology/Settlement, http://www.w3.org/2001/XMLSchema#string>
+cuisine : cuisine : <http://dbpedia.org/ontology/Restaurant, http://www.w3.org/2001/XMLSchema#string>
+cultivatedVariety : cultivar : <http://dbpedia.org/ontology/CultivatedVariety, http://www.w3.org/2002/07/owl#Thing>
+curator : curator : <http://dbpedia.org/ontology/Museum, http://www.w3.org/2002/07/owl#Thing>
+currency : currency : <http://www.w3.org/2002/07/owl#Thing, http://dbpedia.org/ontology/Currency>
+currentMember : current member : <http://dbpedia.org/ontology/Agent, http://dbpedia.org/ontology/SoccerPlayer>
+currentPartner : current partner : <http://dbpedia.org/ontology/FigureSkater, http://dbpedia.org/ontology/FigureSkater>
+currentProduction : current production : <http://dbpedia.org/ontology/Theatre, http://dbpedia.org/ontology/Work>
+currentRank : current rank : <http://dbpedia.org/ontology/SnookerPlayer, http://www.w3.org/2001/XMLSchema#integer>
+currentRecord : current record : <http://dbpedia.org/ontology/CollegeCoach, http://www.w3.org/2001/XMLSchema#string>
+currentSeason : current season : <http://dbpedia.org/ontology/SportsLeague, http://www.w3.org/2001/XMLSchema#string>
+currentStatus : current status : <http://dbpedia.org/ontology/Company, http://www.w3.org/2001/XMLSchema#string>
+currentlyUsedFor : currently used for : <http://dbpedia.org/ontology/Theatre, http://www.w3.org/2001/XMLSchema#string>
+custodian : custodian : <http://dbpedia.org/ontology/School, http://dbpedia.org/ontology/AmericanFootballPlayer>
+cylinderBore : cylinder bore (μ) : <http://dbpedia.org/ontology/AutomobileEngine, http://www.w3.org/2001/XMLSchema#double>
+cylinderCount : cylinder count : <http://dbpedia.org/ontology/Locomotive, http://www.w3.org/2001/XMLSchema#nonNegativeInteger>
+dam : dam : <http://dbpedia.org/ontology/RaceHorse, http://www.w3.org/2002/07/owl#Thing>
+damsire : damsire : <http://dbpedia.org/ontology/RaceHorse, http://dbpedia.org/ontology/RaceHorse>
+date : date : <http://www.w3.org/2002/07/owl#Thing, http://www.w3.org/2001/XMLSchema#date>
+dateAct : date act : <http://dbpedia.org/ontology/Canal, http://www.w3.org/2001/XMLSchema#date>
+dateCompleted : date completed : <http://dbpedia.org/ontology/Canal, http://www.w3.org/2001/XMLSchema#date>
+dateConstruction : date construction : <http://dbpedia.org/ontology/Canal, http://www.w3.org/2001/XMLSchema#date>
+dateOfAbandonment : date of abandonment : <http://dbpedia.org/ontology/Place, http://www.w3.org/2001/XMLSchema#date>
+dateOfBurial : date of burial : <http://dbpedia.org/ontology/Monarch, http://www.w3.org/2001/XMLSchema#date>
+dateUse : date use : <http://dbpedia.org/ontology/Canal, http://www.w3.org/2001/XMLSchema#date>
+day : day : <http://dbpedia.org/ontology/Settlement, http://www.w3.org/2001/XMLSchema#date>
+daylightSavingTimeZone : daylight saving time zone : <http://dbpedia.org/ontology/Place, http://www.w3.org/2002/07/owl#Thing>
+dcc : Dewey Decimal Classification : <http://dbpedia.org/ontology/Book, http://www.w3.org/2001/XMLSchema#string>
+dean : dean : <http://dbpedia.org/ontology/EducationalInstitution, http://www.w3.org/2002/07/owl#Thing>
+deathCause : death cause : <http://dbpedia.org/ontology/Person, http://dbpedia.org/ontology/Disease>
+deathDate : death date : <http://www.w3.org/2002/07/owl#Thing, http://www.w3.org/2001/XMLSchema#date>
+deathPlace : death place : <http://dbpedia.org/ontology/Agent, http://dbpedia.org/ontology/PopulatedPlace>
+deathYear : death year : <http://dbpedia.org/ontology/Person, http://www.w3.org/2001/XMLSchema#gYear>
+debut : debut : <http://dbpedia.org/ontology/Wrestler, http://www.w3.org/2001/XMLSchema#date>
+debutTeam : debut team : <http://dbpedia.org/ontology/Athlete, http://dbpedia.org/ontology/SportsTeam>
+decideDate : decide date : <http://dbpedia.org/ontology/SupremeCourtOfTheUnitedStatesCase, http://www.w3.org/2001/XMLSchema#date>
+decommissioningDate : decommissioning date : <http://dbpedia.org/ontology/Ship, http://www.w3.org/2001/XMLSchema#date>
+deliveryDate : delivery date : <http://dbpedia.org/ontology/Locomotive, http://www.w3.org/2001/XMLSchema#date>
+demolitionDate : demolition date : <http://dbpedia.org/ontology/Place, http://www.w3.org/2001/XMLSchema#date>
+demolitionYear : demolition year : <http://dbpedia.org/ontology/ArchitecturalStructure, http://www.w3.org/2001/XMLSchema#gYear>
+demonym : demonym : <http://www.w3.org/2002/07/owl#Thing, http://www.w3.org/2001/XMLSchema#langString>
+denomination : denomination : <http://dbpedia.org/ontology/School, http://www.w3.org/2002/07/owl#Thing>
+density : density (μ3) : <http://dbpedia.org/ontology/Planet, http://www.w3.org/2001/XMLSchema#double>
+department : department : <http://dbpedia.org/ontology/Settlement, http://dbpedia.org/ontology/Settlement>
+depictionDescription : depiction description (caption) : <http://www.w3.org/2002/07/owl#Thing, http://www.w3.org/2001/XMLSchema#langString>
+depth : depth (μ) : <http://dbpedia.org/ontology/Place, http://www.w3.org/2001/XMLSchema#double>
+deputy : deputy : <http://www.w3.org/2002/07/owl#Thing, http://dbpedia.org/ontology/Person>
+derivative : derivative : <http://dbpedia.org/ontology/MusicGenre, http://dbpedia.org/ontology/MusicGenre>
+description : description : <http://www.w3.org/2002/07/owl#Thing, http://www.w3.org/2001/XMLSchema#langString>
+designCompany : designer company : <http://dbpedia.org/ontology/Automobile, http://dbpedia.org/ontology/Agent>
+designer : designer : <http://www.w3.org/2002/07/owl#Thing, http://dbpedia.org/ontology/Agent>
+destination : destination : <http://dbpedia.org/ontology/Airline, http://dbpedia.org/ontology/Place>
+destructionDate : destruction date : <http://dbpedia.org/ontology/Building, http://www.w3.org/2001/XMLSchema#date>
+detectionMethod : Method of discovery : <http://dbpedia.org/ontology/Planet, http://www.w3.org/2001/XMLSchema#string>
+developer : developer : <http://www.w3.org/2002/07/owl#Thing, http://dbpedia.org/ontology/Company>
+dfE : DfE : <http://dbpedia.org/ontology/School, http://www.w3.org/2002/07/owl#Thing>
+diameter : diameter (μ) : <http://www.w3.org/2002/07/owl#Thing, http://www.w3.org/2001/XMLSchema#double>
+digitalChannel : digital channel : <http://dbpedia.org/ontology/Broadcaster, http://www.w3.org/2001/XMLSchema#string>
+digitalSubChannel : digital sub channel : <http://dbpedia.org/ontology/TelevisionStation, http://www.w3.org/2001/XMLSchema#string>
+director : film director : <http://www.w3.org/2002/07/owl#Thing, http://dbpedia.org/ontology/Person>
+disbanded : disbanded : <http://dbpedia.org/ontology/MilitaryUnit, http://www.w3.org/2001/XMLSchema#date>
+discharge : discharge (m³/s) : <http://dbpedia.org/ontology/Place, http://www.w3.org/2001/XMLSchema#double>
+dischargeAverage : discharge average (m³/s) : <http://dbpedia.org/ontology/Place, http://www.w3.org/2001/XMLSchema#double>
+discipline : discipline : <http://dbpedia.org/ontology/Agent, http://www.w3.org/2002/07/owl#Thing>
+discovered : discovery date : <http://dbpedia.org/ontology/Planet, http://www.w3.org/2001/XMLSchema#date>
+discoverer : discoverer : <http://dbpedia.org/ontology/Planet, http://dbpedia.org/ontology/Person>
+diseasesdb : DiseasesDB : <http://dbpedia.org/ontology/Disease, http://www.w3.org/2001/XMLSchema#string>
+displacement : displacement (μ³) : <http://dbpedia.org/ontology/AutomobileEngine, http://www.w3.org/2001/XMLSchema#double>
+dissolutionDate : dissolution date : <http://dbpedia.org/ontology/Country, http://www.w3.org/2001/XMLSchema#date>
+dissolutionYear : dissolution year : <http://dbpedia.org/ontology/Country, http://www.w3.org/2001/XMLSchema#gYear>
+dissolved : dissolved : <http://www.w3.org/2002/07/owl#Thing, http://www.w3.org/2001/XMLSchema#date>
+distance : distance (μ) : <http://www.w3.org/2002/07/owl#Thing, http://www.w3.org/2001/XMLSchema#double>
+distanceLaps : distance laps : <http://dbpedia.org/ontology/GrandPrix, http://www.w3.org/2001/XMLSchema#nonNegativeInteger>
+distanceToBelfast : distance to Belfast (μ) : <http://dbpedia.org/ontology/Settlement, http://www.w3.org/2001/XMLSchema#double>
+distanceToCardiff : distance to Cardiff (μ) : <http://dbpedia.org/ontology/Settlement, http://www.w3.org/2001/XMLSchema#double>
+distanceToCharingCross : distance to Charing Cross (μ) : <http://dbpedia.org/ontology/Settlement, http://www.w3.org/2001/XMLSchema#double>
+distanceToDouglas : distance to Douglas (μ) : <http://dbpedia.org/ontology/Settlement, http://www.w3.org/2001/XMLSchema#double>
+distanceToDublin : distance to Dublin (μ) : <http://dbpedia.org/ontology/Settlement, http://www.w3.org/2001/XMLSchema#double>
+distanceToEdinburgh : distance to Edinburgh (μ) : <http://dbpedia.org/ontology/Settlement, http://www.w3.org/2001/XMLSchema#double>
+distanceToLondon : distance to London (μ) : <http://dbpedia.org/ontology/Settlement, http://www.w3.org/2001/XMLSchema#double>
+distanceTraveled : distance traveled (μ) : <http://dbpedia.org/ontology/SpaceMission, http://www.w3.org/2001/XMLSchema#double>
+distributingCompany : distributing company : <http://dbpedia.org/ontology/RecordLabel, http://dbpedia.org/ontology/Company>
+distributingLabel : distributing label : <http://dbpedia.org/ontology/RecordLabel, http://dbpedia.org/ontology/Company>
+distributor : distributor : <http://www.w3.org/2002/07/owl#Thing, http://dbpedia.org/ontology/Company>
+district : district : <http://www.w3.org/2002/07/owl#Thing, http://dbpedia.org/ontology/PopulatedPlace>
+division : division : <http://www.w3.org/2002/07/owl#Thing, http://dbpedia.org/ontology/Eukaryote>
+doctoralAdvisor : doctoral advisor : <http://dbpedia.org/ontology/Scientist, http://dbpedia.org/ontology/Person>
+doctoralStudent : doctoral student : <http://dbpedia.org/ontology/Scientist, http://dbpedia.org/ontology/Person>
+domain : domain : <http://dbpedia.org/ontology/Species, http://dbpedia.org/ontology/Species>
+dorlandsPrefix : Dorlands prefix : <http://dbpedia.org/ontology/AnatomicalStructure, http://www.w3.org/2001/XMLSchema#string>
+dorlandsSuffix : Dorlands suffix : <http://dbpedia.org/ontology/AnatomicalStructure, http://www.w3.org/2001/XMLSchema#string>
+draft : draft : <http://dbpedia.org/ontology/Athlete, http://www.w3.org/2001/XMLSchema#string>
+draftPick : draft pick : <http://dbpedia.org/ontology/Athlete, http://www.w3.org/2001/XMLSchema#string>
+draftRound : draft round : <http://dbpedia.org/ontology/GridironFootballPlayer, http://www.w3.org/2001/XMLSchema#string>
+draftTeam : draft team : <http://dbpedia.org/ontology/Athlete, http://dbpedia.org/ontology/SportsTeam>
+draftYear : draft year : <http://dbpedia.org/ontology/Athlete, http://www.w3.org/2001/XMLSchema#gYear>
+drainsFrom : drains from : <http://dbpedia.org/ontology/AnatomicalStructure, http://dbpedia.org/ontology/AnatomicalStructure>
+drainsTo : drains to : <http://dbpedia.org/ontology/AnatomicalStructure, http://dbpedia.org/ontology/AnatomicalStructure>
+dressCode : dress code : <http://dbpedia.org/ontology/Restaurant, http://www.w3.org/2001/XMLSchema#string>
+drugbank : DrugBank : <http://www.w3.org/2002/07/owl#Thing, http://www.w3.org/2001/XMLSchema#string>
+ecNumber : EC number : <http://dbpedia.org/ontology/Biomolecule, http://www.w3.org/2001/XMLSchema#string>
+editing : editing : <http://dbpedia.org/ontology/Film, http://dbpedia.org/ontology/Person>
+editor : editor : <http://dbpedia.org/ontology/Work, http://www.w3.org/2002/07/owl#Thing>
+editorTitle : editor title : <http://dbpedia.org/ontology/Magazine, http://www.w3.org/2001/XMLSchema#langString>
+education : education : <http://dbpedia.org/ontology/Person, http://dbpedia.org/ontology/EducationalInstitution>
+educationSystem : education system : <http://dbpedia.org/ontology/School, http://www.w3.org/2002/07/owl#Thing>
+effectiveRadiatedPower : effectiveRadiatedPower (W) : <http://dbpedia.org/ontology/Broadcaster, http://www.w3.org/2001/XMLSchema#double>
+electionDate : election date : <http://dbpedia.org/ontology/Person, http://www.w3.org/2001/XMLSchema#date>
+electionDateLeader : election date leader : <http://dbpedia.org/ontology/Legislature, http://www.w3.org/2001/XMLSchema#date>
+electionMajority : election majority : <http://dbpedia.org/ontology/Person, http://www.w3.org/2001/XMLSchema#nonNegativeInteger>
+elevation : elevation (μ) : <http://dbpedia.org/ontology/Place, http://www.w3.org/2001/XMLSchema#double>
+emedicineSubject : eMedicine subject : <http://dbpedia.org/ontology/Disease, http://www.w3.org/2001/XMLSchema#langString>
+emedicineTopic : eMedicine subject : <http://dbpedia.org/ontology/Disease, http://www.w3.org/2001/XMLSchema#langString>
+employer : employer : <http://dbpedia.org/ontology/Person, http://www.w3.org/2002/07/owl#Thing>
+endDate : end date : <http://dbpedia.org/ontology/SocietalEvent, http://www.w3.org/2001/XMLSchema#date>
+endPoint : end point : <http://dbpedia.org/ontology/Canal, http://dbpedia.org/ontology/Place>
+endYearOfInsertion : end year of insertion : <http://dbpedia.org/ontology/AutomobileEngine, http://www.w3.org/2001/XMLSchema#gYear>
+endYearOfSales : end year of sales : <http://dbpedia.org/ontology/Sales, http://www.w3.org/2001/XMLSchema#gYear>
+endingTheme : ending theme : <http://dbpedia.org/ontology/TelevisionShow, http://www.w3.org/2002/07/owl#Thing>
+endowment : endowment ($) : <http://dbpedia.org/ontology/Organisation, http://dbpedia.org/datatype/usDollar>
+engine : engine : <http://dbpedia.org/ontology/Automobile, http://dbpedia.org/ontology/AutomobileEngine>
+engineType : engine type : <http://dbpedia.org/ontology/Locomotive, http://www.w3.org/2002/07/owl#Thing>
+engineer : engineer : <http://dbpedia.org/ontology/Place, http://dbpedia.org/ontology/Agent>
+ensembl : ensemble : <http://dbpedia.org/ontology/Gene, http://www.w3.org/2001/XMLSchema#string>
+entrezgene : EntrezGene : <http://dbpedia.org/ontology/Biomolecule, http://www.w3.org/2001/XMLSchema#string>
+episodeNumber : episode number : <http://dbpedia.org/ontology/TelevisionEpisode, http://www.w3.org/2001/XMLSchema#nonNegativeInteger>
+epoch : epoch : <http://dbpedia.org/ontology/Planet, http://www.w3.org/2001/XMLSchema#string>
+equipment : equipment : <http://dbpedia.org/ontology/Sport, http://www.w3.org/2002/07/owl#Thing>
+equity : equity ($) : <http://dbpedia.org/ontology/Company, http://dbpedia.org/datatype/usDollar>
+era : era : <http://dbpedia.org/ontology/Philosopher, http://www.w3.org/2002/07/owl#Thing>
+eruptionYear : eruption date : <http://dbpedia.org/ontology/NaturalPlace, http://www.w3.org/2001/XMLSchema#gYear>
+escapeVelocity : escape velocity (kmh) : <http://dbpedia.org/ontology/Planet, http://www.w3.org/2001/XMLSchema#double>
+espnId : ESPN id : <http://dbpedia.org/ontology/GridironFootballPlayer, http://www.w3.org/2001/XMLSchema#integer>
+established : Established : <http://dbpedia.org/ontology/Diocese, http://www.w3.org/2001/XMLSchema#string>
+ethnicGroup : ethnic group : <http://dbpedia.org/ontology/PopulatedPlace, http://dbpedia.org/ontology/EthnicGroup>
+ethnicGroupsInYear : ethnic groups in year : <http://www.w3.org/2002/07/owl#Thing, http://www.w3.org/2001/XMLSchema#gYear>
+ethnicity : ethnicity : <http://dbpedia.org/ontology/Person, http://dbpedia.org/ontology/EthnicGroup>
+europeanAffiliation : european affiliation : <http://dbpedia.org/ontology/PoliticalParty, http://dbpedia.org/ontology/PoliticalParty>
+europeanParliamentGroup : european parliament group : <http://dbpedia.org/ontology/PoliticalParty, http://www.w3.org/2002/07/owl#Thing>
+event : event : <http://www.w3.org/2002/07/owl#Thing, http://www.w3.org/2002/07/owl#Thing>
+executiveProducer : executive producer : <http://dbpedia.org/ontology/Work, http://dbpedia.org/ontology/Person>
+extinctionDate : extinction date : <http://dbpedia.org/ontology/Organisation, http://www.w3.org/2001/XMLSchema#date>
+extinctionYear : extinction year : <http://dbpedia.org/ontology/Organisation, http://www.w3.org/2001/XMLSchema#gYear>
+eyeColor : eye color : <http://dbpedia.org/ontology/BeautyQueen, http://www.w3.org/2001/XMLSchema#string>
+faaLocationIdentifier : FAA Location Identifier : <http://dbpedia.org/ontology/Airport, http://www.w3.org/2001/XMLSchema#string>
+facilityId : facility id : <http://dbpedia.org/ontology/Broadcaster, http://www.w3.org/2001/XMLSchema#integer>
+facultySize : faculty size : <http://dbpedia.org/ontology/EducationalInstitution, http://www.w3.org/2001/XMLSchema#nonNegativeInteger>
+failedLaunches : failed launches : <http://www.w3.org/2002/07/owl#Thing, http://www.w3.org/2001/XMLSchema#nonNegativeInteger>
+family : family : <http://dbpedia.org/ontology/Species, http://dbpedia.org/ontology/Eukaryote>
+fansgroup : fansgroup : <http://dbpedia.org/ontology/SoccerClub, http://www.w3.org/2001/XMLSchema#string>
+fareZone : fare zone : <http://dbpedia.org/ontology/Station, http://www.w3.org/2001/XMLSchema#string>
+fastestDriver : fastest driver : <http://dbpedia.org/ontology/GrandPrix, http://dbpedia.org/ontology/FormulaOneRacer>
+fastestDriverCountry : fastest driver country : <http://dbpedia.org/ontology/GrandPrix, http://dbpedia.org/ontology/Country>
+fastestDriverTeam : fastest driver team : <http://dbpedia.org/ontology/GrandPrix, http://dbpedia.org/ontology/FormulaOneTeam>
+fastestLap : fastest lap : <http://dbpedia.org/ontology/FormulaOneRacer, http://www.w3.org/2001/XMLSchema#nonNegativeInteger>
+fate : fate : <http://dbpedia.org/ontology/Company, http://www.w3.org/2001/XMLSchema#langString>
+fdaUniiCode : FDA UNII code : <http://www.w3.org/2002/07/owl#Thing, http://www.w3.org/2001/XMLSchema#string>
+feastDay : feast day : <http://dbpedia.org/ontology/Saint, http://www.w3.org/2001/XMLSchema#date>
+federalState : federal state : <http://dbpedia.org/ontology/Settlement, http://dbpedia.org/ontology/AdministrativeRegion>
+fees : fees ($) : <http://dbpedia.org/ontology/School, http://dbpedia.org/datatype/usDollar>
+field : field : <http://dbpedia.org/ontology/Person, http://www.w3.org/2002/07/owl#Thing>
+fileSize : size (B) : <http://dbpedia.org/ontology/Software, http://www.w3.org/2001/XMLSchema#double>
+film : film : <http://dbpedia.org/ontology/FilmFestival, http://www.w3.org/2002/07/owl#Thing>
+finalFlight : final flight : <http://dbpedia.org/ontology/Rocket, http://www.w3.org/2001/XMLSchema#date>
+finalPublicationYear : final publication year : <http://dbpedia.org/ontology/AcademicJournal, http://www.w3.org/2001/XMLSchema#gYear>
+firstAirDate : first air date : <http://www.w3.org/2002/07/owl#Thing, http://www.w3.org/2001/XMLSchema#date>
+firstAppearance : first appearance : <http://dbpedia.org/ontology/FictionalCharacter, http://www.w3.org/2001/XMLSchema#string>
+firstAscentPerson : person that first ascented a mountain : <http://dbpedia.org/ontology/NaturalPlace, http://dbpedia.org/ontology/Person>
+firstAscentYear : year of first ascent : <http://dbpedia.org/ontology/NaturalPlace, http://www.w3.org/2001/XMLSchema#gYear>
+firstDriver : first driver : <http://dbpedia.org/ontology/GrandPrix, http://dbpedia.org/ontology/FormulaOneRacer>
+firstDriverCountry : first driver country : <http://dbpedia.org/ontology/GrandPrix, http://dbpedia.org/ontology/Country>
+firstDriverTeam : winning team : <http://dbpedia.org/ontology/GrandPrix, http://dbpedia.org/ontology/FormulaOneTeam>
+firstFlight : first flight : <http://dbpedia.org/ontology/SpaceShuttle, http://www.w3.org/2002/07/owl#Thing>
+firstFlightEndDate : first flight end date : <http://dbpedia.org/ontology/SpaceShuttle, http://www.w3.org/2001/XMLSchema#date>
+firstFlightStartDate : first flight start date : <http://dbpedia.org/ontology/SpaceShuttle, http://www.w3.org/2001/XMLSchema#date>
+firstGame : first game : <http://dbpedia.org/ontology/SoccerClub, http://www.w3.org/2001/XMLSchema#string>
+firstLaunchDate : first launch date : <http://dbpedia.org/ontology/LaunchPad, http://www.w3.org/2001/XMLSchema#date>
+firstLaunchRocket : first launch rocket : <http://dbpedia.org/ontology/LaunchPad, http://www.w3.org/2002/07/owl#Thing>
+firstLeader : firstLeader : <http://dbpedia.org/ontology/Election, http://dbpedia.org/ontology/Person>
+firstPopularVote : firstPopularVote : <http://dbpedia.org/ontology/Election, http://www.w3.org/2002/07/owl#Thing>
+firstPublicationDate : first publication date : <http://dbpedia.org/ontology/Manga, http://www.w3.org/2001/XMLSchema#date>
+firstPublicationYear : first publication year : <http://dbpedia.org/ontology/AcademicJournal, http://www.w3.org/2001/XMLSchema#gYear>
+firstRace : first race : <http://dbpedia.org/ontology/FormulaOneRacer, http://dbpedia.org/ontology/GrandPrix>
+firstWin : first win : <http://dbpedia.org/ontology/FormulaOneRacer, http://dbpedia.org/ontology/GrandPrix>
+firstWinner : first winner : <http://dbpedia.org/ontology/CyclingRace, http://dbpedia.org/ontology/Cyclist>
+flag : flag : <http://dbpedia.org/ontology/Country, http://www.w3.org/2001/XMLSchema#string>
+flagBearer : flag bearer : <http://dbpedia.org/ontology/OlympicResult, http://dbpedia.org/ontology/Person>
+floorArea : floor area (m2) : <http://dbpedia.org/ontology/Building, http://www.w3.org/2001/XMLSchema#double>
+floorCount : floor count : <http://dbpedia.org/ontology/Building, http://www.w3.org/2001/XMLSchema#positiveInteger>
+foalDate : foal date : <http://dbpedia.org/ontology/RaceHorse, http://www.w3.org/2001/XMLSchema#date>
+followingEvent : following event : <http://dbpedia.org/ontology/SportsEvent, http://dbpedia.org/ontology/SportsEvent>
+format : format : <http://dbpedia.org/ontology/Work, http://www.w3.org/2002/07/owl#Thing>
+formationDate : formation date : <http://dbpedia.org/ontology/Organisation, http://www.w3.org/2001/XMLSchema#date>
+formationYear : formation year : <http://dbpedia.org/ontology/Organisation, http://www.w3.org/2001/XMLSchema#gYear>
+formerBandMember : former band member : <http://dbpedia.org/ontology/Band, http://dbpedia.org/ontology/Person>
+formerBroadcastNetwork : former broadcast network : <http://dbpedia.org/ontology/Broadcaster, http://dbpedia.org/ontology/Broadcaster>
+formerCallsign : former call sign : <http://dbpedia.org/ontology/Broadcaster, http://www.w3.org/2001/XMLSchema#string>
+formerChannel : former channel : <http://dbpedia.org/ontology/TelevisionStation, http://www.w3.org/2001/XMLSchema#string>
+formerChoreographer : former choreographer : <http://dbpedia.org/ontology/FigureSkater, http://dbpedia.org/ontology/Person>
+formerCoach : former coach : <http://dbpedia.org/ontology/FigureSkater, http://dbpedia.org/ontology/Person>
+formerHighschool : former highschool : <http://dbpedia.org/ontology/NationalCollegiateAthleticAssociationAthlete, http://dbpedia.org/ontology/University>
+formerName : former name : <http://www.w3.org/2002/07/owl#Thing, http://www.w3.org/2001/XMLSchema#langString>
+formerPartner : former partner : <http://dbpedia.org/ontology/FigureSkater, http://dbpedia.org/ontology/FigureSkater>
+formerTeam : former team : <http://dbpedia.org/ontology/Athlete, http://dbpedia.org/ontology/Organisation>
+foundationPlace : foundation place : <http://dbpedia.org/ontology/Company, http://dbpedia.org/ontology/PopulatedPlace>
+foundedBy : founded by : <http://www.w3.org/2002/07/owl#Thing, http://dbpedia.org/ontology/Person>
+founder : Founder : <http://www.w3.org/2002/07/owl#Thing, http://dbpedia.org/ontology/Person>
+foundingDate : founding date : <http://www.w3.org/2002/07/owl#Thing, http://www.w3.org/2001/XMLSchema#date>
+foundingPerson : founding person : <http://www.w3.org/2002/07/owl#Thing, http://dbpedia.org/ontology/Person>
+foundingYear : founding year : <http://www.w3.org/2002/07/owl#Thing, http://www.w3.org/2001/XMLSchema#gYear>
+fourthCommander : fourth commander : <http://dbpedia.org/ontology/MilitaryUnit, http://www.w3.org/2002/07/owl#Thing>
+frazioni : frazioni : <http://dbpedia.org/ontology/Settlement, http://www.w3.org/2002/07/owl#Thing>
+frequency : frequency (Hz) : <http://www.w3.org/2002/07/owl#Thing, http://www.w3.org/2001/XMLSchema#double>
+frequencyOfPublication : frequency of publication : <http://dbpedia.org/ontology/AcademicJournal, http://www.w3.org/2001/XMLSchema#string>
+frequentlyUpdated : frequently updated : <http://dbpedia.org/ontology/Software, http://www.w3.org/2001/XMLSchema#string>
+frozen : frozen : <http://dbpedia.org/ontology/Lake, http://www.w3.org/2001/XMLSchema#string>
+fuelCapacity : fuel capacity (μ³) : <http://dbpedia.org/ontology/Automobile, http://www.w3.org/2001/XMLSchema#double>
+fuelConsumption : fuel consumption : <http://dbpedia.org/ontology/AutomobileEngine, http://www.w3.org/2001/XMLSchema#string>
+fuelSystem : fuel system : <http://dbpedia.org/ontology/AutomobileEngine, http://www.w3.org/2002/07/owl#Thing>
+fuelType : fuel type : <http://dbpedia.org/ontology/AutomobileEngine, http://dbpedia.org/datatype/fuelType>
+fuelTypeName : fuel type : <http://dbpedia.org/ontology/PowerStation, http://www.w3.org/2001/XMLSchema#langString>
+fundedBy : funded by : <http://dbpedia.org/ontology/ResearchProject, http://dbpedia.org/ontology/Country>
+gameArtist : game artist : <http://dbpedia.org/ontology/VideoGame, http://dbpedia.org/ontology/Person>
+gameEngine : Game Engine : <http://dbpedia.org/ontology/VideoGame, http://www.w3.org/2002/07/owl#Thing>
+games : games : <http://www.w3.org/2002/07/owl#Thing, http://www.w3.org/2001/XMLSchema#string>
+garrison : garrison : <http://dbpedia.org/ontology/MilitaryUnit, http://dbpedia.org/ontology/Place>
+gender : gender : <http://www.w3.org/2002/07/owl#Thing, http://www.w3.org/2002/07/owl#Thing>
+geneLocation : Gene Location : <http://dbpedia.org/ontology/Gene, http://dbpedia.org/ontology/GeneLocation>
+geneLocationEnd : gene location end : <http://dbpedia.org/ontology/GeneLocation, http://www.w3.org/2001/XMLSchema#integer>
+geneLocationStart : gene location start : <http://dbpedia.org/ontology/GeneLocation, http://www.w3.org/2001/XMLSchema#integer>
+generalManager : general manager : <http://dbpedia.org/ontology/SportsTeam, http://dbpedia.org/ontology/Person>
+generationUnits : generation units : <http://dbpedia.org/ontology/PowerStation, http://www.w3.org/2001/XMLSchema#langString>
+genomeDB : Genome DB : <http://dbpedia.org/ontology/GeneLocation, http://www.w3.org/2001/XMLSchema#string>
+genre : genre : <http://www.w3.org/2002/07/owl#Thing, http://dbpedia.org/ontology/MusicGenre>
+genus : genus : <http://dbpedia.org/ontology/Species, http://dbpedia.org/ontology/Eukaryote>
+geologicPeriod : geologic period : <http://dbpedia.org/ontology/Place, http://www.w3.org/2001/XMLSchema#string>
+geology : geology : <http://dbpedia.org/ontology/Place, http://www.w3.org/2001/XMLSchema#string>
+goldMedalist : gold medalist : <http://dbpedia.org/ontology/OlympicEvent, http://dbpedia.org/ontology/Person>
+governingBody : governing body : <http://dbpedia.org/ontology/Place, http://www.w3.org/2002/07/owl#Thing>
+government : government : <http://dbpedia.org/ontology/Place, http://www.w3.org/2002/07/owl#Thing>
+governmentCountry : government country : <http://dbpedia.org/ontology/AdministrativeRegion, http://dbpedia.org/ontology/PopulatedPlace>
+governmentElevation : government elevation (μ) : <http://dbpedia.org/ontology/Place, http://www.w3.org/2001/XMLSchema#double>
+governmentMountain : government mountain : <http://dbpedia.org/ontology/PopulatedPlace, http://www.w3.org/2002/07/owl#Thing>
+governmentPlace : government place : <http://dbpedia.org/ontology/PopulatedPlace, http://www.w3.org/2002/07/owl#Thing>
+governmentPosition : government position : <http://dbpedia.org/ontology/Place, http://www.w3.org/2002/07/owl#Thing>
+governmentRegion : government region : <http://dbpedia.org/ontology/Place, http://www.w3.org/2002/07/owl#Thing>
+governmentType : government type : <http://dbpedia.org/ontology/PopulatedPlace, http://www.w3.org/2002/07/owl#Thing>
+governor : governor : <http://dbpedia.org/ontology/Person, http://dbpedia.org/ontology/Person>
+governorGeneral : governor general : <http://dbpedia.org/ontology/Person, http://dbpedia.org/ontology/Person>
+grades : grades : <http://dbpedia.org/ontology/School, http://www.w3.org/2002/07/owl#Thing>
+grandsire : grandsire : <http://dbpedia.org/ontology/RaceHorse, http://dbpedia.org/ontology/RaceHorse>
+grayPage : Gray page : <http://dbpedia.org/ontology/AnatomicalStructure, http://www.w3.org/2001/XMLSchema#positiveInteger>
+graySubject : Gray subject : <http://dbpedia.org/ontology/AnatomicalStructure, http://www.w3.org/2001/XMLSchema#positiveInteger>
+gridReference : grid reference : <http://dbpedia.org/ontology/Place, http://www.w3.org/2001/XMLSchema#string>
+gross : gross ($) : <http://dbpedia.org/ontology/Film, http://dbpedia.org/datatype/usDollar>
+ground : ground : <http://www.w3.org/2002/07/owl#Thing, http://dbpedia.org/ontology/Place>
+growingGrape : growing grape : <http://dbpedia.org/ontology/WineRegion, http://dbpedia.org/ontology/Grape>
+guest : guest : <http://dbpedia.org/ontology/TelevisionEpisode, http://dbpedia.org/ontology/Person>
+hairColor : hair color : <http://dbpedia.org/ontology/BeautyQueen, http://www.w3.org/2001/XMLSchema#string>
+hallOfFame : hall of fame : <http://dbpedia.org/ontology/IceHockeyPlayer, http://www.w3.org/2001/XMLSchema#string>
+hasJunctionWith : has junction with : <http://dbpedia.org/ontology/Canal, http://dbpedia.org/ontology/Stream>
+hasVariant : variant or variation : <http://dbpedia.org/ontology/Food, http://www.w3.org/2002/07/owl#Thing>
+head : head : <http://dbpedia.org/ontology/EducationalInstitution, http://www.w3.org/2002/07/owl#Thing>
+headAlloy : head alloy : <http://dbpedia.org/ontology/AutomobileEngine, http://www.w3.org/2002/07/owl#Thing>
+headChef : head chef : <http://dbpedia.org/ontology/Restaurant, http://www.w3.org/2002/07/owl#Thing>
+headLabel : head label : <http://dbpedia.org/ontology/School, http://www.w3.org/2001/XMLSchema#langString>
+headquarter : headquarter : <http://www.w3.org/2002/07/owl#Thing, http://dbpedia.org/ontology/PopulatedPlace>
+height : height (μ) : <http://www.w3.org/2002/07/owl#Thing, http://www.w3.org/2001/XMLSchema#double>
+heightAboveAverageTerrain : height above average terrain (μ) : <http://dbpedia.org/ontology/Broadcaster, http://www.w3.org/2001/XMLSchema#double>
+heir : heir : <http://dbpedia.org/ontology/Monarch, http://dbpedia.org/ontology/Person>
+hgncid : HGNCid : <http://dbpedia.org/ontology/Biomolecule, http://www.w3.org/2001/XMLSchema#string>
+highestBreak : highest break : <http://dbpedia.org/ontology/SnookerPlayer, http://www.w3.org/2001/XMLSchema#integer>
+highestMountain : highest mountain : <http://dbpedia.org/ontology/Place, http://dbpedia.org/ontology/Place>
+highestPlace : highest place : <http://dbpedia.org/ontology/Place, http://dbpedia.org/ontology/Place>
+highestPosition : highest position : <http://dbpedia.org/ontology/Place, http://www.w3.org/2002/07/owl#Thing>
+highestRank : highest rank : <http://www.w3.org/2002/07/owl#Thing, http://www.w3.org/2001/XMLSchema#integer>
+highestRegion : highest region : <http://dbpedia.org/ontology/Place, http://www.w3.org/2002/07/owl#Thing>
+highestState : highest state : <http://dbpedia.org/ontology/Place, http://dbpedia.org/ontology/Settlement>
+highschool : highschool : <http://dbpedia.org/ontology/Person, http://www.w3.org/2002/07/owl#Thing>
+highwaySystem : highway system : <http://dbpedia.org/ontology/Road, http://www.w3.org/2002/07/owl#Thing>
+hipSize : hip size (μ) : <http://dbpedia.org/ontology/PlayboyPlaymate, http://www.w3.org/2001/XMLSchema#double>
+homeArena : home arena : <http://dbpedia.org/ontology/BasketballTeam, http://dbpedia.org/ontology/Stadium>
+homeStadium : home stadium : <http://www.w3.org/2002/07/owl#Thing, http://dbpedia.org/ontology/Stadium>
+homeport : homeport : <http://dbpedia.org/ontology/Ship, http://dbpedia.org/ontology/Place>
+hometown : home town : <http://dbpedia.org/ontology/Agent, http://dbpedia.org/ontology/PopulatedPlace>
+honours : honours : <http://www.w3.org/2002/07/owl#Thing, http://www.w3.org/2002/07/owl#Thing>
+house : house : <http://dbpedia.org/ontology/Legislature, http://dbpedia.org/ontology/Legislature>
+hsvCoordinateHue : hue coordinate in the HSV colour space : <http://dbpedia.org/ontology/Colour, http://www.w3.org/2001/XMLSchema#integer>
+hsvCoordinateSaturation : saturation coordinate in the HSV colour space : <http://dbpedia.org/ontology/Colour, http://www.w3.org/2001/XMLSchema#integer>
+hsvCoordinateValue : value coordinate in the HSV colour space : <http://dbpedia.org/ontology/Colour, http://www.w3.org/2001/XMLSchema#integer>
+hubAirport : hub airport : <http://dbpedia.org/ontology/Airline, http://dbpedia.org/ontology/Airport>
+hybrid : hybrid : <http://dbpedia.org/ontology/CultivatedVariety, http://dbpedia.org/ontology/Plant>
+iataAirlineCode : IATA code : <http://dbpedia.org/ontology/Airline, http://www.w3.org/2001/XMLSchema#string>
+iataLocationIdentifier : IATA Location Identifier : <http://dbpedia.org/ontology/Airport, http://www.w3.org/2001/XMLSchema#string>
+ibdbId : IBDB ID : <http://dbpedia.org/ontology/Play, http://www.w3.org/2001/XMLSchema#string>
+icaoAirlineCode : ICAO code : <http://dbpedia.org/ontology/Airline, http://www.w3.org/2001/XMLSchema#string>
+icaoLocationIdentifier : ICAO Location Identifier : <http://dbpedia.org/ontology/Airport, http://www.w3.org/2001/XMLSchema#string>
+icd10 : ICD10 : <http://dbpedia.org/ontology/Disease, http://www.w3.org/2001/XMLSchema#string>
+icd9 : ICD9 : <http://dbpedia.org/ontology/Disease, http://www.w3.org/2001/XMLSchema#string>
+icdo : ICDO : <http://dbpedia.org/ontology/Disease, http://www.w3.org/2001/XMLSchema#string>
+id : id : <http://dbpedia.org/ontology/WorldHeritageSite, http://www.w3.org/2001/XMLSchema#string>
+identificationSymbol : identification symbol : <http://dbpedia.org/ontology/MilitaryUnit, http://www.w3.org/2001/XMLSchema#string>
+ideology : ideology : <http://dbpedia.org/ontology/PoliticalParty, http://www.w3.org/2002/07/owl#Thing>
+illustrator : illustrator : <http://www.w3.org/2002/07/owl#Thing, http://dbpedia.org/ontology/Person>
+imageSize : image size (px) : <http://dbpedia.org/ontology/Magazine, http://www.w3.org/2001/XMLSchema#integer>
+imdbId : IMDB id : <http://dbpedia.org/ontology/Work, http://www.w3.org/2001/XMLSchema#string>
+impactFactor : impact factor : <http://dbpedia.org/ontology/AcademicJournal, http://www.w3.org/2001/XMLSchema#double>
+impactFactorAsOf : impact factor as of : <http://dbpedia.org/ontology/AcademicJournal, http://www.w3.org/2001/XMLSchema#gYear>
+inchi : The IUPAC International Chemical Identifier : <http://dbpedia.org/ontology/ChemicalCompound, http://www.w3.org/2001/XMLSchema#string>
+incumbent : incumbent : <http://dbpedia.org/ontology/Person, http://dbpedia.org/ontology/Person>
+individualisedGnd : individualised GND number : <http://dbpedia.org/ontology/Agent, http://www.w3.org/2001/XMLSchema#string>
+industry : industry : <http://dbpedia.org/ontology/Company, http://www.w3.org/2002/07/owl#Thing>
+inflow : inflow : <http://dbpedia.org/ontology/Lake, http://dbpedia.org/ontology/River>
+influenced : influenced : <http://www.w3.org/2002/07/owl#Thing, http://www.w3.org/2002/07/owl#Thing>
+influencedBy : influenced by : <http://www.w3.org/2002/07/owl#Thing, http://www.w3.org/2002/07/owl#Thing>
+ingredient : ingredient : <http://dbpedia.org/ontology/Food, http://www.w3.org/2002/07/owl#Thing>
+innervates : innervates : <http://dbpedia.org/ontology/Nerve, http://dbpedia.org/ontology/AnatomicalStructure>
+inseeCode : INSEE code : <http://dbpedia.org/ontology/Settlement, http://www.w3.org/2001/XMLSchema#nonNegativeInteger>
+installedCapacity : installed capacity (W) : <http://dbpedia.org/ontology/PowerStation, http://www.w3.org/2001/XMLSchema#double>
+institution : institution : <http://dbpedia.org/ontology/Person, http://www.w3.org/2002/07/owl#Thing>
+instrument : instrument : <http://www.w3.org/2002/07/owl#Thing, http://www.w3.org/2002/07/owl#Thing>
+intercommunality : intercommunality : <http://dbpedia.org/ontology/Settlement, http://www.w3.org/2002/07/owl#Thing>
+interest : interest : <http://dbpedia.org/ontology/SiteOfSpecialScientificInterest, http://www.w3.org/2001/XMLSchema#string>
+internationalAffiliation : international affiliation : <http://dbpedia.org/ontology/PoliticalParty, http://dbpedia.org/ontology/Organisation>
+internationally : internationally : <http://dbpedia.org/ontology/Company, http://www.w3.org/2001/XMLSchema#boolean>
+introduced : introduced : <http://dbpedia.org/ontology/Beverage, http://www.w3.org/2001/XMLSchema#date>
+introductionDate : introduction date : <http://dbpedia.org/ontology/Aircraft, http://www.w3.org/2001/XMLSchema#date>
+iobdbId : IOBDB ID : <http://dbpedia.org/ontology/Play, http://www.w3.org/2001/XMLSchema#string>
+isHandicappedAccessible : is handicapped accessible : <http://dbpedia.org/ontology/Station, http://www.w3.org/2001/XMLSchema#boolean>
+isPartOf : is part of : <http://www.w3.org/2002/07/owl#Thing, http://dbpedia.org/ontology/PopulatedPlace>
+isPartOfAnatomicalStructure : is part of anatomical structure : <http://dbpedia.org/ontology/Brain, http://dbpedia.org/ontology/Brain>
+isPartOfMilitaryConflict : is part of military conflict : <http://dbpedia.org/ontology/MilitaryConflict, http://dbpedia.org/ontology/MilitaryConflict>
+isPartOfRoute : is part of route : <http://dbpedia.org/ontology/RouteOfTransportation, http://www.w3.org/2001/XMLSchema#string>
+isPartOfWineRegion : is part of wine region : <http://dbpedia.org/ontology/WineRegion, http://dbpedia.org/ontology/WineRegion>
+isPeerReviewed : is peer reviewed : <http://dbpedia.org/ontology/AcademicJournal, http://www.w3.org/2001/XMLSchema#boolean>
+isbn : ISBN : <http://dbpedia.org/ontology/WrittenWork, http://www.w3.org/2001/XMLSchema#string>
+island : island : <http://dbpedia.org/ontology/Lake, http://www.w3.org/2002/07/owl#Thing>
+isniId : ISNI Id : <http://dbpedia.org/ontology/Agent, http://www.w3.org/2001/XMLSchema#string>
+iso6391Code : ISO 639-1 code : <http://dbpedia.org/ontology/Language, http://www.w3.org/2001/XMLSchema#string>
+iso6392Code : ISO 639-2 code : <http://dbpedia.org/ontology/Language, http://www.w3.org/2001/XMLSchema#string>
+iso6393Code : ISO 639-3 code : <http://dbpedia.org/ontology/Language, http://www.w3.org/2001/XMLSchema#string>
+isoCodeRegion : ISO region code : <http://dbpedia.org/ontology/PopulatedPlace, http://www.w3.org/2001/XMLSchema#string>
+issDockings : iss dockings : <http://dbpedia.org/ontology/SpaceShuttle, http://www.w3.org/2001/XMLSchema#nonNegativeInteger>
+issn : issn : <http://dbpedia.org/ontology/PeriodicalLiterature, http://www.w3.org/2001/XMLSchema#string>
+iucnCategory : iucn category : <http://dbpedia.org/ontology/ProtectedArea, http://www.w3.org/2001/XMLSchema#string>
+iupacName : IUPAC name : <http://www.w3.org/2002/07/owl#Thing, http://www.w3.org/2001/XMLSchema#langString>
+jockey : jockey : <http://dbpedia.org/ontology/RaceHorse, http://dbpedia.org/ontology/Person>
+jointCommunity : joint community : <http://dbpedia.org/ontology/Settlement, http://www.w3.org/2002/07/owl#Thing>
+jstor : JSTOR : <http://dbpedia.org/ontology/AcademicJournal, http://www.w3.org/2001/XMLSchema#string>
+jurisdiction : jurisdiction : <http://www.w3.org/2002/07/owl#Thing, http://www.w3.org/2002/07/owl#Thing>
+keyPerson : key person : <http://dbpedia.org/ontology/Organisation, http://www.w3.org/2002/07/owl#Thing>
+kingdom : kingdom : <http://dbpedia.org/ontology/Species, http://dbpedia.org/ontology/Eukaryote>
+knownFor : known for : <http://dbpedia.org/ontology/Agent, http://www.w3.org/2002/07/owl#Thing>
+lake : vastest lake : <http://dbpedia.org/ontology/Dam, http://dbpedia.org/ontology/Lake>
+landingDate : landing date : <http://dbpedia.org/ontology/SpaceMission, http://www.w3.org/2001/XMLSchema#date>
+language : language : <http://www.w3.org/2002/07/owl#Thing, http://dbpedia.org/ontology/Language>
+languageFamily : family : <http://dbpedia.org/ontology/Language, http://www.w3.org/2002/07/owl#Thing>
+languageRegulator : language regulator or academy : <http://dbpedia.org/ontology/Language, http://www.w3.org/2002/07/owl#Thing>
+largestCity : largest city : <http://www.w3.org/2002/07/owl#Thing, http://dbpedia.org/ontology/Settlement>
+largestSettlement : largest settlement : <http://www.w3.org/2002/07/owl#Thing, http://dbpedia.org/ontology/Settlement>
+largestWin : largest win : <http://dbpedia.org/ontology/SoccerClub, http://www.w3.org/2001/XMLSchema#string>
+lastAirDate : last air date : <http://dbpedia.org/ontology/Broadcaster, http://www.w3.org/2001/XMLSchema#date>
+lastAppearance : last appearance : <http://dbpedia.org/ontology/FictionalCharacter, http://dbpedia.org/ontology/Work>
+lastElectionDate : last election date : <http://dbpedia.org/ontology/Legislature, http://www.w3.org/2001/XMLSchema#date>
+lastFlight : last flight : <http://dbpedia.org/ontology/SpaceShuttle, http://www.w3.org/2002/07/owl#Thing>
+lastFlightEndDate : last flight end date : <http://dbpedia.org/ontology/SpaceShuttle, http://www.w3.org/2001/XMLSchema#date>
+lastFlightStartDate : last flight start date : <http://dbpedia.org/ontology/SpaceShuttle, http://www.w3.org/2001/XMLSchema#date>
+lastLaunchDate : last launch date : <http://dbpedia.org/ontology/LaunchPad, http://www.w3.org/2001/XMLSchema#date>
+lastLaunchRocket : last launch rocket : <http://dbpedia.org/ontology/LaunchPad, http://www.w3.org/2002/07/owl#Thing>
+lastPosition : last position : <http://dbpedia.org/ontology/FormulaOneRacer, http://www.w3.org/2001/XMLSchema#positiveInteger>
+lastPublicationDate : last publication date : <http://dbpedia.org/ontology/Manga, http://www.w3.org/2001/XMLSchema#date>
+lastRace : last race : <http://dbpedia.org/ontology/FormulaOneRacer, http://dbpedia.org/ontology/GrandPrix>
+lastWin : last win : <http://dbpedia.org/ontology/FormulaOneRacer, http://dbpedia.org/ontology/GrandPrix>
+latestPreviewDate : latest preview date : <http://dbpedia.org/ontology/Software, http://www.w3.org/2001/XMLSchema#date>
+latestPreviewVersion : latest preview version : <http://dbpedia.org/ontology/Software, http://www.w3.org/2001/XMLSchema#string>
+latestReleaseDate : latest release date : <http://dbpedia.org/ontology/Software, http://www.w3.org/2001/XMLSchema#date>
+latestReleaseVersion : latest release version : <http://dbpedia.org/ontology/Software, http://www.w3.org/2001/XMLSchema#string>
+launchDate : launch date : <http://dbpedia.org/ontology/SpaceMission, http://www.w3.org/2001/XMLSchema#date>
+launchPad : launch pad : <http://dbpedia.org/ontology/SpaceMission, http://www.w3.org/2002/07/owl#Thing>
+launchSite : launch site : <http://www.w3.org/2002/07/owl#Thing, http://www.w3.org/2002/07/owl#Thing>
+launches : launches : <http://dbpedia.org/ontology/LaunchPad, http://www.w3.org/2001/XMLSchema#nonNegativeInteger>
+layingDown : laying down : <http://dbpedia.org/ontology/Ship, http://www.w3.org/2001/XMLSchema#date>
+layout : layout : <http://dbpedia.org/ontology/Automobile, http://www.w3.org/2002/07/owl#Thing>
+lcc : LCC : <http://dbpedia.org/ontology/Book, http://www.w3.org/2001/XMLSchema#string>
+lccn : LCCN : <http://dbpedia.org/ontology/AcademicJournal, http://www.w3.org/2001/XMLSchema#string>
+lccnId : LCCN Id : <http://dbpedia.org/ontology/Agent, http://www.w3.org/2001/XMLSchema#string>
+leader : leader : <http://www.w3.org/2002/07/owl#Thing, http://dbpedia.org/ontology/Person>
+leaderFunction : leaderFunction : <http://dbpedia.org/ontology/Organisation, http://dbpedia.org/ontology/PersonFunction>
+leaderName : leader name : <http://dbpedia.org/ontology/PopulatedPlace, http://www.w3.org/2002/07/owl#Thing>
+leaderParty : leader party : <http://dbpedia.org/ontology/PopulatedPlace, http://dbpedia.org/ontology/PoliticalParty>
+leaderTitle : leader title : <http://dbpedia.org/ontology/PopulatedPlace, http://www.w3.org/2001/XMLSchema#langString>
+league : league : <http://www.w3.org/2002/07/owl#Thing, http://www.w3.org/2002/07/owl#Thing>
+leftChild : left child : <http://dbpedia.org/ontology/Valley, http://dbpedia.org/ontology/Valley>
+leftTributary : left tributary : <http://dbpedia.org/ontology/Place, http://dbpedia.org/ontology/River>
+legalForm : legal form : <http://dbpedia.org/ontology/LawFirm, http://www.w3.org/2002/07/owl#Thing>
+legislativePeriodName : legislative period name : <http://dbpedia.org/ontology/Legislature, http://www.w3.org/2001/XMLSchema#string>
+length : length (μ) : <http://www.w3.org/2002/07/owl#Thing, http://www.w3.org/2001/XMLSchema#double>
+lengthReference : length reference : <http://dbpedia.org/ontology/Road, http://www.w3.org/2001/XMLSchema#string>
+license : license : <http://dbpedia.org/ontology/Work, http://www.w3.org/2002/07/owl#Thing>
+licensee : licensee : <http://www.w3.org/2002/07/owl#Thing, http://www.w3.org/2001/XMLSchema#string>
+lieutenancyArea : Lieutenancy area : <http://dbpedia.org/ontology/Settlement, http://www.w3.org/2002/07/owl#Thing>
+lieutenant : lieutenant : <http://dbpedia.org/ontology/Person, http://dbpedia.org/ontology/Person>
+lineLength : line length (μ) : <http://dbpedia.org/ontology/ArchitecturalStructure, http://www.w3.org/2001/XMLSchema#double>
+literaryGenre : literary genre : <http://dbpedia.org/ontology/WrittenWork, http://www.w3.org/2002/07/owl#Thing>
+loadLimit : load limit (g) : <http://dbpedia.org/ontology/Bridge, http://www.w3.org/2001/XMLSchema#double>
+localAuthority : local authority : <http://dbpedia.org/ontology/School, http://www.w3.org/2002/07/owl#Thing>
+locatedInArea : located in area : <http://dbpedia.org/ontology/Place, http://dbpedia.org/ontology/PopulatedPlace>
+location : location : <http://www.w3.org/2002/07/owl#Thing, http://dbpedia.org/ontology/PopulatedPlace>
+locationCity : location city : <http://www.w3.org/2002/07/owl#Thing, http://dbpedia.org/ontology/PopulatedPlace>
+locationCountry : państwo : <http://www.w3.org/2002/07/owl#Thing, http://dbpedia.org/ontology/Country>
+locationIdentifier : Location Identifier : <http://dbpedia.org/ontology/Airport, http://www.w3.org/2001/XMLSchema#string>
+locusSupplementaryData : locus supplementary data : <http://dbpedia.org/ontology/Protein, http://www.w3.org/2001/XMLSchema#string>
+logo : logo : <http://www.w3.org/2002/07/owl#Thing, http://www.w3.org/2001/XMLSchema#string>
+longName : longName : <http://dbpedia.org/ontology/Country, http://www.w3.org/2001/XMLSchema#langString>
+longtype : longtype : <http://dbpedia.org/ontology/Album, http://www.w3.org/2001/XMLSchema#string>
+lounge : lounge : <http://dbpedia.org/ontology/Airline, http://www.w3.org/2002/07/owl#Thing>
+lowerAge : lower age : <http://dbpedia.org/ontology/School, http://www.w3.org/2001/XMLSchema#nonNegativeInteger>
+lowerEarthOrbitPayload : lower earth orbit payload (g) : <http://dbpedia.org/ontology/Rocket, http://www.w3.org/2001/XMLSchema#double>
+lowest : lowest : <http://dbpedia.org/ontology/Place, http://www.w3.org/2001/XMLSchema#string>
+lowestMountain : lowest mountain : <http://dbpedia.org/ontology/Place, http://www.w3.org/2002/07/owl#Thing>
+lowestPlace : lowest place : <http://dbpedia.org/ontology/Place, http://www.w3.org/2002/07/owl#Thing>
+lowestPosition : lowest position : <http://dbpedia.org/ontology/Place, http://www.w3.org/2002/07/owl#Thing>
+lowestRegion : lowest region : <http://dbpedia.org/ontology/Place, http://www.w3.org/2002/07/owl#Thing>
+lowestState : lowest state : <http://dbpedia.org/ontology/Place, http://dbpedia.org/ontology/Settlement>
+lymph : lymph : <http://dbpedia.org/ontology/AnatomicalStructure, http://dbpedia.org/ontology/Lymph>
+lyrics : lyrics : <http://dbpedia.org/ontology/Musical, http://dbpedia.org/ontology/Person>
+magazine : magazine : <http://dbpedia.org/ontology/Manga, http://dbpedia.org/ontology/Magazine>
+maidenFlight : maiden flight : <http://dbpedia.org/ontology/Rocket, http://www.w3.org/2001/XMLSchema#date>
+maidenFlightRocket : maiden flight rocket : <http://dbpedia.org/ontology/YearInSpaceflight, http://dbpedia.org/ontology/Rocket>
+maidenVoyage : maiden voyage : <http://dbpedia.org/ontology/Ship, http://www.w3.org/2001/XMLSchema#date>
+mainInterest : main interest : <http://dbpedia.org/ontology/Philosopher, http://www.w3.org/2002/07/owl#Thing>
+mainOrgan : main organ : <http://dbpedia.org/ontology/Organisation, http://www.w3.org/2002/07/owl#Thing>
+mainspan : mainspan (μ) : <http://dbpedia.org/ontology/Bridge, http://www.w3.org/2001/XMLSchema#double>
+maintainedBy : maintained by : <http://dbpedia.org/ontology/RouteOfTransportation, http://dbpedia.org/ontology/Organisation>
+majorIsland : major island : <http://dbpedia.org/ontology/Island, http://dbpedia.org/ontology/PopulatedPlace>
+majorShrine : major shrine : <http://dbpedia.org/ontology/Saint, http://dbpedia.org/ontology/Place>
+majorityLeader : majority leader : <http://dbpedia.org/ontology/Politician, http://www.w3.org/2001/XMLSchema#integer>
+management : management : <http://dbpedia.org/ontology/Place, http://dbpedia.org/ontology/GovernmentAgency>
+managementElevation : management elevation (μ) : <http://dbpedia.org/ontology/Place, http://www.w3.org/2001/XMLSchema#double>
+managementMountain : management mountain : <http://dbpedia.org/ontology/Place, http://dbpedia.org/ontology/Settlement>
+managementPlace : management place : <http://dbpedia.org/ontology/Place, http://dbpedia.org/ontology/Settlement>
+managementPosition : management position : <http://dbpedia.org/ontology/Place, http://www.w3.org/2002/07/owl#Thing>
+manager : manager : <http://www.w3.org/2002/07/owl#Thing, http://dbpedia.org/ontology/SoccerManager>
+managerClub : manager club : <http://dbpedia.org/ontology/Person, http://dbpedia.org/ontology/SoccerClub>
+managerTitle : manager title : <http://www.w3.org/2002/07/owl#Thing, http://www.w3.org/2001/XMLSchema#string>
+managingEditor : managing editor : <http://dbpedia.org/ontology/Newspaper, http://www.w3.org/2002/07/owl#Thing>
+manufacturer : manufacturer : <http://www.w3.org/2002/07/owl#Thing, http://dbpedia.org/ontology/Company>
+map : map : <http://www.w3.org/2002/07/owl#Thing, http://www.w3.org/2002/07/owl#Thing>
+march : march : <http://dbpedia.org/ontology/MilitaryUnit, http://www.w3.org/2002/07/owl#Thing>
+mascot : mascot : <http://dbpedia.org/ontology/Organisation, http://www.w3.org/2001/XMLSchema#string>
+mass : mass (g) : <http://www.w3.org/2002/07/owl#Thing, http://www.w3.org/2001/XMLSchema#double>
+material : material : <http://dbpedia.org/ontology/Place, http://www.w3.org/2001/XMLSchema#string>
+maximumBoatBeam : maximum boat beam (μ) : <http://dbpedia.org/ontology/Canal, http://www.w3.org/2001/XMLSchema#double>
+maximumBoatLength : maximum boat length (μ) : <http://dbpedia.org/ontology/Canal, http://www.w3.org/2001/XMLSchema#double>
+maximumDischarge : maximum discharge (m³/s) : <http://dbpedia.org/ontology/Place, http://www.w3.org/2001/XMLSchema#double>
+maximumElevation : maximum elevation (μ) : <http://dbpedia.org/ontology/Place, http://www.w3.org/2001/XMLSchema#double>
+maximumTemperature : maximum temperature (K) : <http://dbpedia.org/ontology/Planet, http://www.w3.org/2001/XMLSchema#double>
+mayor : mayor : <http://dbpedia.org/ontology/Place, http://dbpedia.org/ontology/Agent>
+mbaId : MBA Id : <http://dbpedia.org/ontology/Agent, http://www.w3.org/2001/XMLSchema#string>
+meanRadius : mean radius (μ) : <http://dbpedia.org/ontology/Planet, http://www.w3.org/2001/XMLSchema#double>
+meanTemperature : mean temperature (K) : <http://dbpedia.org/ontology/Planet, http://www.w3.org/2001/XMLSchema#double>
+meaning : meaning : <http://www.w3.org/2002/07/owl#Thing, http://www.w3.org/2001/XMLSchema#string>
+mediaType : media type : <http://dbpedia.org/ontology/WrittenWork, http://www.w3.org/2002/07/owl#Thing>
+medlineplus : MedlinePlus : <http://dbpedia.org/ontology/Disease, http://www.w3.org/2001/XMLSchema#string>
+meetingRoad : meeting road : <http://dbpedia.org/ontology/RoadJunction, http://dbpedia.org/ontology/Road>
+memberOfParliament : Member of Parliament : <http://dbpedia.org/ontology/AdministrativeRegion, http://dbpedia.org/ontology/Person>
+membership : membership : <http://dbpedia.org/ontology/Organisation, http://www.w3.org/2001/XMLSchema#langString>
+mergedIntoParty : merged into party : <http://dbpedia.org/ontology/PoliticalParty, http://dbpedia.org/ontology/PoliticalParty>
+meshId : MeSH ID : <http://dbpedia.org/ontology/Disease, http://www.w3.org/2001/XMLSchema#string>
+meshName : MeSH name : <http://dbpedia.org/ontology/AnatomicalStructure, http://www.w3.org/2001/XMLSchema#langString>
+meshNumber : MeSH number : <http://dbpedia.org/ontology/AnatomicalStructure, http://www.w3.org/2001/XMLSchema#string>
+metropolitanBorough : metropolitan borough : <http://dbpedia.org/ontology/Settlement, http://dbpedia.org/ontology/Settlement>
+mgiid : mgiid : <http://dbpedia.org/ontology/HumanGene, http://www.w3.org/2001/XMLSchema#string>
+militaryBranch : military branch : <http://dbpedia.org/ontology/Agent, http://dbpedia.org/ontology/MilitaryUnit>
+militaryCommand : military command : <http://dbpedia.org/ontology/Person, http://www.w3.org/2001/XMLSchema#string>
+militaryRank : military rank : <http://dbpedia.org/ontology/Person, http://www.w3.org/2002/07/owl#Thing>
+militaryUnit : military unit : <http://dbpedia.org/ontology/Person, http://dbpedia.org/ontology/MilitaryUnit>
+militaryUnitSize : military unit size : <http://dbpedia.org/ontology/MilitaryUnit, http://www.w3.org/2001/XMLSchema#string>
+minimumDischarge : minimum discharge (m³/s) : <http://dbpedia.org/ontology/Place, http://www.w3.org/2001/XMLSchema#double>
+minimumElevation : minimum elevation (μ) : <http://dbpedia.org/ontology/Place, http://www.w3.org/2001/XMLSchema#double>
+minimumTemperature : minimum temperature (K) : <http://dbpedia.org/ontology/Planet, http://www.w3.org/2001/XMLSchema#double>
+mirDockings : mir dockings : <http://dbpedia.org/ontology/SpaceShuttle, http://www.w3.org/2001/XMLSchema#nonNegativeInteger>
+mission : mission : <http://dbpedia.org/ontology/Astronaut, http://dbpedia.org/ontology/ArtificialSatellite>
+missionDuration : mission duration (s) : <http://dbpedia.org/ontology/SpaceMission, http://www.w3.org/2001/XMLSchema#double>
+missions : missions : <http://dbpedia.org/ontology/SpaceShuttle, http://www.w3.org/2001/XMLSchema#nonNegativeInteger>
+model : model : <http://dbpedia.org/ontology/Sales, http://www.w3.org/2001/XMLSchema#string>
+modelEndYear : model end year : <http://dbpedia.org/ontology/Automobile, http://www.w3.org/2001/XMLSchema#gYear>
+modelStartYear : model start year : <http://dbpedia.org/ontology/Automobile, http://www.w3.org/2001/XMLSchema#gYear>
+monarch : monarch : <http://www.w3.org/2002/07/owl#Thing, http://dbpedia.org/ontology/BritishRoyalty>
+mostWins : most wins : <http://dbpedia.org/ontology/CyclingRace, http://dbpedia.org/ontology/Person>
+motto : motto : <http://www.w3.org/2002/07/owl#Thing, http://www.w3.org/2001/XMLSchema#string>
+mountainRange : mountain range : <http://dbpedia.org/ontology/NaturalPlace, http://dbpedia.org/ontology/MountainRange>
+mouthCountry : mouth country : <http://dbpedia.org/ontology/Place, http://dbpedia.org/ontology/Country>
+mouthElevation : mouth elevation (μ) : <http://dbpedia.org/ontology/Place, http://www.w3.org/2001/XMLSchema#double>
+mouthMountain : mouth mountain : <http://dbpedia.org/ontology/Place, http://www.w3.org/2002/07/owl#Thing>
+mouthPlace : mouth place : <http://dbpedia.org/ontology/Place, http://www.w3.org/2002/07/owl#Thing>
+mouthPosition : mouth position : <http://dbpedia.org/ontology/Place, http://www.w3.org/2002/07/owl#Thing>
+mouthRegion : mouth region : <http://dbpedia.org/ontology/Place, http://dbpedia.org/ontology/PopulatedPlace>
+movement : movement : <http://dbpedia.org/ontology/Artist, http://www.w3.org/2002/07/owl#Thing>
+municipality : municipality : <http://dbpedia.org/ontology/Place, http://dbpedia.org/ontology/PopulatedPlace>
+municipalityCode : municipality code : <http://dbpedia.org/ontology/Settlement, http://www.w3.org/2001/XMLSchema#string>
+museum : museum : <http://dbpedia.org/ontology/Artwork, http://dbpedia.org/ontology/Museum>
+musicBy : music by : <http://dbpedia.org/ontology/Musical, http://dbpedia.org/ontology/Person>
+musicComposer : music composer : <http://dbpedia.org/ontology/Work, http://dbpedia.org/ontology/Person>
+musicFusionGenre : music fusion genre : <http://dbpedia.org/ontology/MusicGenre, http://dbpedia.org/ontology/MusicGenre>
+musicSubgenre : music subgenre : <http://dbpedia.org/ontology/MusicGenre, http://dbpedia.org/ontology/MusicGenre>
+musicalArtist : musical artist : <http://dbpedia.org/ontology/Single, http://dbpedia.org/ontology/Agent>
+musicalBand : musical band : <http://dbpedia.org/ontology/Single, http://dbpedia.org/ontology/Agent>
+muteCharacterInPlay : mute character in play : <http://dbpedia.org/ontology/Play, http://www.w3.org/2001/XMLSchema#string>
+mythology : mythology : <http://dbpedia.org/ontology/MythologicalFigure, http://www.w3.org/2002/07/owl#Thing>
+name : name : <http://dbpedia.org/ontology/Place, http://www.w3.org/2001/XMLSchema#langString>
+namedAfter : named after : <http://dbpedia.org/ontology/SpaceShuttle, http://dbpedia.org/ontology/Ship>
+narrator : narrator : <http://dbpedia.org/ontology/Work, http://dbpedia.org/ontology/Person>
+nationalAffiliation : national affiliation : <http://dbpedia.org/ontology/PoliticalParty, http://dbpedia.org/ontology/PoliticalParty>
+nationalRanking : national ranking : <http://dbpedia.org/ontology/School, http://www.w3.org/2001/XMLSchema#positiveInteger>
+nationalTeam : national team : <http://dbpedia.org/ontology/Person, http://www.w3.org/2002/07/owl#Thing>
+nationalTopographicSystemMapNumber : National Topographic System map number : <http://dbpedia.org/ontology/NaturalPlace, http://www.w3.org/2001/XMLSchema#string>
+nationality : nationality : <http://dbpedia.org/ontology/Agent, http://www.w3.org/2002/07/owl#Thing>
+nearestCity : nearest city : <http://dbpedia.org/ontology/Place, http://dbpedia.org/ontology/PopulatedPlace>
+neighboringMunicipality : neighboring municipality : <http://dbpedia.org/ontology/Settlement, http://dbpedia.org/ontology/Settlement>
+nerve : nerve : <http://dbpedia.org/ontology/AnatomicalStructure, http://dbpedia.org/ontology/Nerve>
+netIncome : net income ($) : <http://dbpedia.org/ontology/Company, http://dbpedia.org/datatype/usDollar>
+network : network : <http://www.w3.org/2002/07/owl#Thing, http://dbpedia.org/ontology/Organisation>
+networth : networth ($) : <http://dbpedia.org/ontology/Person, http://dbpedia.org/datatype/usDollar>
+nextEvent : next event : <http://dbpedia.org/ontology/OlympicEvent, http://dbpedia.org/ontology/OlympicEvent>
+nextMission : next mission : <http://dbpedia.org/ontology/SpaceMission, http://dbpedia.org/ontology/ArtificialSatellite>
+nlaId : NLA Id : <http://dbpedia.org/ontology/Agent, http://www.w3.org/2001/XMLSchema#string>
+nobelLaureates : nobel laureates : <http://dbpedia.org/ontology/School, http://dbpedia.org/ontology/Person>
+nominee : nominee : <http://dbpedia.org/ontology/Person, http://www.w3.org/2002/07/owl#Thing>
+nonFictionSubject : non-fiction subject : <http://dbpedia.org/ontology/Book, http://www.w3.org/2002/07/owl#Thing>
+notableCommander : notable commander : <http://dbpedia.org/ontology/MilitaryUnit, http://dbpedia.org/ontology/Person>
+notableIdea : notableIdea : <http://dbpedia.org/ontology/Philosopher, http://www.w3.org/2002/07/owl#Thing>
+notableStudent : notable student : <http://dbpedia.org/ontology/Scientist, http://dbpedia.org/ontology/Person>
+notableWine : notable wine : <http://dbpedia.org/ontology/Grape, http://www.w3.org/2002/07/owl#Thing>
+notableWork : notable work : <http://dbpedia.org/ontology/Writer, http://dbpedia.org/ontology/Work>
+note : note : <http://dbpedia.org/ontology/AutomobileEngine, http://www.w3.org/2001/XMLSchema#string>
+notes : notes : <http://dbpedia.org/ontology/MilitaryConflict, http://www.w3.org/2001/XMLSchema#string>
+nrhpReferenceNumber : NRHP Reference Number : <http://dbpedia.org/ontology/Place, http://www.w3.org/2001/XMLSchema#string>
+nrhpType : NRHP type : <http://dbpedia.org/ontology/Place, http://www.w3.org/2002/07/owl#Thing>
+nssdcId : NSSDC ID : <http://dbpedia.org/ontology/SpaceStation, http://www.w3.org/2001/XMLSchema#string>
+number : number : <http://www.w3.org/2002/07/owl#Thing, http://www.w3.org/2001/XMLSchema#integer>
+numberBuilt : number built : <http://dbpedia.org/ontology/MeanOfTransportation, http://www.w3.org/2001/XMLSchema#nonNegativeInteger>
+numberOfBronzeMedalsWon : number of bronze medals won : <http://dbpedia.org/ontology/OlympicResult, http://www.w3.org/2001/XMLSchema#nonNegativeInteger>
+numberOfClassrooms : number of classrooms : <http://dbpedia.org/ontology/School, http://www.w3.org/2002/07/owl#Thing>
+numberOfCompetitors : number of competitors : <http://dbpedia.org/ontology/OlympicResult, http://www.w3.org/2001/XMLSchema#nonNegativeInteger>
+numberOfDoctoralStudents : number of doctoral students : <http://dbpedia.org/ontology/University, http://www.w3.org/2001/XMLSchema#nonNegativeInteger>
+numberOfEmployees : number of employees : <http://dbpedia.org/ontology/Organisation, http://www.w3.org/2001/XMLSchema#nonNegativeInteger>
+numberOfEpisodes : number of episodes : <http://dbpedia.org/ontology/Work, http://www.w3.org/2001/XMLSchema#nonNegativeInteger>
+numberOfFilms : number of films : <http://dbpedia.org/ontology/AdultActor, http://www.w3.org/2001/XMLSchema#nonNegativeInteger>
+numberOfGoals : number of goals scored : <http://dbpedia.org/ontology/CareerStation, http://www.w3.org/2001/XMLSchema#string>
+numberOfGoldMedalsWon : number of gold medals won : <http://dbpedia.org/ontology/OlympicResult, http://www.w3.org/2001/XMLSchema#nonNegativeInteger>
+numberOfGraduateStudents : number of graduate students : <http://dbpedia.org/ontology/EducationalInstitution, http://www.w3.org/2001/XMLSchema#nonNegativeInteger>
+numberOfIslands : number of islands : <http://dbpedia.org/ontology/Island, http://www.w3.org/2001/XMLSchema#nonNegativeInteger>
+numberOfLanes : number of lanes : <http://dbpedia.org/ontology/RoadTunnel, http://www.w3.org/2001/XMLSchema#nonNegativeInteger>
+numberOfLawyers : number of lawyers : <http://dbpedia.org/ontology/LawFirm, http://www.w3.org/2001/XMLSchema#nonNegativeInteger>
+numberOfLines : number of lines : <http://dbpedia.org/ontology/PublicTransitSystem, http://www.w3.org/2001/XMLSchema#nonNegativeInteger>
+numberOfLocations : number of locations : <http://dbpedia.org/ontology/Company, http://www.w3.org/2001/XMLSchema#nonNegativeInteger>
+numberOfMatches : number of matches or caps : <http://dbpedia.org/ontology/CareerStation, http://www.w3.org/2001/XMLSchema#integer>
+numberOfMembers : number of members : <http://www.w3.org/2002/07/owl#Thing, http://www.w3.org/2001/XMLSchema#nonNegativeInteger>
+numberOfOffices : number of offices : <http://dbpedia.org/ontology/LawFirm, http://www.w3.org/2001/XMLSchema#nonNegativeInteger>
+numberOfOfficials : number of officials : <http://dbpedia.org/ontology/OlympicResult, http://www.w3.org/2001/XMLSchema#nonNegativeInteger>
+numberOfOrbits : number of orbits : <http://dbpedia.org/ontology/SpaceMission, http://www.w3.org/2001/XMLSchema#nonNegativeInteger>
+numberOfPads : number of pads : <http://dbpedia.org/ontology/LaunchPad, http://www.w3.org/2001/XMLSchema#nonNegativeInteger>
+numberOfPages : number of pages : <http://dbpedia.org/ontology/WrittenWork, http://www.w3.org/2001/XMLSchema#positiveInteger>
+numberOfParkingSpaces : number of parking spaces : <http://dbpedia.org/ontology/Hotel, http://www.w3.org/2001/XMLSchema#nonNegativeInteger>
+numberOfParticipatingAthletes : number of participating athletes : <http://dbpedia.org/ontology/Olympics, http://www.w3.org/2001/XMLSchema#nonNegativeInteger>
+numberOfParticipatingNations : number of participating nations : <http://dbpedia.org/ontology/Olympics, http://www.w3.org/2001/XMLSchema#nonNegativeInteger>
+numberOfPiersInWater : number of piers in water : <http://dbpedia.org/ontology/Bridge, http://www.w3.org/2001/XMLSchema#nonNegativeInteger>
+numberOfPlatformLevels : number of platform levels : <http://dbpedia.org/ontology/Station, http://www.w3.org/2001/XMLSchema#integer>
+numberOfPostgraduateStudents : number of postgraduate students : <http://dbpedia.org/ontology/University, http://www.w3.org/2001/XMLSchema#nonNegativeInteger>
+numberOfRestaurants : number of restaurants : <http://dbpedia.org/ontology/Hotel, http://www.w3.org/2001/XMLSchema#nonNegativeInteger>
+numberOfRooms : number of rooms : <http://dbpedia.org/ontology/Hotel, http://www.w3.org/2001/XMLSchema#nonNegativeInteger>
+numberOfSeasons : number of seasons : <http://dbpedia.org/ontology/TelevisionShow, http://www.w3.org/2001/XMLSchema#nonNegativeInteger>
+numberOfSilverMedalsWon : number of silver medals won : <http://dbpedia.org/ontology/OlympicResult, http://www.w3.org/2001/XMLSchema#nonNegativeInteger>
+numberOfSpans : number of spans : <http://dbpedia.org/ontology/Bridge, http://www.w3.org/2001/XMLSchema#nonNegativeInteger>
+numberOfSports : number of sports : <http://dbpedia.org/ontology/OlympicResult, http://www.w3.org/2001/XMLSchema#nonNegativeInteger>
+numberOfStaff : number of staff : <http://dbpedia.org/ontology/Organisation, http://www.w3.org/2001/XMLSchema#nonNegativeInteger>
+numberOfStations : number of stations : <http://www.w3.org/2002/07/owl#Thing, http://www.w3.org/2001/XMLSchema#nonNegativeInteger>
+numberOfStudents : number of students : <http://dbpedia.org/ontology/EducationalInstitution, http://www.w3.org/2001/XMLSchema#nonNegativeInteger>
+numberOfSuites : number of suites : <http://dbpedia.org/ontology/Hotel, http://www.w3.org/2001/XMLSchema#nonNegativeInteger>
+numberOfTeams : number of teams : <http://dbpedia.org/ontology/SoccerLeague, http://www.w3.org/2001/XMLSchema#nonNegativeInteger>
+numberOfTracks : number of tracks : <http://dbpedia.org/ontology/Infrastructure, http://www.w3.org/2001/XMLSchema#nonNegativeInteger>
+numberOfUndergraduateStudents : number of undergraduate students : <http://dbpedia.org/ontology/EducationalInstitution, http://www.w3.org/2001/XMLSchema#nonNegativeInteger>
+numberOfVehicles : number of vehicles : <http://dbpedia.org/ontology/PublicTransitSystem, http://www.w3.org/2001/XMLSchema#nonNegativeInteger>
+numberOfVineyards : number of vineyards : <http://dbpedia.org/ontology/WineRegion, http://www.w3.org/2001/XMLSchema#nonNegativeInteger>
+numberOfVisitors : number of visitors : <http://dbpedia.org/ontology/Place, http://www.w3.org/2001/XMLSchema#nonNegativeInteger>
+numberOfVisitorsAsOf : number of visitors as of : <http://dbpedia.org/ontology/Place, http://www.w3.org/2001/XMLSchema#gYear>
+numberOfVolumes : number of volumes : <http://dbpedia.org/ontology/Manga, http://www.w3.org/2001/XMLSchema#nonNegativeInteger>
+numberOfVolunteers : number of volunteers : <http://dbpedia.org/ontology/Organisation, http://www.w3.org/2001/XMLSchema#nonNegativeInteger>
+numberOfWineries : number of wineries : <http://dbpedia.org/ontology/WineRegion, http://www.w3.org/2001/XMLSchema#nonNegativeInteger>
+nutsCode : NUTS code : <http://dbpedia.org/ontology/AdministrativeRegion, http://www.w3.org/2001/XMLSchema#string>
+occupation : occupation : <http://dbpedia.org/ontology/Agent, http://www.w3.org/2002/07/owl#Thing>
+oclc : OCLC : <http://dbpedia.org/ontology/WrittenWork, http://www.w3.org/2001/XMLSchema#string>
+offeredClasses : offered classes : <http://dbpedia.org/ontology/School, http://www.w3.org/2001/XMLSchema#string>
+office : office : <http://www.w3.org/2002/07/owl#Thing, http://www.w3.org/2001/XMLSchema#string>
+officerInCharge : officer in charge : <http://dbpedia.org/ontology/University, http://www.w3.org/2002/07/owl#Thing>
+officialLanguage : official language : <http://www.w3.org/2002/07/owl#Thing, http://dbpedia.org/ontology/Language>
+officialSchoolColour : official school colour : <http://dbpedia.org/ontology/EducationalInstitution, http://www.w3.org/2001/XMLSchema#string>
+oilSystem : oil system : <http://dbpedia.org/ontology/AutomobileEngine, http://www.w3.org/2002/07/owl#Thing>
+oldcode : oldcode : <http://dbpedia.org/ontology/OlympicResult, http://www.w3.org/2001/XMLSchema#string>
+omim : OMIM id : <http://www.w3.org/2002/07/owl#Thing, http://www.w3.org/2001/XMLSchema#integer>
+onChromosome : on chromosome : <http://dbpedia.org/ontology/GeneLocation, http://www.w3.org/2001/XMLSchema#integer>
+openAccessContent : open access content : <http://dbpedia.org/ontology/AcademicJournal, http://www.w3.org/2001/XMLSchema#string>
+openingDate : opening date : <http://www.w3.org/2002/07/owl#Thing, http://www.w3.org/2001/XMLSchema#date>
+openingFilm : opening film : <http://dbpedia.org/ontology/FilmFestival, http://dbpedia.org/ontology/Film>
+openingTheme : opening theme : <http://dbpedia.org/ontology/TelevisionShow, http://www.w3.org/2002/07/owl#Thing>
+openingYear : opening year : <http://www.w3.org/2002/07/owl#Thing, http://www.w3.org/2001/XMLSchema#gYear>
+operatedBy : operated by : <http://www.w3.org/2002/07/owl#Thing, http://www.w3.org/2002/07/owl#Thing>
+operatingIncome : operating income ($) : <http://dbpedia.org/ontology/Company, http://dbpedia.org/datatype/usDollar>
+operatingSystem : operating system : <http://www.w3.org/2002/07/owl#Thing, http://dbpedia.org/ontology/Software>
+operator : operator : <http://www.w3.org/2002/07/owl#Thing, http://www.w3.org/2002/07/owl#Thing>
+opponent : opponent : <http://dbpedia.org/ontology/Person, http://dbpedia.org/ontology/Person>
+orbitalFlights : orbital flights : <http://dbpedia.org/ontology/YearInSpaceflight, http://www.w3.org/2001/XMLSchema#nonNegativeInteger>
+orbitalInclination : orbital inclination : <http://dbpedia.org/ontology/SpaceMission, http://www.w3.org/2001/XMLSchema#float>
+orbitalPeriod : orbital period (s) : <http://dbpedia.org/ontology/Planet, http://www.w3.org/2001/XMLSchema#double>
+orbits : orbits : <http://dbpedia.org/ontology/SpaceShuttle, http://www.w3.org/2001/XMLSchema#integer>
+orcidId : ORCID Id : <http://dbpedia.org/ontology/Agent, http://www.w3.org/2001/XMLSchema#string>
+order : order : <http://dbpedia.org/ontology/Species, http://www.w3.org/2002/07/owl#Thing>
+orderDate : order date : <http://dbpedia.org/ontology/Ship, http://www.w3.org/2001/XMLSchema#date>
+orderInOffice : order in office : <http://www.w3.org/2002/07/owl#Thing, http://www.w3.org/2001/XMLSchema#string>
+organSystem : organ system : <http://dbpedia.org/ontology/Embryology, http://dbpedia.org/ontology/AnatomicalStructure>
+origin : origin : <http://www.w3.org/2002/07/owl#Thing, http://dbpedia.org/ontology/PopulatedPlace>
+originalEndPoint : original end point : <http://dbpedia.org/ontology/Canal, http://dbpedia.org/ontology/Settlement>
+originalLanguage : original language : <http://dbpedia.org/ontology/Play, http://dbpedia.org/ontology/Language>
+originalMaximumBoatBeam : original maximum boat beam (μ) : <http://dbpedia.org/ontology/Canal, http://www.w3.org/2001/XMLSchema#double>
+originalMaximumBoatLength : original maximum boat length (μ) : <http://dbpedia.org/ontology/Canal, http://www.w3.org/2001/XMLSchema#double>
+originalStartPoint : original start point : <http://dbpedia.org/ontology/Canal, http://dbpedia.org/ontology/Place>
+orogeny : orogeny : <http://dbpedia.org/ontology/Place, http://www.w3.org/2002/07/owl#Thing>
+orthologousGene : Orthologous Gene : <http://dbpedia.org/ontology/HumanGene, http://dbpedia.org/ontology/MouseGene>
+other : other : <http://dbpedia.org/ontology/University, http://www.w3.org/2001/XMLSchema#integer>
+otherChannel : other channel : <http://dbpedia.org/ontology/TelevisionStation, http://www.w3.org/2001/XMLSchema#string>
+otherFuelType : secondary/other fuel type : <http://dbpedia.org/ontology/PowerStation, http://www.w3.org/2002/07/owl#Thing>
+otherParty : other party : <http://dbpedia.org/ontology/Person, http://dbpedia.org/ontology/PoliticalParty>
+otherServingLines : other serving lines : <http://dbpedia.org/ontology/Station, http://www.w3.org/2001/XMLSchema#string>
+otherWins : other wins : <http://dbpedia.org/ontology/SnookerPlayer, http://www.w3.org/2001/XMLSchema#nonNegativeInteger>
+outflow : outflow : <http://dbpedia.org/ontology/Lake, http://dbpedia.org/ontology/River>
+overallRecord : overall record : <http://dbpedia.org/ontology/CollegeCoach, http://www.w3.org/2001/XMLSchema#string>
+oversight : oversight : <http://dbpedia.org/ontology/School, http://www.w3.org/2001/XMLSchema#string>
+owner : owner : <http://www.w3.org/2002/07/owl#Thing, http://dbpedia.org/ontology/Agent>
+owningCompany : owning company : <http://dbpedia.org/ontology/Organisation, http://dbpedia.org/ontology/Organisation>
+owningOrganisation : owning organisation : <http://dbpedia.org/ontology/Place, http://dbpedia.org/ontology/Organisation>
+parent : parent : <http://dbpedia.org/ontology/Person, http://dbpedia.org/ontology/Person>
+parentCompany : parent company : <http://www.w3.org/2002/07/owl#Thing, http://dbpedia.org/ontology/Company>
+parentMountainPeak : parent mountain peak : <http://dbpedia.org/ontology/NaturalPlace, http://dbpedia.org/ontology/Mountain>
+parentOrganisation : parent organisation : <http://dbpedia.org/ontology/Organisation, http://dbpedia.org/ontology/Organisation>
+parish : parish : <http://dbpedia.org/ontology/Settlement, http://www.w3.org/2002/07/owl#Thing>
+parkingInformation : parking information : <http://dbpedia.org/ontology/Station, http://www.w3.org/2001/XMLSchema#string>
+part : part : <http://dbpedia.org/ontology/Place, http://dbpedia.org/ontology/Settlement>
+partialFailedLaunches : partial failed launches : <http://www.w3.org/2002/07/owl#Thing, http://www.w3.org/2001/XMLSchema#nonNegativeInteger>
+partner : partner : <http://dbpedia.org/ontology/Person, http://dbpedia.org/ontology/Person>
+party : party : <http://www.w3.org/2002/07/owl#Thing, http://dbpedia.org/ontology/PoliticalParty>
+passengersPerDay : passengers per day : <http://www.w3.org/2002/07/owl#Thing, http://www.w3.org/2001/XMLSchema#nonNegativeInteger>
+passengersPerYear : passengers per year : <http://www.w3.org/2002/07/owl#Thing, http://www.w3.org/2001/XMLSchema#nonNegativeInteger>
+passengersUsedSystem : passengers used system : <http://dbpedia.org/ontology/Station, http://www.w3.org/2001/XMLSchema#string>
+pastMember : past member : <http://dbpedia.org/ontology/Band, http://dbpedia.org/ontology/Artist>
+pastor : pastor : <http://dbpedia.org/ontology/HistoricBuilding, http://www.w3.org/2002/07/owl#Thing>
+patron : patron : <http://www.w3.org/2002/07/owl#Thing, http://dbpedia.org/ontology/Saint>
+pdb : PDB : <http://dbpedia.org/ontology/Protein, http://www.w3.org/2001/XMLSchema#string>
+percentageOfAreaWater : percentage of area water : <http://www.w3.org/2002/07/owl#Thing, http://www.w3.org/2001/XMLSchema#float>
+periapsis : periapsis (μ) : <http://dbpedia.org/ontology/Planet, http://www.w3.org/2001/XMLSchema#double>
+person : person : <http://www.w3.org/2002/07/owl#Thing, http://dbpedia.org/ontology/Person>
+personFunction : person function : <http://dbpedia.org/ontology/Person, http://dbpedia.org/ontology/PersonFunction>
+personName : personName : <http://dbpedia.org/ontology/PersonFunction, http://www.w3.org/2001/XMLSchema#string>
+philosophicalSchool : philosophicalSchool : <http://dbpedia.org/ontology/Philosopher, http://www.w3.org/2002/07/owl#Thing>
+photographer : photographer : <http://dbpedia.org/ontology/Work, http://dbpedia.org/ontology/Person>
+phylum : phylum : <http://dbpedia.org/ontology/Species, http://dbpedia.org/ontology/Animal>
+picture : picture : <http://www.w3.org/2002/07/owl#Thing, http://www.w3.org/2002/07/owl#Thing>
+pictureFormat : picture format : <http://dbpedia.org/ontology/Broadcaster, http://www.w3.org/2002/07/owl#Thing>
+pistonStroke : piston stroke (μ) : <http://dbpedia.org/ontology/AutomobileEngine, http://www.w3.org/2001/XMLSchema#double>
+place : place of military conflict : <http://dbpedia.org/ontology/MilitaryConflict, http://dbpedia.org/ontology/PopulatedPlace>
+placeOfBurial : place of burial : <http://dbpedia.org/ontology/Monarch, http://www.w3.org/2002/07/owl#Thing>
+plant : plant : <http://dbpedia.org/ontology/Place, http://dbpedia.org/ontology/Plant>
+plays : plays : <http://dbpedia.org/ontology/TennisPlayer, http://www.w3.org/2001/XMLSchema#string>
+podiums : podiums : <http://dbpedia.org/ontology/FormulaOneRacer, http://www.w3.org/2001/XMLSchema#nonNegativeInteger>
+poleDriver : pole driver : <http://dbpedia.org/ontology/GrandPrix, http://dbpedia.org/ontology/FormulaOneRacer>
+poleDriverCountry : pole driver country : <http://dbpedia.org/ontology/GrandPrix, http://dbpedia.org/ontology/Country>
+poleDriverTeam : pole driver team : <http://dbpedia.org/ontology/GrandPrix, http://dbpedia.org/ontology/FormulaOneTeam>
+poles : poles : <http://dbpedia.org/ontology/FormulaOneRacer, http://www.w3.org/2001/XMLSchema#nonNegativeInteger>
+politicalPartyInLegislature : political party in legislature : <http://dbpedia.org/ontology/Legislature, http://dbpedia.org/ontology/PoliticalParty>
+politicalPartyOfLeader : political party of leader : <http://dbpedia.org/ontology/Legislature, http://dbpedia.org/ontology/PoliticalParty>
+populationAsOf : population as of : <http://dbpedia.org/ontology/PopulatedPlace, http://www.w3.org/2001/XMLSchema#date>
+populationDensity : population density (/sqkm) : <http://www.w3.org/2002/07/owl#Thing, http://www.w3.org/2001/XMLSchema#double>
+populationMetro : population metro : <http://dbpedia.org/ontology/Place, http://www.w3.org/2001/XMLSchema#nonNegativeInteger>
+populationMetroDensity : population metro density (/sqkm) : <http://dbpedia.org/ontology/Settlement, http://www.w3.org/2001/XMLSchema#double>
+populationPlace : population place : <http://dbpedia.org/ontology/EthnicGroup, http://dbpedia.org/ontology/PopulatedPlace>
+populationRural : population rural : <http://dbpedia.org/ontology/Settlement, http://www.w3.org/2001/XMLSchema#nonNegativeInteger>
+populationTotal : population total : <http://dbpedia.org/ontology/Place, http://www.w3.org/2001/XMLSchema#nonNegativeInteger>
+populationTotalRanking : total population ranking : <http://dbpedia.org/ontology/PopulatedPlace, http://www.w3.org/2001/XMLSchema#positiveInteger>
+populationUrban : population urban : <http://dbpedia.org/ontology/Place, http://www.w3.org/2001/XMLSchema#nonNegativeInteger>
+populationUrbanDensity : population urban density (/sqkm) : <http://dbpedia.org/ontology/Settlement, http://www.w3.org/2001/XMLSchema#double>
+portfolio : portfolio : <http://dbpedia.org/ontology/Person, http://www.w3.org/2001/XMLSchema#string>
+portrayer : portrayer : <http://dbpedia.org/ontology/FictionalCharacter, http://dbpedia.org/ontology/Person>
+position : position : <http://www.w3.org/2002/07/owl#Thing, http://www.w3.org/2002/07/owl#Thing>
+postalCode : postal code : <http://www.w3.org/2002/07/owl#Thing, http://www.w3.org/2001/XMLSchema#string>
+powerOutput : power output (W) : <http://dbpedia.org/ontology/AutomobileEngine, http://www.w3.org/2001/XMLSchema#double>
+powerType : power type : <http://dbpedia.org/ontology/MeanOfTransportation, http://www.w3.org/2002/07/owl#Thing>
+precursor : precursor : <http://dbpedia.org/ontology/AnatomicalStructure, http://dbpedia.org/ontology/Embryology>
+predecessor : predecessor : <http://www.w3.org/2002/07/owl#Thing, http://www.w3.org/2002/07/owl#Thing>
+premiereDate : premiere date : <http://dbpedia.org/ontology/Play, http://www.w3.org/2001/XMLSchema#date>
+premierePlace : premiere place : <http://dbpedia.org/ontology/Play, http://dbpedia.org/ontology/Place>
+premiereYear : premiere year : <http://dbpedia.org/ontology/Play, http://www.w3.org/2001/XMLSchema#gYear>
+presenter : presenter : <http://dbpedia.org/ontology/Work, http://dbpedia.org/ontology/Person>
+president : president : <http://www.w3.org/2002/07/owl#Thing, http://dbpedia.org/ontology/Person>
+previousEditor : previous editor : <http://dbpedia.org/ontology/Magazine, http://dbpedia.org/ontology/Person>
+previousEvent : previous event : <http://dbpedia.org/ontology/SportsEvent, http://dbpedia.org/ontology/SportsEvent>
+previousInfrastructure : previous infrastructure : <http://dbpedia.org/ontology/Road, http://dbpedia.org/ontology/Road>
+previousMission : previous mission : <http://dbpedia.org/ontology/SpaceMission, http://dbpedia.org/ontology/ArtificialSatellite>
+previousWork : previous work : <http://dbpedia.org/ontology/Work, http://dbpedia.org/ontology/MusicalWork>
+priceMoney : price money ($) : <http://dbpedia.org/ontology/SnookerPlayer, http://dbpedia.org/datatype/poundSterling>
+primaryFuelType : primary fuel type : <http://dbpedia.org/ontology/PowerStation, http://www.w3.org/2002/07/owl#Thing>
+primeMinister : prime minister : <http://www.w3.org/2002/07/owl#Thing, http://dbpedia.org/ontology/Person>
+principal : principal : <http://dbpedia.org/ontology/EducationalInstitution, http://www.w3.org/2002/07/owl#Thing>
+principalArea : principal area : <http://dbpedia.org/ontology/Settlement, http://www.w3.org/2002/07/owl#Thing>
+principalEngineer : principal engineer : <http://dbpedia.org/ontology/Canal, http://dbpedia.org/ontology/Person>
+producer : producer : <http://www.w3.org/2002/07/owl#Thing, http://dbpedia.org/ontology/Agent>
+product : product : <http://dbpedia.org/ontology/Organisation, http://www.w3.org/2002/07/owl#Thing>
+production : production : <http://dbpedia.org/ontology/Company, http://www.w3.org/2001/XMLSchema#nonNegativeInteger>
+productionEndDate : production end date : <http://dbpedia.org/ontology/MeanOfTransportation, http://www.w3.org/2001/XMLSchema#date>
+productionEndYear : production end year : <http://www.w3.org/2002/07/owl#Thing, http://www.w3.org/2001/XMLSchema#gYear>
+productionStartDate : production start date : <http://dbpedia.org/ontology/MeanOfTransportation, http://www.w3.org/2001/XMLSchema#date>
+productionStartYear : production start year : <http://www.w3.org/2002/07/owl#Thing, http://www.w3.org/2001/XMLSchema#gYear>
+profession : profession : <http://dbpedia.org/ontology/Person, http://www.w3.org/2002/07/owl#Thing>
+programCost : program cost ($) : <http://dbpedia.org/ontology/Aircraft, http://dbpedia.org/datatype/usDollar>
+programmeFormat : programme format : <http://dbpedia.org/ontology/RadioStation, http://www.w3.org/2002/07/owl#Thing>
+programmingLanguage : programming language : <http://dbpedia.org/ontology/Software, http://dbpedia.org/ontology/ProgrammingLanguage>
+projectBudgetFunding : project budget funding ($) : <http://dbpedia.org/ontology/ResearchProject, http://dbpedia.org/datatype/euro>
+projectBudgetTotal : project budget total ($) : <http://dbpedia.org/ontology/ResearchProject, http://dbpedia.org/datatype/euro>
+projectCoordinator : project coordinator : <http://dbpedia.org/ontology/ResearchProject, http://www.w3.org/2002/07/owl#Thing>
+projectEndDate : project end date : <http://dbpedia.org/ontology/ResearchProject, http://www.w3.org/2001/XMLSchema#date>
+projectKeyword : project keyword : <http://dbpedia.org/ontology/ResearchProject, http://www.w3.org/2001/XMLSchema#string>
+projectObjective : project objective : <http://dbpedia.org/ontology/ResearchProject, http://www.w3.org/2001/XMLSchema#string>
+projectParticipant : project participant : <http://dbpedia.org/ontology/ResearchProject, http://dbpedia.org/ontology/Organisation>
+projectReferenceID : project reference ID : <http://dbpedia.org/ontology/ResearchProject, http://www.w3.org/2001/XMLSchema#string>
+projectStartDate : project start date : <http://dbpedia.org/ontology/ResearchProject, http://www.w3.org/2001/XMLSchema#date>
+projectType : project type : <http://dbpedia.org/ontology/ResearchProject, http://www.w3.org/2001/XMLSchema#string>
+prominence : prominence (μ) : <http://dbpedia.org/ontology/Place, http://www.w3.org/2001/XMLSchema#double>
+promotion : promotion : <http://dbpedia.org/ontology/WrestlingEvent, http://dbpedia.org/ontology/Company>
+prospectLeague : prospect league : <http://dbpedia.org/ontology/IceHockeyPlayer, http://dbpedia.org/ontology/IceHockeyLeague>
+prospectTeam : prospect team : <http://dbpedia.org/ontology/IceHockeyPlayer, http://dbpedia.org/ontology/HockeyTeam>
+province : province : <http://www.w3.org/2002/07/owl#Thing, http://dbpedia.org/ontology/PopulatedPlace>
+provost : provost : <http://dbpedia.org/ontology/University, http://www.w3.org/2002/07/owl#Thing>
+pseudonym : pseudonym : <http://dbpedia.org/ontology/Agent, http://www.w3.org/2001/XMLSchema#langString>
+pubchem : PubChem : <http://www.w3.org/2002/07/owl#Thing, http://www.w3.org/2001/XMLSchema#string>
+publicationDate : publication date : <http://www.w3.org/2002/07/owl#Thing, http://www.w3.org/2001/XMLSchema#date>
+publiclyAccessible : publicly accessible : <http://dbpedia.org/ontology/Place, http://www.w3.org/2001/XMLSchema#string>
+publisher : publisher : <http://www.w3.org/2002/07/owl#Thing, http://dbpedia.org/ontology/Company>
+purpose : purpose : <http://www.w3.org/2002/07/owl#Thing, http://www.w3.org/2001/XMLSchema#string>
+race : race : <http://www.w3.org/2002/07/owl#Thing, http://dbpedia.org/ontology/HorseRace>
+raceHorse : race horse : <http://dbpedia.org/ontology/Person, http://dbpedia.org/ontology/RaceHorse>
+races : races : <http://dbpedia.org/ontology/FormulaOneRacer, http://www.w3.org/2001/XMLSchema#nonNegativeInteger>
+railGauge : rail gauge (μ) : <http://www.w3.org/2002/07/owl#Thing, http://www.w3.org/2001/XMLSchema#double>
+railwayLineUsingTunnel : railway line using tunnel : <http://dbpedia.org/ontology/RouteOfTransportation, http://dbpedia.org/ontology/RailwayLine>
+railwayPlatforms : railway platforms : <http://dbpedia.org/ontology/Station, http://www.w3.org/2001/XMLSchema#string>
+railwayRollingStock : railway rolling stock : <http://dbpedia.org/ontology/RailwayLine, http://dbpedia.org/ontology/MeanOfTransportation>
+range : range : <http://dbpedia.org/ontology/Place, http://www.w3.org/2001/XMLSchema#string>
+rankInFinalMedalCount : rank in final medal count : <http://dbpedia.org/ontology/OlympicResult, http://www.w3.org/2001/XMLSchema#positiveInteger>
+ranking : ranking : <http://dbpedia.org/ontology/School, http://www.w3.org/2001/XMLSchema#positiveInteger>
+rankingWins : ranking wins : <http://dbpedia.org/ontology/SnookerPlayer, http://www.w3.org/2001/XMLSchema#nonNegativeInteger>
+rating : rating : <http://www.w3.org/2002/07/owl#Thing, http://www.w3.org/2001/XMLSchema#float>
+ratio : ratio : <http://dbpedia.org/ontology/School, http://www.w3.org/2001/XMLSchema#string>
+rebuildDate : rebuild date : <http://dbpedia.org/ontology/Locomotive, http://www.w3.org/2001/XMLSchema#date>
+rebuilder : rebuilder : <http://dbpedia.org/ontology/Locomotive, http://www.w3.org/2002/07/owl#Thing>
+rebuildingDate : rebuilding date : <http://dbpedia.org/ontology/Place, http://www.w3.org/2001/XMLSchema#date>
+rebuildingYear : rebuilding year : <http://dbpedia.org/ontology/ArchitecturalStructure, http://www.w3.org/2001/XMLSchema#gYear>
+recentWinner : recent winner : <http://dbpedia.org/ontology/CyclingRace, http://dbpedia.org/ontology/Cyclist>
+recommissioningDate : recommissioning date : <http://dbpedia.org/ontology/Ship, http://www.w3.org/2001/XMLSchema#date>
+recordDate : record date : <http://dbpedia.org/ontology/MusicalWork, http://www.w3.org/2001/XMLSchema#date>
+recordLabel : record label : <http://www.w3.org/2002/07/owl#Thing, http://dbpedia.org/ontology/Company>
+recordedIn : recorded in : <http://dbpedia.org/ontology/MusicalWork, http://dbpedia.org/ontology/PopulatedPlace>
+rector : rector : <http://dbpedia.org/ontology/EducationalInstitution, http://www.w3.org/2002/07/owl#Thing>
+refseq : RefSeq : <http://dbpedia.org/ontology/Protein, http://www.w3.org/2001/XMLSchema#string>
+refseqmrna : refseq mRNA : <http://dbpedia.org/ontology/Gene, http://www.w3.org/2001/XMLSchema#string>
+refseqprotein : refseq protein : <http://dbpedia.org/ontology/Gene, http://www.w3.org/2001/XMLSchema#string>
+region : region : <http://www.w3.org/2002/07/owl#Thing, http://dbpedia.org/ontology/PopulatedPlace>
+regionServed : region served : <http://dbpedia.org/ontology/Organisation, http://dbpedia.org/ontology/PopulatedPlace>
+regionalLanguage : regional language : <http://dbpedia.org/ontology/Country, http://dbpedia.org/ontology/Language>
+related : related : <http://www.w3.org/2002/07/owl#Thing, http://www.w3.org/2002/07/owl#Thing>
+relatedMeanOfTransportation : related mean of transportation : <http://dbpedia.org/ontology/Automobile, http://dbpedia.org/ontology/Automobile>
+relation : relation : <http://dbpedia.org/ontology/Person, http://dbpedia.org/ontology/Person>
+relative : relative : <http://dbpedia.org/ontology/Person, http://dbpedia.org/ontology/Person>
+releaseDate : release date : <http://www.w3.org/2002/07/owl#Thing, http://www.w3.org/2001/XMLSchema#date>
+religion : religion : <http://www.w3.org/2002/07/owl#Thing, http://www.w3.org/2002/07/owl#Thing>
+religiousHead : religious head : <http://dbpedia.org/ontology/School, http://www.w3.org/2002/07/owl#Thing>
+religiousHeadLabel : religious head label : <http://dbpedia.org/ontology/School, http://www.w3.org/2002/07/owl#Thing>
+reopeningDate : reopening date : <http://dbpedia.org/ontology/Theatre, http://www.w3.org/2001/XMLSchema#date>
+reopeningYear : reopening year : <http://dbpedia.org/ontology/Theatre, http://www.w3.org/2001/XMLSchema#gYear>
+reportingMark : reporting mark : <http://dbpedia.org/ontology/PublicTransitSystem, http://www.w3.org/2001/XMLSchema#string>
+requirement : requirement : <http://dbpedia.org/ontology/VideoGame, http://www.w3.org/2001/XMLSchema#string>
+reservations : reservations : <http://dbpedia.org/ontology/Restaurant, http://www.w3.org/2001/XMLSchema#boolean>
+residence : residence : <http://dbpedia.org/ontology/Person, http://dbpedia.org/ontology/PopulatedPlace>
+resolution : resolution : <http://dbpedia.org/ontology/VideoGame, http://www.w3.org/2002/07/owl#Thing>
+restingPlace : resting place : <http://dbpedia.org/ontology/Person, http://www.w3.org/2002/07/owl#Thing>
+restingPlacePosition : resting place position : <http://dbpedia.org/ontology/Person, http://www.w3.org/2002/07/owl#Thing>
+restoreDate : restore date : <http://www.w3.org/2002/07/owl#Thing, http://www.w3.org/2001/XMLSchema#date>
+result : result : <http://dbpedia.org/ontology/MilitaryConflict, http://www.w3.org/2001/XMLSchema#string>
+retired : retired : <http://dbpedia.org/ontology/MeanOfTransportation, http://www.w3.org/2001/XMLSchema#date>
+retiredRocket : retired rocket : <http://dbpedia.org/ontology/YearInSpaceflight, http://dbpedia.org/ontology/Rocket>
+revenue : revenue ($) : <http://dbpedia.org/ontology/Organisation, http://dbpedia.org/datatype/usDollar>
+review : review : <http://dbpedia.org/ontology/Album, http://www.w3.org/2001/XMLSchema#anyURI>
+rgbCoordinateBlue : bluecoordinate in the RGB space : <http://dbpedia.org/ontology/Colour, http://www.w3.org/2001/XMLSchema#nonNegativeInteger>
+rgbCoordinateGreen : green coordinate in the RGB space : <http://dbpedia.org/ontology/Colour, http://www.w3.org/2001/XMLSchema#nonNegativeInteger>
+rgbCoordinateRed : red coordinate in the RGB space : <http://dbpedia.org/ontology/Colour, http://www.w3.org/2001/XMLSchema#nonNegativeInteger>
+ridId : RID Id : <http://dbpedia.org/ontology/Person, http://www.w3.org/2001/XMLSchema#string>
+rightChild : right child : <http://dbpedia.org/ontology/Valley, http://dbpedia.org/ontology/River>
+rightTributary : right tributary : <http://dbpedia.org/ontology/Place, http://dbpedia.org/ontology/River>
+rival : rival : <http://dbpedia.org/ontology/School, http://dbpedia.org/ontology/School>
+river : river : <http://dbpedia.org/ontology/Place, http://dbpedia.org/ontology/River>
+riverBranch : branch : <http://dbpedia.org/ontology/Canal, http://dbpedia.org/ontology/Place>
+riverBranchOf : branch of : <http://dbpedia.org/ontology/Canal, http://dbpedia.org/ontology/Stream>
+riverMouth : river mouth : <http://dbpedia.org/ontology/Place, http://dbpedia.org/ontology/River>
+rocketFunction : rocket function : <http://dbpedia.org/ontology/Rocket, http://www.w3.org/2002/07/owl#Thing>
+rocketStages : number of rocket stages : <http://dbpedia.org/ontology/Rocket, http://www.w3.org/2001/XMLSchema#nonNegativeInteger>
+role : role : <http://dbpedia.org/ontology/MilitaryUnit, http://www.w3.org/2001/XMLSchema#string>
+rotationPeriod : rotation period (s) : <http://dbpedia.org/ontology/Planet, http://www.w3.org/2001/XMLSchema#double>
+routeEnd : route end : <http://dbpedia.org/ontology/RouteOfTransportation, http://dbpedia.org/ontology/Place>
+routeEndDirection : road end direction : <http://dbpedia.org/ontology/Road, http://www.w3.org/2001/XMLSchema#string>
+routeEndLocation : route end location : <http://dbpedia.org/ontology/ArchitecturalStructure, http://dbpedia.org/ontology/Place>
+routeJunction : route junction : <http://dbpedia.org/ontology/Road, http://dbpedia.org/ontology/Place>
+routeNumber : route number : <http://dbpedia.org/ontology/Road, http://www.w3.org/2001/XMLSchema#string>
+routeStart : route start : <http://dbpedia.org/ontology/RouteOfTransportation, http://dbpedia.org/ontology/Place>
+routeStartDirection : road start direction : <http://dbpedia.org/ontology/Road, http://www.w3.org/2001/XMLSchema#string>
+routeStartLocation : route start location : <http://dbpedia.org/ontology/ArchitecturalStructure, http://dbpedia.org/ontology/Place>
+routeTypeAbbreviation : route type abbreviation : <http://dbpedia.org/ontology/Road, http://www.w3.org/2001/XMLSchema#string>
+royalAnthem : royal anthem : <http://dbpedia.org/ontology/Person, http://www.w3.org/2002/07/owl#Thing>
+runningMate : running mate : <http://dbpedia.org/ontology/Person, http://dbpedia.org/ontology/Person>
+runtime : runtime (s) : <http://dbpedia.org/ontology/Work, http://www.w3.org/2001/XMLSchema#double>
+runwayDesignation : designation of runway : <http://dbpedia.org/ontology/Airport, http://www.w3.org/2001/XMLSchema#string>
+runwayLength : length of runway (μ) : <http://dbpedia.org/ontology/Airport, http://www.w3.org/2001/XMLSchema#double>
+runwaySurface : surface of runway : <http://dbpedia.org/ontology/Airport, http://www.w3.org/2001/XMLSchema#string>
+ruralMunicipality : rural municipality : <http://dbpedia.org/ontology/Road, http://dbpedia.org/ontology/Place>
+saint : saint : <http://dbpedia.org/ontology/Settlement, http://dbpedia.org/ontology/Saint>
+salary : salary ($) : <http://dbpedia.org/ontology/Person, http://dbpedia.org/datatype/usDollar>
+sales : sales : <http://www.w3.org/2002/07/owl#Thing, http://dbpedia.org/ontology/Sales>
+satScore : SAT score : <http://dbpedia.org/ontology/School, http://www.w3.org/2002/07/owl#Thing>
+satellitesDeployed : satellites deployed : <http://dbpedia.org/ontology/SpaceShuttle, http://www.w3.org/2001/XMLSchema#nonNegativeInteger>
+school : school : <http://dbpedia.org/ontology/Athlete, http://dbpedia.org/ontology/EducationalInstitution>
+schoolBoard : school board : <http://dbpedia.org/ontology/School, http://www.w3.org/2002/07/owl#Thing>
+schoolCode : school code : <http://dbpedia.org/ontology/School, http://www.w3.org/2001/XMLSchema#string>
+schoolNumber : school number : <http://dbpedia.org/ontology/School, http://www.w3.org/2001/XMLSchema#string>
+schoolPatron : school patron : <http://dbpedia.org/ontology/School, http://dbpedia.org/ontology/Saint>
+season : season : <http://www.w3.org/2002/07/owl#Thing, http://dbpedia.org/ontology/FootballLeagueSeason>
+seasonNumber : season number : <http://dbpedia.org/ontology/TelevisionEpisode, http://www.w3.org/2001/XMLSchema#nonNegativeInteger>
+seatingCapacity : seating capacity : <http://dbpedia.org/ontology/Place, http://www.w3.org/2001/XMLSchema#nonNegativeInteger>
+secondCommander : second commander : <http://dbpedia.org/ontology/MilitaryUnit, http://www.w3.org/2002/07/owl#Thing>
+secondDriver : second driver : <http://dbpedia.org/ontology/GrandPrix, http://dbpedia.org/ontology/FormulaOneRacer>
+secondDriverCountry : second driver country : <http://dbpedia.org/ontology/GrandPrix, http://dbpedia.org/ontology/Country>
+secondLeader : secondLeader : <http://dbpedia.org/ontology/Election, http://dbpedia.org/ontology/Person>
+secondPopularVote : secondPopularVote : <http://dbpedia.org/ontology/Election, http://www.w3.org/2002/07/owl#Thing>
+secondTeam : second team : <http://dbpedia.org/ontology/GrandPrix, http://dbpedia.org/ontology/FormulaOneTeam>
+secretaryGeneral : secretary : <http://dbpedia.org/ontology/PoliticalParty, http://www.w3.org/2002/07/owl#Thing>
+selection : selection : <http://dbpedia.org/ontology/Astronaut, http://www.w3.org/2002/07/owl#Thing>
+selibrId : SELIBR Id : <http://dbpedia.org/ontology/Agent, http://www.w3.org/2001/XMLSchema#string>
+seniority : seniority : <http://dbpedia.org/ontology/Person, http://www.w3.org/2001/XMLSchema#string>
+series : series : <http://www.w3.org/2002/07/owl#Thing, http://www.w3.org/2002/07/owl#Thing>
+service : service : <http://dbpedia.org/ontology/Company, http://www.w3.org/2002/07/owl#Thing>
+serviceEndYear : service end year : <http://dbpedia.org/ontology/Person, http://www.w3.org/2001/XMLSchema#gYear>
+serviceNumber : service number : <http://dbpedia.org/ontology/MilitaryPerson, http://www.w3.org/2001/XMLSchema#string>
+serviceStartYear : service start year : <http://dbpedia.org/ontology/Person, http://www.w3.org/2001/XMLSchema#gYear>
+servingRailwayLine : serving railway line : <http://dbpedia.org/ontology/Station, http://dbpedia.org/ontology/RailwayLine>
+servingTemperature : serving temperature : <http://dbpedia.org/ontology/Food, http://www.w3.org/2001/XMLSchema#string>
+settingOfPlay : setting of play : <http://dbpedia.org/ontology/Play, http://www.w3.org/2001/XMLSchema#string>
+sex : sex : <http://dbpedia.org/ontology/RaceHorse, http://www.w3.org/2001/XMLSchema#string>
+shareDate : share date : <http://dbpedia.org/ontology/Broadcaster, http://www.w3.org/2001/XMLSchema#gYearMonth>
+shareOfAudience : share of audience : <http://dbpedia.org/ontology/Broadcaster, http://www.w3.org/2001/XMLSchema#float>
+shareSource : share source : <http://dbpedia.org/ontology/Broadcaster, http://www.w3.org/2001/XMLSchema#string>
+sheading : sheading : <http://dbpedia.org/ontology/Settlement, http://www.w3.org/2002/07/owl#Thing>
+shipBeam : ship beam (μ) : <http://dbpedia.org/ontology/Ship, http://www.w3.org/2001/XMLSchema#double>
+shipDisplacement : displacement (g) : <http://dbpedia.org/ontology/Ship, http://www.w3.org/2001/XMLSchema#double>
+shipDraft : ship draft (μ) : <http://dbpedia.org/ontology/Ship, http://www.w3.org/2001/XMLSchema#double>
+shipLaunch : ship launched : <http://dbpedia.org/ontology/Ship, http://www.w3.org/2001/XMLSchema#date>
+shoeNumber : shoe number : <http://dbpedia.org/ontology/BeautyQueen, http://www.w3.org/2001/XMLSchema#positiveInteger>
+shoots : shoots : <http://dbpedia.org/ontology/IceHockeyPlayer, http://www.w3.org/2001/XMLSchema#string>
+shoreLength : shore length (μ) : <http://dbpedia.org/ontology/Lake, http://www.w3.org/2001/XMLSchema#double>
+show : show : <http://dbpedia.org/ontology/TelevisionEpisode, http://dbpedia.org/ontology/TelevisionShow>
+showJudge : showJudge : <http://dbpedia.org/ontology/TelevisionShow, http://dbpedia.org/ontology/Person>
+significantBuilding : significant building : <http://dbpedia.org/ontology/Architect, http://www.w3.org/2002/07/owl#Thing>
+significantDesign : significant design : <http://dbpedia.org/ontology/Architect, http://www.w3.org/2002/07/owl#Thing>
+significantProject : significant project : <http://dbpedia.org/ontology/Person, http://www.w3.org/2002/07/owl#Thing>
+silverMedalist : siler medalist : <http://dbpedia.org/ontology/OlympicEvent, http://dbpedia.org/ontology/Person>
+similar : similar : <http://www.w3.org/2002/07/owl#Thing, http://www.w3.org/2002/07/owl#Thing>
+sire : sire : <http://dbpedia.org/ontology/RaceHorse, http://dbpedia.org/ontology/RaceHorse>
+sisterCollege : sister college : <http://dbpedia.org/ontology/College, http://dbpedia.org/ontology/College>
+sisterNewspaper : sister newspaper : <http://dbpedia.org/ontology/Newspaper, http://dbpedia.org/ontology/Newspaper>
+sisterStation : sister station : <http://dbpedia.org/ontology/Broadcaster, http://dbpedia.org/ontology/Broadcaster>
+sixthFormStudents : sixth form students : <http://dbpedia.org/ontology/School, http://www.w3.org/2001/XMLSchema#string>
+slogan : slogan : <http://www.w3.org/2002/07/owl#Thing, http://www.w3.org/2001/XMLSchema#langString>
+smiles : SMILES : <http://dbpedia.org/ontology/ChemicalCompound, http://www.w3.org/2001/XMLSchema#string>
+source : source : <http://dbpedia.org/ontology/Place, http://www.w3.org/2002/07/owl#Thing>
+sourceConfluence : source confluence : <http://dbpedia.org/ontology/Place, http://dbpedia.org/ontology/River>
+sourceConfluenceElevation : source confluence elevation (μ) : <http://dbpedia.org/ontology/Place, http://www.w3.org/2001/XMLSchema#double>
+sourceConfluenceMountain : source confluence mountain : <http://dbpedia.org/ontology/Place, http://dbpedia.org/ontology/Place>
+sourceConfluencePlace : source confluence place : <http://dbpedia.org/ontology/Place, http://dbpedia.org/ontology/Place>
+sourceConfluencePosition : source confluence position : <http://dbpedia.org/ontology/Place, http://www.w3.org/2002/07/owl#Thing>
+sourceConfluenceRegion : source confluence region : <http://dbpedia.org/ontology/River, http://dbpedia.org/ontology/PopulatedPlace>
+sourceConfluenceState : source confluence state : <http://dbpedia.org/ontology/Place, http://dbpedia.org/ontology/AdministrativeRegion>
+sourceCountry : source country : <http://dbpedia.org/ontology/Place, http://dbpedia.org/ontology/Country>
+sourceElevation : source elevation (μ) : <http://dbpedia.org/ontology/Place, http://www.w3.org/2001/XMLSchema#double>
+sourceMountain : source mountain : <http://dbpedia.org/ontology/Place, http://www.w3.org/2002/07/owl#Thing>
+sourcePlace : source place : <http://dbpedia.org/ontology/Place, http://www.w3.org/2002/07/owl#Thing>
+sourcePosition : source position : <http://dbpedia.org/ontology/Place, http://www.w3.org/2002/07/owl#Thing>
+sourceRegion : source region : <http://dbpedia.org/ontology/Place, http://dbpedia.org/ontology/Place>
+speaker : speaker : <http://dbpedia.org/ontology/Person, http://www.w3.org/2001/XMLSchema#integer>
+specialist : specialist : <http://dbpedia.org/ontology/School, http://www.w3.org/2001/XMLSchema#string>
+species : species : <http://www.w3.org/2002/07/owl#Thing, http://www.w3.org/2002/07/owl#Thing>
+speedLimit : speed limit (kmh) : <http://dbpedia.org/ontology/ArchitecturalStructure, http://www.w3.org/2001/XMLSchema#double>
+spike : spike : <http://dbpedia.org/ontology/Person, http://www.w3.org/2001/XMLSchema#string>
+splitFromParty : split from party : <http://dbpedia.org/ontology/PoliticalParty, http://dbpedia.org/ontology/PoliticalParty>
+spokenIn : spoken in : <http://dbpedia.org/ontology/Language, http://dbpedia.org/ontology/PopulatedPlace>
+spokesperson : spokesperson : <http://dbpedia.org/ontology/PoliticalParty, http://www.w3.org/2002/07/owl#Thing>
+sport : sport : <http://dbpedia.org/ontology/Agent, http://dbpedia.org/ontology/Sport>
+sportCountry : sport country : <http://www.w3.org/2002/07/owl#Thing, http://dbpedia.org/ontology/PopulatedPlace>
+sportGoverningBody : sport governing body : <http://dbpedia.org/ontology/Sport, http://dbpedia.org/ontology/Organisation>
+spouse : spouse : <http://dbpedia.org/ontology/Person, http://dbpedia.org/ontology/Person>
+spurOf : spur of : <http://dbpedia.org/ontology/Road, http://dbpedia.org/ontology/Road>
+squadNumber : squad number : <http://dbpedia.org/ontology/SportsTeamMember, http://www.w3.org/2001/XMLSchema#nonNegativeInteger>
+stadium : Stadium : <http://dbpedia.org/ontology/SportsTeam, http://dbpedia.org/ontology/Stadium>
+staff : staff : <http://dbpedia.org/ontology/EducationalInstitution, http://www.w3.org/2001/XMLSchema#nonNegativeInteger>
+starring : starring : <http://dbpedia.org/ontology/Work, http://dbpedia.org/ontology/Person>
+startDate : start date : <http://dbpedia.org/ontology/SocietalEvent, http://www.w3.org/2001/XMLSchema#date>
+startPoint : start point : <http://dbpedia.org/ontology/Canal, http://dbpedia.org/ontology/Place>
+startYearOfInsertion : start year of insertion : <http://dbpedia.org/ontology/AutomobileEngine, http://www.w3.org/2001/XMLSchema#gYear>
+startYearOfSales : start year of sales : <http://dbpedia.org/ontology/Sales, http://www.w3.org/2001/XMLSchema#gYear>
+state : state : <http://www.w3.org/2002/07/owl#Thing, http://dbpedia.org/ontology/PopulatedPlace>
+stateDelegate : state delegate : <http://dbpedia.org/ontology/Person, http://dbpedia.org/ontology/AdministrativeRegion>
+stateOfOrigin : state of origin : <http://dbpedia.org/ontology/Person, http://www.w3.org/2002/07/owl#Thing>
+stationStructure : station structure : <http://dbpedia.org/ontology/Station, http://www.w3.org/2001/XMLSchema#string>
+statisticLabel : statistic label : <http://dbpedia.org/ontology/BaseballPlayer, http://www.w3.org/2002/07/owl#Thing>
+statisticValue : statistic value : <http://dbpedia.org/ontology/BaseballPlayer, http://www.w3.org/2001/XMLSchema#float>
+statisticYear : statistic year : <http://dbpedia.org/ontology/BaseballPlayer, http://www.w3.org/2001/XMLSchema#date>
+status : status : <http://www.w3.org/2002/07/owl#Thing, http://www.w3.org/2001/XMLSchema#string>
+storyEditor : story editor : <http://dbpedia.org/ontology/TelevisionShow, http://www.w3.org/2002/07/owl#Thing>
+strength : strength : <http://dbpedia.org/ontology/MilitaryConflict, http://www.w3.org/2001/XMLSchema#string>
+structuralSystem : structural system : <http://dbpedia.org/ontology/Building, http://www.w3.org/2002/07/owl#Thing>
+stylisticOrigin : stylistic origin : <http://dbpedia.org/ontology/MusicGenre, http://dbpedia.org/ontology/MusicGenre>
+subdivisions : subdivisions : <http://dbpedia.org/ontology/Settlement, http://www.w3.org/2001/XMLSchema#nonNegativeInteger>
+subjectOfPlay : subject of play : <http://dbpedia.org/ontology/Play, http://www.w3.org/2001/XMLSchema#string>
+suborbitalFlights : suborbital flights : <http://dbpedia.org/ontology/YearInSpaceflight, http://www.w3.org/2001/XMLSchema#nonNegativeInteger>
+subregion : subregion : <http://dbpedia.org/ontology/WineRegion, http://dbpedia.org/ontology/WineRegion>
+subsequentInfrastructure : subsequent infrastructure : <http://dbpedia.org/ontology/Road, http://dbpedia.org/ontology/Road>
+subsequentWork : subsequent work : <http://dbpedia.org/ontology/Work, http://dbpedia.org/ontology/MusicalWork>
+subsidiary : subsidiary : <http://dbpedia.org/ontology/Company, http://dbpedia.org/ontology/Company>
+subtitle : subtitle : <http://www.w3.org/2002/07/owl#Thing, http://www.w3.org/2001/XMLSchema#string>
+successfulLaunches : successful launches : <http://www.w3.org/2002/07/owl#Thing, http://www.w3.org/2001/XMLSchema#nonNegativeInteger>
+successor : successor : <http://www.w3.org/2002/07/owl#Thing, http://www.w3.org/2002/07/owl#Thing>
+summerAppearances : summer appearances : <http://dbpedia.org/ontology/OlympicResult, http://dbpedia.org/ontology/OlympicResult>
+superintendent : superintendent : <http://dbpedia.org/ontology/EducationalInstitution, http://dbpedia.org/ontology/OfficeHolder>
+supplementalDraftRound : supplemental draft round : <http://dbpedia.org/ontology/AmericanFootballPlayer, http://www.w3.org/2001/XMLSchema#string>
+supplementalDraftYear : supplemental draft year : <http://dbpedia.org/ontology/AmericanFootballPlayer, http://www.w3.org/2001/XMLSchema#gYear>
+supplies : supplies : <http://dbpedia.org/ontology/Artery, http://dbpedia.org/ontology/AnatomicalStructure>
+suppreddedDate : suppredded date : <http://dbpedia.org/ontology/Saint, http://www.w3.org/2001/XMLSchema#date>
+surfaceArea : surface area (m2) : <http://dbpedia.org/ontology/Planet, http://www.w3.org/2001/XMLSchema#double>
+symbol : symbol : <http://dbpedia.org/ontology/Biomolecule, http://www.w3.org/2001/XMLSchema#string>
+synonym : synonym : <http://www.w3.org/2002/07/owl#Thing, http://www.w3.org/2001/XMLSchema#string>
+targetAirport : target airport : <http://dbpedia.org/ontology/Airline, http://dbpedia.org/ontology/Airport>
+teachingStaff : teaching staff : <http://dbpedia.org/ontology/School, http://www.w3.org/2002/07/owl#Thing>
+team : team : <http://www.w3.org/2002/07/owl#Thing, http://dbpedia.org/ontology/SoccerClub>
+teamName : team name : <http://dbpedia.org/ontology/Organisation, http://www.w3.org/2001/XMLSchema#langString>
+teamSize : team size : <http://dbpedia.org/ontology/Sport, http://www.w3.org/2001/XMLSchema#nonNegativeInteger>
+televisionSeries : television series : <http://dbpedia.org/ontology/SoapCharacter, http://dbpedia.org/ontology/TelevisionShow>
+temperature : temperature (K) : <http://dbpedia.org/ontology/Planet, http://www.w3.org/2001/XMLSchema#double>
+tenant : tenant : <http://dbpedia.org/ontology/Place, http://dbpedia.org/ontology/SportsTeam>
+tennisSurfaceType : type of tennis surface : <http://dbpedia.org/ontology/TennisTournament, http://www.w3.org/2001/XMLSchema#string>
+termPeriod : term period : <http://dbpedia.org/ontology/Person, http://dbpedia.org/ontology/TimePeriod>
+territory : territory : <http://www.w3.org/2002/07/owl#Thing, http://dbpedia.org/ontology/PopulatedPlace>
+testaverage : testaverage : <http://dbpedia.org/ontology/School, http://www.w3.org/2001/XMLSchema#float>
+thirdCommander : third commander : <http://dbpedia.org/ontology/MilitaryUnit, http://www.w3.org/2002/07/owl#Thing>
+thirdDriver : third driver : <http://dbpedia.org/ontology/GrandPrix, http://dbpedia.org/ontology/FormulaOneRacer>
+thirdDriverCountry : third driver country : <http://dbpedia.org/ontology/GrandPrix, http://dbpedia.org/ontology/Country>
+thirdTeam : third team : <http://dbpedia.org/ontology/GrandPrix, http://dbpedia.org/ontology/FormulaOneTeam>
+throwingSide : throwing side : <http://dbpedia.org/ontology/BaseballPlayer, http://www.w3.org/2001/XMLSchema#string>
+timeInSpace : time in space (s) : <http://www.w3.org/2002/07/owl#Thing, http://www.w3.org/2001/XMLSchema#double>
+timeZone : time zone : <http://dbpedia.org/ontology/Place, http://www.w3.org/2002/07/owl#Thing>
+timeshiftChannel : timeshift channel : <http://dbpedia.org/ontology/TelevisionStation, http://www.w3.org/2001/XMLSchema#string>
+title : title : <http://www.w3.org/2002/07/owl#Thing, http://www.w3.org/2001/XMLSchema#langString>
+toll : toll ($) : <http://dbpedia.org/ontology/RouteOfTransportation, http://dbpedia.org/datatype/usDollar>
+topSpeed : top speed (kmh) : <http://www.w3.org/2002/07/owl#Thing, http://www.w3.org/2001/XMLSchema#double>
+torqueOutput : torque output (Nm) : <http://dbpedia.org/ontology/AutomobileEngine, http://www.w3.org/2001/XMLSchema#double>
+totalLaunches : total launches : <http://www.w3.org/2002/07/owl#Thing, http://www.w3.org/2001/XMLSchema#nonNegativeInteger>
+totalPopulation : total population : <http://dbpedia.org/ontology/EthnicGroup, http://www.w3.org/2001/XMLSchema#nonNegativeInteger>
+totalTravellers : total travellers : <http://dbpedia.org/ontology/YearInSpaceflight, http://www.w3.org/2001/XMLSchema#nonNegativeInteger>
+tournamentRecord : tournament record : <http://dbpedia.org/ontology/CollegeCoach, http://www.w3.org/2001/XMLSchema#string>
+trackLength : track length (μ) : <http://www.w3.org/2002/07/owl#Thing, http://www.w3.org/2001/XMLSchema#double>
+trackNumber : track number : <http://dbpedia.org/ontology/Song, http://www.w3.org/2001/XMLSchema#positiveInteger>
+trainer : trainer : <http://www.w3.org/2002/07/owl#Thing, http://dbpedia.org/ontology/Person>
+training : training : <http://dbpedia.org/ontology/Artist, http://www.w3.org/2002/07/owl#Thing>
+translator : translator : <http://dbpedia.org/ontology/WrittenWork, http://dbpedia.org/ontology/Person>
+transmission : transmission : <http://dbpedia.org/ontology/Automobile, http://www.w3.org/2001/XMLSchema#string>
+trustee : trustee : <http://dbpedia.org/ontology/School, http://www.w3.org/2002/07/owl#Thing>
+tuition : tuition ($) : <http://dbpedia.org/ontology/School, http://dbpedia.org/datatype/usDollar>
+tvComId : tv.com id : <http://dbpedia.org/ontology/TelevisionShow, http://www.w3.org/2001/XMLSchema#integer>
+twinCity : twin city : <http://dbpedia.org/ontology/Settlement, http://dbpedia.org/ontology/Settlement>
+twinCountry : twin country : <http://dbpedia.org/ontology/Settlement, http://dbpedia.org/ontology/Country>
+type : type : <http://www.w3.org/2002/07/owl#Thing, http://www.w3.org/2002/07/owl#Thing>
+typeOfElectrification : type of electrification : <http://www.w3.org/2002/07/owl#Thing, http://www.w3.org/2002/07/owl#Thing>
+uciCode : UCI code : <http://dbpedia.org/ontology/CyclingTeam, http://www.w3.org/2001/XMLSchema#string>
+ulanId : ULAN Id : <http://dbpedia.org/ontology/Agent, http://www.w3.org/2001/XMLSchema#string>
+undraftedYear : undrafted year : <http://dbpedia.org/ontology/GridironFootballPlayer, http://www.w3.org/2001/XMLSchema#gYear>
+uniprot : UniProt : <http://dbpedia.org/ontology/Biomolecule, http://www.w3.org/2001/XMLSchema#string>
+unitCost : unit cost ($) : <http://dbpedia.org/ontology/Aircraft, http://dbpedia.org/datatype/usDollar>
+unitaryAuthority : unitary authority : <http://dbpedia.org/ontology/Island, http://www.w3.org/2002/07/owl#Thing>
+unitedStatesNationalBridgeId : United States National Bridge ID : <http://dbpedia.org/ontology/Bridge, http://www.w3.org/2001/XMLSchema#string>
+university : university : <http://dbpedia.org/ontology/Agent, http://dbpedia.org/ontology/University>
+upperAge : upper age : <http://dbpedia.org/ontology/School, http://www.w3.org/2001/XMLSchema#nonNegativeInteger>
+usSales : US sales : <http://dbpedia.org/ontology/Sales, http://www.w3.org/2001/XMLSchema#nonNegativeInteger>
+usedInWar : used in war : <http://dbpedia.org/ontology/Weapon, http://dbpedia.org/ontology/MilitaryConflict>
+usingCountry : using country : <http://dbpedia.org/ontology/Currency, http://dbpedia.org/ontology/Country>
+utcOffset : UTC offset : <http://dbpedia.org/ontology/PopulatedPlace, http://www.w3.org/2001/XMLSchema#string>
+valvetrain : valvetrain : <http://dbpedia.org/ontology/AutomobileEngine, http://dbpedia.org/datatype/valvetrain>
+variantOf : variant or variation : <http://www.w3.org/2002/07/owl#Thing, http://www.w3.org/2002/07/owl#Thing>
+varietals : varietals : <http://dbpedia.org/ontology/WineRegion, http://dbpedia.org/ontology/Grape>
+vehicle : vehicle : <http://dbpedia.org/ontology/Automobile, http://dbpedia.org/ontology/Automobile>
+vehiclesPerDay : vehicles per day : <http://dbpedia.org/ontology/RouteOfTransportation, http://www.w3.org/2001/XMLSchema#nonNegativeInteger>
+vein : vein : <http://dbpedia.org/ontology/AnatomicalStructure, http://dbpedia.org/ontology/Vein>
+veneratedIn : venerated in : <http://dbpedia.org/ontology/Saint, http://www.w3.org/2002/07/owl#Thing>
+viafId : VIAF Id : <http://dbpedia.org/ontology/Agent, http://www.w3.org/2001/XMLSchema#string>
+viceChancellor : vice chancellor : <http://dbpedia.org/ontology/University, http://www.w3.org/2002/07/owl#Thing>
+vicePresident : vice president : <http://dbpedia.org/ontology/Agent, http://dbpedia.org/ontology/Person>
+vicePrimeMinister : vice prime minister : <http://dbpedia.org/ontology/Person, http://www.w3.org/2002/07/owl#Thing>
+vicePrincipal : vice principal : <http://dbpedia.org/ontology/School, http://www.w3.org/2002/07/owl#Thing>
+vicePrincipalLabel : vice principal label : <http://dbpedia.org/ontology/School, http://www.w3.org/2002/07/owl#Thing>
+virtualChannel : virtual channel : <http://dbpedia.org/ontology/TelevisionStation, http://www.w3.org/2001/XMLSchema#string>
+visitorStatisticsAsOf : visitor statistics as of : <http://dbpedia.org/ontology/Station, http://www.w3.org/2001/XMLSchema#gYear>
+visitorsPerYear : visitors per year : <http://dbpedia.org/ontology/Place, http://www.w3.org/2001/XMLSchema#nonNegativeInteger>
+visitorsPercentageChange : visitor percentage change : <http://dbpedia.org/ontology/Station, http://www.w3.org/2001/XMLSchema#double>
+voice : voice : <http://www.w3.org/2002/07/owl#Thing, http://dbpedia.org/ontology/Person>
+voiceType : voice type : <http://dbpedia.org/ontology/Agent, http://www.w3.org/2002/07/owl#Thing>
+voltageOfElectrification : voltage of electrification (V) : <http://www.w3.org/2002/07/owl#Thing, http://www.w3.org/2001/XMLSchema#double>
+volume : volume (μ³) : <http://www.w3.org/2002/07/owl#Thing, http://www.w3.org/2001/XMLSchema#double>
+waistSize : waist size (μ) : <http://dbpedia.org/ontology/PlayboyPlaymate, http://www.w3.org/2001/XMLSchema#double>
+watershed : watershed (m2) : <http://dbpedia.org/ontology/Place, http://www.w3.org/2001/XMLSchema#double>
+waterwayThroughTunnel : waterway through tunnel : <http://dbpedia.org/ontology/WaterwayTunnel, http://dbpedia.org/ontology/Canal>
+wavelength : wavelength (μ) : <http://dbpedia.org/ontology/Colour, http://www.w3.org/2001/XMLSchema#double>
+webcast : webcast : <http://dbpedia.org/ontology/RadioStation, http://www.w3.org/2002/07/owl#Thing>
+weight : weight (g) : <http://www.w3.org/2002/07/owl#Thing, http://www.w3.org/2001/XMLSchema#double>
+whaDraft : wha draft : <http://dbpedia.org/ontology/IceHockeyPlayer, http://www.w3.org/2001/XMLSchema#string>
+whaDraftTeam : wha draft team : <http://dbpedia.org/ontology/IceHockeyPlayer, http://dbpedia.org/ontology/HockeyTeam>
+wheelbase : wheelbase (μ) : <http://dbpedia.org/ontology/Automobile, http://www.w3.org/2001/XMLSchema#double>
+width : width (μ) : <http://www.w3.org/2002/07/owl#Thing, http://www.w3.org/2001/XMLSchema#double>
+wineProduced : wine produced : <http://dbpedia.org/ontology/WineRegion, http://www.w3.org/2002/07/owl#Thing>
+wineRegion : wine region : <http://dbpedia.org/ontology/Grape, http://www.w3.org/2002/07/owl#Thing>
+wins : wins : <http://dbpedia.org/ontology/Person, http://www.w3.org/2001/XMLSchema#nonNegativeInteger>
+winsAtAsia : wins at ASIA : <http://dbpedia.org/ontology/GolfPlayer, http://dbpedia.org/ontology/GolfTournament>
+winsAtAus : wins at AUS : <http://dbpedia.org/ontology/GolfPlayer, http://dbpedia.org/ontology/GolfTournament>
+winsAtChallenges : wins at challenges : <http://dbpedia.org/ontology/GolfPlayer, http://www.w3.org/2002/07/owl#Thing>
+winsAtChampionships : wins at championships : <http://dbpedia.org/ontology/GolfPlayer, http://www.w3.org/2002/07/owl#Thing>
+winsAtJapan : wins at japan : <http://dbpedia.org/ontology/GolfPlayer, http://www.w3.org/2002/07/owl#Thing>
+winsAtLET : wins at LET : <http://dbpedia.org/ontology/GolfPlayer, http://www.w3.org/2002/07/owl#Thing>
+winsAtLPGA : wins at LPGA : <http://dbpedia.org/ontology/GolfPlayer, http://www.w3.org/2002/07/owl#Thing>
+winsAtMajors : wins at majors : <http://dbpedia.org/ontology/GolfPlayer, http://dbpedia.org/ontology/GolfTournament>
+winsAtNWIDE : wins at NWIDE : <http://dbpedia.org/ontology/GolfPlayer, http://dbpedia.org/ontology/GolfTournament>
+winsAtOtherTournaments : wins at other tournaments : <http://dbpedia.org/ontology/GolfPlayer, http://dbpedia.org/ontology/GolfTournament>
+winsAtPGA : wins at pga : <http://dbpedia.org/ontology/GolfPlayer, http://dbpedia.org/ontology/GolfTournament>
+winsAtProTournaments : wins at pro tournaments : <http://dbpedia.org/ontology/GolfPlayer, http://www.w3.org/2002/07/owl#Thing>
+winsInEurope : wins in Europe : <http://dbpedia.org/ontology/GolfPlayer, http://www.w3.org/2002/07/owl#Thing>
+winterAppearances : winter appearances : <http://dbpedia.org/ontology/OlympicResult, http://dbpedia.org/ontology/OlympicResult>
+worldChampionTitleYear : year of world champion title : <http://dbpedia.org/ontology/Athlete, http://www.w3.org/2001/XMLSchema#string>
+worstDefeat : worst defeat : <http://dbpedia.org/ontology/SoccerClub, http://www.w3.org/2001/XMLSchema#string>
+writer : writer : <http://dbpedia.org/ontology/Work, http://dbpedia.org/ontology/Person>
+year : year : <http://www.w3.org/2002/07/owl#Thing, http://www.w3.org/2001/XMLSchema#gYear>
+yearOfConstruction : year of construction : <http://www.w3.org/2002/07/owl#Thing, http://www.w3.org/2001/XMLSchema#gYear>
+yearOfElectrification : year of electrification : <http://dbpedia.org/ontology/Station, http://www.w3.org/2001/XMLSchema#gYear>
+years : years : <http://dbpedia.org/ontology/CareerStation, http://www.w3.org/2001/XMLSchema#gYear>
+youthWing : youth wing : <http://dbpedia.org/ontology/PoliticalParty, http://www.w3.org/2002/07/owl#Thing>

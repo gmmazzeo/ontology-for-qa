@@ -10,7 +10,7 @@ package edu.ucla.cs.scai.swim.qa.ontology;
  * @author Giuseppe M. Mazzeo <mazzeo@cs.ucla.edu>
  */
 public abstract class NamedEntityAnnotationResult extends WeightedResult {
- 
+
     public abstract NamedEntity getNamedEntity();
 
     public abstract int getBegin();
