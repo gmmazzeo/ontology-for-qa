@@ -51,7 +51,12 @@ public class DBpediaAttributeLookup {
             res = new ArrayList<>();
             double maxSimilarity = 0;
             double similarityThreshold = 0;
-            for (DBpediaAttribute a : DBpediaOntology.getInstance().attributesByUri.values()) {
+            for (String attr : DBpediaOntology.getInstance().attributes) {
+                DBpediaAttribute a = DBpediaOntology.getInstance().attributesByUri.get(attr);
+                if (a == null) {
+                    System.out.println("attribute error: " + attr);
+                    continue;
+                }
                 if (a.words.contains(" label")) {
                     continue;
                 }
@@ -118,7 +123,7 @@ public class DBpediaAttributeLookup {
             if (subjCat == null) {
                 continue;
             }
-            for (DBpediaAttribute att : subjCat.domainOfAttributes) { //Idea: in order to reduce the number of attributes tested we could handle the attributes of the classes of the hierarchy separately - fo instance (first we scan the attributes of MusicalArtist, then those of Artist, then those of Person, until reaching Thing. For each level we assign a weight. We keep the current maximum weight. If at a certain level, its weight is less than the maximum weight multiplied by a threshold level, then we stop the computation
+            for (DBpediaAttribute att : subjCat.domainOfAttributes) { //Idea: in order to reduce the number of attributes tested we could handle the attributes of the classes of the hierarchy separately - for instance (first we scan the attributes of MusicalArtist, then those of Artist, then those of Person, until reaching Thing. For each level we assign a weight. We keep the current maximum weight. If at a certain level, its weight is less than the maximum weight multiplied by a threshold level, then we stop the computation
                 boolean rangeMatch = false;
                 if (domain != null) {
                     if (!((DBpediaNamedEntity) domain).getDomainOfAttributes().contains(att.getUri())) {

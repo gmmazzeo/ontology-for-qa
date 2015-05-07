@@ -6,10 +6,8 @@
 package edu.ucla.cs.scai.swim.qa.ontology.dbpedia;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.Iterator;
 
 /**
@@ -38,7 +36,7 @@ public class DBpediaCategoryLookup {
     }
 
     public ArrayList<DBpediaCategoryLookupResult> lookup(String categoryName) {
-        if (categoryName.length()==0) {
+        if (categoryName.length() == 0) {
             return new ArrayList<>();
         }
         String[] categoryNames = categoryName.toLowerCase().split(" ");
@@ -47,13 +45,18 @@ public class DBpediaCategoryLookup {
             res = new ArrayList<>();
             double maxSimilarity = 0;
             double similarityThreshold = 0;
-            for (DBpediaCategory c : DBpediaOntology.getInstance().categoriesByUri.values()) {
+            for (String cat : DBpediaOntology.getInstance().categories) {
+                DBpediaCategory c = DBpediaOntology.getInstance().categoriesByUri.get(cat);
+                if (c == null) {
+                    System.out.println("category error: " + cat);
+                    continue;
+                }
                 if (c.words == null || c.words.length() == 0) {
                     continue;
                 }
                 double similarity = 0;
                 try {
-                    similarity = similarityClient.similarity(c.words, categoryName);
+                    similarity = similarityClient.conceptSimilarity(c.words, categoryName);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }

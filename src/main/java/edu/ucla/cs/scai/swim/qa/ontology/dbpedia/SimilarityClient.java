@@ -13,4 +13,6 @@ public interface SimilarityClient {
 
     public double similarity(String phrase1, String phrase2) throws Exception;
 
+    public double conceptSimilarity(String phrase1, String phrase2) throws Exception;
+
 }

@@ -637,8 +637,9 @@ public class DBpediaOntology implements Ontology {
                 sb.append(" ");
                 sb.append(qm.getAttributeVariableName());
             }
-            sb.append("\nwhere{");
+            sb.append("\nwhere {\n");
             for (QueryConstraint qc : qm.getConstraints()) {
+                sb.append("\t");
                 if (qc.getSubjString().startsWith("http://")) {
                     sb.append("<").append(qc.getSubjString()).append(">");
                 } else {
@@ -655,6 +656,7 @@ public class DBpediaOntology implements Ontology {
             //TODO: create filters
             sb.append("}\nLIMIT " + limit);
             String queryString = sb.toString();
+            System.out.println("query:\n" + queryString);
             try {
                 Query query = QueryFactory.create(queryString);
                 QueryExecution qexec = QueryExecutionFactory.sparqlService(SPARQL_END_POINT, query);

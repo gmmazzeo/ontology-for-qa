@@ -32,6 +32,11 @@ public class WordNetSimilarityClient implements SimilarityClient {
         }
     }
 
+    @Override
+    public double conceptSimilarity(String phrase1, String phrase2) throws Exception {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     public static void main(String args[]) {
     }
 
