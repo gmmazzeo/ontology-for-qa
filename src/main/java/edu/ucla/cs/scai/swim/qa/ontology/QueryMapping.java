@@ -22,8 +22,9 @@ public class QueryMapping {
     private final HashMap<String, ArrayList<CategoryLookupResult>> cacheLookupCategory = new HashMap<>();
 
     Ontology ontology;
-    boolean printIntermediateModels = false;
-    double THRESHOLD = 0.65;
+    boolean printIntermediateModels = true;
+    double THRESHOLD = 0.8;
+    double OUTPUT_THRESHOLD = 0.7;
     PrintStream out = printIntermediateModels ? System.out : new PrintStream(new OutputStream() {@Override public void write(int b) {}}); //send System.out to not print if printIntermediateModels is false
 
     private ArrayList<QueryModel> expandExampleEntity(QueryModel qm) throws Exception {
@@ -217,6 +218,7 @@ public class QueryMapping {
         HashMap<String, String> domainsOfResolvedAttributes = new HashMap<>();
         HashMap<String, String> rangesOfResolvedAttributes = new HashMap<>();
         HashSet<String> resolvedAttributes = new HashSet<>();
+        HashSet<String> unresolvedVariables = new HashSet<>();
         for (QueryConstraint qc : qm.getConstraints()) {
             if (qc.getAttrExpr().equals("rdf:type")) {
                 qc.setAttrString(ontology.getTypeAttribute());
@@ -227,19 +229,20 @@ public class QueryMapping {
             basicTypes.add(qf.getSubjExpr());
         }
         for (QueryConstraint qc : qm.getConstraints()) {
-            if (qc.getAttrString().contains("http://dbpedia.org/ontology")) {
-                if (qc.getSubjString().contains("http://dbpedia.org/resource") || variableTypes.containsKey(qc.getSubjString())) {
+            if (qc.getAttrString().startsWith("http://dbpedia.org/ontology")) {
+                if (qc.getSubjString().startsWith("http://dbpedia.org/resource") || variableTypes.containsKey(qc.getSubjString())) {
                     rangesOfResolvedAttributes.put(qc.getValueString(), qc.getAttrString());
                     resolvedAttributes.add(qc.getValueString());
-                } else if (qc.getValueString().contains("http://dbpedia.org/resource") || variableTypes.containsKey(qc.getValueString())) {
+                } else if (qc.getValueString().startsWith("http://dbpedia.org/resource") || variableTypes.containsKey(qc.getValueString())) {
                     domainsOfResolvedAttributes.put(qc.getSubjString(), qc.getAttrString());
                     resolvedAttributes.add(qc.getSubjString());
                 }
+            } else if (qc.getAttrString().startsWith("lookupAttribute(")) {
+                unresolvedVariables.add(qc.getValueString());
             }
         }
 
         ArrayList<QueryModel> res = new ArrayList<>();
-
         QueryModel qm0 = new QueryModel(qm.getEntityVariableName(), qm.getAttributeVariableName());
         qm0.setModelNumber(qm.getModelNumber());
         qm0.setExampleEntity(qm.getExampleEntity());
@@ -251,10 +254,10 @@ public class QueryMapping {
             ArrayList<QueryConstraint> expandedConstraints = new ArrayList<>();
             ArrayList<Double> expandedConstraintsWeight = new ArrayList<>();
             String attr = qc.getAttrString();
-            boolean resolvedConstraint = qc.getSubjString().contains("http://dbpedia.org/resource") || qc.getValueString().contains("http://dbpedia.org/resource");
+            boolean resolvedConstraint = qc.getSubjString().startsWith("http://dbpedia.org/resource") || qc.getValueString().startsWith("http://dbpedia.org/resource");
             boolean variableTypeContainsSubj = variableTypes.containsKey(qc.getSubjString());
             boolean resolvedAttributesContainsSubj = resolvedAttributes.contains(qc.getSubjString());
-            boolean subjIsAttrVarName = qc.getSubjString().equals(qm.getAttributeVariableName()) &&(variableTypes.containsKey(qc.getValueString()) || basicTypes.contains(qc.getValueString()) || resolvedAttributes.contains(qc.getValueString()));
+            boolean subjIsAttrVarName = qc.getSubjString().equals(qm.getAttributeVariableName()) && !unresolvedVariables.contains(qc.getSubjString()) && (variableTypes.containsKey(qc.getValueString()) || basicTypes.contains(qc.getValueString()) || resolvedAttributes.contains(qc.getValueString()));
             if (attr.startsWith("lookupAttribute(") && (resolvedConstraint || variableTypeContainsSubj || resolvedAttributesContainsSubj || subjIsAttrVarName)) { //resolved or typed subj or value, or free variable is resolved
                 HashSet<String> subjTypes = new HashSet<>();
                 HashSet<String> valueTypes = new HashSet<>();
@@ -281,7 +284,9 @@ public class QueryMapping {
                         if (basicType) {
                             valueTypes.add("basicType");
                         } else if (!qc.getValueString().equals(qm.getAttributeVariableName())) {
+                            out.println("elookup: " + qc.getValueString());
                             range = ontology.getEntityByUri(qc.getValueString());
+                            out.println("elookup finished");
                             if (range != null) {
                                 for (Category c : range.getCategories()) {
                                     valueTypes.add(c.getUri());
@@ -574,7 +579,7 @@ public class QueryMapping {
         Collections.sort(outputModels);
         double highestWeight = (!outputModels.isEmpty()) ? outputModels.get(0).getWeight() : 0;
         for (int i = 0 ; i < outputModels.size(); i++) {
-            if (outputModels.get(i).getWeight() < highestWeight * THRESHOLD) {
+            if (outputModels.get(i).getWeight() < highestWeight * OUTPUT_THRESHOLD) {
                 outputModels.remove(i);
                 i--;
             }
