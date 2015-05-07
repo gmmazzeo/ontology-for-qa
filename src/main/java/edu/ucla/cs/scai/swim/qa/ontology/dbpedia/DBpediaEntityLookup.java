@@ -25,12 +25,15 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.PrintWriter;
 import java.net.MalformedURLException;
 import java.net.URI;
 import java.net.URL;
+import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -44,13 +47,11 @@ public class DBpediaEntityLookup {
     SimilarityClient similarityClient;
 
     public static class EntityFeed {
-
         @Key
         public ArrayList<DBpediaNamedEntity> results;
     }
 
     public static class DBpediaUrl extends GenericUrl {
-
         public DBpediaUrl(String encodedUrl) {
             super(encodedUrl);
         }
@@ -62,13 +63,12 @@ public class DBpediaEntityLookup {
     }
 
     public ArrayList<DBpediaEntityLookupResult> lookup(String name, int maxHits) throws Exception {
-        HttpRequestFactory requestFactory
-                = HTTP_TRANSPORT.createRequestFactory(new HttpRequestInitializer() {
-                    @Override
-                    public void initialize(HttpRequest request) {
-                        request.setParser(new JsonObjectParser(JSON_FACTORY));
-                    }
-                });
+        HttpRequestFactory requestFactory = HTTP_TRANSPORT.createRequestFactory(new HttpRequestInitializer() {
+            @Override
+            public void initialize(HttpRequest request) {
+                request.setParser(new JsonObjectParser(JSON_FACTORY));
+            }
+        });
         DBpediaUrl url = new DBpediaUrl("http://lookup.dbpedia.org/api/search.asmx/KeywordSearch?MaxHits=" + maxHits + "&QueryString=" + name);
         HttpRequest request = requestFactory.buildGetRequest(url);
         request.getHeaders().setAccept("application/json");
@@ -76,7 +76,6 @@ public class DBpediaEntityLookup {
 
         EntityFeed resultList = response.parseAs(EntityFeed.class);
         ArrayList<DBpediaEntityLookupResult> res = new ArrayList<>();
-        //WordNetSimilarityClient similarityClient = new WordNetSimilarityClient();
         for (DBpediaNamedEntity ne : resultList.results) {
             res.add(new DBpediaEntityLookupResult(ne, similarityClient.similarity(name, ne.getName())));
         }
@@ -86,30 +85,38 @@ public class DBpediaEntityLookup {
     public JsonObject getEntityJsonByUri(String uri) {
         String urls = uri.replace("/resource/", "/data/") + ".json";
         urls = URI.create(urls).toASCIIString();
-        URL url;
-        InputStream is = null;
-        BufferedReader br;
         String line;
         StringBuilder jsonSb = new StringBuilder();
-        try {
-            url = new URL(urls);
-            is = url.openStream();  // throws an IOException
-            br = new BufferedReader(new InputStreamReader(is));
-            while ((line = br.readLine()) != null) {
+        try (BufferedReader in = new BufferedReader(new FileReader("/Users/peterhuang/NetBeansProjects/ontology-for-qa/json/" + URLEncoder.encode(urls, "UTF-8")))) {
+            while ((line = in.readLine()) != null) {
                 jsonSb.append(line);
             }
-        } catch (MalformedURLException mue) {
-            mue.printStackTrace();
-        } catch (IOException ioe) {
-            ioe.printStackTrace();
-            return null;
-        } finally {
+            in.close();
+        } catch (Exception ex) {
+        }
+
+        if (jsonSb.toString().isEmpty()) {
+            BufferedReader br;
             try {
-                if (is != null) {
-                    is.close();
+                URL url = new URL(urls);
+                InputStream is = url.openStream();  // throws an IOException
+                br = new BufferedReader(new InputStreamReader(is));
+                while ((line = br.readLine()) != null) {
+                    jsonSb.append(line);
                 }
+                is.close();
+            } catch (MalformedURLException mue) {
+                mue.printStackTrace();
             } catch (IOException ioe) {
+                ioe.printStackTrace();
                 return null;
+            } finally {
+                try (PrintWriter out = new PrintWriter("/Users/peterhuang/NetBeansProjects/ontology-for-qa/json/" + URLEncoder.encode(urls, "UTF-8"))) {
+                    out.println(jsonSb.toString());
+                    out.close();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
         }
         JsonParser parser = new JsonParser();
