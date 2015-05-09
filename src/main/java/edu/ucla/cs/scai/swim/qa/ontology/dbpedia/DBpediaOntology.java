@@ -127,6 +127,12 @@ public class DBpediaOntology implements Ontology {
         dataTypesByUri.put("http://www.w3.org/2001/XMLSchema#nonNegativeInteger", new DBpediaDataType("", Integer.class));
         dataTypesByUri.put("http://www.w3.org/2001/XMLSchema#positiveInteger", new DBpediaDataType("", Integer.class));
         dataTypesByUri.put("http://www.w3.org/2001/XMLSchema#string", new DBpediaDataType("", String.class));
+        dataTypesByUri.put("http://dbpedia.org/datatype/fuelType", new DBpediaDataType("", Double.class));
+        dataTypesByUri.put("http://dbpedia.org/datatype/valvetrain", new DBpediaDataType("", Double.class));
+        dataTypesByUri.put("http://dbpedia.org/datatype/engineConfiguration", new DBpediaDataType("", Double.class));
+        dataTypesByUri.put("http://dbpedia.org/datatype/usDollar", new DBpediaDataType("", Double.class));
+        dataTypesByUri.put("http://dbpedia.org/datatype/poundSterling", new DBpediaDataType("", Double.class));
+        dataTypesByUri.put("http://dbpedia.org/datatype/euro", new DBpediaDataType("", Double.class));
 
         for (Map.Entry<String, DBpediaDataType> e : dataTypesByUri.entrySet()) {
             e.getValue().uri = e.getKey();
@@ -237,6 +243,73 @@ public class DBpediaOntology implements Ontology {
 //        }
     }
 
+    private void loadEmptyCategories(JsonArray ja) throws Exception {
+        for (JsonElement je : ja) {
+            JsonObject jo = je.getAsJsonObject();
+            String id = jo.get("@id").getAsString();
+            String type;
+            try {
+                type = jo.get("@type").getAsJsonArray().get(0).getAsString();
+            } catch (Exception e) {
+                System.out.println(id + " element type resolution failed - Not an real problem!");
+                continue;
+            }
+            if (type.endsWith("Class")) {
+                DBpediaCategory c = new DBpediaCategory();
+                c.setUri(id);
+                c.setLabel(extractLabel(jo, id));
+                categoriesByUri.put(id, c);
+            } else if (type.endsWith("Property") || type.endsWith("Ontology")) {
+            } else {
+                throw new Exception("Unexpected type: " + id + " : " + type);
+            }
+        }
+        System.out.println(categoriesByUri.size() + " categories");
+    }
+    
+    private void loadAttributesandConnect() throws Exception {
+        String attributesPath = System.getProperty("dbpedia.ontology.attributes.path");
+        if (attributesPath == null) {
+            attributesPath = "/Users/peterhuang/NetBeansProjects/ontology-for-qa/src/main/resources/mappings";
+        }
+        System.out.println("Loading ontology attributes from " + attributesPath);
+        try (BufferedReader in = new BufferedReader(new FileReader(attributesPath))) {
+            String l = in.readLine();
+            while (l != null) {
+                String id = "http://dbpedia.org/ontology/" + l.split(" : ")[0];
+                attributes.add(id);
+                DBpediaAttribute a = new DBpediaAttribute();
+                a.setUri(id);
+                a.setLabel(l.split(" : ")[1]);
+                String domain = l.split(" : ")[2].split(", ")[0].replaceAll("<", "");
+                String range = l.split(" : ")[2].split(", ")[1].replaceAll(">", "");
+                if (domain.equals(THING_URI)) {
+                    a.domainUri.add(THING_URI);
+                } else if (dataTypesByUri.containsKey(domain)) {
+                    throw new Exception(id + " has domain " + dataTypesByUri.get(domain) + ", which is a basic type!");
+                } else if (categoriesByUri.get(domain) != null) {
+                    a.domainUri.add(domain);
+                } else {
+                    throw new Exception(domain + " does not exist");
+                }
+                if (range.equals(THING_URI)) {
+                    a.rangeUri.add(THING_URI);
+                } else if (dataTypesByUri.containsKey(range)) {
+                    DBpediaDataType basicType = dataTypesByUri.get(range);
+                    basicType.rangeOfAttributes.add(a);
+                    a.rangeCanBeBasicType = true;
+                } else if (categoriesByUri.get(range) != null) {
+                    a.rangeUri.add(range);
+                } else {
+                    throw new Exception(range + " does not exist");
+                }
+                attributesByUri.put(id, a);
+                l = in.readLine();
+            }
+            System.out.println(attributesByUri.size() + " attributes");
+        }
+    }
+    
     private void connectCategoriesThroughSubclassRelationship(JsonArray ja) throws Exception {
         for (JsonElement je : ja) {
             JsonObject jo = je.getAsJsonObject();
@@ -427,9 +500,11 @@ public class DBpediaOntology implements Ontology {
             initDataTypes();
             loadCategoriesAndAttributes();
             JsonArray ja = loadJsonDescriptor();
-            loadEmptyCategoriesAndAttributes(ja);
+            //loadEmptyCategoriesAndAttributes(ja);
+            loadEmptyCategories(ja);
             connectCategoriesThroughSubclassRelationship(ja);
-            connectCategoriesAndAttributes(ja);
+            //connectCategoriesAndAttributes(ja);
+            loadAttributesandConnect();
             createThingAndConnectParentlessCategories();
             extendDomainsAndRangesToDescendants();
         } catch (Exception e) {
