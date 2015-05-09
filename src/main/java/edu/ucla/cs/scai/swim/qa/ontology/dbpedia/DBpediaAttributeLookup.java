@@ -114,7 +114,9 @@ public class DBpediaAttributeLookup {
         if (subjectTypes.isEmpty() && range != null) {
             for (String attr : ((DBpediaNamedEntity) range).getRangeOfAttributes()) {
                 DBpediaAttribute da = DBpediaOntology.getInstance().attributesByUri.get(attr);
-                subjectTypes.addAll(da.getDomainUri());
+                if (da != null) {
+                    subjectTypes.addAll(da.getDomainUri());
+                }
             }
         }
 
@@ -184,7 +186,9 @@ public class DBpediaAttributeLookup {
         if (valueTypes.isEmpty() && domain != null) {
             for (String attr : ((DBpediaNamedEntity) domain).getRangeOfAttributes()) {
                 DBpediaAttribute da = DBpediaOntology.getInstance().attributesByUri.get(attr);
-                valueTypes.addAll(da.getDomainUri());
+                if (da != null) {
+                    valueTypes.addAll(da.getDomainUri());
+                }
             }
         }
         //now look for the symmetric relationships
