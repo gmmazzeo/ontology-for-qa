@@ -201,8 +201,8 @@ public class DBpediaDomainRangeFinder {
                     incrementCount(rangeCount, "XS#string");
                     incrementCount(tempCount, "XS#string");
                 } else if (s[2].startsWith("\"") && (s[2].endsWith("\"@en") || s[2].endsWith("\"@ja"))) {
-                    incrementCount(rangeCount, "XS#langString");
-                    incrementCount(tempCount, "XS#langString");
+                    incrementCount(rangeCount, "NS#langString");
+                    incrementCount(tempCount, "NS#langString");
                 } else if (s[2].startsWith("<") && s[2].endsWith(">")) {
                 } else {
                     System.out.println("unknown range type: " + s[2]);
@@ -227,6 +227,8 @@ public class DBpediaDomainRangeFinder {
                 String range = ranges.get(s);
                 if (range.startsWith(thingSuffux)) {
                     range = DBpediaOntology.THING_URI;
+                } else if (range.contains("NS#langString")) {
+                    range = "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString";
                 } else if (range.startsWith("XS#")) {
                     range = range.replace("XS#", "http://www.w3.org/2001/XMLSchema#");
                 } else if (range.startsWith("http://dbpedia.org/datatype/")) {
