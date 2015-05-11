@@ -8,7 +8,6 @@ package edu.ucla.cs.scai.swim.qa.ontology.dbpedia;
 import edu.ucla.cs.scai.swim.qa.ontology.Attribute;
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Objects;
@@ -109,10 +108,7 @@ public class DBpediaAttribute implements Attribute {
             return false;
         }
         final DBpediaAttribute other = (DBpediaAttribute) obj;
-        if (!Objects.equals(this.uri, other.uri)) {
-            return false;
-        }
-        return true;
+        return Objects.equals(this.uri, other.uri);
     }
 
     @Override

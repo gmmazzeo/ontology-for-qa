@@ -58,7 +58,6 @@ public class DBpediaOntology implements Ontology {
     //public static final String SUPERPAGES_FILE = "superpages.txt";
     public static final String TYPE_ATTRIBUTE = "http://www.w3.org/1999/02/22-rdf-syntax-ns#type";
 
-    
     final HashMap<String, DBpediaAttribute> attributesByUri = new HashMap<>();
     final HashMap<String, DBpediaCategory> categoriesByUri = new HashMap<>();
     final HashMap<String, DBpediaNamedEntity> entitiesByUri = new HashMap<>();
@@ -66,6 +65,7 @@ public class DBpediaOntology implements Ontology {
 
     ArrayList<String> attributes = new ArrayList<>();
     ArrayList<String> categories = new ArrayList<>();
+    ArrayList<String> properties = new ArrayList<>();
 
     public static final String THING_URI = "http://www.w3.org/2002/07/owl#Thing";
     public static final String ABSTRACT_ATTRIBUTE_URI = "http://www.w3.org/2000/01/rdf-schema#comment";
@@ -123,6 +123,7 @@ public class DBpediaOntology implements Ontology {
         dataTypesByUri.put("http://www.w3.org/2001/XMLSchema#float", new DBpediaDataType("", Double.class));
         dataTypesByUri.put("http://www.w3.org/2001/XMLSchema#gYear", new DBpediaDataType("", GregorianCalendar.class));
         dataTypesByUri.put("http://www.w3.org/2001/XMLSchema#gYearMonth", new DBpediaDataType("", GregorianCalendar.class));
+        dataTypesByUri.put("http://www.w3.org/2001/XMLSchema#gMonthDay", new DBpediaDataType("", GregorianCalendar.class));
         dataTypesByUri.put("http://www.w3.org/2001/XMLSchema#integer", new DBpediaDataType("", Integer.class));
         dataTypesByUri.put("http://www.w3.org/2001/XMLSchema#nonNegativeInteger", new DBpediaDataType("", Integer.class));
         dataTypesByUri.put("http://www.w3.org/2001/XMLSchema#positiveInteger", new DBpediaDataType("", Integer.class));
@@ -133,6 +134,56 @@ public class DBpediaOntology implements Ontology {
         dataTypesByUri.put("http://dbpedia.org/datatype/usDollar", new DBpediaDataType("", Double.class));
         dataTypesByUri.put("http://dbpedia.org/datatype/poundSterling", new DBpediaDataType("", Double.class));
         dataTypesByUri.put("http://dbpedia.org/datatype/euro", new DBpediaDataType("", Double.class));
+        dataTypesByUri.put("http://dbpedia.org/datatype/acre", new DBpediaDataType("", Double.class));
+        dataTypesByUri.put("http://dbpedia.org/datatype/ampere", new DBpediaDataType("", Double.class));
+        dataTypesByUri.put("http://dbpedia.org/datatype/astronomicalUnit", new DBpediaDataType("", Double.class));
+        dataTypesByUri.put("http://dbpedia.org/datatype/cubicMillimetre", new DBpediaDataType("", Double.class));
+        dataTypesByUri.put("http://dbpedia.org/datatype/danishKrone", new DBpediaDataType("", Double.class));
+        dataTypesByUri.put("http://dbpedia.org/datatype/degreeCelsius", new DBpediaDataType("", Double.class));
+        dataTypesByUri.put("http://dbpedia.org/datatype/degreeFahrenheit", new DBpediaDataType("", Double.class));
+        dataTypesByUri.put("http://dbpedia.org/datatype/degreeRankine", new DBpediaDataType("", Double.class));
+        dataTypesByUri.put("http://dbpedia.org/datatype/foot", new DBpediaDataType("", Double.class));
+        dataTypesByUri.put("http://dbpedia.org/datatype/footPerMinute", new DBpediaDataType("", Double.class));
+        dataTypesByUri.put("http://dbpedia.org/datatype/footPerSecond", new DBpediaDataType("", Double.class));
+        dataTypesByUri.put("http://dbpedia.org/datatype/gigabyte", new DBpediaDataType("", Double.class));
+        dataTypesByUri.put("http://dbpedia.org/datatype/gigahertz", new DBpediaDataType("", Double.class));
+        dataTypesByUri.put("http://dbpedia.org/datatype/gigawattHour", new DBpediaDataType("", Double.class));
+        dataTypesByUri.put("http://dbpedia.org/datatype/gram", new DBpediaDataType("", Double.class));
+        dataTypesByUri.put("http://dbpedia.org/datatype/hectare", new DBpediaDataType("", Double.class));
+        dataTypesByUri.put("http://dbpedia.org/datatype/horsepower", new DBpediaDataType("", Double.class));
+        dataTypesByUri.put("http://dbpedia.org/datatype/inch", new DBpediaDataType("", Double.class));
+        dataTypesByUri.put("http://dbpedia.org/datatype/indianRupee", new DBpediaDataType("", Double.class));
+        dataTypesByUri.put("http://dbpedia.org/datatype/japaneseYen", new DBpediaDataType("", Double.class));
+        dataTypesByUri.put("http://dbpedia.org/datatype/joule", new DBpediaDataType("", Double.class));
+        dataTypesByUri.put("http://dbpedia.org/datatype/kilobyte", new DBpediaDataType("", Double.class));
+        dataTypesByUri.put("http://dbpedia.org/datatype/kilogramForce", new DBpediaDataType("", Double.class));
+        dataTypesByUri.put("http://dbpedia.org/datatype/kilohertz", new DBpediaDataType("", Double.class));
+        dataTypesByUri.put("http://dbpedia.org/datatype/kilojoule", new DBpediaDataType("", Double.class));
+        dataTypesByUri.put("http://dbpedia.org/datatype/kilometresPerLitre", new DBpediaDataType("", Double.class));
+        dataTypesByUri.put("http://dbpedia.org/datatype/kilowattHour", new DBpediaDataType("", Double.class));
+        dataTypesByUri.put("http://dbpedia.org/datatype/knot", new DBpediaDataType("", Double.class));
+        dataTypesByUri.put("http://dbpedia.org/datatype/megahertz", new DBpediaDataType("", Double.class));
+        dataTypesByUri.put("http://dbpedia.org/datatype/megawatt", new DBpediaDataType("", Double.class));
+        dataTypesByUri.put("http://dbpedia.org/datatype/metrePerSecond", new DBpediaDataType("", Double.class));
+        dataTypesByUri.put("http://dbpedia.org/datatype/mile", new DBpediaDataType("", Double.class));
+        dataTypesByUri.put("http://dbpedia.org/datatype/milePerHour", new DBpediaDataType("", Double.class));
+        dataTypesByUri.put("http://dbpedia.org/datatype/millibar", new DBpediaDataType("", Double.class));
+        dataTypesByUri.put("http://dbpedia.org/datatype/milligram", new DBpediaDataType("", Double.class));
+        dataTypesByUri.put("http://dbpedia.org/datatype/millilitre", new DBpediaDataType("", Double.class));
+        dataTypesByUri.put("http://dbpedia.org/datatype/millipond", new DBpediaDataType("", Double.class));
+        dataTypesByUri.put("http://dbpedia.org/datatype/moroccanDirham", new DBpediaDataType("", Double.class));
+        dataTypesByUri.put("http://dbpedia.org/datatype/myanmaKyat", new DBpediaDataType("", Double.class));
+        dataTypesByUri.put("http://dbpedia.org/datatype/nanometre", new DBpediaDataType("", Double.class));
+        dataTypesByUri.put("http://dbpedia.org/datatype/nicaraguanCordoba", new DBpediaDataType("", Double.class));
+        dataTypesByUri.put("http://dbpedia.org/datatype/perCent", new DBpediaDataType("", Double.class));
+        dataTypesByUri.put("http://dbpedia.org/datatype/pond", new DBpediaDataType("", Double.class));
+        dataTypesByUri.put("http://dbpedia.org/datatype/pound", new DBpediaDataType("", Double.class));
+        dataTypesByUri.put("http://dbpedia.org/datatype/rod", new DBpediaDataType("", Double.class));
+        dataTypesByUri.put("http://dbpedia.org/datatype/squareFoot", new DBpediaDataType("", Double.class));
+        dataTypesByUri.put("http://dbpedia.org/datatype/stone", new DBpediaDataType("", Double.class));
+        dataTypesByUri.put("http://dbpedia.org/datatype/tonne", new DBpediaDataType("", Double.class));
+        dataTypesByUri.put("http://dbpedia.org/datatype/usGallon", new DBpediaDataType("", Double.class));
+        dataTypesByUri.put("http://dbpedia.org/datatype/volt", new DBpediaDataType("", Double.class));
 
         for (Map.Entry<String, DBpediaDataType> e : dataTypesByUri.entrySet()) {
             e.getValue().uri = e.getKey();
@@ -152,7 +203,7 @@ public class DBpediaOntology implements Ontology {
                 l = in.readLine();
             }
         }
-        
+
         String attributesPath = System.getProperty("dbpedia.ontology.attributes.path");
         if (attributesPath == null) {
             attributesPath = "/Users/peterhuang/NetBeansProjects/ontology-for-qa/src/main/resources/mappings";
@@ -165,16 +216,16 @@ public class DBpediaOntology implements Ontology {
                 l = in.readLine();
             }
         }
-        
+
         System.out.println(categories.size() + " categories");
         System.out.println(attributes.size() + " attributes");
     }
-    
+
     private JsonArray loadJsonDescriptor() throws IOException {
         StringBuilder jsonSb;
         String filePath = System.getProperty("dbpedia.ontology.definitions.path");
         if (filePath == null) {
-            filePath = "put your absolute path here";
+            filePath = "/Users/peterhuang/NetBeansProjects/ontology-for-qa/src/main/resources/definitions.json";
         }
         System.out.println("Loading ontology definitions from " + filePath);
         try (BufferedReader in = new BufferedReader(new FileReader(filePath))) {
@@ -266,7 +317,7 @@ public class DBpediaOntology implements Ontology {
         }
         System.out.println(categoriesByUri.size() + " categories");
     }
-    
+
     private void loadAttributesandConnect() throws Exception {
         String attributesPath = System.getProperty("dbpedia.ontology.attributes.path");
         if (attributesPath == null) {
@@ -309,7 +360,53 @@ public class DBpediaOntology implements Ontology {
             System.out.println(attributesByUri.size() + " attributes");
         }
     }
-    
+
+    private void loadPropertiesandConnect() throws Exception {
+        String propertiesPath = System.getProperty("dbpedia.ontology.properties.path");
+        if (propertiesPath == null) {
+            propertiesPath = "/Users/peterhuang/NetBeansProjects/ontology-for-qa/src/main/resources/properties";
+        }
+        System.out.println("Loading ontology properties from " + propertiesPath);
+        try (BufferedReader in = new BufferedReader(new FileReader(propertiesPath))) {
+            String l = in.readLine();
+            while (l != null) {
+                String id = "http://dbpedia.org/property/" + l.split(" : ")[0];
+                properties.add(id);
+                DBpediaAttribute a = new DBpediaAttribute();
+                a.setUri(id);
+                a.setLabel(l.split(" : ")[1]);
+                String domain = l.split(" : ")[2].split(", ")[0].replaceAll("<", "");
+                if (l.split(" : ")[2].split(", ").length == 1) {
+                    System.out.println(l);
+                }
+                String range = l.split(" : ")[2].split(", ")[1].replaceAll(">", "");
+                if (domain.equals(THING_URI)) {
+                    a.domainUri.add(THING_URI);
+                } else if (dataTypesByUri.containsKey(domain)) {
+                    throw new Exception(id + " has domain " + dataTypesByUri.get(domain) + ", which is a basic type!");
+                } else if (categoriesByUri.get(domain) != null) {
+                    a.domainUri.add(domain);
+                } else {
+                    throw new Exception(domain + " does not exist");
+                }
+                if (range.equals(THING_URI)) {
+                    a.rangeUri.add(THING_URI);
+                } else if (dataTypesByUri.containsKey(range)) {
+                    DBpediaDataType basicType = dataTypesByUri.get(range);
+                    basicType.rangeOfAttributes.add(a);
+                    a.rangeCanBeBasicType = true;
+                } else if (categoriesByUri.get(range) != null) {
+                    a.rangeUri.add(range);
+                } else {
+                    throw new Exception(range + " does not exist");
+                }
+                attributesByUri.put(id, a);
+                l = in.readLine();
+            }
+            System.out.println(properties.size() + " properties");
+        }
+    }
+
     private void connectCategoriesThroughSubclassRelationship(JsonArray ja) throws Exception {
         for (JsonElement je : ja) {
             JsonObject jo = je.getAsJsonObject();
@@ -505,6 +602,7 @@ public class DBpediaOntology implements Ontology {
             connectCategoriesThroughSubclassRelationship(ja);
             //connectCategoriesAndAttributes(ja);
             loadAttributesandConnect();
+            loadPropertiesandConnect();
             createThingAndConnectParentlessCategories();
             extendDomainsAndRangesToDescendants();
         } catch (Exception e) {
@@ -565,7 +663,7 @@ public class DBpediaOntology implements Ontology {
     public ArrayList<? extends NamedEntityAnnotationResult> annotateNamedEntities(String sentence) {
         ArrayList<NamedEntityAnnotationResult> res = new ArrayList<>();
         try {
-            for (DBpediaEntityAnnotationResult r : new TagMeClient().getTagMeResult(sentence)) {
+            for (DBpediaEntityAnnotationResult r : new TagMeClient().getTagMeResult(sentence, similarityClient)) {
                 res.add(r);
             }
         } catch (Exception ex) {
@@ -635,7 +733,7 @@ public class DBpediaOntology implements Ontology {
         return instance.categoriesByUri.get(THING_URI);
     }
 
-    /*    
+    /*
      public String modelToSparqlQuery(QueryModel m) {
      StringBuilder sb = new StringBuilder();
      sb.append("select distinct");
@@ -729,6 +827,9 @@ public class DBpediaOntology implements Ontology {
                 sb.append(" .\n");
             }
             //TODO: create filters
+            if (!qm.getFilters().isEmpty()) {
+                return res;
+            }
             sb.append("}\nLIMIT " + limit);
             String queryString = sb.toString();
             System.out.println("query:\n" + queryString);
@@ -736,7 +837,7 @@ public class DBpediaOntology implements Ontology {
                 Query query = QueryFactory.create(queryString);
                 QueryExecution qexec = QueryExecutionFactory.sparqlService(SPARQL_END_POINT, query);
                 ResultSet rs = qexec.execSelect();
-                for (; rs.hasNext();) {
+                while (rs.hasNext()) {
                     QuerySolution qs = rs.next();
                     HashMap<String, String> row = new HashMap<>();
                     for (Iterator<String> it = qs.varNames(); it.hasNext();) {
@@ -747,8 +848,8 @@ public class DBpediaOntology implements Ontology {
                         } else {
                             row.put("?" + varName, node.asResource().getURI());
                         }
-                        res.add(row);
                     }
+                    res.add(row);
                 }
             } catch (Exception e) {
                 System.out.println("Error with query\n" + queryString);

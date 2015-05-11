@@ -30,6 +30,9 @@ public class DBpediaNamedEntity implements NamedEntity {
     @Key
     ArrayList<DBpediaCategory> classes = new ArrayList<>();
 
+    @Key
+    int refCount;
+
     HashSet<DBpediaCategory> categories;
 
     HashSet<String> domainOfAttributes = new HashSet<>();
@@ -73,6 +76,11 @@ public class DBpediaNamedEntity implements NamedEntity {
         return thumbUrl;
     }
 
+    @Override
+    public String getDescription() {
+        return description;
+    }
+
     public HashSet<String> getDomainOfAttributes() {
         return domainOfAttributes;
     }
@@ -87,6 +95,14 @@ public class DBpediaNamedEntity implements NamedEntity {
 
     public void setUri(String uri) {
         this.uri = uri;
+    }
+
+    public int getRefCount() {
+        return refCount;
+    }
+
+    public void setRefCount(int refCount) {
+        this.refCount = refCount;
     }
 
     public void setDescription(String description) {
@@ -111,8 +127,4 @@ public class DBpediaNamedEntity implements NamedEntity {
         label = l.replace("_", " ");
     }
 
-    @Override
-    public String getDescription() {
-        return description;
-    }
 }

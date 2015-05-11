@@ -555,7 +555,7 @@ public class DBpediaOntologyOld implements Ontology {
     public ArrayList<? extends NamedEntityAnnotationResult> annotateNamedEntities(String sentence) {
         ArrayList<NamedEntityAnnotationResult> res = new ArrayList<>();
         try {
-            for (DBpediaEntityAnnotationResult r : new TagMeClient().getTagMeResult(sentence)) {
+            for (DBpediaEntityAnnotationResult r : new TagMeClient().getTagMeResult(sentence, similarityClient)) {
                 res.add(r);
             }
         } catch (Exception ex) {

@@ -5,10 +5,7 @@
  */
 package edu.ucla.cs.scai.swim.qa.ontology.dbpedia;
 
-import edu.ucla.cs.scai.swim.qa.ontology.Attribute;
 import edu.ucla.cs.scai.swim.qa.ontology.AttributeLookupResult;
-import edu.ucla.cs.scai.swim.qa.ontology.NamedEntity;
-import edu.ucla.cs.scai.swim.qa.ontology.NamedEntityLookupResult;
 
 /**
  *

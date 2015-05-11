@@ -120,6 +120,15 @@ public class DBpediaAttributeLookup {
             }
         }
 
+        if (domain != null) {
+            for (String attr : ((DBpediaNamedEntity) domain).getDomainOfAttributes()) {
+                DBpediaAttribute da = DBpediaOntology.getInstance().attributesByUri.get(attr);
+                if (da != null) {
+                    subjectTypes.addAll(da.getDomainUri());
+                }
+            }
+        }
+
         for (String sts : subjectTypes) {
             DBpediaCategory subjCat = DBpediaOntology.getInstance().categoriesByUri.get(sts);
             if (subjCat == null) {
@@ -139,9 +148,15 @@ public class DBpediaAttributeLookup {
                         rangeMatch = true;
                     }
                 }
+                if (domain == null && range == null && !att.getUri().contains("http://dbpedia.org/ontology/")) {
+                    continue;
+                }
                 if (att.rangeCanBeBasicType && basicTypeAmongValues) {
                     rangeMatch = true;
-                } else if (!rangeMatch) { //check a matching between the value types and the ranges of the attribute
+                } else if (domain != null && valueTypes.isEmpty()) { //domain matched
+                    rangeMatch = true;
+                }
+                if (!rangeMatch && att.getUri().contains("http://dbpedia.org/ontology/")) { //check a matching between the value types and the ranges of the attribute
                     if (valueTypes.isEmpty() || att.rangeUri.isEmpty()) {
                         rangeMatch = true;
                     }
@@ -177,6 +192,9 @@ public class DBpediaAttributeLookup {
                         if (lr.getWeight() > maxSimilarity) {
                             maxSimilarity = lr.getWeight();
                         }
+                        if (att.getUri().contains("http://dbpedia.org/property/")) {
+                            lr.setWeight(0.999 * lr.getWeight());
+                        }
                         res.add(lr);
                     }
                 }
@@ -191,6 +209,16 @@ public class DBpediaAttributeLookup {
                 }
             }
         }
+
+        if (range != null) {
+            for (String attr : ((DBpediaNamedEntity) range).getRangeOfAttributes()) {
+                DBpediaAttribute da = DBpediaOntology.getInstance().attributesByUri.get(attr);
+                if (da != null) {
+                    valueTypes.addAll(da.getDomainUri());
+                }
+            }
+        }
+
         //now look for the symmetric relationships
         for (String sts : valueTypes) {
             DBpediaCategory valueCat = DBpediaOntology.getInstance().categoriesByUri.get(sts);
@@ -211,7 +239,7 @@ public class DBpediaAttributeLookup {
                         continue;
                     }
                 }
-                if (!rangeMatch) {
+                if (!rangeMatch && att.getUri().contains("http://dbpedia.org/ontology/")) {
                     for (String subjType : subjectTypes) {
                         for (String rangeUri : att.rangeUri) {
                             if (rangeUri.equals(subjType)) {
@@ -240,6 +268,9 @@ public class DBpediaAttributeLookup {
                     if (lr != null) {
                         if (lr.getWeight() > maxSimilarity) {
                             maxSimilarity = lr.getWeight();
+                        }
+                        if (att.getUri().contains("http://dbpedia.org/property/")) {
+                            lr.setWeight(0.999 * lr.getWeight());
                         }
                         lr.invertedRelationship = true;
                         res.add(lr);

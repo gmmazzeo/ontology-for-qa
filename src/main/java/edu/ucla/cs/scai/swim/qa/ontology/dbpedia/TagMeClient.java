@@ -62,14 +62,13 @@ public class TagMeClient {
 
     }
 
-    public ArrayList<DBpediaEntityAnnotationResult> getTagMeResult(String sentence) throws Exception {
-        HttpRequestFactory requestFactory
-                = HTTP_TRANSPORT.createRequestFactory(new HttpRequestInitializer() {
-                    @Override
-                    public void initialize(HttpRequest request) {
-                        request.setParser(new JsonObjectParser(JSON_FACTORY));
-                    }
-                });
+    public ArrayList<DBpediaEntityAnnotationResult> getTagMeResult(String sentence, SimilarityClient similarityClient) throws Exception {
+        HttpRequestFactory requestFactory = HTTP_TRANSPORT.createRequestFactory(new HttpRequestInitializer() {
+            @Override
+            public void initialize(HttpRequest request) {
+                request.setParser(new JsonObjectParser(JSON_FACTORY));
+            }
+        });
         TagMeClient.TagMeUrl url = new TagMeClient.TagMeUrl(END_POINT + "?key=" + API_KEY + "&text=" + sentence);
         HttpRequest request = requestFactory.buildGetRequest(url);
         request.getHeaders().setAccept("application/json");
@@ -78,19 +77,19 @@ public class TagMeClient {
         TagMeClient.AnnotationResults result = response.parseAs(TagMeClient.AnnotationResults.class);
         ArrayList<DBpediaEntityAnnotationResult> res = new ArrayList<>();
         for (AnnotationResult ar : result.annotations) {
-            DBpediaNamedEntity e = new DBpediaNamedEntity();
-            e.setLabel(ar.title);
-            e.setUri("http://dbpedia.org/resource/" + ar.title.replace(" ", "_"));
-            res.add(new DBpediaEntityAnnotationResult(e, ar.rho, ar.start, ar.end, ar.spot));
+            double similarity = similarityClient.similarity(ar.title, ar.spot);
+            ar.rho = Math.max(ar.rho, (similarity > 0.9) ? similarity : 0);
+            res.add(new DBpediaEntityAnnotationResult(ar));
         }
         return res;
     }
 
     public static void main(String[] args) throws Exception {
         TagMeClient tm = new TagMeClient();
+        SimilarityClient similarityClient = new SwoogleSimilarityClient();
         //String sentence="In which films directed by Garry Marshall was Julia Roberts starring?";
-        String sentence="What is a film director?";
-        for (DBpediaEntityAnnotationResult r : tm.getTagMeResult(sentence)) {
+        String sentence = "What is a film director?";
+        for (DBpediaEntityAnnotationResult r : tm.getTagMeResult(sentence, similarityClient)) {
             System.out.println(r);
         }
     }

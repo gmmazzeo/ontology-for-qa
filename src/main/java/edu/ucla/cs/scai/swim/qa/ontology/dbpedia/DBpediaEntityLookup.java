@@ -33,6 +33,7 @@ import java.io.PrintWriter;
 import java.net.MalformedURLException;
 import java.net.URI;
 import java.net.URL;
+import java.net.URLConnection;
 import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -75,9 +76,32 @@ public class DBpediaEntityLookup {
         HttpResponse response = request.execute();
 
         EntityFeed resultList = response.parseAs(EntityFeed.class);
+        int topRefCount = (!resultList.results.isEmpty()) ? resultList.results.get(0).getRefCount() : 0;
         ArrayList<DBpediaEntityLookupResult> res = new ArrayList<>();
+        ArrayList<String> visitedUrl = new ArrayList<>();
         for (DBpediaNamedEntity ne : resultList.results) {
-            res.add(new DBpediaEntityLookupResult(ne, similarityClient.similarity(name, ne.getName())));
+            URLConnection con = new URL(URI.create(ne.getUri()).toASCIIString()).openConnection();
+            con.connect();
+            try {
+                InputStream is = con.getInputStream();
+                is.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            String redirect = con.getURL().toString().replace("http://dbpedia.org/page/", "http://dbpedia.org/resource/");
+            if (!ne.getUri().equals(redirect)) {
+                ne.setUri(redirect);
+            }
+            if (visitedUrl.contains(redirect)) {
+                continue;
+            } else {
+                visitedUrl.add(redirect);
+            }
+            int useRefCount = 0;
+            if (ne.getDescription().contains(name)) {
+                useRefCount = ne.getRefCount() / topRefCount;
+            }
+            res.add(new DBpediaEntityLookupResult(ne, Math.max(useRefCount, similarityClient.similarity(name, ne.getName()))));
         }
         return res;
     }
@@ -153,7 +177,7 @@ public class DBpediaEntityLookup {
                 JsonObject o = e.getValue().getAsJsonObject();
                 for (Map.Entry<String, JsonElement> v : o.entrySet()) {
                     String attr = v.getKey();
-                    if (!attr.contains("http://dbpedia.org/ontology")) {
+                    if (!(attr.contains("http://dbpedia.org/ontology") || attr.contains("http://dbpedia.org/property"))) {
                         continue;
                     }
 
@@ -216,7 +240,7 @@ public class DBpediaEntityLookup {
         try {
             for (Map.Entry<String, JsonElement> e : jo.entrySet()) {
                 String attr = e.getKey();
-                if (attr.contains("http://dbpedia.org/ontology")) {
+                if (attr.contains("http://dbpedia.org/ontology") || attr.contains("http://dbpedia.org/property")) {
                     res.domainOfAttributes.add(attr);
                 }
             }

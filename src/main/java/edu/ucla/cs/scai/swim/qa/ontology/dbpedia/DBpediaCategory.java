@@ -7,7 +7,6 @@ package edu.ucla.cs.scai.swim.qa.ontology.dbpedia;
 
 import edu.ucla.cs.scai.swim.qa.ontology.Attribute;
 import edu.ucla.cs.scai.swim.qa.ontology.Category;
-import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Objects;
@@ -84,10 +83,7 @@ public class DBpediaCategory implements Category {
             return false;
         }
         final DBpediaCategory other = (DBpediaCategory) obj;
-        if (!Objects.equals(this.uri, other.uri)) {
-            return false;
-        }
-        return true;
+        return Objects.equals(this.uri, other.uri);
     }
 
     @Override
@@ -161,28 +157,28 @@ public class DBpediaCategory implements Category {
 
     public HashSet<DBpediaCategory> lowestCommonAncestors(DBpediaCategory c) {
         HashSet<DBpediaCategory> res = new HashSet<>();
-        
+
         if (this.equals(c)) {
             res.add(c);
             return res;
         }
-        
+
         if (hasAncestor(c)) {
             res.add(c);
             return res;
         } else if (c.hasAncestor(this)) {
             res.add(this);
-            return res;            
+            return res;
         }
-        
+
         //here, ancestors of this and c have been already computed
-        
+
         HashSet<DBpediaCategory> temp = new HashSet<>();
         for (DBpediaCategory a : ancestors) {
             if (c.ancestors.contains(a)) {
                 temp.add(a);
             }
-        }        
+        }
 
         for (DBpediaCategory a : temp) {
             boolean add = true;

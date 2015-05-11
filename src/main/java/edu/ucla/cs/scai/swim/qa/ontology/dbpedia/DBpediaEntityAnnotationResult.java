@@ -19,12 +19,15 @@ public class DBpediaEntityAnnotationResult extends NamedEntityAnnotationResult {
     DBpediaNamedEntity namedEntity;
     String spot;
 
-    public DBpediaEntityAnnotationResult(DBpediaNamedEntity namedEntity, double weight, int begin, int end, String spot) {
-        this.weight = weight;
-        this.namedEntity = namedEntity;
-        this.begin = begin;
-        this.end = end;
-        this.spot = spot;
+    public DBpediaEntityAnnotationResult(TagMeClient.AnnotationResult ar) {
+        DBpediaNamedEntity e = new DBpediaNamedEntity();
+        e.setLabel(ar.title);
+        e.setUri("http://dbpedia.org/resource/" + ar.title.replace(" ", "_"));
+        this.namedEntity = e;
+        this.weight = ar.rho;
+        this.begin = ar.start;
+        this.end = ar.end;
+        this.spot = ar.spot;
     }
 
     @Override
