@@ -229,7 +229,7 @@ public class QueryMapping {
             basicTypes.add(qf.getSubjExpr());
         }
         for (QueryConstraint qc : qm.getConstraints()) {
-            if (qc.getAttrString().startsWith("http://dbpedia.org/ontology")) {
+            if (qc.getAttrString().startsWith("http://dbpedia.org/ontology") || qc.getAttrString().startsWith("http://dbpedia.org/property")) {
                 if (qc.getSubjString().startsWith("http://dbpedia.org/resource") || variableTypes.containsKey(qc.getSubjString())) {
                     rangesOfResolvedAttributes.put(qc.getValueString(), qc.getAttrString());
                     resolvedAttributes.add(qc.getValueString());
@@ -311,6 +311,8 @@ public class QueryMapping {
                                 System.out.println(" " + qc2.toString());
                             }
                             System.out.println(variableTypes);
+                            System.out.println(domainsOfResolvedAttributes);
+                            System.out.println(rangesOfResolvedAttributes);
                             throw new Exception("resolveAttribute error"); //can we even get here?
                         }
                     } else { //subj has a category type
@@ -502,7 +504,7 @@ public class QueryMapping {
         out.println("#####################################");
         Collections.sort(intermediateModels0);
         for (int i = 0; i < intermediateModels0.size(); i++) {
-            if (intermediateModels0.get(i).getWeight() == 0 || intermediateModels0.get(i).getWeight() == Double.NEGATIVE_INFINITY) {
+            if (intermediateModels0.get(i).getWeight() < 0.1 || intermediateModels0.get(i).getWeight() == Double.NEGATIVE_INFINITY) {
                 intermediateModels0.remove(i);
                 i--;
                 continue;
@@ -526,7 +528,7 @@ public class QueryMapping {
         out.println("#####################################");
         Collections.sort(intermediateModels1);
         for (int i = 0; i < intermediateModels1.size(); i++) {
-            if (intermediateModels1.get(i).getWeight() == 0 || intermediateModels1.get(i).getWeight() == Double.NEGATIVE_INFINITY) {
+            if (intermediateModels1.get(i).getWeight() < 0.1 || intermediateModels1.get(i).getWeight() == Double.NEGATIVE_INFINITY) {
                 intermediateModels1.remove(i);
                 i--;
                 continue;
@@ -549,8 +551,15 @@ public class QueryMapping {
         out.println("######### MAPPED CATEGORY ###########");
         out.println("#####################################");
         Collections.sort(intermediateModels2);
+        double highestWeight = (!intermediateModels2.isEmpty()) ? intermediateModels2.get(0).getWeight() : 0;
+        for (int i = 0 ; i < intermediateModels2.size(); i++) {
+            if (intermediateModels2.get(i).getWeight() < highestWeight * OUTPUT_THRESHOLD) {
+                intermediateModels2.remove(i);
+                i--;
+            }
+        }
         for (int i = 0; i < intermediateModels2.size(); i++) {
-            if (intermediateModels2.get(i).getWeight() == 0 || intermediateModels2.get(i).getWeight() == Double.NEGATIVE_INFINITY) {
+            if (intermediateModels2.get(i).getWeight() < 0.1 || intermediateModels2.get(i).getWeight() == Double.NEGATIVE_INFINITY) {
                 intermediateModels2.remove(i);
                 i--;
                 continue;
@@ -577,7 +586,7 @@ public class QueryMapping {
             }
         }
         Collections.sort(outputModels);
-        double highestWeight = (!outputModels.isEmpty()) ? outputModels.get(0).getWeight() : 0;
+        highestWeight = (!outputModels.isEmpty()) ? outputModels.get(0).getWeight() : 0;
         for (int i = 0 ; i < outputModels.size(); i++) {
             if (outputModels.get(i).getWeight() < highestWeight * OUTPUT_THRESHOLD) {
                 outputModels.remove(i);
