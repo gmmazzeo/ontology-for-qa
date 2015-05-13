@@ -97,11 +97,7 @@ public class DBpediaEntityLookup {
             } else {
                 visitedUrl.add(redirect);
             }
-            int useRefCount = 0;
-            if (ne.getDescription().contains(name)) {
-                useRefCount = ne.getRefCount() / topRefCount;
-            }
-            res.add(new DBpediaEntityLookupResult(ne, Math.max(useRefCount, similarityClient.similarity(name, ne.getName()))));
+            res.add(new DBpediaEntityLookupResult(ne, Math.max(ne.getRefCount() / topRefCount, similarityClient.similarity(name, ne.getName()))));
         }
         return res;
     }

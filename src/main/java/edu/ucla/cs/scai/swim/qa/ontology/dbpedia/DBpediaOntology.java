@@ -797,9 +797,10 @@ public class DBpediaOntology implements Ontology {
     public ArrayList<HashMap<String, String>> executeSparql(QueryModel qm, int limit) {
         ArrayList<HashMap<String, String>> res = new ArrayList<>();
         if (qm.getAttributeVariableName() == null && qm.getExampleEntity() != null) {
-            HashMap<String, String> row = new HashMap<>();
-            row.put(qm.getEntityVariableName(), qm.getExampleEntity());
-            res.add(row);
+            return res;
+//            HashMap<String, String> row = new HashMap<>();
+//            row.put(qm.getEntityVariableName(), qm.getExampleEntity());
+//            res.add(row);
         } else {
             StringBuilder sb = new StringBuilder();
             sb.append("select distinct");

@@ -24,7 +24,7 @@ public class QueryMapping {
     Ontology ontology;
     boolean printIntermediateModels = true;
     double THRESHOLD = 0.8;
-    double OUTPUT_THRESHOLD = 0.7;
+    double OUTPUT_THRESHOLD = 0.5;
     PrintStream out = printIntermediateModels ? System.out : new PrintStream(new OutputStream() {@Override public void write(int b) {}}); //send System.out to not print if printIntermediateModels is false
 
     private ArrayList<QueryModel> expandExampleEntity(QueryModel qm) throws Exception {

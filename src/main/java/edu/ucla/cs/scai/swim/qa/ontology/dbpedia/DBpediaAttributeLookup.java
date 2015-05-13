@@ -111,8 +111,8 @@ public class DBpediaAttributeLookup {
         double maxSimilarity = 0;
         HashSet<String> visitedAttr = new HashSet<>();
 
-        if (subjectTypes.isEmpty() && range != null) {
-            for (String attr : ((DBpediaNamedEntity) range).getRangeOfAttributes()) {
+        if (domain != null) {
+            for (String attr : ((DBpediaNamedEntity) domain).getDomainOfAttributes()) {
                 DBpediaAttribute da = DBpediaOntology.getInstance().attributesByUri.get(attr);
                 if (da != null) {
                     subjectTypes.addAll(da.getDomainUri());
@@ -120,8 +120,8 @@ public class DBpediaAttributeLookup {
             }
         }
 
-        if (domain != null) {
-            for (String attr : ((DBpediaNamedEntity) domain).getDomainOfAttributes()) {
+        if (range != null) {
+            for (String attr : ((DBpediaNamedEntity) range).getRangeOfAttributes()) {
                 DBpediaAttribute da = DBpediaOntology.getInstance().attributesByUri.get(attr);
                 if (da != null) {
                     subjectTypes.addAll(da.getDomainUri());
